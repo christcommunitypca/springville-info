@@ -191,14 +191,6 @@
       "description": "Baptist congregation on U.S. Highway 11 with worship and ministries for families.",
       "address": "4193 U.S. Highway 11, Springville, AL",
       "website": "https://www.svchurch.net/"
-    },
-    {
-      "id": "church-at-bradford-road",
-      "name": "The Church at Bradford Road",
-      "category": "Churches",
-      "description": "Springville congregation hosting worship and community events.",
-      "address": "35 Bradford Rd, Springville, AL",
-      "website": "https://www.bradfordroad.com/"
     }
   ]
 }
