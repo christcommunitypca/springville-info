@@ -153,6 +153,38 @@
       "description": "Long-running Springville restaurant on Main Street.",
       "address": "6204 Main Street, Springville, AL",
       "website": "https://coverage-4940366242fb45b5ffe060710134dad6.web.ordersave.com/springville"
+    },
+    {
+      "id": "christ-community-pca",
+      "name": "Christ Community PCA",
+      "category": "Churches",
+      "description": "Presbyterian Church in America congregation with worship, Bible studies and community ministries.",
+      "address": "7280 U.S. Highway 11, Springville, AL",
+      "website": "https://www.christcommunitypca.com/"
+    },
+    {
+      "id": "first-baptist-springville",
+      "name": "First Baptist Church of Springville",
+      "category": "Churches",
+      "description": "Local Baptist congregation offering worship, small groups and community activities.",
+      "address": "980 Robinson Street, Springville, AL",
+      "website": "https://www.fbcspringville.com/"
+    },
+    {
+      "id": "spring-valley-baptist",
+      "name": "Spring Valley Baptist Church",
+      "category": "Churches",
+      "description": "Baptist congregation on U.S. Highway 11 with worship and ministries for families.",
+      "address": "4193 U.S. Highway 11, Springville, AL",
+      "website": "https://www.svchurch.net/"
+    },
+    {
+      "id": "springville-methodist",
+      "name": "Springville Methodist Church",
+      "category": "Churches",
+      "description": "Local Methodist congregation with worship, children's programs and community activities.",
+      "address": "6471 U.S. Highway 11, Springville, AL",
+      "website": "https://www.springvillemethodist.com/"
     }
   ]
 }
