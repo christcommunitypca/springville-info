@@ -2,7 +2,7 @@
   "site": {
     "name": "Springville.Info",
     "location": "Springville, Alabama",
-    "updatedAt": "2026-11-18",
+    "updatedAt": "2026-11-19",
     "timezone": "America/Chicago",
     "source": "Migrated from existing Springville.Info Wix site on 2026-11-18",
     "submissionUrl": "https://headless-czuiyfnwkie-christcommunitypca-1412.wix-site-host.com/share.html"
@@ -90,6 +90,17 @@
       "category": "Holiday",
       "summary": "Two evenings of seasonal music, lights and hot chocolate at the nature preserve. Confirm the schedule with the organizer.",
       "sourceUrl": "https://happeningnext.com/event/christmas-in-the-pines-eid3a0e51qe96"
+    },
+    {
+      "id": "walk-through-bethlehem-2026",
+      "title": "A Walk Through Bethlehem",
+      "startDate": "2026-12-04",
+      "endDate": "2026-12-04",
+      "time": "6:00–8:00 p.m.",
+      "location": "Homestead Hollow, 1161 Murphrees Valley Rd, Springville, AL",
+      "category": "Holiday",
+      "summary": "The Church at Bradford Road presents a free, outdoor walk through scenes of Bethlehem with live actors. All ages welcome; no reservation required.",
+      "sourceUrl": "https://happeningnext.com/event/a-walk-through-bethlehem-free-event-eid3a0ebcxw4j"
     }
   ],
   "directory": [
@@ -180,6 +191,14 @@
       "description": "Baptist congregation on U.S. Highway 11 with worship and ministries for families.",
       "address": "4193 U.S. Highway 11, Springville, AL",
       "website": "https://www.svchurch.net/"
+    },
+    {
+      "id": "church-at-bradford-road",
+      "name": "The Church at Bradford Road",
+      "category": "Churches",
+      "description": "Springville congregation hosting worship and community events.",
+      "address": "35 Bradford Rd, Springville, AL",
+      "website": "https://www.bradfordroad.com/"
     }
   ]
 }
