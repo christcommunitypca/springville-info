@@ -5,29 +5,88 @@ const dateLabel=(s,opts={month:'short',day:'numeric',year:'numeric'})=>new Intl.
 const dayNumber=(s)=>dateLabel(s,{day:'2-digit'});
 const monthLabel=(s)=>dateLabel(s,{month:'short'}).toUpperCase();
 const contentUrl='/data/content.json';
-const toggle=$('[data-menu-toggle]');if(toggle){toggle.addEventListener('click',()=>{const nav=$('[data-nav]');const opened=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(opened));});}
 $$('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
+for (const photo of $$('.town-photo img')) {
+  const hideUnavailablePhoto = () => { photo.closest('figure').hidden = true; };
+  photo.addEventListener('error', hideUnavailablePhoto, {once: true});
+  if (photo.complete && !photo.naturalWidth) hideUnavailablePhoto();
+}
 const node=(id)=>document.getElementById(id);
-function storyCard(s){return `<a class="story" href="/story.html?slug=${encodeURIComponent(s.slug)}"><span class="meta">${escapeHTML(s.category)} · ${escapeHTML(dateLabel(s.date))}</span><h3>${escapeHTML(s.title)}</h3><p>${escapeHTML(s.summary)}</p><span class="read">Read summary →</span></a>`}
-const shortHeadlines={
-'springville-appoints-kevin-early-to-district-4-council-seat':'New Councilman Chosen',
-'springville-seeks-community-input-for-comprehensive-plan':'Shape Springville’s Future',
-'how-to-follow-springville-city-council-meetings':'Inside City Hall'
-};
-function punchyTitle(s){if(shortHeadlines[s.slug])return shortHeadlines[s.slug];const words=String(s.title||'Local update').replace(/[.!?]+$/,'').split(/\s+/);return words.slice(0,4).join(' ')+(words.length>4?'…':'')}
-function homeStoryCard(s,i=0){const category=escapeHTML(s.category||'News');const title=escapeHTML(punchyTitle(s));return `<a class="home-story ${i===0?'home-story-featured':''}" href="/story.html?slug=${encodeURIComponent(s.slug)}" aria-label="${escapeHTML(s.title)}"><span class="home-story-body"><span class="home-story-kicker">${category} · ${escapeHTML(dateLabel(s.date,{month:'short',day:'numeric'}))}</span><h3>${title}</h3><span class="home-story-cta">Read story <span aria-hidden="true">↗</span></span></span><span class="home-story-decor" aria-hidden="true"><span></span></span></a>`}
-function eventCard(e,full=false){const link=safeLink(e.sourceUrl);return `<a class="event" href="${escapeHTML(link)}" target="_blank" rel="noopener noreferrer"><span class="event-date"><span>${escapeHTML(monthLabel(e.startDate))}</span><strong>${escapeHTML(dayNumber(e.startDate))}</strong></span><span class="event-content"><h3>${escapeHTML(e.title)}</h3><p>${escapeHTML(e.time)} · ${escapeHTML(e.location)}</p>${full?`<p class="event-description">${escapeHTML(e.summary)}</p><span class="event-link">Event source ↗</span>`:''}</span></a>`}
-function homeEventCard(e){const link=safeLink(e.sourceUrl);const title=String(e.title||'Event');return `<a class="event" href="${escapeHTML(link)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHTML(title)}"><span class="event-date"><span>${escapeHTML(monthLabel(e.startDate))}</span><strong>${escapeHTML(dayNumber(e.startDate))}</strong></span><span class="event-content"><h3>${escapeHTML(title)}</h3><p>${escapeHTML(e.location.split(',')[0])}</p></span><span class="event-arr" aria-hidden="true">↗</span></a>`}
-function directoryCard(d){return `<article class="feature"><span class="meta">${escapeHTML(d.category)}</span><h3>${escapeHTML(d.name)}</h3><p>${escapeHTML(d.description)}</p><p class="small">${escapeHTML(d.address)}</p><a href="${escapeHTML(safeLink(d.website))}" target="_blank" rel="noopener noreferrer">Visit website ↗</a></article>`}
-const empty=(msg)=>`<p class="empty">${escapeHTML(msg)}</p>`;
+function storyLink(story) {
+  return `/story.html?slug=${encodeURIComponent(story.slug)}`;
+}
+
+function storyCard(story) {
+  return `<a class="story" href="${storyLink(story)}">
+    <span class="meta">${escapeHTML(story.category)} · ${escapeHTML(dateLabel(story.date))}</span>
+    <h2>${escapeHTML(story.title)}</h2>
+    <p>${escapeHTML(story.summary)}</p>
+    <span class="read">Read story →</span>
+  </a>`;
+}
+
+function homeStoryCard(story) {
+  const date = dateLabel(story.date, {month: 'short', day: 'numeric'});
+  return `<li><a class="home-story" href="${storyLink(story)}">
+    <div>
+      <span class="meta">${escapeHTML(story.category || 'News')} · <time datetime="${escapeHTML(story.date)}">${escapeHTML(date)}</time></span>
+      <h3>${escapeHTML(story.shortTitle || story.title)}</h3>
+    </div>
+    <span class="home-arrow" aria-hidden="true">→</span>
+  </a></li>`;
+}
+
+function eventDate(event) {
+  return `<time class="event-date" datetime="${escapeHTML(event.startDate)}">
+    <span>${escapeHTML(monthLabel(event.startDate))}</span>
+    <strong>${escapeHTML(dayNumber(event.startDate))}</strong>
+  </time>`;
+}
+
+function eventCard(event) {
+  return `<a class="event" href="${escapeHTML(safeLink(event.sourceUrl))}" target="_blank" rel="noopener noreferrer">
+    ${eventDate(event)}
+    <div>
+      <h2>${escapeHTML(event.title)}</h2>
+      <p>${escapeHTML([event.time, event.location].filter(Boolean).join(' · '))}</p>
+      <p>${escapeHTML(event.summary)}</p>
+      <span class="event-link">Event source →</span>
+    </div>
+  </a>`;
+}
+
+function homeEventCard(event) {
+  return `<li><a class="home-event" href="${escapeHTML(safeLink(event.sourceUrl))}" target="_blank" rel="noopener noreferrer">
+    ${eventDate(event)}
+    <div>
+      <h3>${escapeHTML(event.title)}</h3>
+      <p>${escapeHTML((event.location || '').split(',')[0])}</p>
+    </div>
+    <span class="home-arrow" aria-hidden="true">→</span>
+  </a></li>`;
+}
+
+function directoryCard(d){return `<article class="feature"><span class="meta">${escapeHTML(d.category)}</span><h3>${escapeHTML(d.name)}</h3><p>${escapeHTML(d.description)}</p><p class="small">${escapeHTML(d.address)}</p><a href="${escapeHTML(safeLink(d.website))}" target="_blank" rel="noopener noreferrer">Visit website →</a></article>`}
+function empty(msg, tag = 'p') {
+  return `<${tag} class="empty">${escapeHTML(msg)}</${tag}>`;
+}
 function todayChicago(){return new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()).replace(/(\d{2})\/(\d{2})\/(\d{4})/,'$3-$1-$2');}
-async function render(){const page=document.body.dataset.page;if(!page||page==='about'||page==='share')return;let data;try{const res=await fetch(contentUrl,{cache:'no-cache'});if(!res.ok)throw new Error('Content unavailable');data=await res.json()}catch(e){$$('[data-feed]').forEach(el=>el.innerHTML=empty('The feed is temporarily unavailable. Please try again.'));return}
-const news=[...(data.news||[])].sort((a,b)=>b.date.localeCompare(a.date));const upcoming=(data.events||[]).filter(e=>e.endDate>=todayChicago()).sort((a,b)=>a.startDate.localeCompare(b.startDate));
+async function render(){const page=document.body.dataset.page;if(!['home','news','events','directory','story'].includes(page))return;let data;try{const res=await fetch(contentUrl,{cache:'no-cache'});if(!res.ok)throw new Error('Content unavailable');data=await res.json()}catch(e){$$('[data-feed]').forEach(el=>el.innerHTML=empty('The feed is temporarily unavailable. Please try again.', el.matches('ul') ? 'li' : 'p'));return}
+const today = todayChicago();
+const news=[...(data.news||[])].sort((a,b)=>b.date.localeCompare(a.date));
+const upcoming=(data.events||[]).filter(e=>e.endDate>=today).sort((a,b)=>a.startDate.localeCompare(b.startDate));
 const updated=node('last-updated');if(updated)updated.textContent='Last content update: '+dateLabel(data.site.updatedAt);
-if(page==='home'){node('home-stories').innerHTML=news.length?news.slice(0,5).map((s,i)=>homeStoryCard(s,i)).join(''):empty('No local stories have been published yet.');node('home-events').innerHTML=upcoming.length?upcoming.slice(0,3).map(e=>homeEventCard(e)).join(''):empty('No upcoming events are currently listed.');}
+if (page === 'home') {
+  node('home-stories').innerHTML = news.length
+    ? news.slice(0, 5).map(homeStoryCard).join('')
+    : empty('No local stories have been published yet.', 'li');
+  node('home-events').innerHTML = upcoming.length
+    ? upcoming.slice(0, 3).map(homeEventCard).join('')
+    : empty('No upcoming events are currently listed.', 'li');
+}
 if(page==='news'){node('all-news').innerHTML=news.length?news.map(storyCard).join(''):empty('No local stories have been published yet.');}
-if(page==='events'){node('all-events').innerHTML=upcoming.length?upcoming.map(e=>eventCard(e,true)).join(''):empty('No upcoming events are currently listed.');}
+if(page==='events'){node('all-events').innerHTML=upcoming.length?upcoming.map(eventCard).join(''):empty('No upcoming events are currently listed.');}
 if(page==='directory'){const directory=[...(data.directory||[])].sort((a,b)=>a.name.localeCompare(b.name));const categories=['All',...new Set(directory.map(x=>x.category).filter(Boolean))].sort((a,b)=>a==='All'?-1:b==='All'?1:a.localeCompare(b));let selected='All';let query='';const chips=node('directory-categories');const results=node('directory-results');chips.innerHTML=categories.map(c=>`<button class="chip" type="button" aria-pressed="${c===selected}" data-category="${escapeHTML(c)}">${escapeHTML(c)}</button>`).join('');const draw=()=>{const matches=directory.filter(d=>(selected==='All'||d.category===selected)&&(`${d.name} ${d.description} ${d.category} ${d.address}`).toLowerCase().includes(query));results.innerHTML=matches.length?matches.map(directoryCard).join(''):empty('No matching listings.');$$('[data-category]',chips).forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.category===selected)))};chips.addEventListener('click',e=>{const b=e.target.closest('button[data-category]');if(!b)return;selected=b.dataset.category;draw()});node('directory-search').addEventListener('input',e=>{query=e.target.value.trim().toLowerCase();draw()});draw();}
-if(page==='story'){const slug=new URL(location.href).searchParams.get('slug');const story=news.find(x=>x.slug===slug);const root=node('story-root');if(!story){root.innerHTML=empty('Story not found. Return to local news.');return;}document.title=story.title+' | Springville.Info';const description=$('meta[name="description"]');if(description)description.content=story.summary;root.innerHTML=`<a href="/news.html" class="back">← All news</a><span class="meta" style="margin-top:26px">${escapeHTML(story.category)} · ${escapeHTML(dateLabel(story.date))}</span><h1>${escapeHTML(story.title)}</h1><p class="lead">${escapeHTML(story.summary)}</p>${(story.body||[]).map(p=>`<p>${escapeHTML(p)}</p>`).join('')}<p class="source"><strong>Original source:</strong> <a href="${escapeHTML(safeLink(story.sourceUrl))}" target="_blank" rel="noopener noreferrer">${escapeHTML(story.sourceName)} ↗</a></p><p class="small">Springville.Info provides original summaries and links to publishers and organizers. Check the source for updates.</p>`;}
+if(page==='story'){const slug=new URL(location.href).searchParams.get('slug');const story=news.find(x=>x.slug===slug);const root=node('story-root');if(!story){root.innerHTML=empty('Story not found. Return to local news.');return;}document.title=story.title+' | Springville.Info';const description=$('meta[name="description"]');if(description)description.content=story.summary;root.innerHTML=`<a href="/news.html" class="back">← All news</a><span class="meta" style="margin-top:26px">${escapeHTML(story.category)} · ${escapeHTML(dateLabel(story.date))}</span><h1>${escapeHTML(story.title)}</h1><p class="lead">${escapeHTML(story.summary)}</p>${(story.body||[]).map(p=>`<p>${escapeHTML(p)}</p>`).join('')}<p class="source"><strong>Original source:</strong> <a href="${escapeHTML(safeLink(story.sourceUrl))}" target="_blank" rel="noopener noreferrer">${escapeHTML(story.sourceName)} →</a></p><p class="small">Springville.Info provides original summaries and links to publishers and organizers. Check the source for updates.</p>`;}
 }
 render();
