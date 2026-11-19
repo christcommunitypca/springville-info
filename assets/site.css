@@ -45,7 +45,7 @@ img{max-width:100%}
 .button.light,.button.ghost{color:var(--blue);background:#fff;border-color:#adc8da}
 .button.light:hover,.button.ghost:hover{background:var(--blue-soft);border-color:var(--blue);color:var(--blue)}
 .hero-photo{margin:0;min-width:0;max-width:490px}
-.hero-photo img{display:block;width:100%;height:auto!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important;object-position:center;border-radius:5px;border:1px solid var(--line)}
+.hero-photo .photo-frame{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;border-radius:5px;border:1px solid var(--line);background:#eef2f5}.hero-photo .photo-frame img{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;max-height:none!important;max-width:none!important;object-fit:cover!important;object-position:50% 50%!important;aspect-ratio:auto!important;border:0!important}
 .hero-photo figcaption{margin-top:9px;font-size:.7rem;line-height:1.5;color:#697587}
 .hero-photo figcaption a{color:var(--blue)}
 .section{padding-block:48px}
@@ -133,7 +133,7 @@ img{max-width:100%}
   .hero p{font-size:1rem}
   .hero-photo{max-width:none;width:100%;margin:0}
   /* Deliberately use a shallow landscape image on mobile; crop rather than distort. */
-  .hero-photo img{display:block;width:100%!important;max-width:100%;height:auto!important;aspect-ratio:16/9!important;object-fit:cover!important;object-position:50% 43%!important}
+  .hero-photo .photo-frame{aspect-ratio:16/9}.hero-photo .photo-frame img{object-position:50% 43%!important}
   .hero-photo figcaption{margin-top:6px}
   .section{padding-block:35px}
   .section-heading{align-items:start;flex-direction:column}
