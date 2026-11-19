@@ -131,7 +131,10 @@ img{max-width:100%}
   .hero-layout{grid-template-columns:1fr;gap:22px;padding-block:31px 38px}
   .hero h1{font-size:clamp(2.48rem,8.7vw,3.25rem);margin:10px 0 15px}
   .hero p{font-size:1rem}
-  .hero-photo{max-width:520px}
+  .hero-photo{max-width:none;width:100%;margin:0}
+  /* Deliberately use a shallow landscape image on mobile; crop rather than distort. */
+  .hero-photo img{display:block;width:100%!important;max-width:100%;height:auto!important;aspect-ratio:16/9!important;object-fit:cover!important;object-position:50% 43%!important}
+  .hero-photo figcaption{margin-top:6px}
   .section{padding-block:35px}
   .section-heading{align-items:start;flex-direction:column}
   .story-grid,.event-grid,.columns{grid-template-columns:1fr}
