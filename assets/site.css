@@ -149,3 +149,8 @@ img{max-width:100%}
   .utility .wrap{font-size:.64rem}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* Safe fallback: keep homepage compact after removing the image. */
+.hero-layout{display:block;max-width:900px;padding-block:30px 34px}
+.hero-copy{max-width:720px}
+@media(max-width:700px){.hero-layout{display:block!important;padding-block:25px 30px!important}.hero-copy{max-width:100%}}
