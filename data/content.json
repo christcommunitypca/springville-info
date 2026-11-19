@@ -1,0 +1,158 @@
+{
+  "site": {
+    "name": "Springville.Info",
+    "location": "Springville, Alabama",
+    "updatedAt": "2026-11-18",
+    "timezone": "America/Chicago",
+    "source": "Migrated from existing Springville.Info Wix site on 2026-11-18",
+    "submissionUrl": "https://headless-czuiyfnwkie-christcommunitypca-1412.wix-site-host.com/share.html"
+  },
+  "news": [
+    {
+      "id": "springville-council-seat-2026",
+      "slug": "springville-appoints-kevin-early-to-district-4-council-seat",
+      "title": "Springville fills vacant District 4 council seat",
+      "summary": "City Council selected Kevin Early for its vacant District 4 seat at the November 16 meeting. The council also approved a neighborhood paving agreement.",
+      "body": [
+        "At its November 16 meeting, the Springville City Council selected Kevin Early to fill its vacant District 4 seat after interviewing three applicants.",
+        "The council also approved paving work in the Crandall Crest neighborhood, with an agreement for the neighborhood HOA to reimburse the city for the expense.",
+        "Early was expected to be sworn in at the first December council meeting. Confirm upcoming meeting dates and times with the City of Springville."
+      ],
+      "date": "2026-11-17",
+      "category": "City Hall",
+      "sourceName": "The Trussville Tribune · Terry Schrimscher",
+      "sourceUrl": "https://www.trussvilletribune.com/2026/11/17/springville-fills-vacant-council-seat-approves-road-paving/"
+    },
+    {
+      "id": "springville-comprehensive-plan-2026",
+      "slug": "springville-seeks-community-input-for-comprehensive-plan",
+      "title": "Springville seeks input on its future",
+      "summary": "The city is gathering feedback for a comprehensive plan covering growth, quality of life, and local improvements. Residents and others with ties to the city can weigh in.",
+      "body": [
+        "Springville is seeking feedback from residents, workers, property and business owners, and families whose children attend school in the city as it prepares its comprehensive plan.",
+        "The survey asks about quality of life, local improvements, and how Springville might grow in the next five to fifteen years.",
+        "Find survey details and eligibility information in the original reporting."
+      ],
+      "date": "2026-11-12",
+      "category": "Community",
+      "sourceName": "The Trussville Tribune · Nathan Prewett",
+      "sourceUrl": "https://www.trussvilletribune.com/2026/11/12/input-sought-from-residents-for-springville-comprehensive-plan/"
+    },
+    {
+      "id": "springville-council-howto",
+      "slug": "how-to-follow-springville-city-council-meetings",
+      "title": "How to follow Springville City Council",
+      "summary": "Find meeting notices, minutes and recordings on the City of Springville’s official website. Check before attending for changes or special meetings.",
+      "body": [
+        "The City of Springville posts information about City Council meetings, minutes, and recordings on its official website.",
+        "Regular meetings are listed for the first and third Monday of each month at 6 p.m. Work sessions, public hearings, and special meetings may follow a different schedule.",
+        "Before attending, check the official meeting page for the latest notice, time, and location."
+      ],
+      "date": "2026-11-18",
+      "category": "Civic guide",
+      "sourceName": "City of Springville",
+      "sourceUrl": "https://www.cityofspringville.com/council"
+    }
+  ],
+  "events": [
+    {
+      "id": "smore-explore-2026",
+      "title": "S’more to Explore at the Library",
+      "startDate": "2026-12-05",
+      "endDate": "2026-12-05",
+      "time": "11:00 a.m. – noon",
+      "location": "Springville Public Library, Springville, AL",
+      "category": "Family",
+      "summary": "A free Girl Scouts gathering with crafts and a chance to learn about Girl Scouting. Check the registration details with the organizer.",
+      "sourceUrl": "https://www.eventbrite.com/e/springville-smore-to-explore-tickets-2003727571104"
+    },
+    {
+      "id": "live-nativity-2026",
+      "title": "Spring Valley’s Annual Live Nativity",
+      "startDate": "2026-12-06",
+      "endDate": "2026-12-06",
+      "time": "6:00 p.m.",
+      "location": "4193 U.S. Highway 11, Springville, AL",
+      "category": "Holiday",
+      "summary": "An outdoor live nativity presentation. Confirm details with the organizer before going.",
+      "sourceUrl": "https://happeningnext.com/event/spring-valleys-10th-annual-live-nativity-presentation-eid3a0e9m7rq9"
+    },
+    {
+      "id": "christmas-pines-2026",
+      "title": "Christmas in the Pines",
+      "startDate": "2026-12-18",
+      "endDate": "2026-12-19",
+      "time": "Dec. 18–19; see organizer for schedule",
+      "location": "Big Canoe Creek Nature Preserve, 1700 Murphrees Valley Rd, Springville, AL",
+      "category": "Holiday",
+      "summary": "Two evenings of seasonal music, lights and hot chocolate at the nature preserve. Confirm the schedule with the organizer.",
+      "sourceUrl": "https://happeningnext.com/event/christmas-in-the-pines-eid3a0e51qe96"
+    }
+  ],
+  "directory": [
+    {
+      "id": "city-of-springville",
+      "name": "City of Springville",
+      "category": "Government",
+      "description": "Official city services, council information and public notices.",
+      "address": "Springville, AL",
+      "website": "https://www.cityofspringville.com/"
+    },
+    {
+      "id": "parks-rec",
+      "name": "Springville Parks & Recreation",
+      "category": "Recreation",
+      "description": "Parks, community sports, recreation and Market on Main.",
+      "address": "Springville, AL",
+      "website": "https://www.springvilleparksandrec.com/"
+    },
+    {
+      "id": "library",
+      "name": "Springville Public Library",
+      "category": "Community",
+      "description": "Library hours, resources and community programming.",
+      "address": "Springville, AL",
+      "website": "https://www.cityofspringville.com/library"
+    },
+    {
+      "id": "chamber",
+      "name": "Springville Area Chamber of Commerce",
+      "category": "Business",
+      "description": "Connections and information for local businesses.",
+      "address": "Springville, AL",
+      "website": "https://www.cityofspringville.com/chamber"
+    },
+    {
+      "id": "big-canoe",
+      "name": "Big Canoe Creek Nature Preserve",
+      "category": "Outdoors",
+      "description": "Trails, natural areas and conservation in Springville.",
+      "address": "1700 Murphrees Valley Rd, Springville, AL",
+      "website": "https://bigcanoecreekpreserve.org/"
+    },
+    {
+      "id": "homestead-hollow",
+      "name": "Homestead Hollow",
+      "category": "Attractions",
+      "description": "Historic homestead and seasonal arts-and-crafts festivals.",
+      "address": "1161 Murphrees Valley Rd, Springville, AL",
+      "website": "https://homesteadhollow.com/"
+    },
+    {
+      "id": "main-street-bistro",
+      "name": "Main Street Italian Bistro",
+      "category": "Dining",
+      "description": "Italian restaurant on U.S. Highway 11.",
+      "address": "6470 U.S. Highway 11, Springville, AL",
+      "website": "https://www.mainstreetitalianbistro.com/"
+    },
+    {
+      "id": "the-ark",
+      "name": "The Ark",
+      "category": "Dining",
+      "description": "Long-running Springville restaurant on Main Street.",
+      "address": "6204 Main Street, Springville, AL",
+      "website": "https://coverage-4940366242fb45b5ffe060710134dad6.web.ordersave.com/springville"
+    }
+  ]
+}

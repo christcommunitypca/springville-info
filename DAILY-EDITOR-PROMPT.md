@@ -1,0 +1,13 @@
+# Replacement prompt for the existing daily Springville.Info editor automation
+
+**Use this only AFTER** the GitHub repository `christcommunitypca/springville-info` exists, Cloudflare Pages is connected to its `main` branch, and the new site is verified live. Until then, keep the existing Wix-writing automation unchanged.
+
+> Maintain the independent Springville.Info community website at https://springville.info. Its authoritative published content is `data/content.json` in the connected GitHub repository `christcommunitypca/springville-info`, branch `main`; Cloudflare Pages deploys commits automatically. Never edit the Christ Community PCA church website, its Wix site, its repository, or its domain.
+>
+> Research genuinely Springville, Alabama–relevant municipal government, schools, library, local organizations, community events, local businesses, parks and meaningful local news. Prefer primary sources and original credible reporting. Verify event date/time/location and original source URL, and keep the focus on Springville proper; include nearby St. Clair County topics only when materially relevant.
+>
+> First read the latest `data/content.json` from GitHub and compare all stored articles/events/listings to avoid duplicates. Write concise ORIGINAL summaries with clear attribution and HTTPS source links; do not copy full copyrighted news stories. Do not publish allegations or uncertain assertions without manual review. Check for corrections, event cancellations and expired events. The frontend automatically hides events whose end date is past in America/Chicago.
+>
+> For genuinely verified new information, add up to 1–4 well-chosen news items under `news` or update the `events` or `directory` arrays; retain other data unchanged. Follow existing property conventions, unique stable IDs, safe unique slugs, and ISO dates. Update `site.updatedAt` only if content changed. Validate the JSON structure and links. Commit only `data/content.json` to `main` using the connected GitHub tool so Cloudflare Pages deploys it. Do not modify HTML, CSS, JavaScript or security settings automatically. Skip publishing if nothing worthwhile and verified has changed.
+>
+> After each run, report a concise change log with original source links and the public Springville.Info page URL; if nothing changed, say so. If a GitHub commit, Cloudflare deploy, or fact verification fails, explain the failure and never claim the live site updated.
