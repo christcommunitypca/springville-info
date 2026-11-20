@@ -47,7 +47,7 @@ function months(items) {
     label(key+'-01',{month:'long',year:'numeric'}) + '</h3>' + rows.join('') + '</section>').join('');
 }
 function detail(id,title,body) {
-  return '<section class="page" id="' + escape(id) + '"><a class="back" href="#feed">← Back to the front page</a><h2>' +
+  return '<section class="page" id="' + escape(id) + '"><div class="page-actions"><a class="back" href="#feed">← Back to the front page</a><button class="share-button" type="button" data-share>Share</button></div><h2>' +
     escape(title) + '</h2>' + body + '</section>';
 }
 export function renderCommunity(data, today = chicagoDate()) {
@@ -76,33 +76,32 @@ export function renderCommunity(data, today = chicagoDate()) {
   return {feed:headlines + listing, details: details + archive};
 }
 if (typeof document !== 'undefined') {
-  const shareButton = document.getElementById('share-page');
-  if (shareButton) {
-    shareButton.hidden = false;
-    let resetLabel;
-    shareButton.addEventListener('click', async () => {
-      const page = document.querySelector('.page:target:not(#feed)');
-      const home = document.querySelector('link[rel="canonical"]').href;
-      const url = page ? home + '#' + encodeURIComponent(page.id) : home;
-      const title = page?.querySelector('h2')?.textContent || document.title;
-      try {
-        if (navigator.share) {
-          await navigator.share({title, url});
-          return;
-        }
-      } catch (error) {
-        if (error.name === 'AbortError') return;
+  document.documentElement.classList.add('can-share');
+  const shareTimers = new WeakMap();
+  document.addEventListener('click', async event => {
+    const shareButton = event.target.closest('[data-share]');
+    if (!shareButton) return;
+    const page = shareButton.closest('.page') || document.querySelector('.page:target:not(#feed)');
+    const home = document.querySelector('link[rel="canonical"]').href;
+    const url = page ? home + '#' + encodeURIComponent(page.id) : home;
+    const title = page?.querySelector('h2')?.textContent || document.title;
+    try {
+      if (navigator.share) {
+        await navigator.share({title, url});
+        return;
       }
-      try {
-        await navigator.clipboard.writeText(url);
-        shareButton.textContent = 'Link copied';
-        clearTimeout(resetLabel);
-        resetLabel = setTimeout(() => { shareButton.textContent = 'Share'; }, 2000);
-      } catch {
-        window.prompt('Copy this link', url);
-      }
-    });
-  }
+    } catch (error) {
+      if (error.name === 'AbortError') return;
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      shareButton.textContent = 'Link copied';
+      clearTimeout(shareTimers.get(shareButton));
+      shareTimers.set(shareButton, setTimeout(() => { shareButton.textContent = 'Share'; }, 2000));
+    } catch {
+      window.prompt('Copy this link', url);
+    }
+  });
   async function refresh() {
     const response = await fetch('/data/content.json',{cache:'no-cache'});
     if (!response.ok) return;
