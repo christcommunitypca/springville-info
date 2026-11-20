@@ -54,13 +54,15 @@ export function renderCommunity(data, today = chicagoDate()) {
   const now = Date.parse(today);
   const age = item => (now - Date.parse(item.date)) / dayMs;
   const published = data.news.filter(item => age(item) >= 0).sort((a,b)=>b.date.localeCompare(a.date));
-  const news = published.filter(item => age(item) <= 40);
+  const features = published.filter(item => item.category === 'Did you know?');
+  const todayFeature = features.filter(item => item.date === today).slice(0,1);
+  const news = published.filter(item => item.category !== 'Did you know?' && age(item) <= 40);
   const limit = Math.max(3, Math.min(7, news.filter(item => age(item) < 7).length));
   const events = data.events.filter(item => (item.endDate || item.startDate) >= today)
     .sort((a,b)=>a.startDate.localeCompare(b.startDate));
   const count = Math.max(10,events.filter(item => Date.parse(item.startDate) <= now + 30 * dayMs).length);
-  const headlines = news.length ? '<section aria-labelledby="news-heading"><h2 class="section-title" id="news-heading">Local news</h2>' +
-    newsRows(news.slice(0,limit)) + more('news',newsRows(news.slice(limit))) + '</section>' : '';
+  const headlines = todayFeature.length || news.length ? '<section aria-labelledby="news-heading"><h2 class="section-title" id="news-heading">Local news</h2>' +
+    newsRows([...todayFeature, ...news.slice(0,limit)]) + more('news',newsRows(news.slice(limit))) + '</section>' : '';
   const listing = events.length ? '<section id="listings" aria-labelledby="listings-heading"><h2 class="section-title" id="listings-heading">Upcoming</h2>' +
     months(events.slice(0,count)) + more('events',months(events.slice(count))) + '</section>' : '';
   const details = published.map(item => {
@@ -70,7 +72,8 @@ export function renderCommunity(data, today = chicagoDate()) {
       '</small>'+paragraphs+sourceLink(item.sourceUrl,item.sourceLabel || item.sourceName));
   }).concat(events.map(item=>detail(item.id,item.title,'<p>'+escape([item.startDate,item.time,item.location].filter(Boolean).join(' · '))+
     '</p><p>'+escape(item.summary)+'</p>'+sourceLink(item.sourceUrl,item.sourceName || 'View event details')))).join('');
-  return {feed:headlines + listing, details};
+  const archive = detail('did-you-know-archive','Did You Know archive',features.length ? newsRows(features) : '<p>No features yet.</p>');
+  return {feed:headlines + listing, details: details + archive};
 }
 if (typeof document !== 'undefined') {
   async function refresh() {
