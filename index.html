@@ -332,6 +332,230 @@ body:has(#entry-pages > .page:target) #share-page { visibility: hidden; }
   .story:first-child time { justify-self: start; }
 }
 
+
+/* Mobile brand accents: preserve the familiar one-column feed and all existing behavior. */
+@media (max-width: 899px) {
+  html { background: #f8fbfd; color: #19334a; }
+  body {
+    max-width: 860px;
+    padding: 0 16px 30px;
+    color: #19334a;
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.45;
+  }
+  header {
+    position: relative;
+    display: block;
+    height: 150px;
+    padding: 12px 16px 0;
+    margin: 0 -16px 19px;
+    overflow: hidden;
+    isolation: isolate;
+    border-bottom: 4px solid #174761;
+    background: linear-gradient(180deg, #dcedf4 0%, #f2f9fa 76%, #e8f3f4 100%);
+  }
+  header::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: auto 0 0;
+    height: 51px;
+    background: url("/assets/mainstreet-masthead.svg") center bottom / cover no-repeat;
+  }
+  .ripple { display: none; }
+  header h1 { width: fit-content; max-width: 100%; margin: 0; font-size: 1rem; letter-spacing: 0; }
+  header h1 a {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 100%;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .masthead-around {
+    display: block;
+    margin: 0 0 -1px 12px;
+    color: #ad3436;
+    font: 400 clamp(1.95rem, 8vw, 2.55rem)/.95 "Yellowtail", "Brush Script MT", cursive;
+    text-shadow: 1px 2px 0 rgba(255,255,255,.9);
+    transform: rotate(-3deg);
+  }
+  .masthead-springville {
+    display: block;
+    color: #123950;
+    font: 800 clamp(2.62rem, 12vw, 3.45rem)/.88 "Barlow Condensed", Impact, "Arial Narrow", sans-serif;
+    letter-spacing: -.018em;
+    text-transform: uppercase;
+    transform: skew(-4deg);
+    text-shadow: 1px 2px 0 #fff;
+  }
+  .masthead-location { display: none; }
+  header .share-button {
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    z-index: 1;
+    min-height: 44px;
+    margin: 0;
+    padding: 0 13px;
+    border: 1px solid #9d2a2b;
+    border-radius: 8px;
+    background: #b23a38;
+    color: white;
+    font: 700 .88rem/1 "DM Sans", sans-serif;
+    box-shadow: 0 2px 0 rgba(99, 32, 35, .18);
+  }
+  header .share-button:hover { background: #992f30; }
+  #feed > section, #feed > section:first-child {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+  #listings { margin-top: 24px; }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-height: 36px;
+    padding: 0;
+    color: #183b55 !important;
+    border: 0;
+    background: transparent !important;
+    font: 800 clamp(1.6rem, 6.6vw, 2.15rem)/1 "Barlow Condensed", Impact, sans-serif;
+    letter-spacing: .065em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .section-title::after {
+    content: "";
+    height: 3px;
+    flex: 1;
+    min-width: 18px;
+    background: #4e817a;
+  }
+  .stories, .month, #feed summary { padding-inline: 0; }
+  .story {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 14px 4px 13px;
+  }
+  .story + .story { border-top: 1px solid #c8d8df; }
+  .story h3 {
+    color: #18324c;
+    font: 800 clamp(1.06rem, 4.5vw, 1.26rem)/1.2 "DM Sans", sans-serif;
+    letter-spacing: -.025em;
+  }
+  .story time {
+    color: #586b7b;
+    font: 700 .76rem/1.2 "DM Sans", sans-serif;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  #feed > section:first-child > .stories > .story:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    min-height: 0;
+    margin: 13px 0 2px;
+    padding: 15px 15px 13px;
+    border: 1px solid #d0e6ef;
+    border-radius: 11px;
+    background: linear-gradient(115deg, #e5f2f8, #d5e9f2);
+  }
+  #feed > section:first-child > .stories > .story:first-child h3 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 13px;
+    font-size: clamp(1.12rem, 5vw, 1.38rem);
+  }
+  #feed > section:first-child > .stories > .story:first-child .kind {
+    display: inline-block;
+    flex: none;
+    padding: 7px 13px 9px 11px;
+    background: #b43e3b;
+    color: #fff;
+    clip-path: polygon(0 10%, 99% 1%, 98% 91%, 3% 100%);
+    font: 400 1.36rem/1 "Yellowtail", cursive;
+    letter-spacing: .005em;
+    text-transform: none;
+    white-space: nowrap;
+  }
+  #feed > section:first-child > .stories > .story:first-child time { align-self: flex-end; }
+  #feed details { margin-top: 9px; }
+  #feed summary {
+    min-height: 44px;
+    padding: 13px 14px;
+    border: 0;
+    border-radius: 8px;
+    background: #e5f1f8;
+    color: #a53633;
+    font: 800 .98rem/1.3 "DM Sans", sans-serif;
+  }
+  #feed summary:hover { background: #d8eaf3; }
+  .month { padding-top: 13px; }
+  .month > h3 {
+    display: table;
+    width: auto;
+    max-width: 100%;
+    margin: 0 0 4px;
+    padding: 6px 21px 6px 12px;
+    color: #fff;
+    background: #447a70;
+    clip-path: polygon(5% 0,100% 0,95% 100%,0 100%);
+    font: 700 1.1rem/1.1 "Barlow Condensed", Impact, sans-serif;
+    letter-spacing: .105em;
+    text-transform: uppercase;
+  }
+  .listing {
+    display: grid;
+    grid-template-columns: 63px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    min-height: 73px;
+    padding: 9px 2px;
+  }
+  .listing + .listing { border-top: 1px solid #c9d7de; }
+  .listing time {
+    width: 63px;
+    min-height: 61px;
+    padding: 5px 2px;
+    border-radius: 8px;
+    color: white;
+    background: linear-gradient(160deg, #bc4945, #ac332f);
+    box-shadow: inset 0 -2px 0 rgba(98,28,27,.2);
+  }
+  .listing time small {
+    font: 800 .68rem/1.15 "DM Sans", sans-serif;
+    letter-spacing: .02em;
+  }
+  .listing time b {
+    font: 800 1.8rem/1 "DM Sans", sans-serif;
+    letter-spacing: -.06em;
+  }
+  .listing time b.wide { font-size: 1.13rem; letter-spacing: -.055em; }
+  .listing strong {
+    display: block;
+    color: #1a324c;
+    font: 800 clamp(.99rem, 4.1vw, 1.15rem)/1.23 "DM Sans", sans-serif;
+    letter-spacing: -.02em;
+  }
+  .where { color: #526a78; font-size: .81rem; line-height: 1.32; }
+  footer { border-top: 1px solid #c6d8de; padding-top: 7px; }
+  :focus-visible { outline: 3px solid #ac3531; outline-offset: 3px; }
+}
+@media (max-width: 365px) {
+  header { height: 140px; }
+  .masthead-around { font-size: 1.85rem; }
+  .masthead-springville { font-size: 2.43rem; }
+  header .share-button { padding-inline: 10px; }
+}
+
 </style></head>
 <body>
 <header>
