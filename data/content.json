@@ -9,6 +9,21 @@
   },
   "news": [
     {
+      "id": "pinkhill-post-office",
+      "slug": "when-springville-was-pinkhill",
+      "title": "When Springville was Pinkhill",
+      "shortTitle": "When Springville was Pinkhill",
+      "category": "Did you know?",
+      "date": "2026-11-19",
+      "summary": "For a brief time in the 1830s, a letter bound for what is now Springville could be addressed to Pinkhill.",
+      "body": [
+        "The settlement’s earlier name was Big Springs. Fresh water made it a stopping place for Native Americans and, later, settlers traveling through the area. When the first post office opened in 1833, the name on the mail was Pinkhill.",
+        "Pinkhill had a short run. In December 1834 the name changed to Springville, bringing the springs back into the town’s name. Of the town’s three names, two point to the water that first drew people here."
+      ],
+      "sourceName": "Encyclopedia of Alabama · Springville",
+      "sourceUrl": "https://encyclopediaofalabama.org/article/springville/"
+    },
+    {
       "id": "springville-council-seat-2026",
       "slug": "springville-appoints-kevin-early-to-district-4-council-seat",
       "title": "Springville fills vacant District 4 council seat",

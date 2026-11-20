@@ -77,16 +77,42 @@ const news=[...(data.news||[])].sort((a,b)=>b.date.localeCompare(a.date));
 const upcoming=(data.events||[]).filter(e=>e.endDate>=today).sort((a,b)=>a.startDate.localeCompare(b.startDate));
 const updated=node('last-updated');if(updated)updated.textContent='Last content update: '+dateLabel(data.site.updatedAt);
 if (page === 'home') {
-  node('home-stories').innerHTML = news.length
-    ? news.slice(0, 5).map(homeStoryCard).join('')
-    : empty('No local stories have been published yet.', 'li');
-  node('home-events').innerHTML = upcoming.length
-    ? upcoming.slice(0, 3).map(homeEventCard).join('')
+  const todayStamp = Date.parse(today);
+  const day = 86400000;
+  const recent = news.filter(story => {
+    const age = (todayStamp - Date.parse(story.date)) / day;
+    return age >= 0 && age <= 40;
+  });
+  const weekCount = recent.filter(story => todayStamp - Date.parse(story.date) < 7 * day).length;
+  const visibleNews = Math.max(3, Math.min(7, weekCount));
+  const headlines = node('home-stories');
+  headlines.innerHTML = recent.slice(0, visibleNews).map(homeStoryCard).join('');
+  headlines.closest('section').hidden = recent.length === 0;
+  if (recent.length > visibleNews) {
+    const more = document.createElement('details');
+    more.innerHTML = '<summary>See more news</summary><ul class="feed-list home-stories">' +
+      recent.slice(visibleNews).map(homeStoryCard).join('') + '</ul>';
+    headlines.after(more);
+  }
+
+  const windowEnd = new Date(today + 'T00:00:00Z');
+  windowEnd.setUTCDate(windowEnd.getUTCDate() + 30);
+  const lastDay = windowEnd.toISOString().slice(0, 10);
+  const visibleCount = Math.max(10, upcoming.filter(event => event.startDate <= lastDay).length);
+  const eventList = node('home-events');
+  eventList.innerHTML = upcoming.length
+    ? upcoming.slice(0, visibleCount).map(homeEventCard).join('')
     : empty('No upcoming events are currently listed.', 'li');
+  if (upcoming.length > visibleCount) {
+    const more = document.createElement('details');
+    more.innerHTML = '<summary>See more events</summary><ul class="feed-list">' +
+      upcoming.slice(visibleCount).map(homeEventCard).join('') + '</ul>';
+    eventList.after(more);
+  }
 }
 if(page==='news'){node('all-news').innerHTML=news.length?news.map(storyCard).join(''):empty('No local stories have been published yet.');}
 if(page==='events'){node('all-events').innerHTML=upcoming.length?upcoming.map(eventCard).join(''):empty('No upcoming events are currently listed.');}
 if(page==='directory'){const directory=[...(data.directory||[])].sort((a,b)=>a.name.localeCompare(b.name));const categories=['All',...new Set(directory.map(x=>x.category).filter(Boolean))].sort((a,b)=>a==='All'?-1:b==='All'?1:a.localeCompare(b));let selected='All';let query='';const chips=node('directory-categories');const results=node('directory-results');chips.innerHTML=categories.map(c=>`<button class="chip" type="button" aria-pressed="${c===selected}" data-category="${escapeHTML(c)}">${escapeHTML(c)}</button>`).join('');const draw=()=>{const matches=directory.filter(d=>(selected==='All'||d.category===selected)&&(`${d.name} ${d.description} ${d.category} ${d.address}`).toLowerCase().includes(query));results.innerHTML=matches.length?matches.map(directoryCard).join(''):empty('No matching listings.');$$('[data-category]',chips).forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.category===selected)))};chips.addEventListener('click',e=>{const b=e.target.closest('button[data-category]');if(!b)return;selected=b.dataset.category;draw()});node('directory-search').addEventListener('input',e=>{query=e.target.value.trim().toLowerCase();draw()});draw();}
-if(page==='story'){const slug=new URL(location.href).searchParams.get('slug');const story=news.find(x=>x.slug===slug);const root=node('story-root');if(!story){root.innerHTML=empty('Story not found. Return to local news.');return;}document.title=story.title+' | Springville.Info';const description=$('meta[name="description"]');if(description)description.content=story.summary;root.innerHTML=`<a href="/news.html" class="back">← All news</a><span class="meta" style="margin-top:26px">${escapeHTML(story.category)} · ${escapeHTML(dateLabel(story.date))}</span><h1>${escapeHTML(story.title)}</h1><p class="lead">${escapeHTML(story.summary)}</p>${(story.body||[]).map(p=>`<p>${escapeHTML(p)}</p>`).join('')}<p class="source"><strong>Original source:</strong> <a href="${escapeHTML(safeLink(story.sourceUrl))}" target="_blank" rel="noopener noreferrer">${escapeHTML(story.sourceName)} →</a></p><p class="small">Springville.Info provides original summaries and links to publishers and organizers. Check the source for updates.</p>`;}
+if(page==='story'){const slug=new URL(location.href).searchParams.get('slug');const story=news.find(x=>x.slug===slug);const feature=story?.category==='Did you know?';const root=node('story-root');if(!story){root.innerHTML=empty('Story not found. Return to local news.');return;}document.title=story.title+' | Springville.Info';const description=$('meta[name="description"]');if(description)description.content=story.summary;root.innerHTML=`<a href="/news.html" class="back">← All news</a><span class="meta" style="margin-top:26px">${escapeHTML(story.category)} · ${escapeHTML(dateLabel(story.date))}</span><h1>${escapeHTML(story.title)}</h1><p class="lead">${escapeHTML(story.summary)}</p>${(story.body||[]).map(p=>`<p>${escapeHTML(p)}</p>`).join('')}<p class="source"><strong>Original source:</strong> <a href="${escapeHTML(safeLink(story.sourceUrl))}" target="_blank" rel="noopener noreferrer">${escapeHTML(story.sourceName)} →</a></p>${feature ? '<p class="small">An AI-assisted local feature from Around Springville.</p>' : '<p class="small">Springville.Info provides original summaries and links to publishers and organizers. Check the source for updates.</p>'}`;}
 }
 render();

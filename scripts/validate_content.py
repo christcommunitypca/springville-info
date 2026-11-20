@@ -20,4 +20,6 @@ for section in ('news','events','directory'):
       start=datetime.date.fromisoformat(item['startDate']);end=datetime.date.fromisoformat(item['endDate'])
       assert end>=start,(section,item['id'])
 assert data['site']['timezone']=='America/Chicago'
+feature_dates = [story['date'] for story in data['news'] if story.get('category') == 'Did you know?']
+assert len(feature_dates) == len(set(feature_dates)), 'Only one Did you know? article per publication date'
 print(f"OK: {len(data['news'])} news, {len(data['events'])} events, {len(data['directory'])} directory items")
