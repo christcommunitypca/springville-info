@@ -39,6 +39,21 @@
       "sourceLabel": "Read the full story at The Trussville Tribune"
     },
     {
+      "id": "springville-hare-gadsden-state-2026",
+      "slug": "springville-charlie-hare-signs-gadsden-state",
+      "title": "Springville's Charlie Hare signs with Gadsden State",
+      "shortTitle": "Hare Signs With Gadsden",
+      "category": "Schools",
+      "date": "2026-11-17",
+      "summary": "Springville High School senior Charlie Hare signed to play baseball for Gadsden State, with one more season ahead for the Tigers.",
+      "body": [
+        "Springville High School center fielder Charlie Hare signed his letter of intent on Nov. 12 to play college baseball for the Gadsden State Cardinals, according to a Nov. 17 report in The Trussville Tribune.",
+        "Hare's junior season was cut short by injury. Before then he was batting .375 with a .460 on-base percentage. He plans to return for one more Tigers season, expected to begin in March."
+      ],
+      "sourceName": "The Trussville Tribune · Johnny Sanders",
+      "sourceUrl": "https://www.trussvilletribune.com/2026/11/17/springvilles-charlie-hare-signs-with-gadsden-state/"
+    },
+    {
       "id": "springville-comprehensive-plan-2026",
       "slug": "springville-seeks-community-input-for-comprehensive-plan",
       "title": "How should Springville grow?",
@@ -52,9 +67,61 @@
       "sourceName": "The Trussville Tribune · Nathan Prewett",
       "sourceUrl": "https://www.trussvilletribune.com/2026/11/12/input-sought-from-residents-for-springville-comprehensive-plan/",
       "sourceLabel": "Read the full story at The Trussville Tribune"
+    },
+    {
+      "id": "dibble-dabble-art-gallery-opening-2026",
+      "slug": "dibble-dabble-art-gallery-announces-springville-opening",
+      "title": "New Springville art gallery planned for Highway 11",
+      "shortTitle": "New Gallery on 11",
+      "category": "Business",
+      "date": "2026-11-11",
+      "summary": "Dibble Dabble Art Gallery announced a Nov. 12 opening at 6441 U.S. Highway 11, with art by local and central Alabama artists.",
+      "body": [
+        "Dibble Dabble Art Gallery announced a grand opening and ribbon cutting for Nov. 12 at 6441 U.S. Highway 11 in Springville, according to a Nov. 11 report by The Trussville Tribune.",
+        "The opening-day schedule included a glassblowing event and an evening open house. The gallery was described as a place to see work by local and central Alabama artists. Check with the gallery directly for current visiting hours."
+      ],
+      "sourceName": "The Trussville Tribune · Nathan Prewett",
+      "sourceUrl": "https://www.trussvilletribune.com/2026/11/11/grand-opening-to-be-held-for-dibble-dabble-art-gallery-in-springville/"
     }
   ],
   "events": [
+    {
+      "id": "oneonta-christmas-tree-lighting-2026",
+      "title": "Oneonta Tree Lighting & Carriage Rides",
+      "shortTitle": "Oneonta Carriage Rides",
+      "startDate": "2026-11-21",
+      "endDate": "2026-11-21",
+      "time": "5–8 p.m.; tree lighting at 5:30 p.m.",
+      "listTime": "5–8 p.m.",
+      "location": "Downtown Oneonta, 410 1st Avenue East, Oneonta, AL",
+      "listLocation": "Downtown · Oneonta",
+      "category": "Holiday",
+      "summary": "Oneonta's downtown tree lighting includes free horse-and-carriage rides, snow and Christmas crafts—a memorable evening outing beyond the usual holiday shopping.",
+      "sourceUrl": "https://www.northalabama.org/articles/post/hometown-christmas-brings-holiday-magic-to-downtown-oneonta/"
+    },
+    {
+      "id": "saturday-library",
+      "title": "Saturday at the Library",
+      "startDate": "2026-11-21",
+      "endDate": "2026-11-21",
+      "time": "10 a.m.–1 p.m.",
+      "location": "Springville Public Library",
+      "category": "Library",
+      "summary": "Springville Public Library lists Saturday hours of 10 a.m. to 1 p.m. on the first and third Saturdays of the month. November 21 is the third Saturday. Enter the parking area from Spring Street.",
+      "sourceName": "Library hours and directions",
+      "sourceUrl": "https://www.cityofspringville.com/library"
+    },
+    {
+      "id": "walk-through-bethlehem-2026",
+      "title": "A Walk Through Bethlehem",
+      "startDate": "2026-12-04",
+      "endDate": "2026-12-04",
+      "time": "6:00–8:00 p.m.",
+      "location": "Homestead Hollow, 1161 Murphrees Valley Rd, Springville, AL",
+      "category": "Holiday",
+      "summary": "The Church at Bradford Road presents a free, outdoor walk through scenes of Bethlehem with live actors. All ages welcome; no reservation required.",
+      "sourceUrl": "https://happeningnext.com/event/a-walk-through-bethlehem-free-event-eid3a0ebcxw4j"
+    },
     {
       "id": "smore-explore-2026",
       "title": "S’more to Explore at the Library",
@@ -84,6 +151,20 @@
       "listLocation": "4193 U.S. Highway 11"
     },
     {
+      "id": "odenville-drive-thru-christmas-2026",
+      "title": "Drive Thru Christmas in Odenville",
+      "shortTitle": "Drive Thru Christmas",
+      "startDate": "2026-12-11",
+      "endDate": "2026-12-13",
+      "time": "6–9 p.m. nightly",
+      "listTime": "6–9 p.m.",
+      "location": "New Life Baptist Church, 1405 Simpson Road, Odenville, AL",
+      "listLocation": "New Life Baptist · Odenville",
+      "category": "Holiday",
+      "summary": "A free drive-through presentation with live scenes from the life of Jesus. The church confirms three evenings, December 11–13, from 6 to 9 p.m.",
+      "sourceUrl": "https://www.nlbconline.org/upcoming_events"
+    },
+    {
       "id": "christmas-pines-2026",
       "title": "Christmas in the Pines",
       "startDate": "2026-12-18",
@@ -96,29 +177,6 @@
       "shortTitle": "Christmas in the Pines",
       "listTime": "",
       "listLocation": "Big Canoe Creek Nature Preserve"
-    },
-    {
-      "id": "walk-through-bethlehem-2026",
-      "title": "A Walk Through Bethlehem",
-      "startDate": "2026-12-04",
-      "endDate": "2026-12-04",
-      "time": "6:00–8:00 p.m.",
-      "location": "Homestead Hollow, 1161 Murphrees Valley Rd, Springville, AL",
-      "category": "Holiday",
-      "summary": "The Church at Bradford Road presents a free, outdoor walk through scenes of Bethlehem with live actors. All ages welcome; no reservation required.",
-      "sourceUrl": "https://happeningnext.com/event/a-walk-through-bethlehem-free-event-eid3a0ebcxw4j"
-    },
-    {
-      "id": "saturday-library",
-      "title": "Saturday at the Library",
-      "startDate": "2026-11-21",
-      "endDate": "2026-11-21",
-      "time": "10 a.m.–1 p.m.",
-      "location": "Springville Public Library",
-      "category": "Library",
-      "summary": "Springville Public Library lists Saturday hours of 10 a.m. to 1 p.m. on the first and third Saturdays of the month. November 21 is the third Saturday. Enter the parking area from Spring Street.",
-      "sourceName": "Library hours and directions",
-      "sourceUrl": "https://www.cityofspringville.com/library"
     }
   ],
   "directory": [
