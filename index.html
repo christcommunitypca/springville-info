@@ -77,20 +77,20 @@ body:has(.page:target) #feed:not(:target) { display: none; }
 html:not(.can-share) [data-share] { display: none; }
 body:has(#entry-pages > .page:target) #share-page { visibility: hidden; }
 @media (min-width: 900px) {
-  html { background: #fff; }
+  html { background: #fdfbf7; }
   body { max-width: 1180px; padding-top: 30px; }
-  header { padding-bottom: 18px; border-bottom: 2px solid var(--ink); margin-bottom: 24px; }
+  header { padding-bottom: 18px; border-bottom: 2px solid #42675d; margin-bottom: 24px; }
   h1 { letter-spacing: -.04em; }
   #feed { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); align-items: start; gap: 32px; }
-  #feed > section, #feed > section:first-child { border: 0; border-radius: 0; }
+  #feed > section, #feed > section:first-child { background: transparent; border: 0; border-radius: 0; }
   #feed > section:only-child { grid-column: 1 / -1; }
   #feed > #listings { margin-top: 0; padding-left: 24px; border-left: 1px solid var(--line); }
-  .section-title { padding: 0 0 10px; border-bottom: 1px solid var(--line); }
-  #news-heading, #listings-heading { background: transparent; }
-  #listings-heading { color: var(--blue); }
+  .section-title { padding: 9px 12px; border-left: 3px solid; }
+  #news-heading { background: #f8eee3; border-color: #b27550; }
+  #listings-heading { background: #eaf1eb; color: #31564b; border-color: #688b7c; }
   .stories, .month, #feed summary { padding-inline: 0; }
-  .listing time { min-height: 3.4rem; background: #edf4fc; }
-  .page:not(#feed) { border: 0; padding: 0; border-radius: 0; }
+  .listing time { min-height: 3.4rem; background: #eaf1eb; color: #31564b; }
+  .page:not(#feed) { border: 0; padding: 0; border-radius: 0; background: transparent; }
   footer { border-top: 1px solid var(--line); padding-top: 8px; }
 }
 </style></head>
