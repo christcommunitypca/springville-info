@@ -76,6 +76,33 @@ export function renderCommunity(data, today = chicagoDate()) {
   return {feed:headlines + listing, details: details + archive};
 }
 if (typeof document !== 'undefined') {
+  const shareButton = document.getElementById('share-page');
+  if (shareButton) {
+    shareButton.hidden = false;
+    let resetLabel;
+    shareButton.addEventListener('click', async () => {
+      const page = document.querySelector('.page:target:not(#feed)');
+      const home = document.querySelector('link[rel="canonical"]').href;
+      const url = page ? home + '#' + encodeURIComponent(page.id) : home;
+      const title = page?.querySelector('h2')?.textContent || document.title;
+      try {
+        if (navigator.share) {
+          await navigator.share({title, url});
+          return;
+        }
+      } catch (error) {
+        if (error.name === 'AbortError') return;
+      }
+      try {
+        await navigator.clipboard.writeText(url);
+        shareButton.textContent = 'Link copied';
+        clearTimeout(resetLabel);
+        resetLabel = setTimeout(() => { shareButton.textContent = 'Share'; }, 2000);
+      } catch {
+        window.prompt('Copy this link', url);
+      }
+    });
+  }
   async function refresh() {
     const response = await fetch('/data/content.json',{cache:'no-cache'});
     if (!response.ok) return;
