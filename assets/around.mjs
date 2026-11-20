@@ -62,7 +62,7 @@ export function renderCommunity(data, today = chicagoDate()) {
   const count = Math.max(10,events.filter(item => Date.parse(item.startDate) <= now + 30 * dayMs).length);
   const headlines = news.length ? '<section aria-labelledby="news-heading"><h2 class="section-title" id="news-heading">Local news</h2>' +
     newsRows(news.slice(0,limit)) + more('news',newsRows(news.slice(limit))) + '</section>' : '';
-  const listing = events.length ? '<section id="listings" aria-labelledby="listings-heading"><h2 class="section-title" id="listings-heading">Events, openings &amp; moves</h2>' +
+  const listing = events.length ? '<section id="listings" aria-labelledby="listings-heading"><h2 class="section-title" id="listings-heading">Upcoming</h2>' +
     months(events.slice(0,count)) + more('events',months(events.slice(count))) + '</section>' : '';
   const details = published.map(item => {
     const credit = item.category === 'Did you know?' ? 'Did you know? · AI-written · ' : '';
