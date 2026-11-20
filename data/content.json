@@ -26,34 +26,32 @@
     {
       "id": "springville-council-seat-2026",
       "slug": "springville-appoints-kevin-early-to-district-4-council-seat",
-      "title": "Springville fills vacant District 4 council seat",
-      "shortTitle": "Council Chooses Kevin Early",
-      "summary": "City Council selected Kevin Early for its vacant District 4 seat at the November 16 meeting. The council also approved a neighborhood paving agreement.",
+      "title": "Council picks Kevin Early",
+      "shortTitle": "Council picks Kevin Early",
+      "summary": "Springville’s council chose Kevin Early to represent District 4 on November 16. Terry Schrimscher covered the vote and the candidates’ interviews for The Trussville Tribune.",
       "body": [
-        "At its November 16 meeting, the Springville City Council selected Kevin Early to fill its vacant District 4 seat after interviewing three applicants.",
-        "The council also approved paving work in the Crandall Crest neighborhood, with an agreement for the neighborhood HOA to reimburse the city for the expense.",
-        "Early was expected to be sworn in at the first December council meeting. Confirm upcoming meeting dates and times with the City of Springville."
+        "Springville’s council chose Kevin Early to represent District 4 on November 16. Terry Schrimscher covered the vote and the candidates’ interviews for The Trussville Tribune."
       ],
       "date": "2026-11-17",
       "category": "City Hall",
       "sourceName": "The Trussville Tribune · Terry Schrimscher",
-      "sourceUrl": "https://www.trussvilletribune.com/2026/11/17/springville-fills-vacant-council-seat-approves-road-paving/"
+      "sourceUrl": "https://www.trussvilletribune.com/2026/11/17/springville-fills-vacant-council-seat-approves-road-paving/",
+      "sourceLabel": "Read the full story at The Trussville Tribune"
     },
     {
       "id": "springville-comprehensive-plan-2026",
       "slug": "springville-seeks-community-input-for-comprehensive-plan",
-      "title": "Springville seeks input on its future",
-      "shortTitle": "Help Shape Springville",
-      "summary": "The city is gathering feedback for a comprehensive plan covering growth, quality of life, and local improvements. Residents and others with ties to the city can weigh in.",
+      "title": "How should Springville grow?",
+      "shortTitle": "How should Springville grow?",
+      "summary": "Springville is asking people with ties to the city what they want its future to look like. Nathan Prewett’s report for The Trussville Tribune includes a link to the city’s planning survey.",
       "body": [
-        "Springville is seeking feedback from residents, workers, property and business owners, and families whose children attend school in the city as it prepares its comprehensive plan.",
-        "The survey asks about quality of life, local improvements, and how Springville might grow in the next five to fifteen years.",
-        "Find survey details and eligibility information in the original reporting."
+        "Springville is asking people with ties to the city what they want its future to look like. Nathan Prewett’s report for The Trussville Tribune includes a link to the city’s planning survey."
       ],
       "date": "2026-11-12",
       "category": "Community",
       "sourceName": "The Trussville Tribune · Nathan Prewett",
-      "sourceUrl": "https://www.trussvilletribune.com/2026/11/12/input-sought-from-residents-for-springville-comprehensive-plan/"
+      "sourceUrl": "https://www.trussvilletribune.com/2026/11/12/input-sought-from-residents-for-springville-comprehensive-plan/",
+      "sourceLabel": "Read the full story at The Trussville Tribune"
     }
   ],
   "events": [
@@ -66,7 +64,10 @@
       "location": "Springville Public Library, Springville, AL",
       "category": "Family",
       "summary": "A free Girl Scouts gathering with crafts and a chance to learn about Girl Scouting. Check the registration details with the organizer.",
-      "sourceUrl": "https://www.eventbrite.com/e/springville-smore-to-explore-tickets-2003727571104"
+      "sourceUrl": "https://www.eventbrite.com/e/springville-smore-to-explore-tickets-2003727571104",
+      "shortTitle": "S’more to Explore",
+      "listTime": "11 a.m.",
+      "listLocation": "Springville Public Library"
     },
     {
       "id": "live-nativity-2026",
@@ -77,7 +78,10 @@
       "location": "4193 U.S. Highway 11, Springville, AL",
       "category": "Holiday",
       "summary": "An outdoor live nativity presentation. Confirm details with the organizer before going.",
-      "sourceUrl": "https://happeningnext.com/event/spring-valleys-10th-annual-live-nativity-presentation-eid3a0e9m7rq9"
+      "sourceUrl": "https://happeningnext.com/event/spring-valleys-10th-annual-live-nativity-presentation-eid3a0e9m7rq9",
+      "shortTitle": "Spring Valley Nativity",
+      "listTime": "6 p.m.",
+      "listLocation": "4193 U.S. Highway 11"
     },
     {
       "id": "christmas-pines-2026",
@@ -88,7 +92,10 @@
       "location": "Big Canoe Creek Nature Preserve, 1700 Murphrees Valley Rd, Springville, AL",
       "category": "Holiday",
       "summary": "Two evenings of seasonal music, lights and hot chocolate at the nature preserve. Confirm the schedule with the organizer.",
-      "sourceUrl": "https://happeningnext.com/event/christmas-in-the-pines-eid3a0e51qe96"
+      "sourceUrl": "https://happeningnext.com/event/christmas-in-the-pines-eid3a0e51qe96",
+      "shortTitle": "Christmas in the Pines",
+      "listTime": "",
+      "listLocation": "Big Canoe Creek Nature Preserve"
     },
     {
       "id": "walk-through-bethlehem-2026",
@@ -100,6 +107,18 @@
       "category": "Holiday",
       "summary": "The Church at Bradford Road presents a free, outdoor walk through scenes of Bethlehem with live actors. All ages welcome; no reservation required.",
       "sourceUrl": "https://happeningnext.com/event/a-walk-through-bethlehem-free-event-eid3a0ebcxw4j"
+    },
+    {
+      "id": "saturday-library",
+      "title": "Saturday at the Library",
+      "startDate": "2026-11-21",
+      "endDate": "2026-11-21",
+      "time": "10 a.m.–1 p.m.",
+      "location": "Springville Public Library",
+      "category": "Library",
+      "summary": "Springville Public Library lists Saturday hours of 10 a.m. to 1 p.m. on the first and third Saturdays of the month. November 21 is the third Saturday. Enter the parking area from Spring Street.",
+      "sourceName": "Library hours and directions",
+      "sourceUrl": "https://www.cityofspringville.com/library"
     }
   ],
   "directory": [
