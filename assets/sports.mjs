@@ -91,13 +91,15 @@ function competitionCard(game) {
     game.eventType === 'tournament' ? ' · Tournament' : '';
   let result = '';
   if (finished && Number.isInteger(game.teamPlace)) {
-    const count = Number.isInteger(game.teamCount) ? 'of ' + game.teamCount + ' teams' : 'place';
-    const division = !game.teamCount && /5K division/i.test(game.resultText || '') ? ' · 5K division'
-      : !game.teamCount && /scored division/i.test(game.resultText || '') ? ' · scored division' : '';
+    // In XC the race distance is implied; use one consistent team-place display.
+    const count = Number.isInteger(game.teamCount) ? ' · ' + game.teamCount + ' teams' : '';
     const score = Number.isInteger(game.teamScore) ? ' · ' + game.teamScore + ' pts' : '';
+    const placeLabel = game.teamPlace + (game.teamPlace % 100 >= 11 && game.teamPlace % 100 <= 13 ? 'th' : ({1:'st',2:'nd',3:'rd'}[game.teamPlace % 10] || 'th'));
+    const accessible = 'Springville ' + placeLabel + ' place' +
+      (Number.isInteger(game.teamCount) ? ' of ' + game.teamCount + ' teams' : '');
     result = '<span class="placement-row"><strong class="outcome outcome-placement" aria-label="' +
-      escaped('Springville placed number ' + game.teamPlace) + '">' + escaped(game.teamPlace) +
-      '</strong><span class="placement-context">' + escaped(count + division + score) + '</span></span>';
+      escaped(accessible) + '">' + escaped(game.teamPlace) +
+      '</strong><span class="placement-context">' + escaped('place' + count + score) + '</span></span>';
   } else if (finished) {
     result = '<strong class="meet-summary">' + escaped(game.resultText || 'Results available') + '</strong>';
   } else if (game.status === 'scheduled' && game.date >= today) {
