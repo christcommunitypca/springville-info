@@ -1,3 +1,4 @@
+import {buildRecordIndex,recordLabel} from './sports-records.mjs';
 const $ = selector => document.querySelector(selector);
 const escaped = text => String(text ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const safeUrl = value => { try { const url = new URL(value); return url.protocol === 'https:' ? url.href : '#'; } catch { return '#'; } };
@@ -12,6 +13,8 @@ const monthName = (year, month) => new Intl.DateTimeFormat('en-US', {month:'long
 let year = Number(today.slice(0,4));
 let month = Number(today.slice(5,7)) - 1;
 let games = [];
+let recordIndex = new Map();
+let scheduleCoverage = [];
 let selectedSeason = null;
 let selectedGender = 'all';
 
@@ -55,6 +58,35 @@ function resultLabel(game) {
   return '<span class="game-time">' + escaped(game.time || 'Time TBD') + '</span>';
 }
 
+function recordBadge(game) {
+  const record = recordIndex.get(game.id);
+  const label = recordLabel(record);
+  if(!label) return '';
+  const kind = record.kind === 'entering' ? 'Entering W–L' : 'Verified W–L';
+  return '<span class="record-note" title="Cumulative wins and losses through this date from confirmed finals in this calendar. Missing or disputed results are not counted.">' +
+    escaped(kind) + ' <strong>' + escaped(label) + '</strong></span>';
+}
+function coverageBanner() {
+  const sport = $('#sport-filter').value;
+  if(sport === 'all') return '';
+  const rows = scheduleCoverage.filter(x => x.sport === sport &&
+    (!selectedSeason || x.season === selectedSeason) &&
+    (selectedGender === 'all' || x.gender === selectedGender));
+  if(!rows.length) return '';
+  if(rows.every(x => x.status === 'not_published')) {
+    const links = rows.map(x => '<a href="' + escaped(safeUrl(x.sourceUrl)) +
+      '" target="_blank" rel="noopener noreferrer">' + escaped(x.gender + ' source') + '</a>').join(' · ');
+    return '<p class="schedule-status">The Spring 2027 ' + escaped(sport.toLowerCase()) +
+      ' schedule has not been posted yet. ' + links + '</p>';
+  }
+  if(rows.some(x => x.status === 'partial')) {
+    return '<p class="schedule-status">Showing published ' + escaped(sport.toLowerCase()) +
+      ' fixtures so far. The full season schedule may still change. ' +
+      rows.map(x => '<a href="' + escaped(safeUrl(x.sourceUrl)) +
+        '" target="_blank" rel="noopener noreferrer">Schedule source</a>').join(' · ') + '</p>';
+  }
+  return '';
+}
 function detailHref(game) {
   const params = new URLSearchParams({
     id: game.id,
@@ -81,7 +113,7 @@ function reportedScoreCard(game) {
     outcomeBadge(preferred.springvilleScore, preferred.opponentScore) +
     '<span class="score">' +
     formattedScore(game, preferred.springvilleScore, preferred.opponentScore) + '</span></span></span>' +
-    detailHint() + '</a>';
+    recordBadge(game) + detailHint() + '</a>';
 }
 function competitionCard(game) {
   const finished = game.status === 'final';
@@ -128,8 +160,9 @@ function gameCard(game) {
   const reportsCard = reportedScoreCard(game);
   if (reportsCard) return reportsCard;
   const at = game.site === 'away' ? '@' : game.site === 'neutral' ? 'vs (neutral)' : 'vs';
-  const eventName = escaped(game.sport + ' · ' + game.gender + ' ' + game.level);
-  const location = escaped(at + ' ' + game.opponent);
+  const eventName = escaped(game.sport + ' · ' + game.gender + ' ' + game.level + (game.gameNumber ? ' · Game ' + game.gameNumber : ''));
+
+  const location = escaped(game.venueUnconfirmed ? 'vs ' + game.opponent + ' · Venue TBD' : at + ' ' + game.opponent);
   const result = resultLabel(game);
   const scoreListed = (game.status === 'final' || game.status === 'live' || game.status === 'in_progress') &&
     Number.isFinite(game.springvilleScore) && Number.isFinite(game.opponentScore);
@@ -140,7 +173,7 @@ function gameCard(game) {
     (scoreListed ? '' : '<strong class="matchup">' + location + '</strong>') +
     '<span class="game-result">' + result + '</span>' +
     (game.sport === 'Volleyball' && scoreListed ? '<span class="set-caption">Sets won</span>' : '') +
-    detailHint() + '</a>';
+    recordBadge(game) + detailHint() + '</a>';
 }
 
 function matchingGames() {
@@ -157,10 +190,10 @@ function render() {
     (a.time||'').localeCompare(b.time||'') || (a.opponent || a.title || '').localeCompare(b.opponent || b.title || ''));
 
   const dates = [...new Set(current.map(x=>x.date))];
-  $('#agenda-list').innerHTML = dates.length ? dates.map(date => '<section class="agenda-day"><h3>' +
+  $('#agenda-list').innerHTML = coverageBanner() + (dates.length ? dates.map(date => '<section class="agenda-day"><h3>' +
     escaped(shortDate(date,{weekday:'long',month:'long',day:'numeric'})) + '</h3>' +
     current.filter(g=>g.date===date).map(gameCard).join('') + '</section>').join('') :
-    '<p class="empty">No verified ' + escaped($('#sport-filter').value === 'all' ? 'contests' : $('#sport-filter').value + ' events') + ' listed for this month and these filters. New schedules and results are added as they are confirmed.</p>';
+    '<p class="empty">No verified ' + escaped($('#sport-filter').value === 'all' ? 'contests' : $('#sport-filter').value + ' events') + ' listed for this month and these filters. New schedules and results are added as they are confirmed.</p>');
 }
 function changeMonth(delta) { month += delta; while(month < 0){month += 12; year--;} while(month > 11){month -= 12;year++;} render(); }
 const populate = (select, values, allLabel) => {
@@ -173,6 +206,8 @@ async function start() {
     if (!response.ok) throw new Error('Cannot load verified games');
     const data = await response.json();
     games = data.games.filter(g=>g && /^\d{4}-\d{2}-\d{2}$/.test(g.date) && g.sport && g.gender && (g.opponent || g.title) && g.sourceUrl);
+    recordIndex = buildRecordIndex(games);
+    scheduleCoverage = Array.isArray(data.scheduleCoverage) ? data.scheduleCoverage : [];
     const sports = [...new Set([...(Array.isArray(data.sportsCatalog) ? data.sportsCatalog.filter(s=>typeof s==='string') : []),...games.map(g=>g.sport)])].sort();
     const years = [...new Set(games.map(g=>g.season))].sort().reverse();
     populate($('#sport-filter'), sports, 'All sports');
