@@ -30,3 +30,6 @@
 
 /data/sports.json
   Cache-Control: no-store
+
+/assets/sports-records.mjs
+  Cache-Control: no-store
