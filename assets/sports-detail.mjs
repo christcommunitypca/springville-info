@@ -61,7 +61,7 @@ function renderResult(game) {
   if (game.status === 'scheduled' && game.date >= centralToday())
     return '<strong class="result-context">' + escaped(game.time || 'Time TBD') + '</strong>';
   return '<strong class="result-context">' + escaped(game.statusNote ||
-    (game.status === 'scheduled' || game.status === 'unconfirmed' ? 'Result not yet verified' : game.status)) + '</strong>';
+    (game.status === 'scheduled' || game.status === 'unconfirmed' ? 'Result pending' : game.status)) + '</strong>';
 }
 function runnerList(entries, isPr) {
   return '<div class="runner-list">' + entries.map((r,i) =>
@@ -87,7 +87,7 @@ function playerSpotlights(game) {
       '" target="_blank" rel="noopener noreferrer">' + title + '</a>' : title) +
       '<span class="player-stat">' + escaped(p.achievement) + '</span></div>';
   }).join('') + '</div>';
-  return section('Player highlights',body,'One to three individually verified performances');
+  return section('Player highlights',body,'Player performances from published results');
 }
 function sources(game) {
   const links = [
@@ -117,7 +117,7 @@ async function load() {
     const record = buildRecordIndex(data.games).get(game.id);
     const recordText = recordLabel(record);
     const recordExtra = recordText ? '<div class="verified-record">' +
-      (record.kind === 'entering' ? 'Entering W–L: ' : 'Verified W–L through this date: ') +
+      (record.kind === 'entering' ? 'Record entering game: ' : 'Season record through this date: ') +
       '<strong>' + escaped(recordText) + '</strong></div>' : '';
     const competition = game.eventType === 'meet' || game.eventType === 'tournament' || game.eventType === 'news';
     const name = competition ? game.title : game.sport + ' ' + (game.venueUnconfirmed ? 'vs ' : game.site === 'away' ? '@ ' : 'vs ') + game.opponent + (game.gameNumber ? ' · Game ' + game.gameNumber : '');
@@ -133,7 +133,7 @@ async function load() {
         'Springville team finishing order; placements are overall race positions') : '';
     const prs = isXC && Array.isArray(game.personalRecords) && game.personalRecords.length
       ? section('Personal records (' + game.personalRecords.length + ')',runnerList(game.personalRecords,true),
-        'All PRs verified in the published meet results, including athletes among the top three') : '';
+        'PRs reported in the meet results, including runners listed above') : '';
     const achievements = Array.isArray(game.specialAchievements) && game.specialAchievements.length
       ? section('Special achievements',items(game.specialAchievements)) : '';
     const general = Array.isArray(game.highlights) && game.highlights.length
