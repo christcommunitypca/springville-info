@@ -34,7 +34,7 @@ h1{margin:8px 0 3px;font:800 clamp(2.7rem,7vw,5rem)/.96 "Barlow Condensed",Impac
 .field{display:flex;flex:1 1 170px;flex-direction:column;gap:5px}
 .field label,.field-label{font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:#466674}
 .field select{width:100%;min-height:42px;padding:0 12px;border-radius:9px;background:#f8fbfc;border:1px solid #a8c2cd;color:var(--ink);font-size:.93rem}
-.calendar-note{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 1px 13px;color:#526e78;font-size:.82rem}
+.calendar-note{display:flex;justify-content:flex-end;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 1px 13px;color:#526e78;font-size:.82rem}
 #month-summary{color:#185b61;font-weight:800}
 .weekdays{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin:0 0 8px;text-align:center}
 .weekdays span{padding:4px;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:#4c6a73;font-weight:800}
@@ -174,7 +174,7 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
       <div class="field" id="season-field" hidden><label for="season-filter">School year</label><select id="season-filter"></select></div>
     </div>
   </section>
-  <div class="calendar-note"><span id="month-summary" aria-live="polite">Loading schedule…</span><span id="data-updated">Checking verified sources…</span></div>
+  <div class="calendar-note"><span id="data-updated" aria-live="polite">Loading update time…</span></div>
   <div id="agenda-list" role="region" aria-label="Games by date"></div>
   <aside class="source-note">
     <p><strong>Accuracy first.</strong> The calendar only includes a game when the school, Alabama location, exact season and matchup have been checked. An unconfirmed score is never treated as final. Multi-team meets may show a placement or result instead of a head-to-head score.</p>
