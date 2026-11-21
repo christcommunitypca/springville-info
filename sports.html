@@ -84,62 +84,86 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
 .agenda-day .game.completed:hover{background:#f8ece5}
 @media(max-width:760px){.final-result,.live-result{gap:11px}.outcome{width:42px;height:42px}.agenda-day .game .score{font-size:.95rem}}
 
-/* Compact inline segmented control, bottom-aligned with the sport dropdown. */
-.filters{align-items:flex-end;column-gap:12px;row-gap:12px}
-.filters .field:first-child{flex:1 1 160px;min-width:120px}
-.team-field{flex:0 0 189px;width:189px;min-width:0;align-self:flex-end}
-.team-toggle{display:flex;align-items:stretch;width:100%;height:42px;gap:2px;padding:3px;border:1px solid #a8c2cd;border-radius:9px;background:#edf4f5}
-.team-toggle button{flex:1 1 0;min-width:0;padding:0 5px;border:0;border-radius:6px;background:transparent;color:#315568;font-size:.8rem;font-weight:700;line-height:1;cursor:pointer;transition:background .15s,color .15s}
-.team-toggle button:hover{background:#d7e7ea}
-.team-toggle button[aria-pressed="true"]{background:#164c73;color:white;box-shadow:0 1px 3px rgba(0,0,0,.12)}
-/* Keep month navigation arrows immediately flanking the month label. */
+
+/* A compact return link, without a promotional banner or redundant title. */
+.masthead{position:static;margin:0 0 13px;padding:12px 0 0;min-height:0;background:none;border:0;overflow:visible;color:var(--ink)}
+.masthead:after{display:none}
+.masthead .back{color:var(--blue);font-size:.86rem}
+.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+/* The hidden width guide gives every month the exact same label space.
+   The next arrow is immediately after the longest month, and never shifts. */
 .topline{justify-content:flex-start}
-.month-buttons{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;width:auto;max-width:100%;flex-wrap:nowrap}
-.month-buttons #month-label{flex:none;min-width:0;white-space:nowrap;padding:0 4px;font-size:clamp(1.4rem,3vw,2rem)}
+.month-buttons{display:inline-flex;flex:0 0 auto;align-items:center;gap:5px;width:max-content;max-width:100%;flex-wrap:nowrap}
+.month-label-slot{display:grid;align-items:center;justify-items:start;flex:0 0 auto;white-space:nowrap;font-variant-numeric:tabular-nums}
+.month-label-slot .month-measure,.month-label-slot #month-label{grid-area:1/1;font:800 clamp(1.4rem,3vw,2rem)/1 "Barlow Condensed",Impact,sans-serif;text-transform:uppercase;letter-spacing:0;white-space:nowrap}
+.month-label-slot .month-measure{visibility:hidden;pointer-events:none}
+.month-label-slot #month-label{margin:0;min-width:0;width:auto;padding:0;text-align:left}
 .month-buttons .today-button{margin-left:5px}
+
+/* A real, three-stop range slider: drag the single circular thumb or tap a stop. */
+.filters{align-items:flex-end;gap:12px}
+.filters .field:first-child{flex:1 1 160px;min-width:112px}
+.team-field{flex:0 0 170px;width:170px;min-width:0;align-self:flex-end}
+.gender-slider-wrap{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:42px;width:100%;padding:0 0 1px}
+.gender-slider{position:relative;z-index:2;display:block;width:100%;height:22px;margin:0;padding:0;appearance:none;-webkit-appearance:none;outline-offset:2px;background:transparent;cursor:pointer;touch-action:pan-y}
+.gender-slider::-webkit-slider-runnable-track{height:3px;border-radius:6px;background:#93afbb}
+.gender-slider::-moz-range-track{height:3px;border-radius:6px;background:#93afbb}
+.gender-slider::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:18px;height:18px;margin-top:-7.5px;border:3px solid white;border-radius:50%;background:#174e73;box-shadow:0 0 0 1px #174e73,0 2px 5px #17354a33;cursor:grab}
+.gender-slider::-moz-range-thumb{width:14px;height:14px;border:3px solid white;border-radius:50%;background:#174e73;box-shadow:0 0 0 1px #174e73,0 2px 5px #17354a33;cursor:grab}
+.gender-slider:active::-webkit-slider-thumb{cursor:grabbing}
+.gender-track-stops{position:absolute;z-index:1;left:7px;right:7px;top:9px;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
+.gender-track-stops i{display:block;width:6px;height:6px;border-radius:50%;background:#7b9ba7}
+.gender-stop-labels{display:flex;justify-content:space-between;align-items:center;gap:2px;padding-top:0}
+.gender-stop{display:inline-block;flex:0 0 auto;margin:0;padding:0 1px;border:0;background:none;color:#617784;font:650 .7rem/1.35 "DM Sans",sans-serif;cursor:pointer;min-height:16px}
+.gender-stop:hover,.gender-stop[aria-current="true"]{color:var(--blue);font-weight:800}
+.gender-stop:focus-visible{outline:2px solid #d57d42;outline-offset:3px}
 @media(max-width:760px){
-  .topline{flex-wrap:nowrap}
-  .month-buttons{flex:0 1 auto;width:auto;gap:5px;flex-wrap:nowrap}
-  .month-buttons #month-label{min-width:0;flex:none;font-size:clamp(1.4rem,5.3vw,1.9rem)}
-  .team-field{flex:0 0 183px;width:183px}
+ .masthead{margin-bottom:11px;padding-top:10px}
+ .topline{flex-wrap:nowrap}
+ .month-buttons{flex:0 0 auto;gap:4px;flex-wrap:nowrap}
+ .month-label-slot .month-measure,.month-label-slot #month-label{font-size:clamp(1.33rem,5vw,1.8rem)}
+ .team-field{flex:0 0 165px;width:165px}
 }
 @media(max-width:380px){
-  .month-buttons{gap:3px}
-  .month-buttons button{width:32px;height:36px}
-  .month-buttons #month-label{font-size:1.33rem;padding:0 2px}
-  .month-buttons .today-button{margin-left:1px;padding:0 7px!important;font-size:.76rem!important}
-  .filters{column-gap:8px}
-  .team-field{flex-basis:166px;width:166px}
-  .filters .field:first-child{min-width:105px}
-  .team-toggle button{font-size:.75rem;padding:0 3px}
-}
-@media(max-width:350px){
-  .team-field{flex-basis:148px;width:148px}
-  .filters .field:first-child{min-width:96px}
-  .team-toggle button{font-size:.7rem;padding:0 2px}
+ .month-buttons{gap:3px}
+ .month-buttons button{width:32px;height:36px}
+ .month-label-slot .month-measure,.month-label-slot #month-label{font-size:1.28rem}
+ .month-buttons .today-button{padding:0 7px!important;margin-left:1px;font-size:.76rem!important}
+ .filters{gap:8px}
+ .team-field{flex-basis:146px;width:146px}
+ .filters .field:first-child{min-width:105px}
 }
 </style>
 </head>
 <body>
 <header class="masthead">
   <a class="back" href="/#listings">← Community calendar</a>
-  <div class="eyebrow"><span class="tiger-mark" aria-hidden="true">S</span> Springville, Alabama • High school athletics</div>
-  <h1>Tigers Sports</h1>
-  <p>One place for Springville High School game dates and verified final scores. Schedules can change; follow each game to its source.</p>
+  <h1 class="visually-hidden">Springville High School sports schedules and scores</h1>
 </header>
 <main>
   <section class="toolbar" aria-label="Calendar controls">
     <div class="topline">
       <div class="month-buttons">
         <button id="prev-month" type="button" aria-label="Previous month">‹</button>
-        <h2 id="month-label">November 2026</h2>
+        <div class="month-label-slot"><span class="month-measure" aria-hidden="true">September 2026</span><h2 id="month-label">November 2026</h2></div>
         <button id="next-month" type="button" aria-label="Next month">›</button>
         <button id="current-month" class="today-button" type="button">Today</button>
       </div>
     </div>
     <div class="filters">
       <div class="field"><label for="sport-filter">Sport</label><select id="sport-filter"><option value="all">All sports</option></select></div>
-      <div class="field team-field"><div class="team-toggle" role="group" aria-label="Filter by boys or girls teams"><button type="button" data-gender="Boys" aria-pressed="false">Boys</button><button type="button" data-gender="all" aria-pressed="true">Both</button><button type="button" data-gender="Girls" aria-pressed="false">Girls</button></div></div>
+      <div class="field team-field">
+        <div class="gender-slider-wrap">
+          <input id="gender-slider" class="gender-slider" type="range" min="0" max="2" step="1" value="1" aria-label="Teams: boys, both, or girls" aria-valuetext="Both">
+          <div class="gender-track-stops" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="gender-stop-labels" aria-label="Choose teams">
+            <button type="button" class="gender-stop" data-stop="0">Boys</button>
+            <button type="button" class="gender-stop" data-stop="1" aria-current="true">Both</button>
+            <button type="button" class="gender-stop" data-stop="2">Girls</button>
+          </div>
+        </div>
+      </div>
       <div class="field" id="season-field" hidden><label for="season-filter">School year</label><select id="season-filter"></select></div>
     </div>
   </section>
