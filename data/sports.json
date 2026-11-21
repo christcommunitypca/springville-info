@@ -339,7 +339,8 @@
           "sourceName": "Associated Press",
           "sourceUrl": "https://www.thehour.com/sports/article/tuesday-s-scores-22536828.php"
         }
-      ]
+      ],
+      "preferredScoreSourceName": "MaxPreps"
     },
     {
       "id": "2026-11-17-basketball-boys-mountain-brook",
@@ -370,7 +371,8 @@
           "sourceName": "Associated Press",
           "sourceUrl": "https://www.seattlepi.com/sports/tuesday-s-scores-a22536829"
         }
-      ]
+      ],
+      "preferredScoreSourceName": "MaxPreps"
     },
     {
       "id": "2026-11-19-basketball-girls-albertville",
