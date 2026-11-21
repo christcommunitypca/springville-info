@@ -321,12 +321,25 @@
       "site": "away",
       "season": "2026-27",
       "status": "unconfirmed",
-      "statusNote": "Score under review",
       "sourceName": "MaxPreps",
-      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/girls/schedule/",
+      "sourceUrl": "https://www.maxpreps.com/al/basketball/girls/game/mountain-brook-birmingham-vs-springville/11-17-2026/?c=209f5a80-f680-40dc-b7bb-a759358d8321",
       "verifiedAt": "2026-11-20",
       "secondarySourceName": "Associated Press",
-      "secondarySourceUrl": "https://www.nhregister.com/sports/article/tuesday-s-scores-22536828.php"
+      "secondarySourceUrl": "https://www.thehour.com/sports/article/tuesday-s-scores-22536828.php",
+      "scoreReports": [
+        {
+          "springvilleScore": 42,
+          "opponentScore": 76,
+          "sourceName": "MaxPreps",
+          "sourceUrl": "https://www.maxpreps.com/al/basketball/girls/game/mountain-brook-birmingham-vs-springville/11-17-2026/?c=209f5a80-f680-40dc-b7bb-a759358d8321"
+        },
+        {
+          "springvilleScore": 18,
+          "opponentScore": 63,
+          "sourceName": "Associated Press",
+          "sourceUrl": "https://www.thehour.com/sports/article/tuesday-s-scores-22536828.php"
+        }
+      ]
     },
     {
       "id": "2026-11-17-basketball-boys-mountain-brook",
@@ -339,12 +352,25 @@
       "site": "away",
       "season": "2026-27",
       "status": "unconfirmed",
-      "statusNote": "Score under review",
       "sourceName": "MaxPreps",
-      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/schedule/",
+      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/",
       "verifiedAt": "2026-11-20",
       "secondarySourceName": "Associated Press",
-      "secondarySourceUrl": "https://www.thehour.com/sports/article/tuesday-s-scores-22536829.php"
+      "secondarySourceUrl": "https://www.seattlepi.com/sports/tuesday-s-scores-a22536829",
+      "scoreReports": [
+        {
+          "springvilleScore": 42,
+          "opponentScore": 76,
+          "sourceName": "MaxPreps",
+          "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/"
+        },
+        {
+          "springvilleScore": 38,
+          "opponentScore": 71,
+          "sourceName": "Associated Press",
+          "sourceUrl": "https://www.seattlepi.com/sports/tuesday-s-scores-a22536829"
+        }
+      ]
     },
     {
       "id": "2026-11-19-basketball-girls-albertville",
