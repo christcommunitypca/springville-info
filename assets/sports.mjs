@@ -32,7 +32,43 @@ function resultLabel(game) {
   if (game.status === 'unconfirmed' || (game.status === 'scheduled' && game.date < today)) return '<span class="status-tag">' + escaped(game.statusNote || 'Result not yet verified') + '</span>';
   return '<span class="game-time">' + escaped(game.time || 'Time TBD') + '</span>';
 }
+function reportedScoreCard(game) {
+  const reports = game.scoreReports;
+  if (!Array.isArray(reports) || reports.length < 2) return '';
+  const valid = reports.filter(report => Number.isFinite(report.springvilleScore) &&
+    Number.isFinite(report.opponentScore) && report.sourceUrl && report.sourceName);
+  if (valid.length < 2) return '';
+
+  const results = valid.map(report => Math.sign(report.springvilleScore - report.opponentScore));
+  const sameOutcome = results.every(result => result === results[0]);
+  const outcome = sameOutcome ? (results[0] > 0 ? 'W' : results[0] < 0 ? 'L' : 'T') : '?';
+  const outcomeLabel = outcome === 'W' ? 'Win reported' : outcome === 'L' ? 'Loss reported' :
+    outcome === 'T' ? 'Tie reported' : 'Conflicting outcomes';
+  const sourceIcon = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M21 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h7"/></svg>';
+  const lines = valid.map(report =>
+    '<span class="score-report"><strong class="score">Springville ' +
+      escaped(report.springvilleScore) + ' – ' + escaped(game.opponent) + ' ' +
+      escaped(report.opponentScore) + '</strong>' +
+      '<a class="score-source" href="' + escaped(safeUrl(report.sourceUrl)) +
+      '" target="_blank" rel="noopener noreferrer" title="Source: ' +
+      escaped(report.sourceName) + '" aria-label="View ' + escaped(report.sourceName) +
+      ' score report: Springville ' + escaped(report.springvilleScore) + ', ' +
+      escaped(game.opponent) + ' ' + escaped(report.opponentScore) + '">' + sourceIcon +
+      '</a></span>').join('');
+
+  return '<article class="game disputed-game" aria-label="' +
+    escaped(game.sport + ' ' + game.gender + ' vs ' + game.opponent +
+    ', two conflicting published scores') + '">' +
+    '<span class="game-meta">' + escaped(game.sport + ' · ' + game.gender + ' ' + game.level) +
+    '</span><span class="final-result"><strong class="outcome outcome-' +
+    (outcome === '?' ? 't' : outcome.toLowerCase()) + '" aria-label="' +
+    escaped(outcomeLabel) + '">' + escaped(outcome) +
+    '</strong><span class="score-versions">' + lines + '</span></span></article>';
+}
+
 function gameCard(game) {
+  const reportsCard = reportedScoreCard(game);
+  if (reportsCard) return reportsCard;
   const at = game.site === 'away' ? '@' : game.site === 'neutral' ? 'vs (neutral)' : 'vs';
   const eventName = escaped(game.sport + ' · ' + game.gender + ' ' + game.level);
   const location = escaped(at + ' ' + game.opponent);
