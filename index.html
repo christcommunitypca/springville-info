@@ -889,21 +889,24 @@ body:has(#entry-pages > .page:target) #share-page { visibility: hidden; }
 .sports-shortcut:hover{background:rgba(105,157,150,.25)}
 @media(max-width:899px){#feed > #listings > #listings-heading{display:flex;align-items:center;justify-content:space-between}.sports-shortcut{margin-left:auto;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.4)}}
 
-/* Approved downtown artwork includes the masthead lettering. */
+/* Keep the approved artwork proportional within a compact masthead. */
 header {
   height: auto;
   min-height: 0;
-  max-height: none;
+  max-height: 248px;
   aspect-ratio: 3 / 1;
   padding: 0;
-  background: #d7edf3 url("/assets/around-springville-approved.png") center / 100% 100% no-repeat;
+  background: #d7edf3 url("/assets/around-springville-approved.png") center / contain no-repeat;
+}
+@media (max-width: 899px) {
+  header { max-height: 180px; }
 }
 header::before { content: none; }
 header h1 {
   position: absolute;
   inset: 0;
-  width: 45%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
   max-width: none;
   margin: 0;
   padding: 0;
