@@ -20,11 +20,22 @@ function formattedScore(game, springvilleScore, opponentScore) {
   const opponent = escaped(game.opponent) + ' ' + escaped(opponentScore);
   return game.site === 'home' ? opponent + ' – ' + springville : springville + ' – ' + opponent;
 }
+function outcomeBadge(springvilleScore, opponentScore) {
+  const margin = springvilleScore - opponentScore;
+  const outcome = margin > 0 ? 'W' : margin < 0 ? 'L' : 'T';
+  const label = outcome === 'W' ? 'Win' : outcome === 'L' ? 'Loss' : 'Tie';
+  const detail = outcome === 'T' ? '' : ' by ' + Math.abs(margin) + ' points';
+  const signed = margin > 0 ? '+' + margin : String(margin);
+  return '<strong class="outcome outcome-' + outcome.toLowerCase() +
+    '" aria-label="' + label + detail + '"><span class="outcome-letter" aria-hidden="true">' +
+    outcome + '</span>' + (outcome === 'T' ? '' :
+    '<small class="outcome-margin" aria-hidden="true">' + signed + '</small>') + '</strong>';
+}
 function resultLabel(game) {
   if (game.status === 'final') {
     if (Number.isFinite(game.springvilleScore) && Number.isFinite(game.opponentScore)) {
-      const outcome = game.springvilleScore > game.opponentScore ? 'W' : game.springvilleScore < game.opponentScore ? 'L' : 'T';
-      return '<span class="final-result"><strong class="outcome outcome-' + outcome.toLowerCase() + '" aria-label="' + (outcome === 'W' ? 'Win' : outcome === 'L' ? 'Loss' : 'Tie') + '">' + outcome + '</strong><strong class="score">' + formattedScore(game, game.springvilleScore, game.opponentScore) + '</strong></span>';
+      return '<span class="final-result">' + outcomeBadge(game.springvilleScore, game.opponentScore) +
+        '<strong class="score">' + formattedScore(game, game.springvilleScore, game.opponentScore) + '</strong></span>';
     }
     return '<strong class="score">' + escaped(game.resultText || 'Result pending confirmation') + '</strong>';
   }
@@ -48,19 +59,15 @@ function reportedScoreCard(game) {
   // Preserve competing reports in the data while showing the preferred source's score.
   // Like other completed games, the entire card links to the source; no extra link icon.
   const preferred = valid.find(report => report.sourceName === game.preferredScoreSourceName) || valid[0];
-  const outcome = preferred.springvilleScore > preferred.opponentScore ? 'W' :
-    preferred.springvilleScore < preferred.opponentScore ? 'L' : 'T';
-
   return '<a class="game completed preferred-score-game" target="_blank" rel="noopener noreferrer" href="' +
     escaped(safeUrl(preferred.sourceUrl)) + '" aria-label="' +
     escaped(game.sport + ' ' + game.gender + ' vs ' + game.opponent + ', ' +
       preferred.sourceName + ' reports Springville ' + preferred.springvilleScore +
       ' to ' + preferred.opponentScore + '; view source') + '">' +
     '<span class="game-meta">' + escaped(game.sport + ' · ' + game.gender + ' ' + game.level) +
-    '</span><span class="final-result"><strong class="outcome outcome-' +
-    outcome.toLowerCase() + '" aria-label="' +
-    escaped(outcome === 'W' ? 'Reported win' : outcome === 'L' ? 'Reported loss' : 'Reported tie') +
-    '">' + outcome + '</strong><strong class="score">' +
+    '</span><span class="final-result">' +
+    outcomeBadge(preferred.springvilleScore, preferred.opponentScore) +
+    '<strong class="score">' +
     formattedScore(game, preferred.springvilleScore, preferred.opponentScore) + '</strong></span></a>';
 }
 function gameCard(game) {
