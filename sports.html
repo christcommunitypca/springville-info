@@ -32,7 +32,7 @@ h1{margin:8px 0 3px;font:800 clamp(2.7rem,7vw,5rem)/.96 "Barlow Condensed",Impac
 .today-button{width:auto!important;padding:0 12px;font:700 .84rem "DM Sans",sans-serif!important}
 .filters{display:flex;flex-wrap:wrap;gap:14px;align-items:end}
 .field{display:flex;flex:1 1 170px;flex-direction:column;gap:5px}
-.field label{font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:#466674}
+.field label,.field-label{font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:#466674}
 .field select{width:100%;min-height:42px;padding:0 12px;border-radius:9px;background:#f8fbfc;border:1px solid #a8c2cd;color:var(--ink);font-size:.93rem}
 .calendar-note{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 1px 13px;color:#526e78;font-size:.82rem}
 #month-summary{color:#185b61;font-weight:800}
@@ -83,6 +83,13 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
 .agenda-day .game.completed{background:#fff9f6;border-color:#9c7160}
 .agenda-day .game.completed:hover{background:#f8ece5}
 @media(max-width:760px){.final-result,.live-result{gap:11px}.outcome{width:42px;height:42px}.agenda-day .game .score{font-size:.95rem}}
+
+/* Three-position boys / both / girls team filter */
+.team-field{flex:1 1 225px}
+.team-toggle{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;min-height:42px;border:1px solid #a8c2cd;border-radius:10px;padding:3px;background:#edf4f5}
+.team-toggle button{min-height:34px;min-width:0;padding:4px 9px;border:0;border-radius:7px;background:transparent;color:#315568;font-weight:800;cursor:pointer;transition:background .15s,color .15s}
+.team-toggle button:hover{background:#d7e7ea}
+.team-toggle button[aria-pressed="true"]{background:#164c73;color:white;box-shadow:0 1px 3px rgba(0,0,0,.12)}
 </style>
 </head>
 <body>
@@ -104,7 +111,7 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
     </div>
     <div class="filters">
       <div class="field"><label for="sport-filter">Sport</label><select id="sport-filter"><option value="all">All sports</option></select></div>
-      <div class="field"><label for="gender-filter">Team</label><select id="gender-filter"><option value="all">Boys &amp; girls</option><option value="Boys">Boys</option><option value="Girls">Girls</option></select></div>
+      <div class="field team-field"><span class="field-label" id="team-label">Team</span><div class="team-toggle" role="group" aria-labelledby="team-label"><button type="button" data-gender="Boys" aria-pressed="false">Boys</button><button type="button" data-gender="all" aria-pressed="true">Both</button><button type="button" data-gender="Girls" aria-pressed="false">Girls</button></div></div>
       <div class="field" id="season-field" hidden><label for="season-filter">School year</label><select id="season-filter"></select></div>
     </div>
   </section>
