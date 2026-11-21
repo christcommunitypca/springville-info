@@ -54,7 +54,7 @@ function resultLabel(game) {
     return '<span class="live-result"><strong class="live-tag">LIVE</strong><span class="score">' + score + '</span></span>';
   }
   if (game.status === 'cancelled' || game.status === 'postponed') return '<span class="status-tag">' + escaped(game.status) + '</span>';
-  if (game.status === 'unconfirmed' || (game.status === 'scheduled' && game.date < today)) return '<span class="status-tag">' + escaped(game.statusNote || 'Result not yet verified') + '</span>';
+  if (game.status === 'unconfirmed' || (game.status === 'scheduled' && game.date < today)) return '<span class="status-tag">' + escaped(game.statusNote || 'Result pending') + '</span>';
   return '<span class="game-time">' + escaped(game.time || 'Time TBD') + '</span>';
 }
 
@@ -62,28 +62,34 @@ function recordBadge(game) {
   const record = recordIndex.get(game.id);
   const label = recordLabel(record);
   if(!label) return '';
-  const kind = record.kind === 'entering' ? 'Entering W–L' : 'Verified W–L';
-  return '<span class="record-note" title="Cumulative wins and losses through this date from confirmed finals in this calendar. Missing or disputed results are not counted.">' +
+  const kind = record.kind === 'entering' ? 'Record entering game' : 'Season record';
+  return '<span class="record-note" title="Record through this date, based on final scores listed here. Missing scores are not counted.">' +
     escaped(kind) + ' <strong>' + escaped(label) + '</strong></span>';
 }
-function coverageBanner() {
+function activeScheduleCoverage() {
   const sport = $('#sport-filter').value;
-  if(sport === 'all') return '';
-  const rows = scheduleCoverage.filter(x => x.sport === sport &&
+  if(sport === 'all') return [];
+  return scheduleCoverage.filter(x => x.sport === sport &&
     (!selectedSeason || x.season === selectedSeason) &&
     (selectedGender === 'all' || x.gender === selectedGender));
+}
+function coverageBanner() {
+  const rows = activeScheduleCoverage();
   if(!rows.length) return '';
+  const sport = $('#sport-filter').value;
+  const word = sport === 'Tennis' ? 'matches' : (sport === 'Golf' || sport === 'Cross Country') ? 'meets' : 'games';
+  const sourceLinks = rows.map(x => '<a href="' + escaped(safeUrl(x.sourceUrl)) +
+    '" target="_blank" rel="noopener noreferrer">' +
+    escaped(rows.length > 1 ? x.gender + ' schedule' : 'View schedule') + '</a>').join(' · ');
   if(rows.every(x => x.status === 'not_published')) {
-    const links = rows.map(x => '<a href="' + escaped(safeUrl(x.sourceUrl)) +
-      '" target="_blank" rel="noopener noreferrer">' + escaped(x.gender + ' source') + '</a>').join(' · ');
-    return '<p class="schedule-status">The Spring 2027 ' + escaped(sport.toLowerCase()) +
-      ' schedule has not been posted yet. ' + links + '</p>';
+    const whose = rows.length === 1 ? rows[0].gender + "' " : '';
+    return '<p class="schedule-status">' + escaped(whose + sport + ' schedule not posted yet.') +
+      ' We’ll add ' + escaped(word) + ' when dates become available. ' + sourceLinks + '</p>';
   }
   if(rows.some(x => x.status === 'partial')) {
-    return '<p class="schedule-status">Showing published ' + escaped(sport.toLowerCase()) +
-      ' fixtures so far. The full season schedule may still change. ' +
-      rows.map(x => '<a href="' + escaped(safeUrl(x.sourceUrl)) +
-        '" target="_blank" rel="noopener noreferrer">Schedule source</a>').join(' · ') + '</p>';
+    return '<p class="schedule-status">Showing the ' + escaped(sport.toLowerCase()) + ' ' +
+      escaped(word) + ' listed so far. More may be added when the school updates its schedule. ' +
+      sourceLinks + '</p>';
   }
   return '';
 }
@@ -138,12 +144,12 @@ function competitionCard(game) {
     result = '<span class="game-time">' + escaped(game.time || 'Time TBD') + '</span>';
   } else {
     result = '<span class="status-tag">' + escaped(game.statusNote ||
-      (game.status === 'scheduled' || game.status === 'unconfirmed' ? 'Result not yet verified' : game.status)) + '</span>';
+      (game.status === 'scheduled' || game.status === 'unconfirmed' ? 'Result pending' : game.status)) + '</span>';
   }
   const prCount = game.sport === 'Cross Country' && finished && Array.isArray(game.personalRecords)
     ? game.personalRecords.length : 0;
   const prIndicator = prCount > 0
-    ? '<span class="pr-indicator" aria-label="' + prCount + ' verified personal records. Open for details.">' +
+    ? '<span class="pr-indicator" aria-label="' + prCount + ' personal records. Open for details.">' +
       '<span aria-hidden="true" class="pr-spark">✦</span> ' + prCount + ' PR' + (prCount === 1 ? '' : 's') + '</span>'
     : '';
   return '<a class="game competition-card' + (finished ? ' completed' : '') +
@@ -193,7 +199,8 @@ function render() {
   $('#agenda-list').innerHTML = coverageBanner() + (dates.length ? dates.map(date => '<section class="agenda-day"><h3>' +
     escaped(shortDate(date,{weekday:'long',month:'long',day:'numeric'})) + '</h3>' +
     current.filter(g=>g.date===date).map(gameCard).join('') + '</section>').join('') :
-    '<p class="empty">No verified ' + escaped($('#sport-filter').value === 'all' ? 'contests' : $('#sport-filter').value + ' events') + ' listed for this month and these filters. New schedules and results are added as they are confirmed.</p>');
+    (activeScheduleCoverage().length && activeScheduleCoverage().every(x=>x.status==='not_published') ? '' :
+    '<p class="empty">No ' + escaped($('#sport-filter').value === 'all' ? 'games or meets' : $('#sport-filter').value === 'Golf' || $('#sport-filter').value === 'Cross Country' ? 'meets' : $('#sport-filter').value === 'Tennis' ? 'matches' : 'games') + ' listed for this month. Check another month or filter.</p>'));
 }
 function changeMonth(delta) { month += delta; while(month < 0){month += 12; year--;} while(month > 11){month -= 12;year++;} render(); }
 const populate = (select, values, allLabel) => {
