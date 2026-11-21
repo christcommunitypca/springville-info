@@ -14,12 +14,12 @@ for (const name of ['month','sport','gender']) {
 document.querySelector('#calendar-back').href = '/sports.html' + (backParams.size ? '?' + backParams.toString() : '');
 const row = (label, value) => value ? '<span class="result-detail">' + escaped(label + ': ' + value) + '</span>' : '';
 function teamPlacement(game) {
-  const count = Number.isInteger(game.teamCount) ? ' · ' + (game.teamCountEstimated ? '~' : '') + game.teamCount + ' teams' : '';
+  const count = Number.isInteger(game.teamCount) ? ' · ' + (game.teamCountEstimated ? '~' : '') + game.teamCount + ' teams' : (game.teamDivision ? ' · ' + game.teamDivision : '');
   const points = Number.isInteger(game.teamScore) ? game.teamScore + ' team points' : '';
   return '<span class="result-strip"><strong class="result-box" aria-label="' +
-    escaped(ordinal(game.teamPlace) + ' place' + (game.teamCount ? ' out of ' + (game.teamCountEstimated ? 'approximately ' : '') + game.teamCount + ' teams' : '')) + '">' +
+    escaped(ordinal(game.teamPlace) + ' place' + (game.teamCount ? ' out of ' + (game.teamCountEstimated ? 'approximately ' : '') + game.teamCount + ' teams' : (game.teamDivision ? ' in ' + game.teamDivision : ''))) + '">' +
     escaped(game.teamPlace) + '</strong><span class="result-context">' + escaped('place' + count) +
-    (points ? row('Score',points) : '') + '</span></span>';
+    (points ? row('Score',points) : '') + (game.meetTotalTeams && game.teamDivision ? row('Meet size',game.meetTotalTeams + ' teams across all divisions') : '') + '</span></span>';
 }
 function teamScore(game, scoreA, scoreB, reported) {
   const margin = scoreA - scoreB;
