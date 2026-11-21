@@ -56,7 +56,7 @@ function render() {
   const prefix = year + '-' + String(month+1).padStart(2,'0') + '-';
   const current = filtered.filter(g => g.date.startsWith(prefix)).sort((a,b)=>a.date.localeCompare(b.date) ||
     (a.time||'').localeCompare(b.time||'') || a.opponent.localeCompare(b.opponent));
-  $('#month-summary').textContent = current.length === 1 ? '1 listed contest' : current.length + ' listed contests';
+
   const dates = [...new Set(current.map(x=>x.date))];
   $('#agenda-list').innerHTML = dates.length ? dates.map(date => '<section class="agenda-day"><h3>' +
     escaped(shortDate(date,{weekday:'long',month:'long',day:'numeric'})) + '</h3>' +
@@ -88,8 +88,20 @@ async function start() {
       selectedSeason = activeSeason || years[0];
       $('#season-filter').value = selectedSeason;
     }
-    const verifiedAt = data.school?.updatedAt;
-    $('#data-updated').textContent = verifiedAt ? 'Scores and schedules checked ' + shortDate(verifiedAt,{month:'short',day:'numeric',year:'numeric'}) : 'Verified local schedules';
+    const updatedAt = data.school?.updatedAt;
+    const time = updatedAt ? new Date(updatedAt) : null;
+    if (time && !Number.isNaN(time.getTime())) {
+      const hasTime = /^\d{4}-\d{2}-\d{2}T/.test(updatedAt);
+      const formatter = new Intl.DateTimeFormat('en-US', {
+        timeZone:'America/Chicago', month:'short', day:'numeric',
+        ...(hasTime ? {hour:'numeric',minute:'2-digit',hour12:true,timeZoneName:'short'} : {})
+      });
+      let label = formatter.format(time);
+      if (hasTime) label = label.replace(' AM', ' am').replace(' PM', ' pm');
+      $('#data-updated').textContent = 'Last updated ' + label;
+    } else {
+      $('#data-updated').textContent = '';
+    }
     render();
   } catch (error) {
     $('#data-updated').textContent = 'Schedule unavailable';
