@@ -45,7 +45,7 @@ export async function onRequestPost({ request, env }) {
   if (!allowedKinds.has(kind) ||
       typeof id !== "string" || !/^[a-z0-9-]{0,110}$/.test(id) ||
       typeof visitor !== "string" || !/^[a-f0-9-]{36}$/.test(visitor) ||
-      typeof source !== "string" || !/^[\w .&-]{1,40}$/.test(source) ||
+      typeof source !== "string" || !/^[\w .&/-]{1,40}$/.test(source) ||
       (["article", "event"].includes(kind) && !id) ||
       (kind === "home" && id)) return response(400);
   const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(visitor));
