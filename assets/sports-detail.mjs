@@ -38,6 +38,12 @@ function teamScore(game, scoreA, scoreB, reported) {
     (game.sport === 'Volleyball' ? '<p class="note">Scores represent sets won, not individual set points.</p>' : '') +
     (reported ? '<p class="note">Reported score. Sources disagree or final verification remains open.</p>' : '');
 }
+function centralToday() {
+  const parts = new Intl.DateTimeFormat('en-US', {timeZone:'America/Chicago',
+    year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+  const p = Object.fromEntries(parts.map(x=>[x.type,x.value]));
+  return p.year + '-' + p.month + '-' + p.day;
+}
 function renderResult(game) {
   if (game.status === 'final') {
     if (Number.isInteger(game.teamPlace)) return teamPlacement(game);
@@ -52,8 +58,7 @@ function renderResult(game) {
     return teamScore(game,preferred.springvilleScore,preferred.opponentScore,true) +
       '<p class="note">Displayed report: ' + escaped(preferred.sourceName) + '</p>';
   }
-  if (game.status === 'scheduled' && game.date >= new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',
-    year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()))
+  if (game.status === 'scheduled' && game.date >= centralToday())
     return '<strong class="result-context">' + escaped(game.time || 'Time TBD') + '</strong>';
   return '<strong class="result-context">' + escaped(game.statusNote ||
     (game.status === 'scheduled' || game.status === 'unconfirmed' ? 'Result not yet verified' : game.status)) + '</strong>';
