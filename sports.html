@@ -141,10 +141,10 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
 
 /* Preferred source scores use the same clickable card treatment as all other finals. */
 .preferred-score-game .score{font-weight:800;color:var(--ink)}
-/* Compact signed point differential immediately under each W/L. */
-.outcome{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:2px 1px}
-.outcome-letter{font:800 1.66rem/.94 "Barlow Condensed",Impact,sans-serif}
-.outcome-margin{display:block;font:800 .73rem/1 "DM Sans",sans-serif;letter-spacing:.005em;font-variant-numeric:tabular-nums}
+/* Keep the W/L in its colored square; place the quiet margin below it. */
+.outcome-stack{display:flex;flex:none;flex-direction:column;align-items:center;gap:3px}
+.outcome-letter{font:inherit;line-height:1}
+.outcome-margin{display:block;margin:0;color:#83919b;font:600 .67rem/1 "DM Sans",sans-serif;letter-spacing:.01em;font-variant-numeric:tabular-nums}
 </style>
 </head>
 <body>
