@@ -54,7 +54,7 @@ async function report(db,period) {
   const from = days===null ? "0000-01-01" : dateInChicago(days);
   const [main,repeat,articles,shares,cities,countries,sources,trend,earliest] = await Promise.all([
     db.prepare("SELECT COUNT(DISTINCT visitor) AS visitors,COUNT(*) AS pageViews,SUM(CASE WHEN kind='home' THEN 1 ELSE 0 END) AS homeViews,SUM(CASE WHEN kind='article' THEN 1 ELSE 0 END) AS articleReads,SUM(CASE WHEN kind='event' THEN 1 ELSE 0 END) AS eventReads FROM analytics_events WHERE kind IN ('home','article','event') AND day>=?").bind(from).first(),
-    db.prepare("SELECT COUNT(DISTINCT e.visitor) AS returning FROM analytics_events e WHERE e.day>=? AND e.kind IN ('home','article','event') AND EXISTS (SELECT 1 FROM analytics_events prior WHERE prior.visitor=e.visitor AND prior.day<e.day AND prior.kind IN ('home','article','event'))").bind(from).first(),
+    db.prepare("SELECT COUNT(DISTINCT e.visitor) AS returningVisitors FROM analytics_events e WHERE e.day>=? AND e.kind IN ('home','article','event') AND EXISTS (SELECT 1 FROM analytics_events prior WHERE prior.visitor=e.visitor AND prior.day<e.day AND prior.kind IN ('home','article','event'))").bind(from).first(),
     db.prepare("SELECT content_id AS id, COUNT(*) AS views,COUNT(DISTINCT visitor) AS readers FROM analytics_events WHERE kind='article' AND day>=? GROUP BY content_id ORDER BY views DESC LIMIT 12").bind(from).all(),
     db.prepare("SELECT content_id AS id,COUNT(*) AS taps FROM analytics_events WHERE kind='share' AND day>=? GROUP BY content_id ORDER BY taps DESC LIMIT 12").bind(from).all(),
     db.prepare("SELECT city,region,country,COUNT(DISTINCT visitor) AS visitors FROM analytics_events WHERE kind IN ('home','article','event') AND day>=? AND city<>'Unknown' GROUP BY city,region,country ORDER BY visitors DESC LIMIT 12").bind(from).all(),
@@ -68,7 +68,7 @@ async function report(db,period) {
     totals:{visitors:main?.visitors||0,pageViews:main?.pageViews||0,
       homeViews:main?.homeViews||0,articleReads:main?.articleReads||0,
       eventReads:main?.eventReads||0,shareTaps:shareTotal?.total||0,
-      returning:repeat?.returning||0},
+      returning:repeat?.returningVisitors||0},
     articles:articles.results||[],shares:shares.results||[],
     cities:cities.results||[],countries:countries.results||[],
     sources:sources.results||[],trend:trend.results||[],
