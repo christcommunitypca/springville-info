@@ -85,11 +85,11 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
 @media(max-width:760px){.final-result,.live-result{gap:11px}.outcome{width:42px;height:42px}.agenda-day .game .score{font-size:.95rem}}
 
 
-/* A compact return link, without a promotional banner or redundant title. */
-.masthead{position:static;margin:0 0 13px;padding:12px 0 0;min-height:0;background:none;border:0;overflow:visible;color:var(--ink)}
-.masthead:after{display:none}
-.masthead .back{color:var(--blue);font-size:.86rem}
-.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+/* Keep the Tigers Sports masthead; omit only the supporting eyebrow and description. */
+.masthead{position:relative;margin:0 calc(0px - clamp(14px,3vw,38px)) 23px;padding:18px clamp(16px,5vw,62px) 25px;min-height:0;background:linear-gradient(112deg,#113a55 0%,#1c5664 70%,#427e77 100%);border-bottom:6px solid #bd654c;overflow:hidden;color:white}
+.masthead:after{display:block}
+.masthead .back{position:relative;z-index:1;color:#d9f1ed;font-size:.84rem}
+.masthead h1{position:relative;z-index:1;margin:12px 0 3px;font:800 clamp(2.7rem,7vw,5rem)/.96 "Barlow Condensed",Impact,sans-serif;letter-spacing:.006em;text-transform:uppercase}
 
 /* The hidden width guide gives every month the exact same label space.
    The next arrow is immediately after the longest month, and never shifts. */
@@ -120,7 +120,7 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
 .gender-stop:hover,.gender-stop[aria-current="true"]{color:var(--blue);font-weight:800}
 .gender-stop:focus-visible{outline:2px solid #d57d42;outline-offset:3px}
 @media(max-width:760px){
- .masthead{margin-bottom:11px;padding-top:10px}
+ .masthead{margin-bottom:16px;padding-top:16px}
  .topline{flex-wrap:nowrap}
  .month-buttons{flex:0 0 auto;gap:4px;flex-wrap:nowrap}
  .month-label-slot .month-measure,.month-label-slot #month-label{font-size:clamp(1.33rem,5vw,1.8rem)}
@@ -140,7 +140,7 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
 <body>
 <header class="masthead">
   <a class="back" href="/#listings">← Community calendar</a>
-  <h1 class="visually-hidden">Springville High School sports schedules and scores</h1>
+  <h1>Tigers Sports</h1>
 </header>
 <main>
   <section class="toolbar" aria-label="Calendar controls">
