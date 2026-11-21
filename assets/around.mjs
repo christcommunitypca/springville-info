@@ -18,8 +18,11 @@ function more(label, contents) {
 function newsRows(items) {
   if (!items.length) return '';
   return '<div class="stories">' + items.map(item => {
-    const kind = item.category === 'Did you know?' ? '<small class="kind">Did you know?</small>' : '';
-    return '<a class="story" href="' + sectionLink(item.slug) + '"><h3>' + kind + escape(item.shortTitle || item.title) +
+    const isFeature = item.category === 'Did you know?';
+    const kind = isFeature ? '<small class="kind">Did you know?</small>' : '';
+    const headline = escape(item.shortTitle || item.title);
+    return '<a class="story" href="' + sectionLink(item.slug) + '"><h3>' + kind +
+      (isFeature ? '<span class="story-headline">' + headline + '</span>' : headline) +
       '</h3><time datetime="' + escape(item.date) + '">' + label(item.date,{month:'short',day:'numeric'}) + '</time></a>';
   }).join('') + '</div>';
 }
@@ -44,7 +47,7 @@ function months(items) {
     groups.get(key).push(eventRow(item));
   }
   return Array.from(groups, ([key,rows]) => '<section class="month"><h3>' +
-    label(key+'-01',{month:'long',year:'numeric'}) + '</h3>' + rows.join('') + '</section>').join('');
+    label(key+'-01',{month:'long'}) + '</h3>' + rows.join('') + '</section>').join('');
 }
 function detail(id,title,body) {
   return '<section class="page" id="' + escape(id) + '"><div class="page-actions"><a class="back" href="#feed">← Back to the front page</a><button class="share-button" type="button" data-share>Share</button></div><h2>' +
