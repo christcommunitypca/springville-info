@@ -625,6 +625,119 @@ body:has(#entry-pages > .page:target) #share-page { visibility: hidden; }
   }
 }
 
+
+/* Flat editorial mobile masthead — SVG storefront illustration + live HTML controls.
+   No rasterized lettering, decorative shadows, filters or generated scenery. */
+@media (max-width: 899px) {
+  header {
+    display: block;
+    position: relative;
+    width: calc(100% + 32px);
+    height: clamp(150px, 37vw, 180px);
+    min-height: 150px;
+    max-height: none;
+    aspect-ratio: auto;
+    margin: 0 -16px 18px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    isolation: isolate;
+    background: #dfedf2 url("/assets/mobile-masthead-flat.svg") center bottom / 100% 100% no-repeat;
+  }
+  header::before { content: none; }
+  header .ripple { display: none; }
+  header h1 {
+    position: absolute;
+    inset: 12px auto auto 15px;
+    z-index: 1;
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: calc(100% - 28px);
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: normal;
+  }
+  header h1 a {
+    position: relative;
+    inset: auto;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    opacity: 1;
+    color: #153a52;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .masthead-around {
+    display: block;
+    margin: 0 0 -3px 12px;
+    color: #b23b33;
+    font: 400 clamp(1.9rem, 7.4vw, 2.65rem)/.95 "Yellowtail", "Brush Script MT", cursive;
+    letter-spacing: 0;
+    transform: none;
+    -webkit-text-stroke: 0;
+    text-shadow: none;
+  }
+  .masthead-springville {
+    display: block;
+    color: #153a52;
+    font: 800 clamp(2.5rem, 10.4vw, 4.25rem)/.9 "Barlow Condensed", Impact, "Arial Narrow", sans-serif;
+    letter-spacing: -.005em;
+    text-transform: uppercase;
+    transform: none;
+    -webkit-text-stroke: 0;
+    text-shadow: none;
+  }
+  .masthead-location {
+    display: block;
+    align-self: flex-start;
+    margin: 7px 0 0 4px;
+    padding: 0;
+    color: #376e70;
+    font: 800 clamp(.58rem, 1.8vw, .76rem)/1.15 "DM Sans", system-ui, sans-serif;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    text-shadow: none;
+  }
+  header .share-button {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 12px;
+    right: 12px;
+    width: auto;
+    height: auto;
+    min-width: 68px;
+    min-height: 44px;
+    margin: 0;
+    padding: 0 12px;
+    overflow: visible;
+    background: #ad3b34;
+    color: #fff;
+    border: 1px solid #ad3b34;
+    border-radius: 7px;
+    box-shadow: none;
+    font: 700 .82rem/1 "DM Sans", system-ui, sans-serif;
+    text-indent: 0;
+    cursor: pointer;
+  }
+  header .share-button:hover { background: #8f302b; }
+  header .share-button:focus-visible { outline: 3px solid #153a52; outline-offset: 2px; }
+}
+@media (max-width: 365px) {
+  header { height: 150px; }
+  .masthead-around { font-size: 1.85rem; }
+  .masthead-springville { font-size: 2.4rem; }
+  .masthead-location { font-size: .54rem; letter-spacing: .1em; }
+  header .share-button { right: 9px; padding-inline: 8px; }
+}
+
 </style></head>
 <body>
 <header>
