@@ -117,7 +117,7 @@ async function load() {
     const record = buildRecordIndex(data.games).get(game.id);
     const recordText = recordLabel(record);
     const recordExtra = recordText ? '<div class="verified-record">' +
-      (record.kind === 'entering' ? 'Record entering game: ' : 'Season record through this date: ') +
+      'Overall: ' +
       '<strong>' + escaped(recordText) + '</strong></div>' : '';
     const competition = game.eventType === 'meet' || game.eventType === 'tournament' || game.eventType === 'news';
     const name = competition ? game.title : game.sport + ' ' + (game.venueUnconfirmed ? 'vs ' : game.site === 'away' ? '@ ' : 'vs ') + game.opponent + (game.gameNumber ? ' · Game ' + game.gameNumber : '');
