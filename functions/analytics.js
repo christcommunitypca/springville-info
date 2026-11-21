@@ -2,7 +2,7 @@
 // NEVER return readership data unless a Cloudflare Access JWT is fully verified
 // for this application's AUD, team issuer, expiration, and exact owner email.
 // This fails closed until Access and the D1 binding have been configured.
-const OWNER_EMAIL = "hutchinsonfamily@gmail.com";
+// Owner identity is a Cloudflare environment variable, not a public repository value.
 const NO_CACHE = { "Cache-Control": "no-store", "X-Robots-Tag": "noindex, nofollow", "X-Content-Type-Options": "nosniff" };
 function textReply(message, status = 403) {
   return new Response(message, {status,headers:{"Content-Type":"text/plain; charset=utf-8",...NO_CACHE}});
@@ -15,7 +15,8 @@ function decodeJson(b64) { return JSON.parse(new TextDecoder().decode(bytes(b64)
 async function ownerAuthorized(request,env) {
   const domain = String(env.ACCESS_TEAM_DOMAIN || "").replace(/\/$/,"");
   const audience = String(env.ACCESS_AUD || "");
-  if (!/^https:\/\/[a-z0-9.-]+\.cloudflareaccess\.com$/i.test(domain) || !audience) return false;
+  const ownerEmail = String(env.ANALYTICS_OWNER_EMAIL || "").trim().toLowerCase();
+  if (!/^https:\/\/[a-z0-9.-]+\.cloudflareaccess\.com$/i.test(domain) || !audience || !ownerEmail) return false;
   const jwt = request.headers.get("Cf-Access-Jwt-Assertion");
   if (!jwt || jwt.length > 10000) return false;
   const parts = jwt.split(".");
@@ -28,7 +29,7 @@ async function ownerAuthorized(request,env) {
         typeof claims.exp!=="number" || claims.exp<=now ||
         (typeof claims.nbf==="number" && claims.nbf>now) ||
         (typeof claims.iat==="number" && claims.iat>now+60) ||
-        String(claims.email||"").toLowerCase()!==OWNER_EMAIL) return false;
+        String(claims.email||"").toLowerCase()!==ownerEmail) return false;
     const certs=await fetch(domain+"/cdn-cgi/access/certs");
     if (!certs.ok) return false;
     const jwks=await certs.json();
