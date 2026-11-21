@@ -97,6 +97,9 @@ function competitionCard(game) {
     ? (top ? '<div class="xc-section"><span class="xc-section-heading">Top 3 Springville finishers</span>' + top + '</div>' : '') +
       (prs ? '<div class="xc-section"><span class="xc-section-heading">Personal records (' + game.personalRecords.length + ')</span>' + prs + '</div>' : '')
     : '';
+  const achievements = isCrossCountry && Array.isArray(game.specialAchievements) && game.specialAchievements.length
+    ? '<div class="xc-achievements"><span class="xc-section-heading">Special achievements</span>' +
+      game.specialAchievements.map(item => '<span class="xc-achievement">' + escaped(item) + '</span>').join('') + '</div>' : '';
   const highlights = !isCrossCountry && Array.isArray(game.highlights) ?
     game.highlights.slice(0,4).map(item => '<span class="meet-highlight">' + escaped(item) + '</span>').join('') : '';
   return '<a class="game competition-card' + (finished ? ' completed' : '') +
@@ -106,7 +109,7 @@ function competitionCard(game) {
     '<strong class="meet-title">' + escaped(title) + '</strong>' +
     (game.venue ? '<span class="meet-venue">' + escaped(game.venue) + '</span>' : '') +
     '<span class="game-result">' + status + '</span>' +
-    crossCountryResults +
+    crossCountryResults + achievements +
     (highlights ? '<span class="meet-highlights">' + highlights + '</span>' : '') + '</a>';
 }
 function gameCard(game) {
