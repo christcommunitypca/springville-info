@@ -4,7 +4,7 @@
     "city": "Springville, Alabama",
     "timezone": "America/Chicago",
     "address": "8295 US Highway 11, Springville, AL 35146",
-    "updatedAt": "2026-11-21T16:28:41-06:00",
+    "updatedAt": "2026-11-21T16:36:49-06:00",
     "note": "Verified Springville High School, Alabama varsity game scores and meet results, with source links. Unpublished spring schedules are not assumed."
   },
   "games": [
@@ -126,12 +126,33 @@
       "teamPlace": 9,
       "teamCount": 11,
       "teamScore": 217,
-      "highlights": [
-        "Carson Holderfield · 74th · 20:18.1"
-      ],
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/280517-black-and-gold-classic/?event=ef8e494b8e008f67",
-      "verifiedAt": "2026-11-21"
+      "verifiedAt": "2026-11-21",
+      "topFinishers": [
+        {
+          "name": "Van Stewart",
+          "place": 29,
+          "time": "17:48.2"
+        },
+        {
+          "name": "Jordan Alaniz",
+          "place": 35,
+          "time": "18:03.4"
+        },
+        {
+          "name": "Jack Hutchinson",
+          "place": 62,
+          "time": "19:37.0"
+        }
+      ],
+      "personalRecords": [
+        {
+          "name": "Jordan Alaniz",
+          "place": 35,
+          "time": "18:03.4"
+        }
+      ]
     },
     {
       "id": "2026-08-29-cross-country-girls-black-and-gold",
@@ -149,13 +170,33 @@
       "teamPlace": 7,
       "teamCount": 10,
       "teamScore": 154,
-      "highlights": [
-        "Avery Daniels · 3rd · 19:47.3",
-        "Anju Hodges · 37th · 23:52.6"
-      ],
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/280517-black-and-gold-classic/?event=68d43586a7f5bb3d",
-      "verifiedAt": "2026-11-21"
+      "verifiedAt": "2026-11-21",
+      "topFinishers": [
+        {
+          "name": "Avery Daniels",
+          "place": 3,
+          "time": "19:47.3"
+        },
+        {
+          "name": "Anju Hodges",
+          "place": 37,
+          "time": "23:52.6"
+        },
+        {
+          "name": "Lily Langley",
+          "place": 42,
+          "time": "24:25.1"
+        }
+      ],
+      "personalRecords": [
+        {
+          "name": "Avery Daniels",
+          "place": 3,
+          "time": "19:47.3"
+        }
+      ]
     },
     {
       "id": "2026-09-01-volleyball-girls-st-clair-county",
@@ -207,12 +248,38 @@
       "site": "neutral",
       "season": "2026-27",
       "status": "final",
-      "resultText": "1st place · 42 team points",
+      "resultText": "1st in 5K division",
       "teamPlace": 1,
-      "teamScore": 42,
-      "sourceName": "AL.com high-school sports",
-      "sourceUrl": "https://www.al.com/highschoolsports/2026/09/alabama-hs-cross-country-highlights-from-another-busy-week-across-the-state.html",
-      "verifiedAt": "2026-11-21"
+      "sourceName": "Just In Time Racing · official meet results",
+      "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/281853-tomahawk-trail-invitational/?event=ec54bdf484501a26",
+      "verifiedAt": "2026-11-21",
+      "topFinishers": [
+        {
+          "name": "Van Stewart",
+          "place": 2,
+          "time": "18:53.8"
+        },
+        {
+          "name": "Jordan Alaniz",
+          "place": 4,
+          "time": "19:52.4"
+        },
+        {
+          "name": "Jonathan Dowd",
+          "place": 5,
+          "time": "19:58.7"
+        }
+      ],
+      "personalRecords": [
+        {
+          "name": "Brayden Massey",
+          "place": 37,
+          "time": "32:54.3"
+        }
+      ],
+      "secondarySourceName": "AL.com high-school sports",
+      "secondarySourceUrl": "https://www.al.com/highschoolsports/2026/09/alabama-hs-cross-country-highlights-from-another-busy-week-across-the-state.html",
+      "sourceNote": "Official timing reports Springville first in the 5K 4–6 division. Earlier news coverage gave different team point totals; omit ambiguous scores."
     },
     {
       "id": "2026-09-05-cross-country-girls-tomahawk-trail",
@@ -226,12 +293,32 @@
       "site": "neutral",
       "season": "2026-27",
       "status": "final",
-      "resultText": "1st place · 69 team points",
+      "resultText": "1st in 5K division",
       "teamPlace": 1,
-      "teamScore": 69,
-      "sourceName": "AL.com high-school sports",
-      "sourceUrl": "https://www.al.com/highschoolsports/2026/09/alabama-hs-cross-country-highlights-from-another-busy-week-across-the-state.html",
-      "verifiedAt": "2026-11-21"
+      "sourceName": "Just In Time Racing · official meet results",
+      "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/281853-tomahawk-trail-invitational/?event=768afc7ecfe60e56",
+      "verifiedAt": "2026-11-21",
+      "topFinishers": [
+        {
+          "name": "Avery Daniels",
+          "place": 1,
+          "time": "21:40.8"
+        },
+        {
+          "name": "Anju Hodges",
+          "place": 2,
+          "time": "24:46.6"
+        },
+        {
+          "name": "Lily Langley",
+          "place": 4,
+          "time": "25:51.5"
+        }
+      ],
+      "personalRecords": [],
+      "secondarySourceName": "AL.com high-school sports",
+      "secondarySourceUrl": "https://www.al.com/highschoolsports/2026/09/alabama-hs-cross-country-highlights-from-another-busy-week-across-the-state.html",
+      "sourceNote": "Official timing reports Springville first in the 5K 4–6 division. Earlier news coverage gave different team point totals; omit ambiguous scores."
     },
     {
       "id": "2026-09-05-volleyball-girls-a-p-brewer",
@@ -364,14 +451,79 @@
       "teamPlace": 27,
       "teamCount": 39,
       "teamScore": 811,
-      "highlights": [
-        "Jordan Alaniz · 162nd · 18:25.3",
-        "Carson Holderfield · 263rd · 20:33.2"
-      ],
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/283228-chickasaw-trails-invitational/?event=e0c73d7a0ae61529&page=3",
       "sourceNote": "The official timing website labels this team 'Springville ms' although listed high-school varsity runners include grades 11-12; linked athlete profiles identify Springville AL. Retain source caveat.",
-      "verifiedAt": "2026-11-21"
+      "verifiedAt": "2026-11-21",
+      "topFinishers": [
+        {
+          "name": "Van Stewart",
+          "place": 142,
+          "time": "18:06.2"
+        },
+        {
+          "name": "Jordan Alaniz",
+          "place": 162,
+          "time": "18:25.3"
+        },
+        {
+          "name": "Jack Hutchinson",
+          "place": 191,
+          "time": "18:54.9"
+        }
+      ],
+      "personalRecords": [
+        {
+          "name": "Van Stewart",
+          "place": 142,
+          "time": "18:06.2"
+        },
+        {
+          "name": "Jordan Alaniz",
+          "place": 162,
+          "time": "18:25.3"
+        },
+        {
+          "name": "Jack Hutchinson",
+          "place": 191,
+          "time": "18:54.9"
+        },
+        {
+          "name": "Jonathan Dowd",
+          "place": 197,
+          "time": "19:05.4"
+        },
+        {
+          "name": "Carson Holderfield",
+          "place": 263,
+          "time": "20:33.2"
+        },
+        {
+          "name": "Ryley Morris",
+          "place": 265,
+          "time": "20:35.1"
+        },
+        {
+          "name": "Aiden Leopard",
+          "place": 288,
+          "time": "21:21.2"
+        },
+        {
+          "name": "Miles Hutchinson",
+          "place": 296,
+          "time": "21:31.7"
+        },
+        {
+          "name": "Sims Hutchinson",
+          "place": 308,
+          "time": "21:59.2"
+        },
+        {
+          "name": "Matthew Mahaffey",
+          "place": 313,
+          "time": "22:24.7"
+        }
+      ]
     },
     {
       "id": "2026-09-12-cross-country-girls-chickasaw-trails",
@@ -389,14 +541,79 @@
       "teamPlace": 20,
       "teamCount": 29,
       "teamScore": 564,
-      "highlights": [
-        "Avery Daniels · 47th · 20:37.2",
-        "Anju Hodges · 103rd · 21:56.9"
-      ],
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/283228-chickasaw-trails-invitational/?event=6612db79f45b711f",
       "sourceNote": "The official timing website labels this team 'Springville ms' although listed high-school varsity runners include grades 11-12; linked athlete profiles identify Springville AL. Retain source caveat.",
-      "verifiedAt": "2026-11-21"
+      "verifiedAt": "2026-11-21",
+      "topFinishers": [
+        {
+          "name": "Avery Daniels",
+          "place": 47,
+          "time": "20:37.2"
+        },
+        {
+          "name": "Anju Hodges",
+          "place": 103,
+          "time": "21:56.9"
+        },
+        {
+          "name": "Lily Langley",
+          "place": 181,
+          "time": "24:39.6"
+        }
+      ],
+      "personalRecords": [
+        {
+          "name": "Avery Daniels",
+          "place": 47,
+          "time": "20:37.2"
+        },
+        {
+          "name": "Anju Hodges",
+          "place": 103,
+          "time": "21:56.9"
+        },
+        {
+          "name": "Lily Langley",
+          "place": 181,
+          "time": "24:39.6"
+        },
+        {
+          "name": "Kate Hale",
+          "place": 190,
+          "time": "25:17.6"
+        },
+        {
+          "name": "June Chandler",
+          "place": 203,
+          "time": "26:06.6"
+        },
+        {
+          "name": "Madison Freeman",
+          "place": 222,
+          "time": "27:06.1"
+        },
+        {
+          "name": "Blair Graydon",
+          "place": 236,
+          "time": "27:54.6"
+        },
+        {
+          "name": "Lucy Weichman",
+          "place": 237,
+          "time": "27:59.2"
+        },
+        {
+          "name": "Skylar Hale",
+          "place": 246,
+          "time": "29:05.3"
+        },
+        {
+          "name": "Lauren Smith",
+          "place": 247,
+          "time": "29:13.0"
+        }
+      ]
     },
     {
       "id": "2026-09-14-volleyball-girls-st-clair-county",
@@ -478,13 +695,27 @@
       "teamPlace": 6,
       "teamCount": 16,
       "teamScore": 206,
-      "highlights": [
-        "Jack Hutchinson · 20th · 18:41.9",
-        "Van Stewart · 22nd · 18:44.0"
-      ],
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/284317-oak-mountain-xc-hs-invite/?event=7b4026aa6b6fdb67",
-      "verifiedAt": "2026-11-21"
+      "verifiedAt": "2026-11-21",
+      "topFinishers": [
+        {
+          "name": "Jack Hutchinson",
+          "place": 20,
+          "time": "18:41.9"
+        },
+        {
+          "name": "Van Stewart",
+          "place": 22,
+          "time": "18:44.0"
+        },
+        {
+          "name": "Jonathan Dowd",
+          "place": 50,
+          "time": "20:07.2"
+        }
+      ],
+      "personalRecords": []
     },
     {
       "id": "2026-09-19-cross-country-girls-oak-mountain-invite",
@@ -502,13 +733,38 @@
       "teamPlace": 6,
       "teamCount": 11,
       "teamScore": 189,
-      "highlights": [
-        "Anju Hodges · 12th · 21:41.5 (PR)",
-        "Lily Langley · 44th · 24:36.3"
-      ],
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/284317-oak-mountain-xc-hs-invite/?event=b648dd648cee6565",
-      "verifiedAt": "2026-11-21"
+      "verifiedAt": "2026-11-21",
+      "topFinishers": [
+        {
+          "name": "Anju Hodges",
+          "place": 12,
+          "time": "21:41.5"
+        },
+        {
+          "name": "Lily Langley",
+          "place": 44,
+          "time": "24:36.3"
+        },
+        {
+          "name": "Kate Hale",
+          "place": 46,
+          "time": "24:45.8"
+        }
+      ],
+      "personalRecords": [
+        {
+          "name": "Anju Hodges",
+          "place": 12,
+          "time": "21:41.5"
+        },
+        {
+          "name": "Madison Freeman",
+          "place": 65,
+          "time": "25:47.2"
+        }
+      ]
     },
     {
       "id": "2026-09-19-volleyball-girls-alexandria",
@@ -593,14 +849,68 @@
       "teamPlace": 4,
       "teamCount": 9,
       "teamScore": 85,
-      "highlights": [
-        "Van Stewart · 8th · 17:44.8 (PR)",
-        "Jack Hutchinson · 15th · 18:14.9 (PR)",
-        "Jonathan Dowd · 19th · 18:39.4 (PR)"
-      ],
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/285441-munford-invitational-corn-classic/?event=688bddb6d2d41002",
-      "verifiedAt": "2026-11-21"
+      "verifiedAt": "2026-11-21",
+      "topFinishers": [
+        {
+          "name": "Van Stewart",
+          "place": 8,
+          "time": "17:44.8"
+        },
+        {
+          "name": "Jack Hutchinson",
+          "place": 15,
+          "time": "18:14.9"
+        },
+        {
+          "name": "Jordan Alaniz",
+          "place": 17,
+          "time": "18:23.7"
+        }
+      ],
+      "personalRecords": [
+        {
+          "name": "Van Stewart",
+          "place": 8,
+          "time": "17:44.8"
+        },
+        {
+          "name": "Jack Hutchinson",
+          "place": 15,
+          "time": "18:14.9"
+        },
+        {
+          "name": "Jonathan Dowd",
+          "place": 19,
+          "time": "18:39.4"
+        },
+        {
+          "name": "Carson Holderfield",
+          "place": 30,
+          "time": "19:27.7"
+        },
+        {
+          "name": "Hudson Taylor",
+          "place": 31,
+          "time": "19:31.7"
+        },
+        {
+          "name": "Sims Hutchinson",
+          "place": 46,
+          "time": "20:38.3"
+        },
+        {
+          "name": "Christopher Wallace",
+          "place": 49,
+          "time": "20:43.9"
+        },
+        {
+          "name": "Matthew Mahaffey",
+          "place": 60,
+          "time": "21:16.6"
+        }
+      ]
     },
     {
       "id": "2026-09-26-cross-country-girls-munford-invitational",
@@ -617,14 +927,38 @@
       "resultText": "5th in scored division · 113 points",
       "teamPlace": 5,
       "teamScore": 113,
-      "highlights": [
-        "Anju Hodges · 10th · 21:51.7",
-        "Lily Langley · 17th · 23:20.5",
-        "Kate Hale · 20th · 23:32.9"
-      ],
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/285441-munford-invitational-corn-classic/?event=a1b47c72e2a005cb",
-      "verifiedAt": "2026-11-21"
+      "verifiedAt": "2026-11-21",
+      "topFinishers": [
+        {
+          "name": "Anju Hodges",
+          "place": 10,
+          "time": "21:51.7"
+        },
+        {
+          "name": "Lily Langley",
+          "place": 17,
+          "time": "23:20.5"
+        },
+        {
+          "name": "Kate Hale",
+          "place": 20,
+          "time": "23:32.9"
+        }
+      ],
+      "personalRecords": [
+        {
+          "name": "Lucy Weichman",
+          "place": 47,
+          "time": "25:27.6"
+        },
+        {
+          "name": "Blair Graydon",
+          "place": 48,
+          "time": "25:28.1"
+        }
+      ]
     },
     {
       "id": "2026-09-26-volleyball-girls-ashville",
@@ -809,16 +1143,29 @@
       "season": "2026-27",
       "status": "final",
       "resultText": "Varsity 5K results",
-      "highlights": [
-        "Jack Hutchinson · 39th · 18:35.41",
-        "Jordan Alaniz · 40th · 18:35.51",
-        "Jonathan Dowd · 50th · 19:09.48"
-      ],
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/288205-35th-annual-husky-challenge/",
       "secondarySourceName": "MileSplit · Springville team results",
       "secondarySourceUrl": "https://al.milesplit.com/meets/730172-35th-annual-husky-challenge-2026/teams/8838",
-      "verifiedAt": "2026-11-21"
+      "verifiedAt": "2026-11-21",
+      "topFinishers": [
+        {
+          "name": "Van Stewart",
+          "place": 30,
+          "time": "18:09.28"
+        },
+        {
+          "name": "Jack Hutchinson",
+          "place": 39,
+          "time": "18:35.41"
+        },
+        {
+          "name": "Jordan Alaniz",
+          "place": 40,
+          "time": "18:35.51"
+        }
+      ],
+      "personalRecords": []
     },
     {
       "id": "2026-10-17-cross-country-girls-husky-challenge",
@@ -833,16 +1180,29 @@
       "season": "2026-27",
       "status": "final",
       "resultText": "Varsity 5K results",
-      "highlights": [
-        "Avery Daniels · 17th · 20:30.35",
-        "Anju Hodges · 41st · 22:24.12",
-        "Lily Langley · 52nd · 23:20.84"
-      ],
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/288205-35th-annual-husky-challenge/",
       "secondarySourceName": "MileSplit · Springville team results",
       "secondarySourceUrl": "https://al.milesplit.com/meets/730172-35th-annual-husky-challenge-2026/teams/8838",
-      "verifiedAt": "2026-11-21"
+      "verifiedAt": "2026-11-21",
+      "topFinishers": [
+        {
+          "name": "Avery Daniels",
+          "place": 17,
+          "time": "20:30.35"
+        },
+        {
+          "name": "Anju Hodges",
+          "place": 41,
+          "time": "22:24.12"
+        },
+        {
+          "name": "Lily Langley",
+          "place": 52,
+          "time": "23:20.84"
+        }
+      ],
+      "personalRecords": []
     },
     {
       "id": "2026-10-23-football-boys-pell-city",
@@ -897,14 +1257,38 @@
       "teamPlace": 3,
       "teamCount": 5,
       "teamScore": 99,
-      "highlights": [
-        "Van Stewart · 23rd · 18:05.8",
-        "Jordan Alaniz · 25th · 18:17.9",
-        "Jack Hutchinson · 26th · 18:47.5"
-      ],
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/289300-munford-sectional/",
-      "verifiedAt": "2026-11-21"
+      "verifiedAt": "2026-11-21",
+      "topFinishers": [
+        {
+          "name": "Van Stewart",
+          "place": 23,
+          "time": "18:05.8"
+        },
+        {
+          "name": "Jordan Alaniz",
+          "place": 25,
+          "time": "18:17.9"
+        },
+        {
+          "name": "Jack Hutchinson",
+          "place": 26,
+          "time": "18:47.5"
+        }
+      ],
+      "personalRecords": [
+        {
+          "name": "Hudson Taylor",
+          "place": 28,
+          "time": "19:19.9"
+        },
+        {
+          "name": "Matthew Mahaffey",
+          "place": 42,
+          "time": "21:09.9"
+        }
+      ]
     },
     {
       "id": "2026-10-29-cross-country-girls-munford-sectional",
@@ -922,14 +1306,27 @@
       "teamPlace": 3,
       "teamCount": 5,
       "teamScore": 84,
-      "highlights": [
-        "Avery Daniels · 11th · 20:33.1",
-        "Anju Hodges · 21st · 21:25.6",
-        "Lily Langley · 23rd · 23:19.9"
-      ],
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/289300-munford-sectional/",
-      "verifiedAt": "2026-11-21"
+      "verifiedAt": "2026-11-21",
+      "topFinishers": [
+        {
+          "name": "Avery Daniels",
+          "place": 11,
+          "time": "20:33.1"
+        },
+        {
+          "name": "Anju Hodges",
+          "place": 21,
+          "time": "21:25.6"
+        },
+        {
+          "name": "Lily Langley",
+          "place": 23,
+          "time": "23:19.9"
+        }
+      ],
+      "personalRecords": []
     },
     {
       "id": "2026-10-30-football-boys-cleburne-county",
@@ -964,13 +1361,73 @@
       "teamPlace": 13,
       "teamCount": 24,
       "teamScore": 371,
-      "highlights": [
-        "Jack Hutchinson · 17:54.5 (PR)",
-        "Jordan Alaniz · 17:55.3 (PR)"
-      ],
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/289797-ahsaa-xc-state-championship/",
-      "verifiedAt": "2026-11-21"
+      "verifiedAt": "2026-11-21",
+      "topFinishers": [
+        {
+          "name": "Van Stewart",
+          "place": 61,
+          "time": "17:26.4"
+        },
+        {
+          "name": "Jack Hutchinson",
+          "place": 86,
+          "time": "17:54.5"
+        },
+        {
+          "name": "Jordan Alaniz",
+          "place": 87,
+          "time": "17:55.3"
+        }
+      ],
+      "personalRecords": [
+        {
+          "name": "Van Stewart",
+          "place": 61,
+          "time": "17:26.4"
+        },
+        {
+          "name": "Jack Hutchinson",
+          "place": 86,
+          "time": "17:54.5"
+        },
+        {
+          "name": "Jordan Alaniz",
+          "place": 87,
+          "time": "17:55.3"
+        },
+        {
+          "name": "Jonathan Dowd",
+          "place": 91,
+          "time": "18:01.1"
+        },
+        {
+          "name": "Miles Hutchinson",
+          "place": 138,
+          "time": "18:51.4"
+        },
+        {
+          "name": "Carson Holderfield",
+          "place": 153,
+          "time": "19:10.1"
+        },
+        {
+          "name": "Ryley Morris",
+          "place": 159,
+          "time": "19:14.2"
+        },
+        {
+          "name": "Christopher Wallace",
+          "place": 183,
+          "time": "19:40.6"
+        },
+        {
+          "name": "Aiden Leopard",
+          "place": 208,
+          "time": "20:04.5"
+        }
+      ]
     },
     {
       "id": "2026-11-07-cross-country-girls-state-5a",
@@ -988,13 +1445,58 @@
       "teamPlace": 13,
       "teamCount": 19,
       "teamScore": 349,
-      "highlights": [
-        "Anju Hodges · 21:16.9 (PR)",
-        "Madison Freeman · 24:04.3 (PR)"
-      ],
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/289797-ahsaa-xc-state-championship/",
-      "verifiedAt": "2026-11-21"
+      "verifiedAt": "2026-11-21",
+      "topFinishers": [
+        {
+          "name": "Avery Daniels",
+          "place": 25,
+          "time": "19:49.9"
+        },
+        {
+          "name": "Anju Hodges",
+          "place": 62,
+          "time": "21:16.9"
+        },
+        {
+          "name": "Lily Langley",
+          "place": 99,
+          "time": "22:24.3"
+        }
+      ],
+      "personalRecords": [
+        {
+          "name": "Anju Hodges",
+          "place": 62,
+          "time": "21:16.9"
+        },
+        {
+          "name": "Madison Freeman",
+          "place": 156,
+          "time": "24:04.3"
+        },
+        {
+          "name": "Lucy Weichman",
+          "place": 169,
+          "time": "24:49.4"
+        },
+        {
+          "name": "Blair Graydon",
+          "place": 171,
+          "time": "24:52.8"
+        },
+        {
+          "name": "Lauren Smith",
+          "place": 187,
+          "time": "26:39.0"
+        },
+        {
+          "name": "Skylar Hale",
+          "place": 197,
+          "time": "26:58.8"
+        }
+      ]
     },
     {
       "id": "2026-11-07-basketball-girls-pisgah",
