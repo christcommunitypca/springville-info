@@ -26,10 +26,10 @@ function outcomeBadge(springvilleScore, opponentScore) {
   const label = outcome === 'W' ? 'Win' : outcome === 'L' ? 'Loss' : 'Tie';
   const detail = outcome === 'T' ? '' : ' by ' + Math.abs(margin) + ' points';
   const signed = margin > 0 ? '+' + margin : String(margin);
-  return '<strong class="outcome outcome-' + outcome.toLowerCase() +
+  return '<span class="outcome-stack"><strong class="outcome outcome-' + outcome.toLowerCase() +
     '" aria-label="' + label + detail + '"><span class="outcome-letter" aria-hidden="true">' +
-    outcome + '</span>' + (outcome === 'T' ? '' :
-    '<small class="outcome-margin" aria-hidden="true">' + signed + '</small>') + '</strong>';
+    outcome + '</span></strong>' + (outcome === 'T' ? '' :
+    '<small class="outcome-margin" aria-hidden="true">' + signed + '</small>') + '</span>';
 }
 function resultLabel(game) {
   if (game.status === 'final') {
