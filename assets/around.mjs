@@ -37,7 +37,7 @@ function eventRow(item) {
   const where = [when,item.listTime ?? item.time,item.listLocation || item.location].filter(Boolean).join(' · ');
   return '<a class="listing" data-kind="' + escape(kind) + '" href="' + sectionLink(item.id) + '"><time datetime="' +
     escape(start) + '" aria-label="' + escape(start + (range ? ' through ' + end : '')) + '"><small>' + weekdays +
-    '</small><b' + (range ? ' class="wide"' : '') + '>' + days + '</b></time><span><strong>' + escape(item.shortTitle || item.title) + '</strong><span class="where">' + escape(where) + '</span></span></a>';
+    '</small><small class="date-month">' + label(start,{month:'short'}) + '</small><b' + (range ? ' class="wide"' : '') + '>' + days + '</b></time><span><strong>' + escape(item.shortTitle || item.title) + '</strong><span class="where">' + escape(where) + '</span></span></a>';
 }
 function months(items) {
   const groups = new Map();
