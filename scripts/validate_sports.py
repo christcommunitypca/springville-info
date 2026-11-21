@@ -13,6 +13,13 @@ assert data["school"]["city"] == "Springville, Alabama"
 assert data["school"]["timezone"] == "America/Chicago"
 updated = dt.datetime.fromisoformat(data["school"]["updatedAt"])
 assert updated.tzinfo is not None, "Last updated timestamp must include timezone"
+for coverage in data.get("scheduleCoverage", []):
+    assert coverage["sport"] and coverage["gender"] in ("Boys", "Girls"), coverage
+    assert coverage["status"] in ("partial", "not_published", "complete"), coverage
+    assert coverage["season"] and dt.date.fromisoformat(coverage["asOf"]), coverage
+    source = urlparse(coverage["sourceUrl"])
+    assert source.scheme == "https" and source.hostname, coverage
+
 ids, matchups = set(), set()
 allowed_status = {"scheduled", "final", "unconfirmed", "postponed", "cancelled"}
 for game in data["games"]:
@@ -79,6 +86,12 @@ for game in data["games"]:
                 source = urlparse(athlete["sourceUrl"])
                 assert source.scheme == "https" and source.hostname, game
 
+    if "gameNumber" in game:
+        assert game["sport"] == "Baseball" and game["level"] == "Varsity", game
+        assert type(game["gameNumber"]) is int and 1 <= game["gameNumber"] <= 3, game
+        assert isinstance(game.get("sourceEventId"), str) and re.fullmatch(r"\d+", game["sourceEventId"]), game
+    if "venueUnconfirmed" in game:
+        assert game["venueUnconfirmed"] is True and game["site"] == "neutral", game
     assert game["gender"] in ("Boys", "Girls", "Co-ed"), game
     assert game["site"] in ("home", "away", "neutral"), game
     assert game["status"] in allowed_status, game
@@ -88,7 +101,8 @@ for game in data["games"]:
             assert u.scheme == "https" and u.hostname, f"Bad source URL: {game['id']}"
     assert game["sourceName"].strip() and dt.date.fromisoformat(game["verifiedAt"]), game
     signature = (game["date"], game["sport"].lower(), game["gender"], game["level"].lower(),
-                 (game.get("opponent") or game.get("title") or "").lower(), (game.get("time") or "").lower())
+                 (game.get("opponent") or game.get("title") or "").lower(), (game.get("time") or "").lower(),
+                 game.get("gameNumber", 0))
     assert signature not in matchups, f"Duplicate real-world fixture: {game['id']}"
     matchups.add(signature)
     if game["status"] == "final":
