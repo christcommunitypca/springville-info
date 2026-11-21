@@ -92,11 +92,11 @@ function competitionCard(game) {
   let result = '';
   if (finished && Number.isInteger(game.teamPlace)) {
     // In XC the race distance is implied; use one consistent team-place display.
-    const count = Number.isInteger(game.teamCount) ? ' · ' + (game.teamCountEstimated ? '~' : '') + game.teamCount + ' teams' : '';
+    const count = Number.isInteger(game.teamCount) ? ' · ' + (game.teamCountEstimated ? '~' : '') + game.teamCount + ' teams' : (game.teamDivision ? ' · ' + game.teamDivision : '');
     const score = Number.isInteger(game.teamScore) ? ' · ' + game.teamScore + ' pts' : '';
     const placeLabel = game.teamPlace + (game.teamPlace % 100 >= 11 && game.teamPlace % 100 <= 13 ? 'th' : ({1:'st',2:'nd',3:'rd'}[game.teamPlace % 10] || 'th'));
     const accessible = 'Springville ' + placeLabel + ' place' +
-      (Number.isInteger(game.teamCount) ? ' of ' + (game.teamCountEstimated ? 'approximately ' : '') + game.teamCount + ' teams' : '');
+      (Number.isInteger(game.teamCount) ? ' of ' + (game.teamCountEstimated ? 'approximately ' : '') + game.teamCount + ' teams' : (game.teamDivision ? ' in ' + game.teamDivision : ''));
     result = '<span class="placement-row"><strong class="outcome outcome-placement" aria-label="' +
       escaped(accessible) + '">' + escaped(game.teamPlace) +
       '</strong><span class="placement-context">' + escaped('place' + count + score) + '</span></span>';
