@@ -322,7 +322,7 @@
       "season": "2026-27",
       "status": "unconfirmed",
       "sourceName": "MaxPreps",
-      "sourceUrl": "https://www.maxpreps.com/al/basketball/girls/game/mountain-brook-birmingham-vs-springville/11-17-2026/?c=209f5a80-f680-40dc-b7bb-a759358d8321",
+      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/girls/schedule/",
       "verifiedAt": "2026-11-20",
       "secondarySourceName": "Associated Press",
       "secondarySourceUrl": "https://www.thehour.com/sports/article/tuesday-s-scores-22536828.php",
@@ -331,7 +331,7 @@
           "springvilleScore": 42,
           "opponentScore": 76,
           "sourceName": "MaxPreps",
-          "sourceUrl": "https://www.maxpreps.com/al/basketball/girls/game/mountain-brook-birmingham-vs-springville/11-17-2026/?c=209f5a80-f680-40dc-b7bb-a759358d8321"
+          "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/girls/schedule/"
         },
         {
           "springvilleScore": 18,
@@ -354,7 +354,7 @@
       "season": "2026-27",
       "status": "unconfirmed",
       "sourceName": "MaxPreps",
-      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/",
+      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/schedule/",
       "verifiedAt": "2026-11-20",
       "secondarySourceName": "Associated Press",
       "secondarySourceUrl": "https://www.seattlepi.com/sports/tuesday-s-scores-a22536829",
@@ -363,7 +363,7 @@
           "springvilleScore": 42,
           "opponentScore": 76,
           "sourceName": "MaxPreps",
-          "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/"
+          "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/schedule/"
         },
         {
           "springvilleScore": 38,
