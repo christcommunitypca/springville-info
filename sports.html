@@ -11,7 +11,7 @@
 *{box-sizing:border-box}
 :root{--ink:#17354a;--muted:#547081;--teal:#346e64;--blue:#164c73;--red:#9d443e;--line:#d8e4e9;--paper:#f5f9fa;--white:#fff}
 html{background:var(--paper);color:var(--ink)}
-body{max-width:1260px;margin:0 auto;padding:0 clamp(14px,3vw,38px) 45px;font:500 15px/1.5 "DM Sans",-apple-system,sans-serif}
+body{max-width:1260px;margin:0 auto;padding:0 clamp(14px,3vw,38px) 45px;font:500 16px/1.5 "DM Sans",-apple-system,sans-serif}
 a{color:inherit;text-underline-offset:3px} button,select{font:inherit}
 a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #d57d42;outline-offset:3px}
 [hidden]{display:none!important}
@@ -32,9 +32,9 @@ h1{margin:8px 0 3px;font:800 clamp(2.7rem,7vw,5rem)/.96 "Barlow Condensed",Impac
 .today-button{width:auto!important;padding:0 12px;font:700 .84rem "DM Sans",sans-serif!important}
 .filters{display:flex;flex-wrap:wrap;gap:14px;align-items:end}
 .field{display:flex;flex:1 1 170px;flex-direction:column;gap:5px}
-.field label,.field-label{font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:#466674}
-.field select{width:100%;min-height:42px;padding:0 12px;border-radius:9px;background:#f8fbfc;border:1px solid #a8c2cd;color:var(--ink);font-size:.93rem}
-.calendar-note{display:flex;justify-content:flex-end;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 1px 13px;color:#526e78;font-size:.82rem}
+.field label,.field-label{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:#466674}
+.field select{width:100%;min-height:46px;padding:0 12px;border-radius:9px;background:#f8fbfc;border:1px solid #a8c2cd;color:var(--ink);font-size:1rem}
+.calendar-note{display:flex;justify-content:flex-end;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 1px 13px;color:#526e78;font-size:.9rem}
 .weekdays{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin:0 0 8px;text-align:center}
 .weekdays span{padding:4px;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:#4c6a73;font-weight:800}
 #month-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));align-items:stretch;gap:8px}
@@ -48,40 +48,40 @@ h1{margin:8px 0 3px;font:800 clamp(2.7rem,7vw,5rem)/.96 "Barlow Condensed",Impac
 .game:hover{background:#d6e7e9}
 .game.completed{background:#f9eae4;border-color:var(--red)}
 .game.completed:hover{background:#f4dad0}
-.game-meta{font-size:.61rem;text-transform:uppercase;letter-spacing:.055em;color:#4b6671;font-weight:800}
-.matchup{font-size:.82rem;line-height:1.2;overflow-wrap:anywhere}
-.game-result{font-size:.73rem;color:#2e6271}
+.game-meta{font-size:.79rem;text-transform:uppercase;letter-spacing:.055em;color:#4b6671;font-weight:800}
+.matchup{font-size:1rem;line-height:1.2;overflow-wrap:anywhere}
+.game-result{font-size:1rem;color:#2e6271}
 .game-time{font-weight:700;color:#215c63}
 .final-tag{display:inline-block;padding:2px 5px;margin-right:5px;border-radius:4px;background:#8e3c34;color:#fff;font-size:.58rem;text-transform:uppercase;letter-spacing:.04em;font-weight:800;vertical-align:middle}
-.score{display:block;margin-top:3px;line-height:1.25;font-size:.74rem;color:#74332d}
+.score{display:block;margin-top:3px;line-height:1.25;font-size:1rem;color:#74332d}
 .status-tag{font-weight:800;text-transform:capitalize;color:#935a24}
 #agenda-list{display:flex;flex-direction:column;gap:16px}
 .agenda-day{background:white;border:1px solid var(--line);border-radius:13px;padding:14px}
-.agenda-day h3{margin:0 0 11px;font:800 1.2rem "Barlow Condensed",sans-serif;letter-spacing:.03em;text-transform:uppercase}
-.agenda-day .game{padding:12px;margin:0 0 7px;gap:6px}
+.agenda-day h3{margin:0 0 11px;font:800 1.4rem "Barlow Condensed",sans-serif;letter-spacing:.03em;text-transform:uppercase}
+.agenda-day .game{padding:14px;margin:0 0 9px;gap:7px}
 .agenda-day .game:last-child{margin-bottom:0}
-.agenda-day .game-meta{font-size:.69rem}
-.agenda-day .matchup{font-size:1.04rem}
-.agenda-day .game-result{font-size:.87rem}
-.agenda-day .score{font-size:.87rem}
+.agenda-day .game-meta{font-size:.83rem}
+.agenda-day .matchup{font-size:1.12rem}
+.agenda-day .game-result{font-size:1rem}
+.agenda-day .score{font-size:1rem}
 .empty{padding:20px;color:#5c7180;background:white;border:1px dashed var(--line);border-radius:12px;max-width:700px}
-.source-note{max-width:800px;margin-top:25px;padding-top:16px;border-top:1px solid var(--line);color:#516978;font-size:.83rem}
+.source-note{max-width:800px;margin-top:25px;padding-top:16px;border-top:1px solid var(--line);color:#516978;font-size:.92rem}
 .source-note p{margin-bottom:8px}
 footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:#46616e}
-@media(max-width:1000px){.weekdays,#month-grid{gap:5px}.calendar-day{padding:6px}.game{padding:6px}.game-meta{font-size:.55rem}.matchup{font-size:.75rem}.score{font-size:.66rem}}
+@media(max-width:1000px){.weekdays,#month-grid{gap:5px}.calendar-day{padding:6px}.game{padding:6px}.game-meta{font-size:.76rem}.matchup{font-size:.95rem}.score{font-size:.9rem}}
 @media(max-width:760px){body{padding-bottom:26px}.masthead{margin-bottom:16px;padding-bottom:22px}.eyebrow{margin-top:15px}h1{font-size:3.3rem}.toolbar{padding:14px}.topline{gap:12px}.month-buttons{flex:1;flex-wrap:wrap}.month-buttons #month-label{min-width:135px;flex:1}.view{margin-left:auto}.field{flex-basis:125px}.weekdays{display:none}.calendar-note{margin-top:15px}.agenda-day{padding:12px}.source-note{margin-top:16px}}
 
 /* Simplified schedule: only a vertical list, with prominent W/L and compact verified score. */
-.final-result,.live-result{display:flex;align-items:center;gap:13px;min-width:0}
-.outcome{display:grid;place-items:center;flex:none;width:43px;height:43px;border-radius:10px;font:800 2.05rem/1 "Barlow Condensed",Impact,sans-serif}
+.final-result,.live-result{display:flex;align-items:center;gap:15px;min-width:0}
+.outcome{display:grid;place-items:center;flex:none;width:50px;height:50px;border-radius:10px;font:800 2.2rem/1 "Barlow Condensed",Impact,sans-serif}
 .outcome-w{color:#fff;background:#286e54}
 .outcome-l{color:#fff;background:#9d443e}
 .outcome-t{color:#17354a;background:#dce7e7}
 .live-tag{display:inline-block;flex:none;padding:5px 8px;border-radius:6px;background:#b53e29;color:#fff;font-size:.75rem;font-weight:800;letter-spacing:.05em}
-.agenda-day .game .score{display:inline-block;margin:0;color:#17354a;font-size:.97rem;font-weight:800;line-height:1.32}
+.agenda-day .game .score{display:inline-block;margin:0;color:#17354a;font-size:1.1rem;font-weight:800;line-height:1.35}
 .agenda-day .game.completed{background:#fff9f6;border-color:#9c7160}
 .agenda-day .game.completed:hover{background:#f8ece5}
-@media(max-width:760px){.final-result,.live-result{gap:11px}.outcome{width:42px;height:42px}.agenda-day .game .score{font-size:.95rem}}
+@media(max-width:760px){.final-result,.live-result{gap:13px}.outcome{width:50px;height:50px}.agenda-day .game .score{font-size:1.06rem}}
 
 
 /* Keep the Tigers Sports masthead; omit only the supporting eyebrow and description. */
@@ -119,20 +119,20 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
 .gender-track-stops{position:absolute;z-index:1;left:6px;right:6px;top:50%;transform:translateY(-50%);display:flex;justify-content:space-between;align-items:center;pointer-events:none}
 .gender-track-stops i{display:block;width:6px;height:6px;border-radius:50%;background:#7b9ba7}
 .gender-stop-labels{display:flex;justify-content:space-between;align-items:center;gap:2px;padding-top:0}
-.gender-stop{display:inline-block;flex:0 0 auto;margin:0;padding:0 1px;border:0;background:none;color:#617784;font:650 .7rem/1.35 "DM Sans",sans-serif;cursor:pointer;min-height:16px}
+.gender-stop{display:inline-block;flex:0 0 auto;margin:0;padding:0 1px;border:0;background:none;color:#526978;font:650 .85rem/1.35 "DM Sans",sans-serif;cursor:pointer;min-height:22px}
 .gender-stop:hover,.gender-stop[aria-current="true"]{color:var(--blue);font-weight:800}
 .gender-stop:focus-visible{outline:2px solid #d57d42;outline-offset:3px}
 @media(max-width:760px){
  .masthead{margin-bottom:16px;padding-top:16px}
  .topline{flex-wrap:nowrap}
  .month-buttons{flex:0 0 auto;gap:4px;flex-wrap:nowrap}
- .month-label-slot .month-measure,.month-label-slot #month-label{font-size:clamp(1.33rem,5vw,1.8rem)}
+ .month-label-slot .month-measure,.month-label-slot #month-label{font-size:clamp(1.45rem,5vw,1.8rem)}
  .team-field{flex:0 0 165px;width:165px}
 }
 @media(max-width:380px){
  .month-buttons{gap:3px}
  .month-buttons button{width:32px;height:36px}
- .month-label-slot .month-measure,.month-label-slot #month-label{font-size:1.28rem}
+ .month-label-slot .month-measure,.month-label-slot #month-label{font-size:1.38rem}
  .month-buttons .today-button{padding:0 7px!important;margin-left:1px;font-size:.76rem!important}
  .filters{gap:8px}
  .team-field{flex-basis:146px;width:146px}
@@ -142,9 +142,9 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
 /* Preferred source scores use the same clickable card treatment as all other finals. */
 .preferred-score-game .score{font-weight:800;color:var(--ink)}
 /* Keep the W/L in its colored square; place the quiet margin below it. */
-.outcome-stack{display:flex;flex:none;flex-direction:column;align-items:center;gap:3px}
+.outcome-stack{display:flex;flex:0 0 50px;flex-direction:column;align-items:center;justify-content:flex-start;gap:5px;width:50px;text-align:center}
 .outcome-letter{font:inherit;line-height:1}
-.outcome-margin{display:block;margin:0;color:#83919b;font:600 .67rem/1 "DM Sans",sans-serif;letter-spacing:.01em;font-variant-numeric:tabular-nums}
+.outcome-margin{display:block;width:100%;margin:0;color:#667988;font:600 .81rem/1.1 "DM Sans",sans-serif;letter-spacing:0;font-variant-numeric:tabular-nums;text-align:center;white-space:nowrap}
 </style>
 </head>
 <body>
