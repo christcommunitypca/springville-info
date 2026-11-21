@@ -2,12 +2,44 @@
   "site": {
     "name": "Springville.Info",
     "location": "Springville, Alabama",
-    "updatedAt": "2026-11-20",
+    "updatedAt": "2026-11-21",
     "timezone": "America/Chicago",
     "source": "Migrated from existing Springville.Info Wix site on 2026-11-18",
     "submissionUrl": "https://headless-czuiyfnwkie-christcommunitypca-1412.wix-site-host.com/share.html"
   },
   "news": [
+    {
+      "id": "springville-historic-district-1997",
+      "slug": "springville-historic-district-national-register",
+      "title": "Springville's downtown is a nationally recognized historic district",
+      "shortTitle": "Downtown's Historic Recognition",
+      "category": "Did you know?",
+      "date": "2026-11-21",
+      "summary": "Springville's historic district joined the National Register of Historic Places on July 3, 1997, recognizing the architecture and history of its old downtown.",
+      "body": [
+        "Did you know Springville has a historic district recognized by the National Park Service? The Springville Historic District was added to the National Register of Historic Places on July 3, 1997.",
+        "The federal listing identifies architecture, commerce and social history as reasons the area matters. Its documented architectural styles include Late Victorian, Queen Anne and Early Commercial, reflecting how Springville developed as a railroad-era trading town.",
+        "The district covers part of the historic downtown around streets such as Academy, Wilson and Cross. The recognition helps tell the story of buildings and neighborhoods residents still encounter today."
+      ],
+      "sourceName": "National Park Service · National Register of Historic Places",
+      "sourceUrl": "https://npgallery.nps.gov/AssetDetail/NRIS/97000653"
+    },
+    {
+      "id": "springville-christmas-parade-2026",
+      "slug": "springville-neon-north-pole-parade-december-12",
+      "title": "Springville Christmas parade set for December 12",
+      "shortTitle": "Neon North Pole Parade",
+      "category": "Community",
+      "date": "2026-11-20",
+      "summary": "Springville's Christmas parade will roll out December 12 at 6 p.m. with a Neon North Pole theme and Frank and Carol Waid as grand marshals.",
+      "body": [
+        "The Springville Area Chamber of Commerce's Christmas parade is scheduled for Saturday, December 12, 2026, at 6 p.m. This year's theme is Neon North Pole, with community groups invited to decorate floats in neon lights.",
+        "Frank and Carol Waid will serve as grand marshals. The Chamber announced their recognition for work with the Springville Preservation Society, including efforts involving historic landmarks.",
+        "The announced time is 6 p.m. A verified parade route and street-closure schedule were not included in the cited report, so residents should watch for organizer updates before planning travel."
+      ],
+      "sourceName": "The Trussville Tribune · November 20, 2026",
+      "sourceUrl": "https://www.trussvilletribune.com/2026/11/20/neon-north-pole-christmas-parade-in-springville-slated-for-dec-12/"
+    },
     {
       "id": "springville-depot-fire-1969",
       "slug": "the-1969-springville-train-fire",
@@ -237,6 +269,20 @@
       "category": "Holiday",
       "summary": "A Christmas Eve service of Scripture lessons and carols, hosted by Christ Community PCA. The service runs from 5 to 6 p.m., allowing families to gather for worship before Christmas Day. Details supplied directly by the organizer.",
       "sourceUrl": "https://www.christcommunitypca.com/"
+    },
+    {
+      "id": "springville-neon-north-pole-parade-2026",
+      "title": "Springville Christmas Parade: Neon North Pole",
+      "shortTitle": "Neon North Pole Parade",
+      "startDate": "2026-12-12",
+      "endDate": "2026-12-12",
+      "time": "6 p.m.",
+      "listTime": "6 p.m.",
+      "location": "Springville, Alabama (parade route not confirmed)",
+      "listLocation": "Springville · Route TBA",
+      "category": "Holiday",
+      "summary": "The Springville Area Chamber of Commerce's 2026 Christmas parade will feature a Neon North Pole theme. Frank and Carol Waid are the grand marshals. The parade starts at 6 p.m.; watch for an official route and traffic guidance before traveling.",
+      "sourceUrl": "https://www.trussvilletribune.com/2026/11/20/neon-north-pole-christmas-parade-in-springville-slated-for-dec-12/"
     }
   ],
   "directory": [
