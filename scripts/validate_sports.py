@@ -34,6 +34,25 @@ for game in data["games"]:
         assert game.get("opponent", "").strip(), game
     else:
         assert game.get("title", "").strip(), game
+        if game["sport"] == "Cross Country" and game["status"] == "final":
+            top = game.get("topFinishers", [])
+            prs = game.get("personalRecords", [])
+            assert len(top) == 3, f"Expected 3 verified Springville finishers: {game['id']}"
+            assert isinstance(prs, list), game
+            top_times = []
+            for field, rows in (("topFinishers", top), ("personalRecords", prs)):
+                assert isinstance(rows, list), game
+                seen_names = set()
+                for runner in rows:
+                    assert isinstance(runner, dict), game
+                    assert isinstance(runner.get("name"), str) and runner["name"].strip(), game
+                    assert type(runner.get("place")) is int and runner["place"] > 0, game
+                    assert isinstance(runner.get("time"), str) and re.fullmatch(r"\\d{1,2}:\\d{2}\\.\\d{1,2}", runner["time"]), game
+                    assert runner["name"] not in seen_names, f"Duplicate {field} runner: {game['id']}"
+                    seen_names.add(runner["name"])
+                    if field == "topFinishers":
+                        top_times.append(float(runner["time"].split(":")[0]) * 60 + float(runner["time"].split(":")[1]))
+            assert top_times == sorted(top_times), f"Finishers must be sorted by fastest time: {game['id']}"
         if "highlights" in game:
             assert isinstance(game["highlights"], list) and len(game["highlights"]) <= 6, game
             assert all(isinstance(s, str) and 0 < len(s.strip()) <= 200 for s in game["highlights"]), game
