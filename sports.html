@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Springville Tigers Sports Calendar | Springville.Info</title>
+<meta name="description" content="Springville High School Tigers sports schedules and verified final scores, with filters by sport and girls' and boys' teams.">
+<link rel="canonical" href="https://springville.info/sports.html"><link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+:root{--ink:#17354a;--muted:#547081;--teal:#346e64;--blue:#164c73;--red:#9d443e;--line:#d8e4e9;--paper:#f5f9fa;--white:#fff}
+html{background:var(--paper);color:var(--ink)}
+body{max-width:1260px;margin:0 auto;padding:0 clamp(14px,3vw,38px) 45px;font:500 15px/1.5 "DM Sans",-apple-system,sans-serif}
+a{color:inherit;text-underline-offset:3px} button,select{font:inherit}
+a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #d57d42;outline-offset:3px}
+[hidden]{display:none!important}
+.masthead{margin:0 calc(-1 * clamp(14px,3vw,38px)) 23px;padding:18px clamp(16px,5vw,62px) 25px;background:linear-gradient(112deg,#113a55 0%,#1c5664 70%,#427e77 100%);border-bottom:6px solid #bd654c;color:white;position:relative;overflow:hidden}
+.masthead:after{content:"";position:absolute;right:-100px;top:-90px;width:380px;height:380px;border:28px solid rgba(255,255,255,.08);border-radius:50%;box-shadow:0 0 0 40px rgba(255,255,255,.045);pointer-events:none}
+.back{display:inline-flex;align-items:center;gap:5px;font-size:.84rem;font-weight:700;text-decoration:none;color:#d9f1ed}
+.eyebrow{display:flex;align-items:center;gap:11px;margin:17px 0 1px;color:#d9e8e8;text-transform:uppercase;letter-spacing:.18em;font-size:.73rem;font-weight:800}
+.tiger-mark{display:inline-grid;place-items:center;width:36px;height:36px;border:2px solid rgba(255,255,255,.75);border-radius:10px;font:800 1.8rem/1 "Barlow Condensed",sans-serif;letter-spacing:-.07em;transform:rotate(-5deg)}
+h1,h2,h3,p{margin-top:0}
+h1{margin:8px 0 3px;font:800 clamp(2.7rem,7vw,5rem)/.96 "Barlow Condensed",Impact,sans-serif;letter-spacing:.006em;text-transform:uppercase}
+.masthead p{max-width:640px;margin:9px 0 0;color:#f0f6f5;font-size:.94rem}
+.toolbar{padding:18px;background:white;border:1px solid var(--line);border-radius:16px;box-shadow:0 7px 30px rgba(23,53,74,.035)}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.month-buttons{display:flex;align-items:center;gap:9px}
+.month-buttons button{width:37px;height:37px;border-radius:9px;border:1px solid #b5cbd2;background:#edf4f5;color:var(--ink);cursor:pointer;font-size:1.3rem}
+.month-buttons button:hover,.view button:hover{background:#dceced}
+#month-label{margin:0;min-width:205px;font:800 clamp(1.5rem,3vw,2rem)/1 "Barlow Condensed",sans-serif;text-transform:uppercase}
+.today-button{width:auto!important;padding:0 12px;font:700 .84rem "DM Sans",sans-serif!important}
+.view{display:flex;background:#edf4f5;padding:4px;border-radius:10px;gap:4px}
+.view button{border:0;border-radius:8px;background:transparent;color:#4c6676;padding:8px 12px;font-size:.83rem;font-weight:800;cursor:pointer}
+.view button[aria-pressed="true"]{background:#204d67;color:white;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.filters{display:flex;flex-wrap:wrap;gap:14px;align-items:end}
+.field{display:flex;flex:1 1 170px;flex-direction:column;gap:5px}
+.field label{font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:#466674}
+.field select{width:100%;min-height:42px;padding:0 12px;border-radius:9px;background:#f8fbfc;border:1px solid #a8c2cd;color:var(--ink);font-size:.93rem}
+.calendar-note{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 1px 13px;color:#526e78;font-size:.82rem}
+#month-summary{color:#185b61;font-weight:800}
+.weekdays{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin:0 0 8px;text-align:center}
+.weekdays span{padding:4px;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:#4c6a73;font-weight:800}
+#month-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));align-items:stretch;gap:8px}
+.calendar-day,.calendar-gap{min-height:131px;border-radius:11px}
+.calendar-day{background:#fff;border:1px solid var(--line);padding:9px;min-width:0}
+.calendar-gap{background:#edf3f4;border:1px dashed #d8e4e9}
+.calendar-day.is-today{border:2px solid var(--teal);padding:8px}
+.calendar-day h3{display:flex;align-items:center;gap:5px;margin:0 0 8px;color:#1d5270;font:800 1.05rem "DM Sans",sans-serif}
+.calendar-day h3 small{font-size:.53rem;text-transform:uppercase;letter-spacing:.07em;color:var(--teal)}
+.game{display:flex;flex-direction:column;gap:4px;min-width:0;margin-bottom:6px;padding:9px 10px;background:#e7f0f1;border-left:3px solid var(--teal);border-radius:7px;text-decoration:none;transition:background .15s}
+.game:hover{background:#d6e7e9}
+.game.completed{background:#f9eae4;border-color:var(--red)}
+.game.completed:hover{background:#f4dad0}
+.game-meta{font-size:.61rem;text-transform:uppercase;letter-spacing:.055em;color:#4b6671;font-weight:800}
+.matchup{font-size:.82rem;line-height:1.2;overflow-wrap:anywhere}
+.game-result{font-size:.73rem;color:#2e6271}
+.game-time{font-weight:700;color:#215c63}
+.final-tag{display:inline-block;padding:2px 5px;margin-right:5px;border-radius:4px;background:#8e3c34;color:#fff;font-size:.58rem;text-transform:uppercase;letter-spacing:.04em;font-weight:800;vertical-align:middle}
+.score{display:block;margin-top:3px;line-height:1.25;font-size:.74rem;color:#74332d}
+.status-tag{font-weight:800;text-transform:capitalize;color:#935a24}
+#agenda-list{display:flex;flex-direction:column;gap:16px}
+.agenda-day{background:white;border:1px solid var(--line);border-radius:13px;padding:14px}
+.agenda-day h3{margin:0 0 11px;font:800 1.2rem "Barlow Condensed",sans-serif;letter-spacing:.03em;text-transform:uppercase}
+.agenda-day .game{padding:12px;margin:0 0 7px;gap:6px}
+.agenda-day .game:last-child{margin-bottom:0}
+.agenda-day .game-meta{font-size:.69rem}
+.agenda-day .matchup{font-size:1.04rem}
+.agenda-day .game-result{font-size:.87rem}
+.agenda-day .score{font-size:.87rem}
+.empty{padding:20px;color:#5c7180;background:white;border:1px dashed var(--line);border-radius:12px;max-width:700px}
+.source-note{max-width:800px;margin-top:25px;padding-top:16px;border-top:1px solid var(--line);color:#516978;font-size:.83rem}
+.source-note p{margin-bottom:8px}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:#46616e}
+@media(max-width:1000px){.weekdays,#month-grid{gap:5px}.calendar-day{padding:6px}.game{padding:6px}.game-meta{font-size:.55rem}.matchup{font-size:.75rem}.score{font-size:.66rem}}
+@media(max-width:760px){body{padding-bottom:26px}.masthead{margin-bottom:16px;padding-bottom:22px}.eyebrow{margin-top:15px}h1{font-size:3.3rem}.toolbar{padding:14px}.topline{gap:12px}.month-buttons{flex:1;flex-wrap:wrap}.month-buttons #month-label{min-width:135px;flex:1}.view{margin-left:auto}.field{flex-basis:125px}.weekdays{display:none}.calendar-note{margin-top:15px}.agenda-day{padding:12px}.source-note{margin-top:16px}}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <a class="back" href="/#listings">← Community calendar</a>
+  <div class="eyebrow"><span class="tiger-mark" aria-hidden="true">S</span> Springville, Alabama • High school athletics</div>
+  <h1>Tigers Sports</h1>
+  <p>One place for Springville High School game dates and verified final scores. Schedules can change; follow each game to its source.</p>
+</header>
+<main>
+  <section class="toolbar" aria-label="Calendar controls">
+    <div class="topline">
+      <div class="month-buttons">
+        <button id="prev-month" type="button" aria-label="Previous month">‹</button>
+        <h2 id="month-label">November 2026</h2>
+        <button id="next-month" type="button" aria-label="Next month">›</button>
+        <button id="current-month" class="today-button" type="button">Today</button>
+      </div>
+      <div class="view" aria-label="View format">
+        <button type="button" class="view-calendar" aria-pressed="false">Calendar</button>
+        <button type="button" class="view-agenda" aria-pressed="true">List</button>
+      </div>
+    </div>
+    <div class="filters">
+      <div class="field"><label for="sport-filter">Sport</label><select id="sport-filter"><option value="all">All sports</option></select></div>
+      <div class="field"><label for="gender-filter">Team</label><select id="gender-filter"><option value="all">Boys &amp; girls</option><option value="Boys">Boys</option><option value="Girls">Girls</option><option value="Co-ed">Co-ed / mixed</option></select></div>
+      <div class="field"><label for="season-filter">School year</label><select id="season-filter"><option value="all">All seasons</option></select></div>
+    </div>
+  </section>
+  <div class="calendar-note"><span id="month-summary" aria-live="polite">Loading schedule…</span><span id="data-updated">Checking verified sources…</span></div>
+  <div class="weekdays" aria-hidden="true"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+  <div id="month-grid" role="region" aria-label="Month game calendar" hidden></div>
+  <p id="calendar-empty" class="empty" hidden>No verified contests are listed for this month and these filters. More teams and sports will be added as schedules can be confirmed.</p>
+  <div id="agenda-list" role="region" aria-label="Games by date"></div>
+  <aside class="source-note">
+    <p><strong>Accuracy first.</strong> The calendar only includes a game when the school, Alabama location, exact season and matchup have been checked. An unconfirmed score is never treated as final. Multi-team meets may show a placement or result instead of a head-to-head score.</p>
+    <p>This is an independent community calendar, not an official Springville High School or AHSAA publication. Game details link to their published sources.</p>
+  </aside>
+</main>
+<footer><a href="/">Around Springville</a> · <a href="/#listings">Community events</a></footer>
+<script type="module" src="/assets/sports.mjs"></script>
+</body></html>
