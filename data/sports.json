@@ -5,7 +5,7 @@
     "timezone": "America/Chicago",
     "address": "8295 US Highway 11, Springville, AL 35146",
     "updatedAt": "2026-11-21T17:39:11-06:00",
-    "note": "Verified Springville High School, Alabama varsity game scores and meet results, with source links. Unpublished spring schedules are not assumed.",
+    "note": "Springville Tigers varsity games, meets and results, with sources. Schedules are updated as they are published.",
     "flagFootball2026EditorialNote": "2026 girls varsity flag football: 18 distinct final matchups independently identified (9-9) plus two listed Oct 15 cancellations. MaxPreps and Flag Football Planet display a 10-9 record; FFP lists the exact Sep 1 Springville 33–13 Hope Christian Academy result twice with opposite venue labels. Do not fabricate a 19th game to force 10-9. If a new independent game source identifies an additional unique event, evaluate it; otherwise stop the one-time backfill."
   },
   "games": [
@@ -3234,7 +3234,7 @@
       "asOf": "2026-11-21",
       "sourceName": "High School On SI · varsity schedule",
       "sourceUrl": "https://www.si.com/high-school/stats/alabama/baseball/teams/275135-springville-tigers/games",
-      "note": "27 posted Spring 2027 fixtures; additional games or changes may be announced"
+      "note": "27 baseball games currently listed for spring 2027; more may be added"
     },
     {
       "sport": "Softball",
@@ -3244,7 +3244,7 @@
       "asOf": "2026-11-21",
       "sourceName": "High School On SI · varsity schedule",
       "sourceUrl": "https://www.si.com/high-school/stats/alabama/softball/teams/312094-springville-tigers/games",
-      "note": "Three 2027 fixtures posted; March 9 venue needs confirmation"
+      "note": "Three softball games currently listed for spring 2027; March 9 location is still to be confirmed"
     },
     {
       "sport": "Golf",
@@ -3254,7 +3254,7 @@
       "asOf": "2026-11-21",
       "sourceName": "High School On SI · boys golf schedule",
       "sourceUrl": "https://www.si.com/high-school/stats/alabama/golf/teams/496227-springville-tigers/games",
-      "note": "No Spring 2027 fixtures submitted"
+      "note": "No spring 2027 golf meets posted yet"
     },
     {
       "sport": "Golf",
@@ -3264,7 +3264,7 @@
       "asOf": "2026-11-21",
       "sourceName": "High School On SI · girls golf schedule",
       "sourceUrl": "https://www.si.com/high-school/stats/alabama/girls-golf/teams/496224-springville-tigers/games",
-      "note": "No Spring 2027 fixtures submitted"
+      "note": "No spring 2027 golf meets posted yet"
     }
   ]
 }
