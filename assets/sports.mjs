@@ -16,26 +16,31 @@ let selectedSeason = null;
 let selectedGender = 'all';
 
 function formattedScore(game, springvilleScore, opponentScore) {
-  const springville = 'Springville ' + escaped(springvilleScore);
-  const opponent = escaped(game.opponent) + ' ' + escaped(opponentScore);
-  return game.site === 'home' ? opponent + ' – ' + springville : springville + ' – ' + opponent;
+  // Away team first, home team second. Neutral-site fixtures retain Springville first.
+  const teams = game.site === 'home'
+    ? [{name:game.opponent,points:opponentScore},{name:'Springville',points:springvilleScore}]
+    : [{name:'Springville',points:springvilleScore},{name:game.opponent,points:opponentScore}];
+  const winningScore = Math.max(springvilleScore, opponentScore);
+  const tied = springvilleScore === opponentScore;
+  return '<span class="score-lines">' + teams.map(team => {
+    const emphasis = tied ? 'score-tie' : team.points === winningScore ? 'score-winner' : 'score-loser';
+    return '<span class="score-line ' + emphasis + '"><span class="score-points">' +
+      escaped(team.points) + '</span><span class="score-team-name">' +
+      escaped(team.name) + '</span></span>';
+  }).join('') + '</span>';
 }
 function outcomeBadge(springvilleScore, opponentScore) {
   const margin = springvilleScore - opponentScore;
   const outcome = margin > 0 ? 'W' : margin < 0 ? 'L' : 'T';
   const label = outcome === 'W' ? 'Win' : outcome === 'L' ? 'Loss' : 'Tie';
-  const detail = outcome === 'T' ? '' : ' by ' + Math.abs(margin) + ' points';
-  const signed = margin > 0 ? '+' + margin : String(margin);
-  return '<span class="outcome-stack"><strong class="outcome outcome-' + outcome.toLowerCase() +
-    '" aria-label="' + label + detail + '"><span class="outcome-letter" aria-hidden="true">' +
-    outcome + '</span></strong>' + (outcome === 'T' ? '' :
-    '<small class="outcome-margin" aria-hidden="true">' + signed + '</small>') + '</span>';
+  return '<strong class="outcome outcome-' + outcome.toLowerCase() +
+    '" aria-label="' + label + '">' + outcome + '</strong>';
 }
 function resultLabel(game) {
   if (game.status === 'final') {
     if (Number.isFinite(game.springvilleScore) && Number.isFinite(game.opponentScore)) {
       return '<span class="final-result">' + outcomeBadge(game.springvilleScore, game.opponentScore) +
-        '<strong class="score">' + formattedScore(game, game.springvilleScore, game.opponentScore) + '</strong></span>';
+        '<span class="score">' + formattedScore(game, game.springvilleScore, game.opponentScore) + '</span></span>';
     }
     return '<strong class="score">' + escaped(game.resultText || 'Result pending confirmation') + '</strong>';
   }
@@ -43,7 +48,7 @@ function resultLabel(game) {
     const score = Number.isFinite(game.springvilleScore) && Number.isFinite(game.opponentScore)
       ? formattedScore(game, game.springvilleScore, game.opponentScore)
       : 'Score being checked';
-    return '<span class="live-result"><strong class="live-tag">LIVE</strong><strong class="score">' + score + '</strong></span>';
+    return '<span class="live-result"><strong class="live-tag">LIVE</strong><span class="score">' + score + '</span></span>';
   }
   if (game.status === 'cancelled' || game.status === 'postponed') return '<span class="status-tag">' + escaped(game.status) + '</span>';
   if (game.status === 'unconfirmed' || (game.status === 'scheduled' && game.date < today)) return '<span class="status-tag">' + escaped(game.statusNote || 'Result not yet verified') + '</span>';
@@ -67,8 +72,8 @@ function reportedScoreCard(game) {
     '<span class="game-meta">' + escaped(game.sport + ' · ' + game.gender + ' ' + game.level) +
     '</span><span class="final-result">' +
     outcomeBadge(preferred.springvilleScore, preferred.opponentScore) +
-    '<strong class="score">' +
-    formattedScore(game, preferred.springvilleScore, preferred.opponentScore) + '</strong></span></a>';
+    '<span class="score">' +
+    formattedScore(game, preferred.springvilleScore, preferred.opponentScore) + '</span></span></a>';
 }
 function gameCard(game) {
   const reportsCard = reportedScoreCard(game);
