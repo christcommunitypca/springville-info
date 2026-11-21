@@ -95,10 +95,10 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
    The next arrow is immediately after the longest month, and never shifts. */
 .topline{justify-content:flex-start}
 .month-buttons{display:inline-flex;flex:0 0 auto;align-items:center;gap:5px;width:max-content;max-width:100%;flex-wrap:nowrap}
-.month-label-slot{display:grid;align-items:center;justify-items:start;flex:0 0 auto;white-space:nowrap;font-variant-numeric:tabular-nums}
+.month-label-slot{display:grid;align-items:center;justify-items:center;flex:0 0 auto;white-space:nowrap;font-variant-numeric:tabular-nums}
 .month-label-slot .month-measure,.month-label-slot #month-label{grid-area:1/1;font:800 clamp(1.4rem,3vw,2rem)/1 "Barlow Condensed",Impact,sans-serif;text-transform:uppercase;letter-spacing:0;white-space:nowrap}
 .month-label-slot .month-measure{visibility:hidden;pointer-events:none}
-.month-label-slot #month-label{margin:0;min-width:0;width:auto;padding:0;text-align:left}
+.month-label-slot #month-label{margin:0;min-width:0;width:auto;padding:0;text-align:center;justify-self:center}
 .month-buttons .today-button{margin-left:5px}
 
 /* A real, three-stop range slider: drag the single circular thumb or tap a stop. */
@@ -106,13 +106,14 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
 .filters .field:first-child{flex:1 1 160px;min-width:112px}
 .team-field{flex:0 0 170px;width:170px;min-width:0;align-self:flex-end}
 .gender-slider-wrap{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:42px;width:100%;padding:0 0 1px}
-.gender-slider{position:relative;z-index:2;display:block;width:100%;height:22px;margin:0;padding:0;appearance:none;-webkit-appearance:none;outline-offset:2px;background:transparent;cursor:pointer;touch-action:pan-y}
+.gender-slider-rail{position:relative;display:block;width:100%;height:24px}
+.gender-slider{position:relative;z-index:2;display:block;width:100%;height:24px;margin:0;padding:0;appearance:none;-webkit-appearance:none;outline-offset:2px;background:transparent;cursor:pointer;touch-action:pan-y}
 .gender-slider::-webkit-slider-runnable-track{height:3px;border-radius:6px;background:#93afbb}
 .gender-slider::-moz-range-track{height:3px;border-radius:6px;background:#93afbb}
-.gender-slider::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:18px;height:18px;margin-top:-7.5px;border:3px solid white;border-radius:50%;background:#174e73;box-shadow:0 0 0 1px #174e73,0 2px 5px #17354a33;cursor:grab}
-.gender-slider::-moz-range-thumb{width:14px;height:14px;border:3px solid white;border-radius:50%;background:#174e73;box-shadow:0 0 0 1px #174e73,0 2px 5px #17354a33;cursor:grab}
+.gender-slider::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;box-sizing:border-box;width:18px;height:18px;margin-top:-7.5px;border:3px solid white;border-radius:50%;background:#174e73;box-shadow:0 0 0 1px #174e73,0 2px 5px #17354a33;cursor:grab}
+.gender-slider::-moz-range-thumb{box-sizing:border-box;width:18px;height:18px;border:3px solid white;border-radius:50%;background:#174e73;box-shadow:0 0 0 1px #174e73,0 2px 5px #17354a33;cursor:grab}
 .gender-slider:active::-webkit-slider-thumb{cursor:grabbing}
-.gender-track-stops{position:absolute;z-index:1;left:7px;right:7px;top:9px;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
+.gender-track-stops{position:absolute;z-index:1;left:6px;right:6px;top:50%;transform:translateY(-50%);display:flex;justify-content:space-between;align-items:center;pointer-events:none}
 .gender-track-stops i{display:block;width:6px;height:6px;border-radius:50%;background:#7b9ba7}
 .gender-stop-labels{display:flex;justify-content:space-between;align-items:center;gap:2px;padding-top:0}
 .gender-stop{display:inline-block;flex:0 0 auto;margin:0;padding:0 1px;border:0;background:none;color:#617784;font:650 .7rem/1.35 "DM Sans",sans-serif;cursor:pointer;min-height:16px}
@@ -155,8 +156,10 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
       <div class="field"><label for="sport-filter">Sport</label><select id="sport-filter"><option value="all">All sports</option></select></div>
       <div class="field team-field">
         <div class="gender-slider-wrap">
-          <input id="gender-slider" class="gender-slider" type="range" min="0" max="2" step="1" value="1" aria-label="Teams: boys, both, or girls" aria-valuetext="Both">
-          <div class="gender-track-stops" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="gender-slider-rail">
+            <input id="gender-slider" class="gender-slider" type="range" min="0" max="2" step="1" value="1" aria-label="Teams: boys, both, or girls" aria-valuetext="Both">
+            <div class="gender-track-stops" aria-hidden="true"><i></i><i></i><i></i></div>
+          </div>
           <div class="gender-stop-labels" aria-label="Choose teams">
             <button type="button" class="gender-stop" data-stop="0">Boys</button>
             <button type="button" class="gender-stop" data-stop="1" aria-current="true">Both</button>
