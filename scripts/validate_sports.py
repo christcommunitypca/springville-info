@@ -26,7 +26,22 @@ for game in data["games"]:
     assert end_year == start_year + 1, game
     assert dt.date(start_year, 7, 1) <= date <= dt.date(end_year, 6, 30), \
         f"Game date outside claimed season: {game['id']}"
-    assert game["sport"].strip() and game["opponent"].strip() and game["level"].strip(), game
+    assert game["sport"].strip() and game["level"].strip(), game
+    event_type = game.get("eventType", "game")
+    assert event_type in ("game", "meet", "tournament", "news"), game
+    if event_type == "game":
+        assert game.get("opponent", "").strip(), game
+    else:
+        assert game.get("title", "").strip(), game
+        if "highlights" in game:
+            assert isinstance(game["highlights"], list) and len(game["highlights"]) <= 6, game
+            assert all(isinstance(s, str) and 0 < len(s.strip()) <= 200 for s in game["highlights"]), game
+        if "teamPlace" in game:
+            assert type(game["teamPlace"]) is int and game["teamPlace"] > 0, game
+        if "teamCount" in game:
+            assert type(game["teamCount"]) is int and game["teamCount"] >= game.get("teamPlace", 1), game
+        if "teamScore" in game:
+            assert type(game["teamScore"]) is int and game["teamScore"] >= 0, game
     assert game["gender"] in ("Boys", "Girls", "Co-ed"), game
     assert game["site"] in ("home", "away", "neutral"), game
     assert game["status"] in allowed_status, game
@@ -36,7 +51,7 @@ for game in data["games"]:
             assert u.scheme == "https" and u.hostname, f"Bad source URL: {game['id']}"
     assert game["sourceName"].strip() and dt.date.fromisoformat(game["verifiedAt"]), game
     signature = (game["date"], game["sport"].lower(), game["gender"], game["level"].lower(),
-                 game["opponent"].lower(), (game.get("time") or "").lower())
+                 (game.get("opponent") or game.get("title") or "").lower(), (game.get("time") or "").lower())
     assert signature not in matchups, f"Duplicate real-world fixture: {game['id']}"
     matchups.add(signature)
     if game["status"] == "final":
