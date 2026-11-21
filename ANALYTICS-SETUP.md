@@ -12,12 +12,13 @@ The GitHub code for the private mobile-friendly readership dashboard is in:
 ## Configure in the existing Cloudflare account (no paid analytics product needed)
 1. Open [Cloudflare Dashboard](https://dash.cloudflare.com/), select the account that hosts `springville.info`, and open **Storage & Databases → D1**. Create one database called `springville-info-analytics`.
 2. Open **Workers & Pages → your Springville.Info Pages project → Settings → Bindings**, add a **D1 database binding** with variable name **`ANALYTICS_DB`**, selecting the database above. Apply to **production** and redeploy the site. The analytics Functions create the tables and indexes automatically on first use; no manual SQL is required.
-3. Open **Zero Trust → Access controls → Applications → Add an application → Self-hosted**. Protect the hostname **`springville.info`** with path **`/analytics`**. Create an **Allow** policy including **only** the email **`hutchinsonfamily@gmail.com`**. Use Cloudflare One-time PIN login or the user's authenticated Google account. Do not choose Everyone or a whole-domain allow rule.
+3. Open **Zero Trust → Access controls → Applications → Add an application → Self-hosted**. Protect the hostname **`springville.info`** with path **`/analytics`**. Create an **Allow** policy including **only** your owner login email. Use Cloudflare One-time PIN login or the user's authenticated Google account. Do not choose Everyone or a whole-domain allow rule.
 4. Copy this Access application's **Application Audience (AUD) tag** from the app's settings, and find your Cloudflare Access **team domain**, of the form `https://your-team.cloudflareaccess.com`.
 5. On the Pages project **Settings → Variables and Secrets**, set:
    - `ACCESS_AUD` = the exact application AUD tag
    - `ACCESS_TEAM_DOMAIN` = the exact `https://your-team.cloudflareaccess.com` origin
-   The owner email is checked in server code as `hutchinsonfamily@gmail.com`. Redeploy after setting the variables.
+   - `ANALYTICS_OWNER_EMAIL` = the exact email permitted in the Access policy
+   The server requires this owner email configuration and verifies it against signed Access claims. Redeploy after setting the variables.
 6. Confirm the site is reachable normally for the public. Visit **`https://springville.info/analytics`** as the owner, complete Cloudflare Access authentication, and check the first data after browsing a few article links. In a logged-out browser, the analytics page and report must be inaccessible. Verify that **`/analytics?report=1`** returns 403 for a visitor without a signed, verified Access JWT.
 
 ## What is measured
