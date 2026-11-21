@@ -4,7 +4,7 @@
     "city": "Springville, Alabama",
     "timezone": "America/Chicago",
     "address": "8295 US Highway 11, Springville, AL 35146",
-    "updatedAt": "2026-11-21T16:52:05-06:00",
+    "updatedAt": "2026-11-21T17:13:26-06:00",
     "note": "Verified Springville High School, Alabama varsity game scores and meet results, with source links. Unpublished spring schedules are not assumed."
   },
   "games": [
@@ -1148,11 +1148,11 @@
       "site": "neutral",
       "season": "2026-27",
       "status": "final",
-      "resultText": "Varsity 5K results",
+      "resultText": "6th of 18 scoring teams · 179 points",
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/288205-35th-annual-husky-challenge/",
-      "secondarySourceName": "MileSplit · Springville team results",
-      "secondarySourceUrl": "https://al.milesplit.com/meets/730172-35th-annual-husky-challenge-2026/teams/8838",
+      "secondarySourceName": "Xpress Timing / MileSplit · complete 2026 varsity results",
+      "secondarySourceUrl": "https://al.milesplit.com/meets/730172-35th-annual-husky-challenge-2026/results/1334269/raw",
       "verifiedAt": "2026-11-21",
       "topFinishers": [
         {
@@ -1171,7 +1171,11 @@
           "time": "18:35.51"
         }
       ],
-      "personalRecords": []
+      "personalRecords": [],
+      "teamPlace": 6,
+      "teamCount": 18,
+      "teamScore": 179,
+      "sourceNote": "Team placement and points independently calculated from the published varsity finishing order using five scoring runners and up to seven scoring-eligible entrants per team. All 14 girls and 18 boys scoring teams were reconciled; top-three team points matched contemporaneous AL.com reporting. Team count is scoring teams, not every school with a runner."
     },
     {
       "id": "2026-10-17-cross-country-girls-husky-challenge",
@@ -1185,11 +1189,11 @@
       "site": "neutral",
       "season": "2026-27",
       "status": "final",
-      "resultText": "Varsity 5K results",
+      "resultText": "7th of 14 scoring teams · 176 points",
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/288205-35th-annual-husky-challenge/",
-      "secondarySourceName": "MileSplit · Springville team results",
-      "secondarySourceUrl": "https://al.milesplit.com/meets/730172-35th-annual-husky-challenge-2026/teams/8838",
+      "secondarySourceName": "Xpress Timing / MileSplit · complete 2026 varsity results",
+      "secondarySourceUrl": "https://al.milesplit.com/meets/730172-35th-annual-husky-challenge-2026/results/1334269/raw",
       "verifiedAt": "2026-11-21",
       "topFinishers": [
         {
@@ -1208,7 +1212,11 @@
           "time": "23:20.84"
         }
       ],
-      "personalRecords": []
+      "personalRecords": [],
+      "teamPlace": 7,
+      "teamCount": 14,
+      "teamScore": 176,
+      "sourceNote": "Team placement and points independently calculated from the published varsity finishing order using five scoring runners and up to seven scoring-eligible entrants per team. All 14 girls and 18 boys scoring teams were reconciled; top-three team points matched contemporaneous AL.com reporting. Team count is scoring teams, not every school with a runner."
     },
     {
       "id": "2026-10-23-football-boys-pell-city",
