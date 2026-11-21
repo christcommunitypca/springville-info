@@ -47,7 +47,7 @@ for game in data["games"]:
                     assert isinstance(runner, dict), game
                     assert isinstance(runner.get("name"), str) and runner["name"].strip(), game
                     assert type(runner.get("place")) is int and runner["place"] > 0, game
-                    assert isinstance(runner.get("time"), str) and re.fullmatch(r"\\d{1,2}:\\d{2}\\.\\d{1,2}", runner["time"]), game
+                    assert isinstance(runner.get("time"), str) and re.fullmatch(r"\d{1,2}:\d{2}\.\d{1,2}", runner["time"]), game
                     assert runner["name"] not in seen_names, f"Duplicate {field} runner: {game['id']}"
                     seen_names.add(runner["name"])
                     if field == "topFinishers":
