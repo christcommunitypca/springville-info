@@ -96,8 +96,8 @@ function sources(game) {
   ].filter(([name,url])=>name && secureUrl(url)).map(([name,url])=>
     '<p><a href="' + escaped(secureUrl(url)) + '" target="_blank" rel="noopener noreferrer">' +
     escaped(name) + ' ↗</a></p>').join('');
-  const note = game.sourceNote ? '<p class="note">' + escaped(game.sourceNote) + '</p>' : '';
-  return '<div class="sources"><strong>Sources</strong>' + links + note + '</div>';
+  // Editor-only provenance and research notes are never displayed to visitors.
+  return '<div class="sources"><strong>Sources</strong>' + links + '</div>';
 }
 async function load() {
   const main = document.querySelector('#content');
