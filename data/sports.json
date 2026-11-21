@@ -4,7 +4,7 @@
     "city": "Springville, Alabama",
     "timezone": "America/Chicago",
     "address": "8295 US Highway 11, Springville, AL 35146",
-    "updatedAt": "2026-11-21T17:26:24-06:00",
+    "updatedAt": "2026-11-21T17:30:18-06:00",
     "note": "Verified Springville High School, Alabama varsity game scores and meet results, with source links. Unpublished spring schedules are not assumed."
   },
   "games": [
@@ -251,7 +251,7 @@
       "site": "neutral",
       "season": "2026-27",
       "status": "final",
-      "resultText": "1st of 4 scoring teams · 24 points",
+      "resultText": "1st place · 4A–6A division",
       "teamPlace": 1,
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/281853-tomahawk-trail-invitational/?event=ec54bdf484501a26",
@@ -282,9 +282,9 @@
       ],
       "secondarySourceName": "AL.com high-school sports",
       "secondarySourceUrl": "https://www.al.com/highschoolsports/2026/09/alabama-hs-cross-country-highlights-from-another-busy-week-across-the-state.html",
-      "teamCount": 4,
-      "teamScore": 24,
-      "editorialNote": "Official timing reports Springville first in the 5K 4–6 division. Earlier news coverage gave different team point totals; omit ambiguous scores. Historical result category finalized using selected source: 4–6 team-score division, not overall meet. No further routine research needed."
+      "editorialNote": "SEPT 5 TOMOHAWK: 17 teams entered/represented at meet across genders and classifications (Just In Time Racing); source's 4 boys / 2 girls team counts belong only to the 4–6 scoring category, NOT entire meet; avoid publishing them as meet-wide field. Published AL.com reports Springville varsity wins with 42 boys and 69 girls points, differing from 4–6 category 24 boys and 22 girls; do not publish a teamScore without identical scoring category corroboration. Keep archived results and no repeat daily investigation.",
+      "teamDivision": "4A–6A division",
+      "meetTotalTeams": 17
     },
     {
       "id": "2026-09-05-cross-country-girls-tomahawk-trail",
@@ -298,7 +298,7 @@
       "site": "neutral",
       "season": "2026-27",
       "status": "final",
-      "resultText": "1st of 2 scoring teams · 22 points",
+      "resultText": "1st place · 4A–6A division",
       "teamPlace": 1,
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/281853-tomahawk-trail-invitational/?event=768afc7ecfe60e56",
@@ -326,9 +326,9 @@
       "specialAchievements": [
         "Avery Daniels won the 5K division"
       ],
-      "teamCount": 2,
-      "teamScore": 22,
-      "editorialNote": "Official timing reports Springville first in the 5K 4–6 division. Earlier news coverage gave different team point totals; omit ambiguous scores. Historical result category finalized using selected source: 4–6 team-score division, not overall meet. No further routine research needed."
+      "editorialNote": "SEPT 5 TOMOHAWK: 17 teams entered/represented at meet across genders and classifications (Just In Time Racing); source's 4 boys / 2 girls team counts belong only to the 4–6 scoring category, NOT entire meet; avoid publishing them as meet-wide field. Published AL.com reports Springville varsity wins with 42 boys and 69 girls points, differing from 4–6 category 24 boys and 22 girls; do not publish a teamScore without identical scoring category corroboration. Keep archived results and no repeat daily investigation.",
+      "teamDivision": "4A–6A division",
+      "meetTotalTeams": 17
     },
     {
       "id": "2026-09-05-volleyball-girls-a-p-brewer",
