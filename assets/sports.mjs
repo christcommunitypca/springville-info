@@ -62,7 +62,7 @@ function recordBadge(game) {
   const record = recordIndex.get(game.id);
   const label = recordLabel(record);
   if(!label) return '';
-  const kind = record.kind === 'entering' ? 'Record entering game' : 'Season record';
+  const kind = 'Overall';
   return '<span class="record-note" title="Record through this date, based on final scores listed here. Missing scores are not counted.">' +
     escaped(kind) + ' <strong>' + escaped(label) + '</strong></span>';
 }
