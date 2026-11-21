@@ -138,6 +138,22 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
  .team-field{flex-basis:146px;width:146px}
  .filters .field:first-child{min-width:105px}
 }
+
+/* Conflicting reported results: a source icon is immediately beside each score. */
+.disputed-game{background:#fffaf6;border-left-color:#a97e58;cursor:default}
+.disputed-game:hover{background:#fffaf6}
+.disputed-game .final-result{align-items:center;gap:12px}
+.score-versions{display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-width:0}
+.score-report{display:flex;align-items:center;gap:5px;min-width:0}
+.agenda-day .disputed-game .score{display:inline;margin:0;overflow-wrap:anywhere;font-size:.94rem;font-weight:800;color:var(--ink)}
+.score-source{display:inline-grid;flex:0 0 auto;place-items:center;width:24px;height:24px;border:1px solid #b7cbd2;border-radius:6px;color:#1f5979;background:#f3f8fa;text-decoration:none}
+.score-source:hover{background:#dcebed;color:#123b53}
+.score-source:focus-visible{outline:2px solid #d57d42;outline-offset:2px}
+@media(max-width:380px){
+ .disputed-game .final-result{gap:8px}
+ .agenda-day .disputed-game .score{font-size:.84rem}
+ .score-source{width:23px;height:23px}
+}
 </style>
 </head>
 <body>
