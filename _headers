@@ -4,5 +4,14 @@
   X-Frame-Options: DENY
   Permissions-Policy: geolocation=(), microphone=(), camera=()
 
+/
+  Cache-Control: no-store
+
+/index.html
+  Cache-Control: no-store
+
+/assets/around.mjs
+  Cache-Control: no-store
+
 /data/content.json
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: no-store
