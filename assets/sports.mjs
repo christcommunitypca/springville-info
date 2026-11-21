@@ -1,4 +1,4 @@
-import {buildRecordIndex,recordLabel} from './sports-records.mjs';
+import {buildRecordIndex,recordLabel} from './sports-records.mjs?v=20261121h';
 const $ = selector => document.querySelector(selector);
 const escaped = text => String(text ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const safeUrl = value => { try { const url = new URL(value); return url.protocol === 'https:' ? url.href : '#'; } catch { return '#'; } };
