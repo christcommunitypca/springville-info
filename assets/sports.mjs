@@ -63,7 +63,7 @@ function recordBadge(game) {
   const label = recordLabel(record);
   if(!label) return '';
   const kind = 'Overall';
-  return '<span class="record-note" title="Record through this date, based on final scores listed here. Missing scores are not counted.">' +
+  return '<span class="record-note" title="Record through this date from final scores and outcomes agreed by multiple sources. Unsettled outcomes aren't counted.">' +
     escaped(kind) + ' <strong>' + escaped(label) + '</strong></span>';
 }
 function activeScheduleCoverage() {
