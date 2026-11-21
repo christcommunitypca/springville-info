@@ -11,7 +11,8 @@ data = json.loads((root / "data" / "sports.json").read_text(encoding="utf-8"))
 assert data["school"]["name"] == "Springville High School Tigers"
 assert data["school"]["city"] == "Springville, Alabama"
 assert data["school"]["timezone"] == "America/Chicago"
-assert dt.date.fromisoformat(data["school"]["updatedAt"])
+updated = dt.datetime.fromisoformat(data["school"]["updatedAt"])
+assert updated.tzinfo is not None, "Last updated timestamp must include timezone"
 ids, matchups = set(), set()
 allowed_status = {"scheduled", "final", "unconfirmed", "postponed", "cancelled"}
 for game in data["games"]:
