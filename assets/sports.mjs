@@ -14,17 +14,23 @@ let month = Number(today.slice(5,7)) - 1;
 let games = [];
 let selectedSeason = null;
 let selectedGender = 'all';
+
+function formattedScore(game, springvilleScore, opponentScore) {
+  const springville = 'Springville ' + escaped(springvilleScore);
+  const opponent = escaped(game.opponent) + ' ' + escaped(opponentScore);
+  return game.site === 'home' ? opponent + ' – ' + springville : springville + ' – ' + opponent;
+}
 function resultLabel(game) {
   if (game.status === 'final') {
     if (Number.isFinite(game.springvilleScore) && Number.isFinite(game.opponentScore)) {
       const outcome = game.springvilleScore > game.opponentScore ? 'W' : game.springvilleScore < game.opponentScore ? 'L' : 'T';
-      return '<span class="final-result"><strong class="outcome outcome-' + outcome.toLowerCase() + '" aria-label="' + (outcome === 'W' ? 'Win' : outcome === 'L' ? 'Loss' : 'Tie') + '">' + outcome + '</strong><strong class="score">Springville ' + escaped(game.springvilleScore) + ' – ' + escaped(game.opponent) + ' ' + escaped(game.opponentScore) + '</strong></span>';
+      return '<span class="final-result"><strong class="outcome outcome-' + outcome.toLowerCase() + '" aria-label="' + (outcome === 'W' ? 'Win' : outcome === 'L' ? 'Loss' : 'Tie') + '">' + outcome + '</strong><strong class="score">' + formattedScore(game, game.springvilleScore, game.opponentScore) + '</strong></span>';
     }
     return '<strong class="score">' + escaped(game.resultText || 'Result pending confirmation') + '</strong>';
   }
   if (game.status === 'live' || game.status === 'in_progress') {
     const score = Number.isFinite(game.springvilleScore) && Number.isFinite(game.opponentScore)
-      ? 'Springville ' + escaped(game.springvilleScore) + ' – ' + escaped(game.opponent) + ' ' + escaped(game.opponentScore)
+      ? formattedScore(game, game.springvilleScore, game.opponentScore)
       : 'Score being checked';
     return '<span class="live-result"><strong class="live-tag">LIVE</strong><strong class="score">' + score + '</strong></span>';
   }
@@ -54,9 +60,8 @@ function reportedScoreCard(game) {
     '</span><span class="final-result"><strong class="outcome outcome-' +
     outcome.toLowerCase() + '" aria-label="' +
     escaped(outcome === 'W' ? 'Reported win' : outcome === 'L' ? 'Reported loss' : 'Reported tie') +
-    '">' + outcome + '</strong><strong class="score">Springville ' +
-    escaped(preferred.springvilleScore) + ' – ' + escaped(game.opponent) + ' ' +
-    escaped(preferred.opponentScore) + '</strong></span></a>';
+    '">' + outcome + '</strong><strong class="score">' +
+    formattedScore(game, preferred.springvilleScore, preferred.opponentScore) + '</strong></span></a>';
 }
 function gameCard(game) {
   const reportsCard = reportedScoreCard(game);
