@@ -72,7 +72,7 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
 @media(max-width:760px){body{padding-bottom:26px}.masthead{margin-bottom:16px;padding-bottom:22px}.eyebrow{margin-top:15px}h1{font-size:3.3rem}.toolbar{padding:14px}.topline{gap:12px}.month-buttons{flex:1;flex-wrap:wrap}.month-buttons #month-label{min-width:135px;flex:1}.view{margin-left:auto}.field{flex-basis:125px}.weekdays{display:none}.calendar-note{margin-top:15px}.agenda-day{padding:12px}.source-note{margin-top:16px}}
 
 /* Simplified schedule: only a vertical list, with prominent W/L and compact verified score. */
-.final-result,.live-result{display:flex;align-items:center;gap:15px;min-width:0}
+.final-result,.live-result{display:flex;align-items:center;gap:5px;min-width:0}
 .outcome{display:grid;place-items:center;flex:none;width:50px;height:50px;border-radius:10px;font:800 2.2rem/1 "Barlow Condensed",Impact,sans-serif}
 .outcome-w{color:#fff;background:#286e54}
 .outcome-l{color:#fff;background:#9d443e}
@@ -81,7 +81,7 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
 .agenda-day .game .score{display:inline-block;margin:0;color:#17354a;font-size:1.1rem;font-weight:800;line-height:1.35}
 .agenda-day .game.completed{background:#fff9f6;border-color:#9c7160}
 .agenda-day .game.completed:hover{background:#f8ece5}
-@media(max-width:760px){.final-result,.live-result{gap:13px}.outcome{width:50px;height:50px}.agenda-day .game .score{font-size:1.06rem}}
+@media(max-width:760px){.final-result,.live-result{gap:5px}.outcome{width:50px;height:50px}.agenda-day .game .score{font-size:1.06rem}}
 
 
 /* Keep the Tigers Sports masthead; omit only the supporting eyebrow and description. */
@@ -142,8 +142,8 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
 /* Easy-to-scan scores: away above home; winner bold, loser gently muted. */
 .agenda-day .game .score{font-weight:500;min-width:0;flex:1}
 .score-lines{display:flex;flex-direction:column;gap:3px;width:100%;min-width:0}
-.score-line{display:grid;grid-template-columns:3ch minmax(0,1fr);column-gap:9px;align-items:baseline;line-height:1.35}
-.score-points{font-variant-numeric:tabular-nums;text-align:right}
+.score-line{display:grid;grid-template-columns:2.2rem minmax(0,1fr);column-gap:6px;align-items:baseline;line-height:1.35}
+.score-points{font-variant-numeric:tabular-nums;font-feature-settings:"tnum";text-align:right;white-space:nowrap}
 .score-team-name{overflow-wrap:anywhere}
 .score-winner{font-weight:800;color:#17354a}
 .score-loser{font-weight:500;color:#647783}
