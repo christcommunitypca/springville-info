@@ -848,6 +848,36 @@
       "sourceName": "MaxPreps",
       "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/soccer/spring/schedule/",
       "verifiedAt": "2026-11-20"
+    },
+    {
+      "id": "2027-03-02-soccer-boys-susan-moore",
+      "date": "2027-03-02",
+      "time": "7:00 PM",
+      "sport": "Soccer",
+      "gender": "Boys",
+      "level": "Varsity",
+      "opponent": "Susan Moore",
+      "site": "away",
+      "season": "2026-27",
+      "status": "scheduled",
+      "sourceName": "NFHS Network",
+      "sourceUrl": "https://www.nfhsnetwork.com/events/susan-moore-high-school-blountsville-al/gam439c9797b9",
+      "verifiedAt": "2026-11-20"
+    },
+    {
+      "id": "2027-04-13-soccer-boys-pell-city",
+      "date": "2027-04-13",
+      "time": "7:00 PM",
+      "sport": "Soccer",
+      "gender": "Boys",
+      "level": "Varsity",
+      "opponent": "Pell City",
+      "site": "away",
+      "season": "2026-27",
+      "status": "scheduled",
+      "sourceName": "NFHS Network",
+      "sourceUrl": "https://www.nfhsnetwork.com/events/pell-city-high-school-pell-city-al/gamf00ce3c1ae",
+      "verifiedAt": "2026-11-20"
     }
   ]
 }
