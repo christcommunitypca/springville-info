@@ -15,3 +15,18 @@
 
 /data/content.json
   Cache-Control: no-store
+
+/sports.html
+  Cache-Control: no-store
+
+/sports-detail.html
+  Cache-Control: no-store
+
+/assets/sports.mjs
+  Cache-Control: no-store
+
+/assets/sports-detail.mjs
+  Cache-Control: no-store
+
+/data/sports.json
+  Cache-Control: no-store
