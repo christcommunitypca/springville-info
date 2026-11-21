@@ -51,6 +51,7 @@ function matchingGames() {
 }
 function render() {
   $('#month-label').textContent = monthName(year,month);
+  $('.month-measure').textContent = 'September ' + year;
   const filtered = matchingGames();
   const prefix = year + '-' + String(month+1).padStart(2,'0') + '-';
   const current = filtered.filter(g => g.date.startsWith(prefix)).sort((a,b)=>a.date.localeCompare(b.date) ||
@@ -99,12 +100,22 @@ $('#prev-month').addEventListener('click',()=>changeMonth(-1));
 $('#next-month').addEventListener('click',()=>changeMonth(1));
 $('#current-month').addEventListener('click',()=>{year=Number(today.slice(0,4));month=Number(today.slice(5,7))-1;render();});
 $('#sport-filter').addEventListener('change',render);
-$('.team-toggle').addEventListener('click',event=>{
-  const button=event.target.closest('button[data-gender]');
-  if(!button)return;
-  selectedGender=button.dataset.gender;
-  document.querySelectorAll('.team-toggle button[data-gender]').forEach(el=>el.setAttribute('aria-pressed',String(el===button)));
+const genderSlider=$('#gender-slider');
+const genderStops=['Boys','all','Girls'];
+function setGenderStop(index) {
+  const stop=Math.max(0,Math.min(2,Math.round(Number(index))));
+  genderSlider.value=String(stop);
+  selectedGender=genderStops[stop];
+  genderSlider.setAttribute('aria-valuetext',selectedGender==='all'?'Both':selectedGender);
+  document.querySelectorAll('.gender-stop').forEach(label=>{
+    if(Number(label.dataset.stop)===stop) label.setAttribute('aria-current','true');
+    else label.removeAttribute('aria-current');
+  });
   render();
+}
+genderSlider.addEventListener('input',()=>setGenderStop(genderSlider.value));
+document.querySelectorAll('.gender-stop').forEach(label=>{
+  label.addEventListener('click',()=>{setGenderStop(label.dataset.stop);genderSlider.focus({preventScroll:true});});
 });
 $('#season-filter').addEventListener('change',event=>{selectedSeason=event.target.value;render();});
 start();
