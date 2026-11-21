@@ -14,13 +14,12 @@ for (const name of ['month','sport','gender']) {
 document.querySelector('#calendar-back').href = '/sports.html' + (backParams.size ? '?' + backParams.toString() : '');
 const row = (label, value) => value ? '<span class="result-detail">' + escaped(label + ': ' + value) + '</span>' : '';
 function teamPlacement(game) {
-  const count = Number.isInteger(game.teamCount) ? 'of ' + game.teamCount + ' teams' : 'place';
+  const count = Number.isInteger(game.teamCount) ? ' · ' + game.teamCount + ' teams' : '';
   const points = Number.isInteger(game.teamScore) ? game.teamScore + ' team points' : '';
-  const division = !game.teamCount && /5K division/i.test(game.resultText || '') ? '5K division'
-    : !game.teamCount && /scored division/i.test(game.resultText || '') ? 'scored division' : '';
-  return '<span class="result-strip"><strong class="result-box" aria-label="' + escaped(ordinal(game.teamPlace) + ' place') + '">' +
-    escaped(game.teamPlace) + '</strong><span class="result-context">' + escaped(count) +
-    (points ? row('Score',points) : '') + (division ? row('Division',division) : '') + '</span></span>';
+  return '<span class="result-strip"><strong class="result-box" aria-label="' +
+    escaped(ordinal(game.teamPlace) + ' place' + (game.teamCount ? ' out of ' + game.teamCount + ' teams' : '')) + '">' +
+    escaped(game.teamPlace) + '</strong><span class="result-context">' + escaped('place' + count) +
+    (points ? row('Score',points) : '') + '</span></span>';
 }
 function teamScore(game, scoreA, scoreB, reported) {
   const margin = scoreA - scoreB;
