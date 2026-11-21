@@ -22,6 +22,7 @@ function resultLabel(game) {
     return '<span class="final-tag">Final</span><strong class="score">' + escaped(game.resultText || 'Result pending confirmation') + '</strong>';
   }
   if (game.status === 'cancelled' || game.status === 'postponed') return '<span class="status-tag">' + escaped(game.status) + '</span>';
+  if (game.status === 'unconfirmed' || (game.status === 'scheduled' && game.date < today)) return '<span class="status-tag">Result not yet verified</span>';
   return '<span class="game-time">' + escaped(game.time || 'Time TBD') + '</span>';
 }
 function gameCard(game) {
