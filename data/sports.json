@@ -4,7 +4,7 @@
     "city": "Springville, Alabama",
     "timezone": "America/Chicago",
     "address": "8295 US Highway 11, Springville, AL 35146",
-    "updatedAt": "2026-11-21T16:36:49-06:00",
+    "updatedAt": "2026-11-21T16:38:01-06:00",
     "note": "Verified Springville High School, Alabama varsity game scores and meet results, with source links. Unpublished spring schedules are not assumed."
   },
   "games": [
@@ -196,6 +196,9 @@
           "place": 3,
           "time": "19:47.3"
         }
+      ],
+      "specialAchievements": [
+        "Avery Daniels finished 3rd overall"
       ]
     },
     {
@@ -318,7 +321,10 @@
       "personalRecords": [],
       "secondarySourceName": "AL.com high-school sports",
       "secondarySourceUrl": "https://www.al.com/highschoolsports/2026/09/alabama-hs-cross-country-highlights-from-another-busy-week-across-the-state.html",
-      "sourceNote": "Official timing reports Springville first in the 5K 4–6 division. Earlier news coverage gave different team point totals; omit ambiguous scores."
+      "sourceNote": "Official timing reports Springville first in the 5K 4–6 division. Earlier news coverage gave different team point totals; omit ambiguous scores.",
+      "specialAchievements": [
+        "Avery Daniels won the 5K division"
+      ]
     },
     {
       "id": "2026-09-05-volleyball-girls-a-p-brewer",
