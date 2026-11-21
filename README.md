@@ -7,6 +7,8 @@ A standalone, dependency-free website for `springville.info`, migrated from the 
 - `assets/site.css`: layout and styling
 - `assets/app.js`: renders stories, events and directory from the JSON file
 - `data/content.json`: editable data source for daily publishing
+- `sports.html` and `assets/sports.mjs`: independently filtered Springville Tigers sports calendar (calendar/list view)
+- `data/sports.json`: season-specific verified fixtures, final scores and source citations, maintained by daily editor
 - `scripts/validate_content.py`: checks the data schema before publication
 - `DEPLOY.md`: instructions for Cloudflare Pages and scheduled publishing
 
