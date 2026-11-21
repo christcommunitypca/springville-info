@@ -63,6 +63,8 @@ for game in data["games"]:
             assert type(game["teamPlace"]) is int and game["teamPlace"] > 0, game
         if "teamCount" in game:
             assert type(game["teamCount"]) is int and game["teamCount"] >= game.get("teamPlace", 1), game
+        if "teamCountEstimated" in game:
+            assert game.get("teamCountEstimated") is True and "teamCount" in game, game
         if "teamScore" in game:
             assert type(game["teamScore"]) is int and game["teamScore"] >= 0, game
     if "playerHighlights" in game:
