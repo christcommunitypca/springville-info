@@ -115,7 +115,7 @@ async function load() {
       return;
     }
     const record = buildRecordIndex(data.games).get(game.id);
-    const recordText = recordLabel(record);
+    const recordText = record?.kind === 'through' ? recordLabel(record) : '';
     const recordExtra = recordText ? '<div class="verified-record">' +
       'Overall: ' +
       '<strong>' + escaped(recordText) + '</strong></div>' : '';
