@@ -39,28 +39,24 @@ function reportedScoreCard(game) {
     Number.isFinite(report.opponentScore) && report.sourceUrl && report.sourceName);
   if (!valid.length) return '';
 
-  // A source preference controls presentation only: other claims remain in the record
-  // for later independent verification, without asserting the dispute is settled.
+  // Preserve competing reports in the data while showing the preferred source's score.
+  // Like other completed games, the entire card links to the source; no extra link icon.
   const preferred = valid.find(report => report.sourceName === game.preferredScoreSourceName) || valid[0];
   const outcome = preferred.springvilleScore > preferred.opponentScore ? 'W' :
     preferred.springvilleScore < preferred.opponentScore ? 'L' : 'T';
-  const sourceIcon = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M21 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1 1-1V4a1 1 0 0 1 1-1h7"/></svg>';
 
-  return '<article class="game preferred-score-game" aria-label="' +
+  return '<a class="game completed preferred-score-game" target="_blank" rel="noopener noreferrer" href="' +
+    escaped(safeUrl(preferred.sourceUrl)) + '" aria-label="' +
     escaped(game.sport + ' ' + game.gender + ' vs ' + game.opponent + ', ' +
-    preferred.sourceName + ' reported Springville ' + preferred.springvilleScore +
-    ' to ' + preferred.opponentScore) + '">' +
+      preferred.sourceName + ' reports Springville ' + preferred.springvilleScore +
+      ' to ' + preferred.opponentScore + '; view source') + '">' +
     '<span class="game-meta">' + escaped(game.sport + ' · ' + game.gender + ' ' + game.level) +
     '</span><span class="final-result"><strong class="outcome outcome-' +
     outcome.toLowerCase() + '" aria-label="' +
     escaped(outcome === 'W' ? 'Reported win' : outcome === 'L' ? 'Reported loss' : 'Reported tie') +
-    '">' + outcome + '</strong><span class="score-report"><strong class="score">Springville ' +
+    '">' + outcome + '</strong><strong class="score">Springville ' +
     escaped(preferred.springvilleScore) + ' – ' + escaped(game.opponent) + ' ' +
-    escaped(preferred.opponentScore) + '</strong>' +
-    '<a class="score-source" href="' + escaped(safeUrl(preferred.sourceUrl)) +
-    '" target="_blank" rel="noopener noreferrer" title="Score reported by ' +
-    escaped(preferred.sourceName) + '" aria-label="View ' + escaped(preferred.sourceName) +
-    ' score report">' + sourceIcon + '</a></span></span></article>';
+    escaped(preferred.opponentScore) + '</strong></span></a>';
 }
 function gameCard(game) {
   const reportsCard = reportedScoreCard(game);
