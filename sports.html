@@ -27,12 +27,9 @@ h1{margin:8px 0 3px;font:800 clamp(2.7rem,7vw,5rem)/.96 "Barlow Condensed",Impac
 .topline{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
 .month-buttons{display:flex;align-items:center;gap:9px}
 .month-buttons button{width:37px;height:37px;border-radius:9px;border:1px solid #b5cbd2;background:#edf4f5;color:var(--ink);cursor:pointer;font-size:1.3rem}
-.month-buttons button:hover,.view button:hover{background:#dceced}
+.month-buttons button:hover{background:#dceced}
 #month-label{margin:0;min-width:205px;font:800 clamp(1.5rem,3vw,2rem)/1 "Barlow Condensed",sans-serif;text-transform:uppercase}
 .today-button{width:auto!important;padding:0 12px;font:700 .84rem "DM Sans",sans-serif!important}
-.view{display:flex;background:#edf4f5;padding:4px;border-radius:10px;gap:4px}
-.view button{border:0;border-radius:8px;background:transparent;color:#4c6676;padding:8px 12px;font-size:.83rem;font-weight:800;cursor:pointer}
-.view button[aria-pressed="true"]{background:#204d67;color:white;box-shadow:0 1px 4px rgba(0,0,0,.12)}
 .filters{display:flex;flex-wrap:wrap;gap:14px;align-items:end}
 .field{display:flex;flex:1 1 170px;flex-direction:column;gap:5px}
 .field label{font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:#466674}
@@ -74,6 +71,18 @@ h1{margin:8px 0 3px;font:800 clamp(2.7rem,7vw,5rem)/.96 "Barlow Condensed",Impac
 footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:#46616e}
 @media(max-width:1000px){.weekdays,#month-grid{gap:5px}.calendar-day{padding:6px}.game{padding:6px}.game-meta{font-size:.55rem}.matchup{font-size:.75rem}.score{font-size:.66rem}}
 @media(max-width:760px){body{padding-bottom:26px}.masthead{margin-bottom:16px;padding-bottom:22px}.eyebrow{margin-top:15px}h1{font-size:3.3rem}.toolbar{padding:14px}.topline{gap:12px}.month-buttons{flex:1;flex-wrap:wrap}.month-buttons #month-label{min-width:135px;flex:1}.view{margin-left:auto}.field{flex-basis:125px}.weekdays{display:none}.calendar-note{margin-top:15px}.agenda-day{padding:12px}.source-note{margin-top:16px}}
+
+/* Simplified schedule: only a vertical list, with prominent W/L and compact verified score. */
+.final-result,.live-result{display:flex;align-items:center;gap:13px;min-width:0}
+.outcome{display:grid;place-items:center;flex:none;width:43px;height:43px;border-radius:10px;font:800 2.05rem/1 "Barlow Condensed",Impact,sans-serif}
+.outcome-w{color:#fff;background:#286e54}
+.outcome-l{color:#fff;background:#9d443e}
+.outcome-t{color:#17354a;background:#dce7e7}
+.live-tag{display:inline-block;flex:none;padding:5px 8px;border-radius:6px;background:#b53e29;color:#fff;font-size:.75rem;font-weight:800;letter-spacing:.05em}
+.agenda-day .game .score{display:inline-block;margin:0;color:#17354a;font-size:.97rem;font-weight:800;line-height:1.32}
+.agenda-day .game.completed{background:#fff9f6;border-color:#9c7160}
+.agenda-day .game.completed:hover{background:#f8ece5}
+@media(max-width:760px){.final-result,.live-result{gap:11px}.outcome{width:42px;height:42px}.agenda-day .game .score{font-size:.95rem}}
 </style>
 </head>
 <body>
@@ -92,21 +101,14 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
         <button id="next-month" type="button" aria-label="Next month">›</button>
         <button id="current-month" class="today-button" type="button">Today</button>
       </div>
-      <div class="view" aria-label="View format">
-        <button type="button" class="view-calendar" aria-pressed="false">Calendar</button>
-        <button type="button" class="view-agenda" aria-pressed="true">List</button>
-      </div>
     </div>
     <div class="filters">
       <div class="field"><label for="sport-filter">Sport</label><select id="sport-filter"><option value="all">All sports</option></select></div>
-      <div class="field"><label for="gender-filter">Team</label><select id="gender-filter"><option value="all">Boys &amp; girls</option><option value="Boys">Boys</option><option value="Girls">Girls</option><option value="Co-ed">Co-ed / mixed</option></select></div>
-      <div class="field"><label for="season-filter">School year</label><select id="season-filter"><option value="all">All seasons</option></select></div>
+      <div class="field"><label for="gender-filter">Team</label><select id="gender-filter"><option value="all">Boys &amp; girls</option><option value="Boys">Boys</option><option value="Girls">Girls</option></select></div>
+      <div class="field" id="season-field" hidden><label for="season-filter">School year</label><select id="season-filter"></select></div>
     </div>
   </section>
   <div class="calendar-note"><span id="month-summary" aria-live="polite">Loading schedule…</span><span id="data-updated">Checking verified sources…</span></div>
-  <div class="weekdays" aria-hidden="true"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
-  <div id="month-grid" role="region" aria-label="Month game calendar" hidden></div>
-  <p id="calendar-empty" class="empty" hidden>No verified contests are listed for this month and these filters. More teams and sports will be added as schedules can be confirmed.</p>
   <div id="agenda-list" role="region" aria-label="Games by date"></div>
   <aside class="source-note">
     <p><strong>Accuracy first.</strong> The calendar only includes a game when the school, Alabama location, exact season and matchup have been checked. An unconfirmed score is never treated as final. Multi-team meets may show a placement or result instead of a head-to-head score.</p>
