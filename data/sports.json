@@ -4,7 +4,7 @@
     "city": "Springville, Alabama",
     "timezone": "America/Chicago",
     "address": "8295 US Highway 11, Springville, AL 35146",
-    "updatedAt": "2026-11-21T16:19:11.981-06:00",
+    "updatedAt": "2026-11-21T16:24:39-06:00",
     "note": "Verified Springville High School, Alabama varsity game scores and meet results, with source links. Unpublished spring schedules are not assumed."
   },
   "games": [
@@ -218,6 +218,54 @@
       "secondarySourceUrl": "https://www.ahsfhs.org/teams2/teampage.asp?Team=Springville"
     },
     {
+      "id": "2026-10-17-cross-country-boys-husky-challenge",
+      "date": "2026-10-17",
+      "sport": "Cross Country",
+      "gender": "Boys",
+      "level": "Varsity",
+      "eventType": "meet",
+      "title": "35th Annual Husky Challenge",
+      "venue": "Hewitt-Trussville High School, Trussville, AL",
+      "site": "neutral",
+      "season": "2026-27",
+      "status": "final",
+      "resultText": "Varsity 5K results",
+      "highlights": [
+        "Jack Hutchinson · 39th · 18:35.41",
+        "Jordan Alaniz · 40th · 18:35.51",
+        "Jonathan Dowd · 50th · 19:09.48"
+      ],
+      "sourceName": "Just In Time Racing · official meet results",
+      "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/288205-35th-annual-husky-challenge/",
+      "secondarySourceName": "MileSplit · Springville team results",
+      "secondarySourceUrl": "https://al.milesplit.com/meets/730172-35th-annual-husky-challenge-2026/teams/8838",
+      "verifiedAt": "2026-11-21"
+    },
+    {
+      "id": "2026-10-17-cross-country-girls-husky-challenge",
+      "date": "2026-10-17",
+      "sport": "Cross Country",
+      "gender": "Girls",
+      "level": "Varsity",
+      "eventType": "meet",
+      "title": "35th Annual Husky Challenge",
+      "venue": "Hewitt-Trussville High School, Trussville, AL",
+      "site": "neutral",
+      "season": "2026-27",
+      "status": "final",
+      "resultText": "Varsity 5K results",
+      "highlights": [
+        "Avery Daniels · 17th · 20:30.35",
+        "Anju Hodges · 41st · 22:24.12",
+        "Lily Langley · 52nd · 23:20.84"
+      ],
+      "sourceName": "Just In Time Racing · official meet results",
+      "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/288205-35th-annual-husky-challenge/",
+      "secondarySourceName": "MileSplit · Springville team results",
+      "secondarySourceUrl": "https://al.milesplit.com/meets/730172-35th-annual-husky-challenge-2026/teams/8838",
+      "verifiedAt": "2026-11-21"
+    },
+    {
       "id": "2026-10-23-football-boys-pell-city",
       "date": "2026-10-23",
       "time": "7:00 PM",
@@ -253,6 +301,56 @@
       "verifiedAt": "2026-11-21",
       "secondarySourceName": "Gadsden City team record (MaxPreps)",
       "secondarySourceUrl": "https://www.maxpreps.com/al/gadsden/gadsden-city-titans/flag-football/girls/fall/"
+    },
+    {
+      "id": "2026-10-29-cross-country-boys-munford-sectional",
+      "date": "2026-10-29",
+      "sport": "Cross Country",
+      "gender": "Boys",
+      "level": "Varsity",
+      "eventType": "meet",
+      "title": "Munford Sectional · Class 5A",
+      "venue": "Munford High School, Munford, AL",
+      "site": "neutral",
+      "season": "2026-27",
+      "status": "final",
+      "resultText": "3rd of 5 teams · 99 points",
+      "teamPlace": 3,
+      "teamCount": 5,
+      "teamScore": 99,
+      "highlights": [
+        "Van Stewart · 23rd · 18:05.8",
+        "Jordan Alaniz · 25th · 18:17.9",
+        "Jack Hutchinson · 26th · 18:47.5"
+      ],
+      "sourceName": "Just In Time Racing · official meet results",
+      "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/289300-munford-sectional/",
+      "verifiedAt": "2026-11-21"
+    },
+    {
+      "id": "2026-10-29-cross-country-girls-munford-sectional",
+      "date": "2026-10-29",
+      "sport": "Cross Country",
+      "gender": "Girls",
+      "level": "Varsity",
+      "eventType": "meet",
+      "title": "Munford Sectional · Class 5A",
+      "venue": "Munford High School, Munford, AL",
+      "site": "neutral",
+      "season": "2026-27",
+      "status": "final",
+      "resultText": "3rd of 5 teams · 84 points",
+      "teamPlace": 3,
+      "teamCount": 5,
+      "teamScore": 84,
+      "highlights": [
+        "Avery Daniels · 11th · 20:33.1",
+        "Anju Hodges · 21st · 21:25.6",
+        "Lily Langley · 23rd · 23:19.9"
+      ],
+      "sourceName": "Just In Time Racing · official meet results",
+      "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/289300-munford-sectional/",
+      "verifiedAt": "2026-11-21"
     },
     {
       "id": "2026-10-30-football-boys-cleburne-county",
