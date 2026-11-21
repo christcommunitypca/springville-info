@@ -13,6 +13,7 @@ let year = Number(today.slice(0,4));
 let month = Number(today.slice(5,7)) - 1;
 let games = [];
 let selectedSeason = null;
+let selectedGender = 'all';
 function resultLabel(game) {
   if (game.status === 'final') {
     if (Number.isFinite(game.springvilleScore) && Number.isFinite(game.opponentScore)) {
@@ -44,7 +45,7 @@ function gameCard(game) {
     '<span class="game-result">' + result + '</span></a>';
 }
 function matchingGames() {
-  const sport = $('#sport-filter').value, gender = $('#gender-filter').value;
+  const sport = $('#sport-filter').value, gender = selectedGender;
   return games.filter(g => (sport === 'all' || g.sport === sport) &&
     (gender === 'all' || g.gender === gender) && (selectedSeason === null || g.season === selectedSeason));
 }
@@ -97,6 +98,13 @@ async function start() {
 $('#prev-month').addEventListener('click',()=>changeMonth(-1));
 $('#next-month').addEventListener('click',()=>changeMonth(1));
 $('#current-month').addEventListener('click',()=>{year=Number(today.slice(0,4));month=Number(today.slice(5,7))-1;render();});
-for (const id of ['sport-filter','gender-filter']) $('#'+id).addEventListener('change',render);
+$('#sport-filter').addEventListener('change',render);
+$('.team-toggle').addEventListener('click',event=>{
+  const button=event.target.closest('button[data-gender]');
+  if(!button)return;
+  selectedGender=button.dataset.gender;
+  document.querySelectorAll('.team-toggle button[data-gender]').forEach(el=>el.setAttribute('aria-pressed',String(el===button)));
+  render();
+});
 $('#season-filter').addEventListener('change',event=>{selectedSeason=event.target.value;render();});
 start();
