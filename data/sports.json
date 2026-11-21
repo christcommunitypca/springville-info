@@ -4,7 +4,7 @@
     "city": "Springville, Alabama",
     "timezone": "America/Chicago",
     "address": "8295 US Highway 11, Springville, AL 35146",
-    "updatedAt": "2026-11-21T16:27:42-06:00",
+    "updatedAt": "2026-11-21T16:28:41-06:00",
     "note": "Verified Springville High School, Alabama varsity game scores and meet results, with source links. Unpublished spring schedules are not assumed."
   },
   "games": [
@@ -109,6 +109,53 @@
       "verifiedAt": "2026-11-20",
       "secondarySourceName": "Alabama High School Football History",
       "secondarySourceUrl": "https://www.ahsfhs.org/teams2/teampage.asp?Team=Springville"
+    },
+    {
+      "id": "2026-08-29-cross-country-boys-black-and-gold",
+      "date": "2026-08-29",
+      "sport": "Cross Country",
+      "gender": "Boys",
+      "level": "Varsity",
+      "eventType": "meet",
+      "title": "Black and Gold Classic",
+      "venue": "Scottsboro High School, Scottsboro, AL",
+      "site": "neutral",
+      "season": "2026-27",
+      "status": "final",
+      "resultText": "9th of 11 teams · 217 points",
+      "teamPlace": 9,
+      "teamCount": 11,
+      "teamScore": 217,
+      "highlights": [
+        "Carson Holderfield · 74th · 20:18.1"
+      ],
+      "sourceName": "Just In Time Racing · official meet results",
+      "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/280517-black-and-gold-classic/?event=ef8e494b8e008f67",
+      "verifiedAt": "2026-11-21"
+    },
+    {
+      "id": "2026-08-29-cross-country-girls-black-and-gold",
+      "date": "2026-08-29",
+      "sport": "Cross Country",
+      "gender": "Girls",
+      "level": "Varsity",
+      "eventType": "meet",
+      "title": "Black and Gold Classic",
+      "venue": "Scottsboro High School, Scottsboro, AL",
+      "site": "neutral",
+      "season": "2026-27",
+      "status": "final",
+      "resultText": "7th of 10 teams · 154 points",
+      "teamPlace": 7,
+      "teamCount": 10,
+      "teamScore": 154,
+      "highlights": [
+        "Avery Daniels · 3rd · 19:47.3",
+        "Anju Hodges · 37th · 23:52.6"
+      ],
+      "sourceName": "Just In Time Racing · official meet results",
+      "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/280517-black-and-gold-classic/?event=68d43586a7f5bb3d",
+      "verifiedAt": "2026-11-21"
     },
     {
       "id": "2026-09-01-volleyball-girls-st-clair-county",
@@ -300,6 +347,56 @@
       "verifiedAt": "2026-11-20",
       "secondarySourceName": "Alabama High School Football History",
       "secondarySourceUrl": "https://www.ahsfhs.org/teams2/teampage.asp?Team=Springville"
+    },
+    {
+      "id": "2026-09-12-cross-country-boys-chickasaw-trails",
+      "date": "2026-09-12",
+      "sport": "Cross Country",
+      "gender": "Boys",
+      "level": "Varsity",
+      "eventType": "meet",
+      "title": "Chickasaw Trails Invitational",
+      "venue": "Oakville Indian Mounds Park, Moulton, AL",
+      "site": "neutral",
+      "season": "2026-27",
+      "status": "final",
+      "resultText": "27th of 39 teams · 811 points",
+      "teamPlace": 27,
+      "teamCount": 39,
+      "teamScore": 811,
+      "highlights": [
+        "Jordan Alaniz · 162nd · 18:25.3",
+        "Carson Holderfield · 263rd · 20:33.2"
+      ],
+      "sourceName": "Just In Time Racing · official meet results",
+      "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/283228-chickasaw-trails-invitational/?event=e0c73d7a0ae61529&page=3",
+      "sourceNote": "The official timing website labels this team 'Springville ms' although listed high-school varsity runners include grades 11-12; linked athlete profiles identify Springville AL. Retain source caveat.",
+      "verifiedAt": "2026-11-21"
+    },
+    {
+      "id": "2026-09-12-cross-country-girls-chickasaw-trails",
+      "date": "2026-09-12",
+      "sport": "Cross Country",
+      "gender": "Girls",
+      "level": "Varsity",
+      "eventType": "meet",
+      "title": "Chickasaw Trails Invitational",
+      "venue": "Oakville Indian Mounds Park, Moulton, AL",
+      "site": "neutral",
+      "season": "2026-27",
+      "status": "final",
+      "resultText": "20th of 29 teams · 564 points",
+      "teamPlace": 20,
+      "teamCount": 29,
+      "teamScore": 564,
+      "highlights": [
+        "Avery Daniels · 47th · 20:37.2",
+        "Anju Hodges · 103rd · 21:56.9"
+      ],
+      "sourceName": "Just In Time Racing · official meet results",
+      "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/283228-chickasaw-trails-invitational/?event=6612db79f45b711f",
+      "sourceNote": "The official timing website labels this team 'Springville ms' although listed high-school varsity runners include grades 11-12; linked athlete profiles identify Springville AL. Retain source caveat.",
+      "verifiedAt": "2026-11-21"
     },
     {
       "id": "2026-09-14-volleyball-girls-st-clair-county",
