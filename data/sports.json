@@ -321,8 +321,8 @@
       "site": "away",
       "season": "2026-27",
       "status": "unconfirmed",
-      "sourceName": "MaxPreps",
-      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/girls/schedule/",
+      "sourceName": "AL Scores",
+      "sourceUrl": "https://alscores.app/basketball/girls/team/springville-high-school/",
       "verifiedAt": "2026-11-20",
       "secondarySourceName": "Associated Press",
       "secondarySourceUrl": "https://www.thehour.com/sports/article/tuesday-s-scores-22536828.php",
@@ -338,9 +338,16 @@
           "opponentScore": 63,
           "sourceName": "Associated Press",
           "sourceUrl": "https://www.thehour.com/sports/article/tuesday-s-scores-22536828.php"
+        },
+        {
+          "springvilleScore": 18,
+          "opponentScore": 63,
+          "sourceName": "AL Scores",
+          "sourceUrl": "https://alscores.app/basketball/girls/team/springville-high-school/"
         }
       ],
-      "preferredScoreSourceName": "MaxPreps"
+      "preferredScoreSourceName": "AL Scores",
+      "sourcePreferenceReason": "November 17 girls: Associated Press and AL Scores both report 18–63; MaxPreps' 42–76 duplicates the boys' final and is disputed. Confirm with team when available."
     },
     {
       "id": "2026-11-17-basketball-boys-mountain-brook",
@@ -372,7 +379,8 @@
           "sourceUrl": "https://www.seattlepi.com/sports/tuesday-s-scores-a22536829"
         }
       ],
-      "preferredScoreSourceName": "MaxPreps"
+      "preferredScoreSourceName": "MaxPreps",
+      "sourcePreferenceReason": "MaxPreps reports final 42–76 and explicitly identifies the Associated Press/AL Scores 38–71 figure as the third-quarter tally. Confirm with school if available."
     },
     {
       "id": "2026-11-19-basketball-girls-albertville",
