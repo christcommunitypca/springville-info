@@ -1,3 +1,4 @@
+import {buildRecordIndex,recordLabel} from './sports-records.mjs';
 const escaped = value => String(value ?? '').replace(/[&<>"']/g, ch =>
   ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const secureUrl = value => { try { const url = new URL(value); return url.protocol === 'https:' ? url.href : ''; } catch { return ''; } };
@@ -113,14 +114,19 @@ async function load() {
       main.innerHTML = '<p class="state-message">This event was not found. <a href="/sports.html">Back to the sports calendar.</a></p>';
       return;
     }
+    const record = buildRecordIndex(data.games).get(game.id);
+    const recordText = recordLabel(record);
+    const recordExtra = recordText ? '<div class="verified-record">' +
+      (record.kind === 'entering' ? 'Entering W–L: ' : 'Verified W–L through this date: ') +
+      '<strong>' + escaped(recordText) + '</strong></div>' : '';
     const competition = game.eventType === 'meet' || game.eventType === 'tournament' || game.eventType === 'news';
-    const name = competition ? game.title : game.sport + ' ' + (game.site === 'away' ? '@ ' : 'vs ') + game.opponent;
+    const name = competition ? game.title : game.sport + ' ' + (game.venueUnconfirmed ? 'vs ' : game.site === 'away' ? '@ ' : 'vs ') + game.opponent + (game.gameNumber ? ' · Game ' + game.gameNumber : '');
     document.title = name + ' | Tigers Sports | Around Springville';
     const canonical = document.createElement('link');
     canonical.rel = 'canonical';
     canonical.href = 'https://springville.info/sports-detail.html?id=' + encodeURIComponent(game.id);
     document.head.appendChild(canonical);
-    const dateLine = dateText(game.date) + (game.time ? ' · ' + game.time : '') + (game.venue ? ' · ' + game.venue : '');
+    const dateLine = dateText(game.date) + (game.time ? ' · ' + game.time : '') + (game.venueUnconfirmed ? ' · Venue TBD' : game.venue ? ' · ' + game.venue : '');
     const isXC = game.sport === 'Cross Country';
     const top = isXC && Array.isArray(game.topFinishers) && game.topFinishers.length
       ? section('Top 3 Springville finishers',runnerList(game.topFinishers.slice(0,3),false),
@@ -139,7 +145,7 @@ async function load() {
       '<div class="share-status" id="share-status" role="status" aria-live="polite"></div>' +
       '<div class="result-panel"><span class="result-label">' +
       escaped(competition ? 'Springville team result' : 'Springville game result') + '</span>' +
-      renderResult(game) + '</div>' + top + prs + achievements + playerSpotlights(game) + general +
+      renderResult(game) + recordExtra + '</div>' + top + prs + achievements + playerSpotlights(game) + general +
       sources(game) + '</article>';
     const button = document.querySelector('#share');
     button.addEventListener('click',async()=>{
