@@ -90,6 +90,10 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
 .masthead:after{display:block}
 .masthead .back{position:relative;z-index:1;color:#d9f1ed;font-size:.84rem}
 .masthead h1{position:relative;z-index:1;margin:12px 0 3px;font:800 clamp(2.7rem,7vw,5rem)/.96 "Barlow Condensed",Impact,sans-serif;letter-spacing:.006em;text-transform:uppercase}
+.masthead-title{position:relative;z-index:1;display:flex;align-items:center;gap:14px;margin-top:12px}
+.masthead-title h1{margin:0}
+.masthead-title .tiger-mark{flex:0 0 48px;width:48px;height:48px;border:2px solid rgba(255,255,255,.85);border-radius:12px;color:white;font:800 2.3rem/1 "Barlow Condensed",Impact,sans-serif;transform:rotate(-5deg)}
+@media(max-width:480px){.masthead-title{gap:11px}.masthead-title .tiger-mark{flex-basis:42px;width:42px;height:42px;font-size:2rem}.masthead-title h1{font-size:clamp(2.35rem,10vw,3.3rem)}}
 
 /* The hidden width guide gives every month the exact same label space.
    The next arrow is immediately after the longest month, and never shifts. */
@@ -140,7 +144,7 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
 <body>
 <header class="masthead">
   <a class="back" href="/#listings">← Community calendar</a>
-  <h1>Tigers Sports</h1>
+  <div class="masthead-title"><span class="tiger-mark" aria-hidden="true">S</span><h1>Tigers Sports</h1></div>
 </header>
 <main>
   <section class="toolbar" aria-label="Calendar controls">
