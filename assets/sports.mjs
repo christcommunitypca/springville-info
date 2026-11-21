@@ -75,7 +75,29 @@ function reportedScoreCard(game) {
     '<span class="score">' +
     formattedScore(game, preferred.springvilleScore, preferred.opponentScore) + '</span></span></span></a>';
 }
+function competitionCard(game) {
+  const finished = game.status === 'final';
+  const title = game.title || game.opponent;
+  const kind = game.eventType === 'news' ? 'Team news' :
+    game.eventType === 'tournament' ? 'Tournament' : 'Meet';
+  const status = finished
+    ? '<strong class="meet-summary">' + escaped(game.resultText || 'Results available') + '</strong>'
+    : game.status === 'scheduled' && game.date >= today
+      ? '<span class="game-time">' + escaped(game.time || 'Time TBD') + '</span>'
+      : '<span class="status-tag">' + escaped(game.statusNote || (game.status === 'scheduled' || game.status === 'unconfirmed' ? 'Results not yet verified' : game.status)) + '</span>';
+  const highlights = Array.isArray(game.highlights) ?
+    game.highlights.slice(0,4).map(item => '<span class="meet-highlight">' + escaped(item) + '</span>').join('') : '';
+  return '<a class="game competition-card' + (finished ? ' completed' : '') +
+    '" target="_blank" rel="noopener noreferrer" href="' + escaped(safeUrl(game.sourceUrl)) +
+    '" aria-label="' + escaped(game.sport + ' ' + game.gender + ' ' + kind + ': ' + title + ', view source') + '">' +
+    '<span class="game-meta">' + escaped(game.sport + ' · ' + game.gender + ' ' + game.level + ' · ' + kind) + '</span>' +
+    '<strong class="meet-title">' + escaped(title) + '</strong>' +
+    (game.venue ? '<span class="meet-venue">' + escaped(game.venue) + '</span>' : '') +
+    '<span class="game-result">' + status + '</span>' +
+    (highlights ? '<span class="meet-highlights">' + highlights + '</span>' : '') + '</a>';
+}
 function gameCard(game) {
+  if (game.eventType === 'meet' || game.eventType === 'tournament' || game.eventType === 'news') return competitionCard(game);
   const reportsCard = reportedScoreCard(game);
   if (reportsCard) return reportsCard;
   const at = game.site === 'away' ? '@' : game.site === 'neutral' ? 'vs (neutral)' : 'vs';
@@ -87,7 +109,10 @@ function gameCard(game) {
   return '<a class="game' + (game.status === 'final' ? ' completed' : '') + '" target="_blank" rel="noopener noreferrer" href="' + escaped(safeUrl(game.sourceUrl)) + '" aria-label="' +
     escaped(game.date + ' ' + game.sport + ' ' + game.gender + ' Springville ' + at + ' ' + game.opponent + ' ' + (game.status === 'final' ? 'final result' : 'scheduled')) + '">' +
     '<span class="game-meta">' + eventName + '</span>' + (scoreListed ? '' : '<strong class="matchup">' + location + '</strong>') +
-    '<span class="game-result">' + result + '</span></a>';
+    '<span class="game-result">' + result + '</span>' +
+    (game.sport === 'Volleyball' && scoreListed ? '<span class="set-caption">Score shown in sets won</span>' : '') +
+    (Array.isArray(game.highlights) && game.highlights.length ? '<span class="meet-highlights">' + game.highlights.slice(0,4).map(s=>'<span class="meet-highlight">' + escaped(s) + '</span>').join('') + '</span>' : '') +
+    '</a>';
 }
 function matchingGames() {
   const sport = $('#sport-filter').value, gender = selectedGender;
@@ -100,13 +125,13 @@ function render() {
   const filtered = matchingGames();
   const prefix = year + '-' + String(month+1).padStart(2,'0') + '-';
   const current = filtered.filter(g => g.date.startsWith(prefix)).sort((a,b)=>a.date.localeCompare(b.date) ||
-    (a.time||'').localeCompare(b.time||'') || a.opponent.localeCompare(b.opponent));
+    (a.time||'').localeCompare(b.time||'') || (a.opponent || a.title || '').localeCompare(b.opponent || b.title || ''));
 
   const dates = [...new Set(current.map(x=>x.date))];
   $('#agenda-list').innerHTML = dates.length ? dates.map(date => '<section class="agenda-day"><h3>' +
     escaped(shortDate(date,{weekday:'long',month:'long',day:'numeric'})) + '</h3>' +
     current.filter(g=>g.date===date).map(gameCard).join('') + '</section>').join('') :
-    '<p class="empty">No verified contests are listed for this month and these filters. This schedule is being built out sport by sport; check the source calendars for additional games.</p>';
+    '<p class="empty">No verified ' + escaped($('#sport-filter').value === 'all' ? 'contests' : $('#sport-filter').value + ' events') + ' listed for this month and these filters. New schedules and results are added as they are confirmed.</p>';
 }
 function changeMonth(delta) { month += delta; while(month < 0){month += 12; year--;} while(month > 11){month -= 12;year++;} render(); }
 const populate = (select, values, allLabel) => {
@@ -118,8 +143,8 @@ async function start() {
     const response = await fetch('/data/sports.json',{cache:'no-cache'});
     if (!response.ok) throw new Error('Cannot load verified games');
     const data = await response.json();
-    games = data.games.filter(g=>g && /^\d{4}-\d{2}-\d{2}$/.test(g.date) && g.sport && g.gender && g.opponent && g.sourceUrl);
-    const sports = [...new Set(games.map(g=>g.sport))].sort();
+    games = data.games.filter(g=>g && /^\d{4}-\d{2}-\d{2}$/.test(g.date) && g.sport && g.gender && (g.opponent || g.title) && g.sourceUrl);
+    const sports = [...new Set([...(Array.isArray(data.sportsCatalog) ? data.sportsCatalog.filter(s=>typeof s==='string') : []),...games.map(g=>g.sport)])].sort();
     const years = [...new Set(games.map(g=>g.season))].sort().reverse();
     populate($('#sport-filter'), sports, 'All sports');
     const seasonField = $('#season-field');
