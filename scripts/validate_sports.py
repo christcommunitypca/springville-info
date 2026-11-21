@@ -65,6 +65,18 @@ for game in data["games"]:
             assert type(game["teamCount"]) is int and game["teamCount"] >= game.get("teamPlace", 1), game
         if "teamScore" in game:
             assert type(game["teamScore"]) is int and game["teamScore"] >= 0, game
+    if "playerHighlights" in game:
+        players = game["playerHighlights"]
+        assert isinstance(players, list) and len(players) <= 3, f"At most 3 player highlights: {game['id']}"
+        for athlete in players:
+            assert isinstance(athlete, dict), game
+            assert isinstance(athlete.get("name"), str) and athlete["name"].strip(), game
+            assert isinstance(athlete.get("achievement"), str) and athlete["achievement"].strip(), game
+            assert len(athlete["achievement"]) <= 250, game
+            if "sourceUrl" in athlete:
+                source = urlparse(athlete["sourceUrl"])
+                assert source.scheme == "https" and source.hostname, game
+
     assert game["gender"] in ("Boys", "Girls", "Co-ed"), game
     assert game["site"] in ("home", "away", "neutral"), game
     assert game["status"] in allowed_status, game
