@@ -74,7 +74,7 @@ async function report(db,period) {
     age:"Not collected: browser traffic cannot reliably establish age.",
     note:"Unique and returning visitors are approximate per browser. Share taps count button use, not confirmed deliveries. City comes from approximate Cloudflare geolocation."};
 }
-const page = \`<!doctype html>
+const page = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#173c53">
 <link rel="icon" href="/favicon.svg">
@@ -123,7 +123,7 @@ a{color:#a43c33}footer{padding:15px 20px 30px;max-width:1180px;margin:0 auto;col
 <section class="panel"><h2>Age groups</h2><p>Ages cannot be inferred reliably from ordinary browsing</p><div class="muted">Not collected. No speculative age estimates.</div></section>
 </div><p class="note" id="notes"></p></main><footer>Private analytics · Anonymous browser estimates · No exact IPs or full referral addresses stored</footer>
 <script type="module" src="/assets/owner-dashboard.mjs"></script>
-</body></html>\`;
+</body></html>`;
 export async function onRequestGet({request,env}) {
   if (!await ownerAuthorized(request,env)) return textReply("Private dashboard: access not configured or account not authorized.");
   const url=new URL(request.url);
