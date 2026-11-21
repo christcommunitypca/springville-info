@@ -85,7 +85,19 @@ function competitionCard(game) {
     : game.status === 'scheduled' && game.date >= today
       ? '<span class="game-time">' + escaped(game.time || 'Time TBD') + '</span>'
       : '<span class="status-tag">' + escaped(game.statusNote || (game.status === 'scheduled' || game.status === 'unconfirmed' ? 'Results not yet verified' : game.status)) + '</span>';
-  const highlights = Array.isArray(game.highlights) ?
+  const isCrossCountry = game.sport === 'Cross Country';
+  const xcRows = (list, isPr) => Array.isArray(list) ? list.map((runner, index) =>
+    '<div class="xc-runner">' +
+    (isPr ? '<span class="xc-pr-mark">PR</span>' : '<span class="xc-rank" aria-label="Springville finisher number ' + (index + 1) + '">' + (index + 1) + '</span>') +
+    '<span class="xc-runner-name">' + escaped(runner.name) + '</span>' +
+    '<span class="xc-runner-stat">' + escaped(runner.place ? (runner.place + (runner.place % 100 >= 11 && runner.place % 100 <= 13 ? 'th' : ({1:'st',2:'nd',3:'rd'}[runner.place % 10] || 'th')) + ' overall · ') : '') + escaped(runner.time || '') + '</span></div>').join('') : '';
+  const top = isCrossCountry && Array.isArray(game.topFinishers) ? xcRows(game.topFinishers, false) : '';
+  const prs = isCrossCountry && Array.isArray(game.personalRecords) ? xcRows(game.personalRecords, true) : '';
+  const crossCountryResults = isCrossCountry && finished
+    ? (top ? '<div class="xc-section"><span class="xc-section-heading">Top 3 Springville finishers</span>' + top + '</div>' : '') +
+      (prs ? '<div class="xc-section"><span class="xc-section-heading">Personal records (' + game.personalRecords.length + ')</span>' + prs + '</div>' : '')
+    : '';
+  const highlights = !isCrossCountry && Array.isArray(game.highlights) ?
     game.highlights.slice(0,4).map(item => '<span class="meet-highlight">' + escaped(item) + '</span>').join('') : '';
   return '<a class="game competition-card' + (finished ? ' completed' : '') +
     '" target="_blank" rel="noopener noreferrer" href="' + escaped(safeUrl(game.sourceUrl)) +
@@ -94,6 +106,7 @@ function competitionCard(game) {
     '<strong class="meet-title">' + escaped(title) + '</strong>' +
     (game.venue ? '<span class="meet-venue">' + escaped(game.venue) + '</span>' : '') +
     '<span class="game-result">' + status + '</span>' +
+    crossCountryResults +
     (highlights ? '<span class="meet-highlights">' + highlights + '</span>' : '') + '</a>';
 }
 function gameCard(game) {
