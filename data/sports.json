@@ -203,7 +203,7 @@
     {
       "id": "2026-12-08-basketball-girls-moody",
       "date": "2026-12-08",
-      "time": "6:15 PM",
+      "time": null,
       "sport": "Basketball",
       "gender": "Girls",
       "level": "Varsity",
@@ -373,7 +373,7 @@
       "gender": "Boys",
       "level": "Varsity",
       "opponent": "Cumberland County (TN)",
-      "site": "neutral",
+      "site": "home",
       "season": "2026-27",
       "status": "scheduled",
       "sourceName": "MaxPreps",
@@ -383,7 +383,7 @@
     {
       "id": "2027-01-05-basketball-girls-moody",
       "date": "2027-01-05",
-      "time": "6:15 PM",
+      "time": null,
       "sport": "Basketball",
       "gender": "Girls",
       "level": "Varsity",
