@@ -53,6 +53,9 @@ for game in data["games"]:
                     if field == "topFinishers":
                         top_times.append(float(runner["time"].split(":")[0]) * 60 + float(runner["time"].split(":")[1]))
             assert top_times == sorted(top_times), f"Finishers must be sorted by fastest time: {game['id']}"
+        if "specialAchievements" in game:
+            assert isinstance(game["specialAchievements"], list), game
+            assert all(isinstance(v, str) and 0 < len(v.strip()) <= 200 for v in game["specialAchievements"]), game
         if "highlights" in game:
             assert isinstance(game["highlights"], list) and len(game["highlights"]) <= 6, game
             assert all(isinstance(s, str) and 0 < len(s.strip()) <= 200 for s in game["highlights"]), game
