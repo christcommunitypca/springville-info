@@ -556,6 +556,75 @@ body:has(#entry-pages > .page:target) #share-page { visibility: hidden; }
   header .share-button { padding-inline: 10px; }
 }
 
+
+/* Approved mobile mockup masthead: use the actual illustration and lettering,
+   not a separately recreated approximation. Keep existing link and Share handlers. */
+@media (max-width: 600px) {
+  header {
+    display: block;
+    position: relative;
+    width: calc(100% + 32px);
+    height: auto;
+    aspect-ratio: 941 / 309;
+    min-height: 0;
+    max-height: none;
+    margin: 0 -16px 18px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    isolation: isolate;
+    background: #d7edf3 url("/assets/mobile-masthead.webp") center top / 100% 100% no-repeat;
+  }
+  header::before { content: none; }
+  header .ripple { display: none; }
+  header h1 {
+    position: absolute;
+    inset: 0 22% 0 0;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    z-index: 1;
+  }
+  header h1 a {
+    position: absolute;
+    inset: 0;
+    display: block;
+    max-width: none;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+  header .share-button {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 4%;
+    right: 2%;
+    width: 19%;
+    height: 33%;
+    min-height: 44px;
+    min-width: 65px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    border-radius: 9px;
+    box-shadow: none;
+    background: transparent;
+    color: transparent;
+    font-size: 0;
+    text-indent: -10000px;
+    cursor: pointer;
+  }
+  header .share-button:hover { background: transparent; }
+  header .share-button:focus-visible, header h1:focus-within {
+    outline: 3px solid #b73836;
+    outline-offset: -3px;
+  }
+}
+
 </style></head>
 <body>
 <header>
