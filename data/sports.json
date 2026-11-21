@@ -4,8 +4,8 @@
     "city": "Springville, Alabama",
     "timezone": "America/Chicago",
     "address": "8295 US Highway 11, Springville, AL 35146",
-    "updatedAt": "2026-11-20T23:16:53-06:00",
-    "note": "Varsity schedule entries confirmed from explicitly dated, Springville, AL 2026–27 source pages; not a complete listing of every school sport."
+    "updatedAt": "2026-11-21T16:19:11.981-06:00",
+    "note": "Verified Springville High School, Alabama varsity game scores and meet results, with source links. Unpublished spring schedules are not assumed."
   },
   "games": [
     {
@@ -47,6 +47,25 @@
       "secondarySourceUrl": "https://www.ahsfhs.org/teams2/teampage.asp?Team=Springville"
     },
     {
+      "id": "2026-09-01-volleyball-girls-st-clair-county",
+      "date": "2026-09-01",
+      "time": "6:00 PM",
+      "sport": "Volleyball",
+      "gender": "Girls",
+      "level": "Varsity",
+      "opponent": "St. Clair County",
+      "site": "away",
+      "season": "2026-27",
+      "status": "final",
+      "springvilleScore": 0,
+      "opponentScore": 3,
+      "sourceName": "High School On SI",
+      "sourceUrl": "https://www.si.com/high-school/stats/alabama/volleyball/games/6439097-springville-vs-st-clair-county",
+      "verifiedAt": "2026-11-21",
+      "secondarySourceName": "St. Clair County school record (MaxPreps)",
+      "secondarySourceUrl": "https://www.maxpreps.com/al/odenville/st-clair-county-fighting-saints/volleyball/schedule/"
+    },
+    {
       "id": "2026-09-04-football-boys-clay-chalkville",
       "date": "2026-09-04",
       "time": "7:00 PM",
@@ -64,6 +83,44 @@
       "verifiedAt": "2026-11-20",
       "secondarySourceName": "Alabama High School Football History",
       "secondarySourceUrl": "https://www.ahsfhs.org/teams2/teampage.asp?Team=Springville"
+    },
+    {
+      "id": "2026-09-05-cross-country-boys-tomahawk-trail",
+      "date": "2026-09-05",
+      "sport": "Cross Country",
+      "gender": "Boys",
+      "level": "Varsity",
+      "eventType": "meet",
+      "title": "Tomahawk Trail Invitational",
+      "venue": "Oneonta, Alabama",
+      "site": "neutral",
+      "season": "2026-27",
+      "status": "final",
+      "resultText": "1st place · 42 team points",
+      "teamPlace": 1,
+      "teamScore": 42,
+      "sourceName": "AL.com high-school sports",
+      "sourceUrl": "https://www.al.com/highschoolsports/2026/09/alabama-hs-cross-country-highlights-from-another-busy-week-across-the-state.html",
+      "verifiedAt": "2026-11-21"
+    },
+    {
+      "id": "2026-09-05-cross-country-girls-tomahawk-trail",
+      "date": "2026-09-05",
+      "sport": "Cross Country",
+      "gender": "Girls",
+      "level": "Varsity",
+      "eventType": "meet",
+      "title": "Tomahawk Trail Invitational",
+      "venue": "Oneonta, Alabama",
+      "site": "neutral",
+      "season": "2026-27",
+      "status": "final",
+      "resultText": "1st place · 69 team points",
+      "teamPlace": 1,
+      "teamScore": 69,
+      "sourceName": "AL.com high-school sports",
+      "sourceUrl": "https://www.al.com/highschoolsports/2026/09/alabama-hs-cross-country-highlights-from-another-busy-week-across-the-state.html",
+      "verifiedAt": "2026-11-21"
     },
     {
       "id": "2026-09-11-football-boys-st-clair-county",
@@ -180,6 +237,24 @@
       "secondarySourceUrl": "https://www.ahsfhs.org/teams2/teampage.asp?Team=Springville"
     },
     {
+      "id": "2026-10-27-flag-football-girls-gadsden-city",
+      "date": "2026-10-27",
+      "sport": "Flag Football",
+      "gender": "Girls",
+      "level": "Varsity",
+      "opponent": "Gadsden City",
+      "site": "home",
+      "season": "2026-27",
+      "status": "final",
+      "springvilleScore": 7,
+      "opponentScore": 33,
+      "sourceName": "High School On SI",
+      "sourceUrl": "https://www.si.com/high-school/stats/flag-football/scores?date=2026-10-27",
+      "verifiedAt": "2026-11-21",
+      "secondarySourceName": "Gadsden City team record (MaxPreps)",
+      "secondarySourceUrl": "https://www.maxpreps.com/al/gadsden/gadsden-city-titans/flag-football/girls/fall/"
+    },
+    {
       "id": "2026-10-30-football-boys-cleburne-county",
       "date": "2026-10-30",
       "time": "7:00 PM",
@@ -195,6 +270,54 @@
       "sourceName": "MaxPreps",
       "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/football/schedule/",
       "verifiedAt": "2026-11-20"
+    },
+    {
+      "id": "2026-11-07-cross-country-boys-state-5a",
+      "date": "2026-11-07",
+      "sport": "Cross Country",
+      "gender": "Boys",
+      "level": "Varsity",
+      "eventType": "meet",
+      "title": "AHSAA State Championship · Class 5A",
+      "venue": "Oakville Indian Mounds Park, Moulton",
+      "site": "neutral",
+      "season": "2026-27",
+      "status": "final",
+      "resultText": "13th of 24 teams · 371 points",
+      "teamPlace": 13,
+      "teamCount": 24,
+      "teamScore": 371,
+      "highlights": [
+        "Jack Hutchinson · 17:54.5 (PR)",
+        "Jordan Alaniz · 17:55.3 (PR)"
+      ],
+      "sourceName": "Just In Time Racing · official meet results",
+      "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/289797-ahsaa-xc-state-championship/",
+      "verifiedAt": "2026-11-21"
+    },
+    {
+      "id": "2026-11-07-cross-country-girls-state-5a",
+      "date": "2026-11-07",
+      "sport": "Cross Country",
+      "gender": "Girls",
+      "level": "Varsity",
+      "eventType": "meet",
+      "title": "AHSAA State Championship · Class 5A",
+      "venue": "Oakville Indian Mounds Park, Moulton",
+      "site": "neutral",
+      "season": "2026-27",
+      "status": "final",
+      "resultText": "13th of 19 teams · 349 points",
+      "teamPlace": 13,
+      "teamCount": 19,
+      "teamScore": 349,
+      "highlights": [
+        "Anju Hodges · 21:16.9 (PR)",
+        "Madison Freeman · 24:04.3 (PR)"
+      ],
+      "sourceName": "Just In Time Racing · official meet results",
+      "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/289797-ahsaa-xc-state-championship/",
+      "verifiedAt": "2026-11-21"
     },
     {
       "id": "2026-11-07-basketball-girls-pisgah",
@@ -1080,5 +1203,16 @@
       "sourceUrl": "https://www.nfhsnetwork.com/events/pell-city-high-school-pell-city-al/gamf00ce3c1ae",
       "verifiedAt": "2026-11-20"
     }
+  ],
+  "sportsCatalog": [
+    "Basketball",
+    "Cross Country",
+    "Flag Football",
+    "Football",
+    "Golf",
+    "Soccer",
+    "Softball",
+    "Tennis",
+    "Volleyball"
   ]
 }
