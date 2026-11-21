@@ -29,7 +29,7 @@ function resultLabel(game) {
     return '<span class="live-result"><strong class="live-tag">LIVE</strong><strong class="score">' + score + '</strong></span>';
   }
   if (game.status === 'cancelled' || game.status === 'postponed') return '<span class="status-tag">' + escaped(game.status) + '</span>';
-  if (game.status === 'unconfirmed' || (game.status === 'scheduled' && game.date < today)) return '<span class="status-tag">Result not yet verified</span>';
+  if (game.status === 'unconfirmed' || (game.status === 'scheduled' && game.date < today)) return '<span class="status-tag">' + escaped(game.statusNote || 'Result not yet verified') + '</span>';
   return '<span class="game-time">' + escaped(game.time || 'Time TBD') + '</span>';
 }
 function gameCard(game) {
