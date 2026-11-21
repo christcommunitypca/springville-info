@@ -70,10 +70,10 @@ function reportedScoreCard(game) {
       preferred.sourceName + ' reports Springville ' + preferred.springvilleScore +
       ' to ' + preferred.opponentScore + '; view source') + '">' +
     '<span class="game-meta">' + escaped(game.sport + ' · ' + game.gender + ' ' + game.level) +
-    '</span><span class="final-result">' +
+    '</span><span class="game-result"><span class="final-result">' +
     outcomeBadge(preferred.springvilleScore, preferred.opponentScore) +
     '<span class="score">' +
-    formattedScore(game, preferred.springvilleScore, preferred.opponentScore) + '</span></span></a>';
+    formattedScore(game, preferred.springvilleScore, preferred.opponentScore) + '</span></span></span></a>';
 }
 function gameCard(game) {
   const reportsCard = reportedScoreCard(game);
