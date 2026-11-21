@@ -60,10 +60,13 @@ function resultLabel(game) {
 
 function recordBadge(game) {
   const record = recordIndex.get(game.id);
+  // Show Overall only when this game has a completed, established outcome.
+  // This includes played games with an agreed W/L but conflicting point totals.
+  if(record?.kind !== 'through') return '';
   const label = recordLabel(record);
   if(!label) return '';
   const kind = 'Overall';
-  return '<span class="record-note" title="Record through this date from final scores and outcomes agreed by multiple sources. Unsettled outcomes aren't counted.">' +
+  return '<span class="record-note" title="Record through this date from final scores and outcomes agreed by multiple sources. Unsettled outcomes are not counted.">' +
     escaped(kind) + ' <strong>' + escaped(label) + '</strong></span>';
 }
 function activeScheduleCoverage() {
