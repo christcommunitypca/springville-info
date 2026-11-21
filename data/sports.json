@@ -4,7 +4,7 @@
     "city": "Springville, Alabama",
     "timezone": "America/Chicago",
     "address": "8295 US Highway 11, Springville, AL 35146",
-    "updatedAt": "2026-11-21T17:13:26-06:00",
+    "updatedAt": "2026-11-21T17:13:58-06:00",
     "note": "Verified Springville High School, Alabama varsity game scores and meet results, with source links. Unpublished spring schedules are not assumed."
   },
   "games": [
@@ -459,7 +459,6 @@
       "teamScore": 811,
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/283228-chickasaw-trails-invitational/?event=e0c73d7a0ae61529&page=3",
-      "sourceNote": "The official timing website labels this team 'Springville ms' although listed high-school varsity runners include grades 11-12; linked athlete profiles identify Springville AL. Retain source caveat.",
       "verifiedAt": "2026-11-21",
       "topFinishers": [
         {
@@ -529,7 +528,8 @@
           "place": 313,
           "time": "22:24.7"
         }
-      ]
+      ],
+      "editorialNote": "Source lists 'Springville ms' in varsity results despite named high-school runners in grades 11–12. Team identity was cross-checked against Springville, Alabama athlete records. For editorial verification only; do not display on event pages."
     },
     {
       "id": "2026-09-12-cross-country-girls-chickasaw-trails",
@@ -549,7 +549,6 @@
       "teamScore": 564,
       "sourceName": "Just In Time Racing · official meet results",
       "sourceUrl": "https://www.just-in-time-racing.com/us/meets/xc/283228-chickasaw-trails-invitational/?event=6612db79f45b711f",
-      "sourceNote": "The official timing website labels this team 'Springville ms' although listed high-school varsity runners include grades 11-12; linked athlete profiles identify Springville AL. Retain source caveat.",
       "verifiedAt": "2026-11-21",
       "topFinishers": [
         {
@@ -619,7 +618,8 @@
           "place": 247,
           "time": "29:13.0"
         }
-      ]
+      ],
+      "editorialNote": "Source lists 'Springville ms' in varsity results despite named high-school runners in grades 11–12. Team identity was cross-checked against Springville, Alabama athlete records. For editorial verification only; do not display on event pages."
     },
     {
       "id": "2026-09-14-volleyball-girls-st-clair-county",
