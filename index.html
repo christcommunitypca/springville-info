@@ -889,50 +889,51 @@ body:has(#entry-pages > .page:target) #share-page { visibility: hidden; }
 .sports-shortcut:hover{background:rgba(105,157,150,.25)}
 @media(max-width:899px){#feed > #listings > #listings-heading{display:flex;align-items:center;justify-content:space-between}.sports-shortcut{margin-left:auto;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.4)}}
 
-/* Keep the approved artwork proportional within a compact masthead. */
+/* Independent artwork layers keep the approved masthead compact and responsive. */
 header {
-  height: auto;
-  min-height: 0;
-  max-height: 248px;
-  aspect-ratio: 3 / 1;
-  padding: 0;
-  background: #d7edf3 url("/assets/around-springville-approved.png") center / contain no-repeat;
-}
-@media (max-width: 899px) {
-  header { max-height: 180px; }
+  display: block; height: 248px; min-height: 0; max-height: none;
+  aspect-ratio: auto; padding: 0; overflow: hidden;
+  background: linear-gradient(#c9e6ef, #e4f1ee);
 }
 header::before { content: none; }
+header .masthead-scene { position: relative; max-width: 1500px; height: 100%; margin: auto; }
 header h1 {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  margin: 0;
-  padding: 0;
+  position: absolute; inset: 30px auto auto 2%; width: 48%; height: 190px;
+  max-width: none; margin: 0; padding: 0; z-index: 1;
 }
 header h1 a { display: block; width: 100%; height: 100%; }
-header h1 a span {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
+header .masthead-wordmark { display: block; width: 100%; height: 100%; object-fit: contain; }
+header .masthead-town {
+  position: absolute; right: 0; bottom: -2px; width: 58%; height: auto;
+  max-height: 98%; object-fit: contain; object-position: right bottom;
 }
 header h1 a:focus-visible { outline: 3px solid #153a52; outline-offset: -3px; }
-@media (min-width: 900px) {
-  header .share-button { position: absolute; top: 15px; right: 28px; z-index: 2; }
+header #share-page {
+  display: block; position: absolute; z-index: 2; top: 2px; left: 49%; right: auto;
+  width: auto; height: 44px; min-width: 74px; min-height: 44px;
+  margin: 0; padding: 6px 10px; border: 0; border-radius: 4px;
+  background: transparent; color: #426374; box-shadow: none;
+  font: 600 14px/1 system-ui, sans-serif; text-indent: 0; cursor: pointer;
+}
+header #share-page:hover { color: #153a52; background: rgba(255,255,255,.25); }
+header #share-page:focus-visible { outline: 3px solid #153a52; outline-offset: -3px; }
+@media (max-width: 899px) {
+  header { height: 180px; }
+  header .masthead-scene { max-width: 600px; }
+  header h1 { inset: 12px auto auto 0; width: min(68%, 340px); height: auto; }
+  header .masthead-wordmark { height: auto; }
+  header .masthead-town { width: 100%; max-height: 130px; right: 0; bottom: 0; }
+  header #share-page { top: 0; right: 8px; left: auto; }
 }
 
 </style></head>
 <body>
 <header>
-  <svg aria-hidden="true" class="ripple" viewBox="0 0 72 36" fill="none" stroke="#253b50" stroke-width="1.6"><path d="M2 24q10-8 27-4t37-1M9 28q12-5 23-2t28-1M20 32q9-2 16-1t13-1M38 18q2-9 10-15-5 7-5 14m3 1q4-8 13-10-6 3-9 10"/></svg>
-  <h1><a href="#feed"><span class="masthead-around">Around</span> <span class="masthead-springville">Springville</span><span class="masthead-location">Springville, Alabama</span></a></h1>
-  <button type="button" id="share-page" class="share-button" data-share>Share</button>
+  <div class="masthead-scene">
+    <h1><a href="#feed"><img class="masthead-wordmark" src="/assets/wordmark-layer.png" width="2172" height="724" alt="Around Springville — Alabama —"></a></h1>
+    <img class="masthead-town" src="/assets/downtown-layer.png" width="2172" height="724" alt="" aria-hidden="true">
+    <button type="button" id="share-page" class="share-button" data-share aria-label="Share Around Springville">Share ↗</button>
+  </div>
 </header>
 <main>
 <section id="feed" class="page" aria-label="Front page"><section aria-labelledby="news-heading"><h2 class="section-title" id="news-heading">Local news</h2><div class="stories"><a class="story" href="#the-1969-springville-train-fire"><h3><small class="kind">Did you know?</small><span class="story-headline">A Train Derailment Set Off Explosions</span></h3><time datetime="2026-11-20">Nov 20</time></a><a class="story" href="#springville-appoints-kevin-early-to-district-4-council-seat"><h3>Council picks Kevin Early</h3><time datetime="2026-11-17">Nov 17</time></a><a class="story" href="#springville-charlie-hare-signs-gadsden-state"><h3>Hare Signs With Gadsden</h3><time datetime="2026-11-17">Nov 17</time></a><a class="story" href="#springville-seeks-community-input-for-comprehensive-plan"><h3>How should Springville grow?</h3><time datetime="2026-11-12">Nov 12</time></a></div><details><summary>See more news</summary><div class="stories"><a class="story" href="#dibble-dabble-art-gallery-announces-springville-opening"><h3>New Gallery on 11</h3><time datetime="2026-11-11">Nov 11</time></a><a class="story" href="#springville-cops-for-tots-applications"><h3>Cops for Tots applications</h3><time datetime="2026-11-03">Nov 3</time></a></div></details></section><section id="listings" aria-labelledby="listings-heading"><h2 class="section-title" id="listings-heading">Upcoming <a class="sports-shortcut" href="/sports.html" aria-label="Springville Tigers sports calendar" title="Springville Tigers sports calendar">🏆</a></h2><section class="month"><h3>November</h3><a class="listing" data-kind="Event" href="#oneonta-christmas-tree-lighting-2026"><time datetime="2026-11-21" aria-label="2026-11-21"><small>Sat</small><small class="date-month">Nov</small><b>21</b></time><span><strong>Oneonta Carriage Rides</strong><span class="where">5–8 p.m. · Downtown · Oneonta</span></span></a></section><section class="month"><h3>December</h3><a class="listing" data-kind="Event" href="#walk-through-bethlehem-2026"><time datetime="2026-12-04" aria-label="2026-12-04"><small>Fri</small><small class="date-month">Dec</small><b>4</b></time><span><strong>A Walk Through Bethlehem</strong><span class="where">6:00–8:00 p.m. · Homestead Hollow, 1161 Murphrees Valley Rd, Springville, AL</span></span></a><a class="listing" data-kind="Event" href="#smore-explore-2026"><time datetime="2026-12-05" aria-label="2026-12-05"><small>Sat</small><small class="date-month">Dec</small><b>5</b></time><span><strong>S’more to Explore</strong><span class="where">11 a.m. · Springville Public Library</span></span></a><a class="listing" data-kind="Event" href="#live-nativity-2026"><time datetime="2026-12-06" aria-label="2026-12-06"><small>Sun</small><small class="date-month">Dec</small><b>6</b></time><span><strong>Spring Valley Nativity</strong><span class="where">6 p.m. · 4193 U.S. Highway 11</span></span></a><a class="listing" data-kind="Event" href="#odenville-drive-thru-christmas-2026"><time datetime="2026-12-11" aria-label="2026-12-11 through 2026-12-13"><small>Fri–Sun</small><small class="date-month">Dec</small><b class="wide">11–13</b></time><span><strong>Drive Thru Christmas</strong><span class="where">6–9 p.m. · New Life Baptist · Odenville</span></span></a><a class="listing" data-kind="Event" href="#christmas-pines-2026"><time datetime="2026-12-18" aria-label="2026-12-18 through 2026-12-19"><small>Fri–Sat</small><small class="date-month">Dec</small><b class="wide">18–19</b></time><span><strong>Christmas in the Pines</strong><span class="where">Big Canoe Creek Nature Preserve</span></span></a><a class="listing" data-kind="Event" href="#christ-community-lessons-carols-2026"><time datetime="2026-12-24" aria-label="2026-12-24"><small>Thu</small><small class="date-month">Dec</small><b>24</b></time><span><strong>Lessons &amp; Carols</strong><span class="where">5 p.m. · Christ Community PCA</span></span></a></section></section></section>

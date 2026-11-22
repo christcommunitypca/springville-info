@@ -100,7 +100,7 @@ if (typeof document !== 'undefined') {
       await navigator.clipboard.writeText(url);
       shareButton.textContent = 'Link copied';
       clearTimeout(shareTimers.get(shareButton));
-      shareTimers.set(shareButton, setTimeout(() => { shareButton.textContent = 'Share'; }, 2000));
+      shareTimers.set(shareButton, setTimeout(() => { shareButton.textContent = shareButton.id === 'share-page' ? 'Share ↗' : 'Share'; }, 2000));
     } catch {
       window.prompt('Copy this link', url);
     }
