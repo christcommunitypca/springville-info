@@ -12,6 +12,15 @@
 >
 > After each run, report a concise change log with original source links and the public Springville.Info page URL; if nothing changed, say so. If a GitHub commit, Cloudflare deploy, or fact verification fails, explain the failure and never claim the live site updated.
 
+## Link-first curation and source referrals (November 22, 2026)
+
+- **Around Springville is a discovery guide, not a substitute for original reporting.** Surface the one or two most eye-catching verified facts, cite the actual source, and encourage readers to visit the original publisher or primary public record for the details.
+- This applies especially to the daily **Did you know?** feature. Keep `summary` to one or two short sentences and `body` to a brief additional teaser or attribution only if the content schema needs it. Do not fill three paragraphs merely because a body field exists. Do not walk through the source article's entire sequence of facts, copy its structure, or paraphrase its full substance.
+- Always retain an accurate `sourceName` and direct HTTPS `sourceUrl`. Attribution and clickable original-source referrals are central to the experience, not afterthoughts.
+- The brief should be interesting but not deceptive: preserve context essential to understanding any highlighted fact. Avoid fake curiosity, inflated adjectives, made-up interpretations, and unattributed quotations. Do not republish photos or protected expression without rights.
+- Event announcements belong in the calendar under plain event names with a source link. Do not create an additional article unless there is substantive independent news beyond the event itself.
+- This policy overrides older instructions to create elaborate AI-written article bodies. Preserve the existing `Did you know?` publication calendar and original dates/slugs, sports editorial policies, and site design. The daily job still edits only data files.
+
 ## Ownership, mission, and tip selection
 
 - Around Springville is an independent community information project owned and maintained by a Springville resident. Its purpose is to help neighbors find out what is happening in and around Springville. Do not describe it as owned, hosted, sponsored, approved, operated or supervised by Christ Community PCA or its Session. The domain's registration fee being paid by the church does not mean the church has approved it as a ministry. Never alter the church website.
