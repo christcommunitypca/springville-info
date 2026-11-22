@@ -2,12 +2,28 @@
   "site": {
     "name": "Springville.Info",
     "location": "Springville, Alabama",
-    "updatedAt": "2026-11-21",
+    "updatedAt": "2026-11-22",
     "timezone": "America/Chicago",
     "source": "Migrated from existing Springville.Info Wix site on 2026-11-18",
     "submissionUrl": "https://headless-czuiyfnwkie-christcommunitypca-1412.wix-site-host.com/share.html"
   },
   "news": [
+    {
+      "id": "springville-library-summer-reading-record-2026",
+      "slug": "springville-library-829-summer-readers-2026",
+      "title": "Springville Library's summer reading program reached 829 participants",
+      "shortTitle": "829 Summer Readers",
+      "category": "Did you know?",
+      "date": "2026-11-22",
+      "summary": "Springville Public Library reported 829 summer reading enrollees in 2026, a remarkable increase from the 25 children in its largest program when its director arrived in 2015.",
+      "body": [
+        "Did you know Springville Public Library enrolled 829 people in its summer reading program in 2026? Library director Jamie Twente reported the record participation to the City Council in October.",
+        "Twente said that when she arrived in 2015, the library's largest summer reading enrollment had been 25 children. She also reported nearly 30,000 items circulated over the 2026 summer and said the library's activity compared with libraries serving larger communities.",
+        "The numbers reflect how much use Springville residents make of their local library. The library offers programs throughout the year; check its current announcements for what's next."
+      ],
+      "sourceName": "The Trussville Tribune · Terry Schrimscher · October 9, 2026",
+      "sourceUrl": "https://www.trussvilletribune.com/2026/10/09/springville-library-sets-new-record-with-summer-reading-program/"
+    },
     {
       "id": "springville-historic-district-1997",
       "slug": "springville-historic-district-national-register",
@@ -131,20 +147,6 @@
     }
   ],
   "events": [
-    {
-      "id": "oneonta-christmas-tree-lighting-2026",
-      "title": "Oneonta Tree Lighting & Carriage Rides",
-      "shortTitle": "Oneonta Carriage Rides",
-      "startDate": "2026-11-21",
-      "endDate": "2026-11-21",
-      "time": "5–8 p.m.; tree lighting at 5:30 p.m.",
-      "listTime": "5–8 p.m.",
-      "location": "Downtown Oneonta, 410 1st Avenue East, Oneonta, AL",
-      "listLocation": "Downtown · Oneonta",
-      "category": "Holiday",
-      "summary": "Oneonta's downtown tree lighting includes free horse-and-carriage rides, snow and Christmas crafts—a memorable evening outing beyond the usual holiday shopping.",
-      "sourceUrl": "https://www.northalabama.org/articles/post/hometown-christmas-brings-holiday-magic-to-downtown-oneonta/"
-    },
     {
       "id": "springville-first-tree-lighting-2026",
       "title": "Springville's First Christmas Tree Lighting",
