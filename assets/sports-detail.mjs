@@ -149,7 +149,7 @@ async function load() {
       sources(game) + '</article>';
     const button = document.querySelector('#share');
     button.addEventListener('click',async()=>{
-      const url = 'https://springville.info/sports-detail.html?id=' + encodeURIComponent(game.id);
+      const url = 'https://springville.info/share/sport/' + encodeURIComponent(game.id);
       try {
         if (navigator.share) {
           await navigator.share({title:document.title,url});
