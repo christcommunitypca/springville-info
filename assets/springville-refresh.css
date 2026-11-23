@@ -1,0 +1,215 @@
+/* Springville.info approved community refresh, 2026-11-22.
+   Presentation only: JSON and sports/news content remain in their existing sources. */
+:root {
+ --paper:#f8f7f4; --card:#fff; --ink:#1f2923; --quiet:#626d65;
+ --line:#e2e0d8; --red:#913f2e; --forest:#345a47;
+ --serif:Georgia,"Times New Roman",serif;
+ --sans:"Source Sans 3",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{background:var(--paper);color:var(--ink);scroll-behavior:smooth}
+body.springville-home,body.springville-sports,body.springville-detail {
+ margin:0;max-width:none;padding:0;color:var(--ink);background:var(--paper);
+ font:400 16px/1.5 var(--sans);-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-underline-offset:3px}
+a:hover{color:var(--red)}
+button,select,input{font:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.site-masthead{display:block!important;position:relative!important;inset:auto!important;transform:none!important;
+ width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:auto!important;
+ margin:0!important;padding:0!important;background:#e8eee8!important;border:0!important;box-shadow:none!important;
+ overflow:hidden!important;isolation:auto!important}
+.site-masthead:before,.site-masthead:after{display:none!important;content:none!important}
+.masthead-inner{width:min(calc(100% - 56px),1110px);min-height:0;margin:0 auto;
+ display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:0}
+.site-masthead .site-name{display:block;position:static!important;inset:auto!important;width:100%!important;height:auto!important;
+ max-width:100%!important;margin:0!important;padding:17px 0 8px!important;color:#254434!important;text-align:center;
+ font:700 clamp(36px,4.2vw,58px)/.96 var(--serif)!important;letter-spacing:.09em!important;text-transform:uppercase!important}
+.site-masthead .site-name a{position:static!important;inset:auto!important;display:inline!important;height:auto!important;width:auto!important;
+ opacity:1!important;color:inherit!important;text-decoration:none!important;transform:none!important;text-shadow:none!important}
+.site-masthead .town-art{display:block!important;position:static!important;width:min(560px,100%)!important;height:auto!important;
+ max-width:none!important;max-height:none!important;aspect-ratio:600/220!important;margin:0!important;object-fit:contain!important;
+ transform:none!important;filter:none!important}
+.site-masthead .share-button{position:absolute!important;top:10px!important;right:clamp(12px,3vw,42px)!important;left:auto!important;
+ width:auto!important;height:auto!important;min-width:0!important;min-height:36px!important;margin:0!important;padding:6px 10px!important;
+ border:1px solid #cbd3ca!important;border-radius:4px!important;box-shadow:none!important;text-indent:0!important;
+ background:#f8f7f4!important;color:#31553e!important;font:700 12px/1 var(--sans)!important}
+.site-masthead .share-button:hover{background:#eef4eb!important}
+.tagline-strip{background:#345a47;color:#f8f7f4;border-top:1px solid #294b39;
+ font:750 11px/1.4 var(--sans);letter-spacing:.14em;text-align:center;text-transform:uppercase;padding:8px 12px 7px}
+body.springville-home main,body.springville-sports main,body.springville-detail main{
+ width:min(calc(100% - 56px),1110px);max-width:none;margin:0 auto;padding:25px 0 36px}
+body.springville-home #feed{display:grid;grid-template-columns:minmax(0,1.09fr) minmax(0,.91fr);align-items:start;gap:23px}
+body.springville-home #feed>section{display:block;min-width:0;overflow:hidden;
+ margin:0!important;padding:0!important;background:var(--card)!important;border:1px solid #ddded6!important;border-radius:3px!important}
+body.springville-home #feed>section .section-title{display:flex;align-items:center;gap:12px;justify-content:space-between;
+ margin:0!important;min-height:0!important;padding:17px 22px 14px!important;border:0!important;
+ font:700 29px/1.06 var(--serif)!important;letter-spacing:-.048em!important;text-transform:none!important;white-space:normal!important}
+body.springville-home #feed>section .section-title:after{display:none!important;content:none!important}
+body.springville-home #feed>section:first-child .section-title{background:#f7f3ef!important;
+ color:#6f3b2e!important;border-bottom:2px solid #a45b45!important}
+body.springville-home #feed>#listings .section-title{background:#f0f4ef!important;
+ color:#31553e!important;border-bottom:2px solid #61846a!important}
+body.springville-home .sports-shortcut{display:inline-flex!important;align-items:center;justify-content:center;flex:none;order:initial;
+ margin-left:auto!important;width:36px;height:36px;min-width:36px;background:#fff!important;
+ color:#31553e!important;border:1px solid #d9dfd5!important;border-radius:4px!important;
+ text-decoration:none!important;line-height:1!important}
+body.springville-home .sports-shortcut svg{display:block;width:19px;height:19px;stroke:currentColor;stroke-width:1.6;fill:none}
+body.springville-home .sports-shortcut:hover{background:#eaf1e9!important}
+body.springville-home .stories{padding:0 22px!important}
+body.springville-home .story{position:relative;display:block!important;min-height:0!important;margin:0!important;
+ padding:17px 0 16px!important;border:0!important;background:transparent!important;text-decoration:none!important}
+body.springville-home .story+.story{border-top:1px solid var(--line)!important}
+body.springville-home .story h3,body.springville-home #feed .story:first-child h3{
+ display:block!important;margin:0!important;padding:0!important;
+ font:700 19px/1.23 var(--sans)!important;letter-spacing:-.026em!important;
+ color:var(--ink)!important;text-transform:none!important}
+body.springville-home .story h3:hover{text-decoration:underline}
+body.springville-home .story .kind,body.springville-home #feed .story:first-child .kind{
+ display:block!important;margin:0 0 5px!important;padding:0!important;border:0!important;clip-path:none!important;
+ background:transparent!important;color:var(--red)!important;font:800 11px/1.2 var(--sans)!important;
+ letter-spacing:.095em!important;text-transform:uppercase!important;white-space:normal!important}
+body.springville-home .story .story-headline{display:block!important;font:inherit!important}
+body.springville-home .story time{display:none!important}
+body.springville-home #feed details{margin:0!important;border-top:1px solid var(--line)}
+body.springville-home #feed summary{display:block;list-style:none;min-height:44px!important;margin:0!important;padding:12px 22px!important;
+ border:0!important;border-radius:0!important;background:white!important;box-shadow:none!important;
+ color:var(--forest)!important;font:700 13px/1.5 var(--sans)!important}
+body.springville-home #feed summary::-webkit-details-marker{display:none}
+body.springville-home #feed summary:hover{background:#f6f8f4!important;text-decoration:underline}
+body.springville-home #listings .month{padding:0 22px!important;margin:0!important}
+body.springville-home #listings .month h3{display:none!important}
+body.springville-home #listings .month+.month .listing:first-of-type{border-top:1px solid var(--line)}
+body.springville-home .listing{display:grid!important;grid-template-columns:48px minmax(0,1fr)!important;align-items:center!important;
+ gap:12px!important;min-height:79px!important;margin:0!important;padding:13px 0!important;border:0!important;
+ text-decoration:none!important;color:var(--ink)!important}
+body.springville-home .listing+.listing{border-top:1px solid var(--line)!important}
+body.springville-home .listing time{display:flex!important;flex-direction:column;align-items:center;justify-content:center;
+ width:48px!important;height:52px!important;min-height:52px!important;padding:0!important;border-radius:0!important;
+ border:1px solid #d6e2d4!important;background:#eef5ed!important;color:#294734!important;box-shadow:none!important;
+ font-variant-numeric:tabular-nums;line-height:1.05}
+body.springville-home .listing time small:not(.date-month){display:none!important}
+body.springville-home .listing time .date-month{display:block!important;
+ font:800 10px/1.15 var(--sans)!important;letter-spacing:.07em;color:#8f4631!important;text-transform:uppercase}
+body.springville-home .listing time b{font:700 23px/1.12 var(--serif)!important;letter-spacing:normal!important;color:#294734!important}
+body.springville-home .listing time b.wide{font:700 15px/1.4 var(--sans)!important}
+body.springville-home .listing strong{display:block!important;margin:0!important;padding:0!important;
+ font:750 15px/1.22 var(--sans)!important;letter-spacing:normal!important;color:var(--ink)!important}
+body.springville-home .listing .where{display:block!important;margin-top:4px;color:#647067!important;
+ font:400 12px/1.25 var(--sans)!important}
+body.springville-home .listing:hover strong{color:var(--forest)!important;text-decoration:underline}
+body.springville-home .page{display:none}
+body.springville-home #feed{display:grid}
+body.springville-home .page:target:not(#feed){display:block!important}
+body.springville-home:has(.page:target:not(#feed)) #feed{display:none!important}
+body.springville-home:has(.page:target:not(#feed)) .page:not(:target){display:none!important}
+body.springville-home .page:not(#feed){
+ max-width:760px;margin:0 auto;background:white;border:1px solid var(--line);border-radius:3px;
+ padding:clamp(20px,4vw,36px)}
+body.springville-home .page:not(#feed) h2{
+ margin:0 0 9px;color:var(--ink);font:700 clamp(27px,4.5vw,40px)/1.12 var(--serif);letter-spacing:-.04em}
+body.springville-home .page:not(#feed) p{margin:14px 0;font:400 16px/1.6 var(--sans)}
+body.springville-home .page:not(#feed) small{color:#69736c;font:600 12px/1.5 var(--sans)}
+body.springville-home .page:not(#feed) a:not(.back){color:var(--forest);font-weight:700}
+body.springville-home .page-actions{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:22px}
+body.springville-home .back{display:inline-flex;align-items:center;margin:0 0 18px;text-decoration:none;color:var(--forest);
+ font:700 13px/1.4 var(--sans)}
+body.springville-home .page-actions .back{margin:0}
+body.springville-home .page-actions .share-button{min-height:38px;padding:7px 12px;border:1px solid var(--line);
+ border-radius:4px;background:#f6f8f4;color:var(--forest);font:700 13px var(--sans)}
+body.springville-home footer,body.springville-sports footer,body.springville-detail footer{
+ width:min(calc(100% - 56px),1110px);max-width:none;margin:0 auto;padding:18px 0 28px;
+ border-top:1px solid var(--line);background:none;display:flex;align-items:center;justify-content:flex-start;
+ flex-wrap:wrap;gap:10px 20px;color:#6b756c;font:600 12px/1.5 var(--sans)}
+body.springville-home footer a,body.springville-sports footer a,body.springville-detail footer a{
+ color:var(--forest);text-decoration:none;font-weight:700}
+body.springville-home footer a:hover,body.springville-sports footer a:hover,body.springville-detail footer a:hover{text-decoration:underline}
+body.springville-sports main,body.springville-detail main{padding-top:23px}
+body.springville-sports .page-back,body.springville-detail .page-back{
+ display:inline-flex;margin-bottom:14px;font:700 14px/1.4 var(--sans);text-decoration:none;color:var(--forest)}
+body.springville-sports .toolbar{margin:0 0 15px;padding:17px 21px;border:1px solid var(--line);
+ border-radius:3px;background:white;box-shadow:none}
+body.springville-sports #month-label{min-width:0;margin:0;text-align:center;
+ font:700 clamp(21px,3vw,27px)/1.2 var(--serif);letter-spacing:-.03em;text-transform:none;color:#2f5140}
+body.springville-sports .month-label-slot .month-measure{font:700 clamp(21px,3vw,27px)/1.2 var(--serif);letter-spacing:-.03em;text-transform:none}
+body.springville-sports .month-buttons button{border:1px solid #d7dfd3;border-radius:4px;background:#f5f8f3;color:#32553e;box-shadow:none}
+body.springville-sports .month-buttons button:hover{background:#e5eee4}
+body.springville-sports .field label,body.springville-sports .field-label{color:#59665b;font:800 11px/1.3 var(--sans);letter-spacing:.07em}
+body.springville-sports .field select{height:43px;min-height:43px;padding:7px 12px;border:1px solid #d2dacf;
+ border-radius:4px;background:#fbfcfa;color:var(--ink);font:650 15px/1.2 var(--sans)}
+body.springville-sports .gender-slider::-webkit-slider-runnable-track{background:#b5c3b6}
+body.springville-sports .gender-slider::-moz-range-track{background:#b5c3b6}
+body.springville-sports .gender-slider::-webkit-slider-thumb{background:var(--forest);box-shadow:0 0 0 1px var(--forest)}
+body.springville-sports .gender-slider::-moz-range-thumb{background:var(--forest);box-shadow:0 0 0 1px var(--forest)}
+body.springville-sports .gender-stop[aria-current="true"]{color:var(--forest)}
+body.springville-sports .calendar-note{margin:12px 0;color:#7a827a;font:600 12px/1.5 var(--sans)}
+body.springville-sports #agenda-list{display:flex;flex-direction:column;gap:14px}
+body.springville-sports .agenda-day{margin:0;background:white;border:1px solid var(--line);border-radius:3px;padding:0;overflow:hidden}
+body.springville-sports .agenda-day>h3{margin:0;padding:12px 17px;border-bottom:1px solid var(--line);background:#f1f4ef;
+ color:#31553e;font:700 20px/1.25 var(--serif);letter-spacing:-.02em;text-transform:none}
+body.springville-sports .agenda-day .game,body.springville-sports .agenda-day .game.completed,
+body.springville-sports .agenda-day .competition-card{
+ display:flex;flex-direction:column;gap:6px;margin:0 17px;padding:13px 0;
+ background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;
+ box-shadow:none;color:var(--ink);min-height:0;text-decoration:none}
+body.springville-sports .agenda-day .game:last-child{border-bottom:0}
+body.springville-sports .agenda-day .game:hover{background:#f8faf6;color:var(--ink)}
+body.springville-sports .game-meta{font:800 10px/1.4 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#718077}
+body.springville-sports .matchup,body.springville-sports .meet-title{font:750 17px/1.25 var(--sans);color:var(--ink)}
+body.springville-sports .game-time{color:#355743;font:700 13px/1.4 var(--sans)}
+body.springville-sports .final-result{display:flex;align-items:center;gap:11px}
+body.springville-sports .outcome{width:39px;height:39px;border-radius:3px;font:800 21px/1 var(--sans)}
+body.springville-sports .outcome-w{background:#345a47;color:#fff}
+body.springville-sports .outcome-l{background:#99513e;color:#fff}
+body.springville-sports .outcome-t{background:#617268;color:#fff}
+body.springville-sports .agenda-day .game .score{font:500 15px/1.3 var(--sans);color:var(--ink)}
+body.springville-sports .score-winner{color:var(--ink);font-weight:800}
+body.springville-sports .score-loser{color:#6f7c74;font-weight:500}
+body.springville-sports .game-result{color:var(--forest)}
+body.springville-sports .record-note{background:#f1f5ef;border:1px solid #d8e0d7;color:#536657}
+body.springville-sports .record-note strong{color:#31553e}
+body.springville-sports .meet-summary,body.springville-sports .placement-context{color:#31553e}
+body.springville-sports .outcome-placement{background:#345a47}
+body.springville-sports .details-hint{color:#637267;font:700 12px/1.4 var(--sans)}
+body.springville-sports .schedule-status{background:#f1f4ef;border-color:#d7dfd3;border-radius:3px;color:#536657}
+body.springville-sports .empty{background:#fff;border-radius:3px}
+body.springville-detail .detail-shell{border:1px solid var(--line);border-radius:3px;box-shadow:none;background:white}
+body.springville-detail .category,body.springville-detail .result-label{color:#6b776d}
+body.springville-detail h1{font:700 clamp(27px,4.8vw,43px)/1.1 var(--serif);letter-spacing:-.04em;text-transform:none;color:#31553e}
+body.springville-detail h2{font:700 24px/1.2 var(--serif);letter-spacing:-.03em;color:#31553e}
+body.springville-detail .result-panel{border-left:3px solid var(--forest);border-radius:3px;background:#f1f4ef}
+body.springville-detail .result-box{border-radius:3px;background:var(--forest)}
+body.springville-detail .result-box.win{background:var(--forest)}
+body.springville-detail .result-box.loss{background:#99513e}
+body.springville-detail .result-context{color:#31553e}
+body.springville-detail .share{border-color:#d7dfd3;border-radius:4px;box-shadow:none;background:#f5f8f3;color:#31553e}
+body.springville-detail .sources a{color:var(--forest)}
+@media(max-width:780px){
+ .masthead-inner{width:calc(100% - 34px)}
+ .site-masthead .site-name{font-size:clamp(28px,8.1vw,39px)!important;letter-spacing:.087em!important;padding:12px 0 6px!important}
+ .site-masthead .town-art{width:min(100%,480px)!important}
+ .site-masthead .share-button{top:8px!important;right:9px!important;min-height:30px!important;padding:6px!important;font-size:11px!important}
+ body.springville-home main,body.springville-sports main,body.springville-detail main{width:calc(100% - 34px);padding-top:18px;padding-bottom:27px}
+ body.springville-home #feed{display:flex;flex-direction:column;gap:17px}
+ body.springville-home #feed>section{width:100%}
+ body.springville-home #feed>section .section-title{font-size:27px!important;padding:16px 17px 13px!important}
+ body.springville-home .stories,body.springville-home #listings .month{padding-left:17px!important;padding-right:17px!important}
+ body.springville-home #feed summary{padding:12px 17px!important}
+ body.springville-home .story h3,body.springville-home #feed .story:first-child h3{font-size:18px!important}
+ body.springville-home .listing{min-height:77px!important;grid-template-columns:46px minmax(0,1fr)!important;gap:11px!important}
+ body.springville-home .listing time{width:46px!important}
+ body.springville-home footer,body.springville-sports footer,body.springville-detail footer{width:calc(100% - 34px)}
+ body.springville-sports .toolbar{padding:14px}
+ body.springville-sports .agenda-day .game,body.springville-sports .agenda-day .game.completed,body.springville-sports .agenda-day .competition-card{margin:0 13px;padding:11px 0}
+ body.springville-sports .agenda-day>h3{padding:12px 13px}
+ body.springville-sports .month-label-slot .month-measure{font-size:clamp(18px,5vw,26px)}
+ body.springville-sports #month-label{font-size:clamp(18px,5vw,26px)}
+}
+@media(max-width:390px){
+ .site-masthead .site-name{font-size:28px!important;letter-spacing:.07em!important}
+ body.springville-sports .month-buttons button{width:31px;height:36px}
+ body.springville-sports .month-label-slot .month-measure{font-size:18px}
+ body.springville-sports #month-label{font-size:18px}
+}
