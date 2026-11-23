@@ -6,7 +6,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/springville-refresh.css?v=20261122">
-<link rel="stylesheet" href="/assets/front-porch.css?v=3">
+<link rel="stylesheet" href="/assets/front-porch.css?v=4">
 <title>A Town Is More Than Its Growth | Springville.info</title>
 </head>
 <body class="springville-home springville-porch">
@@ -55,21 +55,29 @@
     </div>
   </article>
   <div class="porch-article-bottom">
-    <nav class="porch-explore" aria-label="Explore other columns">
-      <p class="porch-explore-eyebrow">Keep visiting the porch</p>
-      <a href="/front-porch/" class="porch-explore-link">More from My Front Porch <span aria-hidden="true">→</span></a>
-    </nav>
+    <section class="porch-community" aria-labelledby="porch-community-heading">
+      <p class="porch-explore-eyebrow">The conversation continues</p>
+      <h2 id="porch-community-heading">Around the Porch</h2>
+      <div id="porch-community-content" data-column="a-town-is-more-than-its-growth">
+        <p class="porch-community-empty">As neighbors write in, we'll bring the conversation together here—what we're agreeing on, what we're wrestling with, and what deserves another look.</p>
+      </div>
+      <p class="porch-community-updated" id="porch-community-updated" hidden></p>
+    </section>
     <section class="porch-response" aria-labelledby="porch-response-heading">
       <h2 id="porch-response-heading">What's your view?</h2>
       <p>I've shared my thoughts. I'd enjoy hearing yours, whether you agree or see it a little differently.</p>
       <a class="porch-response-link" href="mailto:tips@springville.info?subject=From%20My%20Front%20Porch%3A%20A%20Town%20Is%20More%20Than%20Its%20Growth&body=My%20thoughts%3A%0A%0A">Write back <span aria-hidden="true">↗</span></a>
-      <p class="porch-response-note">Your reply goes privately to the editor. Responses aren't published automatically; we'll ask permission before sharing anything that identifies you.</p>
+      <p class="porch-response-note">Your email stays private. We may summarize ideas anonymously in the community conversation above. We won't publish your name or quote you directly without permission.</p>
     </section>
+    <nav class="porch-explore" aria-label="Explore other columns">
+      <p class="porch-explore-eyebrow">Keep visiting the porch</p>
+      <a href="/front-porch/" class="porch-explore-link">More from My Front Porch <span aria-hidden="true">→</span></a>
+    </nav>
   </div>
   <div class="porch-bottom-nav"><a href="/">← Back to Springville</a></div>
 </main>
 <footer><a href="/">Home</a><a href="/front-porch/">From My Front Porch</a><a href="/sports.html">Tigers Sports</a><a href="/#about">About</a></footer>
-<script type="module" src="/assets/analytics.mjs"></script><script>
+<script type="module" src="/assets/analytics.mjs"></script><script type="module" src="/assets/porch-community.mjs"></script><script>
 document.querySelectorAll('[data-share]').forEach(button=>button.addEventListener('click',async()=>{
   const url=location.href;
   try {if (navigator.share) {await navigator.share({title:document.title,url});return;}}catch(error){if(error.name==='AbortError')return;}
