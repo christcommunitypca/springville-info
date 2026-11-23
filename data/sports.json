@@ -4,7 +4,7 @@
     "city": "Springville, Alabama",
     "timezone": "America/Chicago",
     "address": "8295 US Highway 11, Springville, AL 35146",
-    "updatedAt": "2026-11-21T17:39:11-06:00",
+    "updatedAt": "2026-11-22T22:54:48-06:00",
     "note": "Springville Tigers varsity games, meets and results, with sources. Schedules are updated as they are published.",
     "flagFootball2026EditorialNote": "2026 girls varsity flag football: 18 distinct final matchups independently identified (9-9) plus two listed Oct 15 cancellations. MaxPreps and Flag Football Planet display a 10-9 record; FFP lists the exact Sep 1 Springville 33–13 Hope Christian Academy result twice with opposite venue labels. Do not fabricate a 19th game to force 10-9. If a new independent game source identifies an additional unique event, evaluate it; otherwise stop the one-time backfill."
   },
@@ -1698,6 +1698,25 @@
       "secondarySourceUrl": "https://flagfootballplanet.com/high-school/teams/austin-decatur-al-flag"
     },
     {
+      "id": "2026-11-07-basketball-girls-pisgah",
+      "date": "2026-11-07",
+      "time": "11:30 AM",
+      "sport": "Basketball",
+      "gender": "Girls",
+      "level": "Varsity",
+      "opponent": "Pisgah",
+      "site": "away",
+      "season": "2026-27",
+      "status": "final",
+      "springvilleScore": 36,
+      "opponentScore": 53,
+      "sourceName": "MaxPreps",
+      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/girls/schedule/",
+      "verifiedAt": "2026-11-20",
+      "secondarySourceName": "High School On SI",
+      "secondarySourceUrl": "https://www.si.com/high-school/stats/alabama/girls-basketball/games/6861459-springville-vs-pisgah"
+    },
+    {
       "id": "2026-11-07-cross-country-boys-state-5a",
       "date": "2026-11-07",
       "sport": "Cross Country",
@@ -1851,25 +1870,6 @@
       ]
     },
     {
-      "id": "2026-11-07-basketball-girls-pisgah",
-      "date": "2026-11-07",
-      "time": "11:30 AM",
-      "sport": "Basketball",
-      "gender": "Girls",
-      "level": "Varsity",
-      "opponent": "Pisgah",
-      "site": "away",
-      "season": "2026-27",
-      "status": "final",
-      "springvilleScore": 36,
-      "opponentScore": 53,
-      "sourceName": "MaxPreps",
-      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/girls/schedule/",
-      "verifiedAt": "2026-11-20",
-      "secondarySourceName": "High School On SI",
-      "secondarySourceUrl": "https://www.si.com/high-school/stats/alabama/girls-basketball/games/6861459-springville-vs-pisgah"
-    },
-    {
       "id": "2026-11-10-basketball-girls-briarwood-christian",
       "date": "2026-11-10",
       "time": "5:30 PM",
@@ -1908,25 +1908,6 @@
       "secondarySourceUrl": "https://alscores.app/basketball/team/springville-high-school/"
     },
     {
-      "id": "2026-11-13-basketball-girls-locust-fork",
-      "date": "2026-11-13",
-      "time": "6:00 PM",
-      "sport": "Basketball",
-      "gender": "Girls",
-      "level": "Varsity",
-      "opponent": "Locust Fork",
-      "site": "home",
-      "season": "2026-27",
-      "status": "final",
-      "springvilleScore": 43,
-      "opponentScore": 67,
-      "sourceName": "MaxPreps",
-      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/girls/schedule/",
-      "verifiedAt": "2026-11-20",
-      "secondarySourceName": "AL Scores",
-      "secondarySourceUrl": "https://alscores.app/basketball/girls/team/springville-high-school/"
-    },
-    {
       "id": "2026-11-13-basketball-boys-locust-fork",
       "date": "2026-11-13",
       "time": "7:00 PM",
@@ -1946,6 +1927,25 @@
       "secondarySourceUrl": "https://alscores.app/basketball/team/springville-high-school/"
     },
     {
+      "id": "2026-11-13-basketball-girls-locust-fork",
+      "date": "2026-11-13",
+      "time": "6:00 PM",
+      "sport": "Basketball",
+      "gender": "Girls",
+      "level": "Varsity",
+      "opponent": "Locust Fork",
+      "site": "home",
+      "season": "2026-27",
+      "status": "final",
+      "springvilleScore": 43,
+      "opponentScore": 67,
+      "sourceName": "MaxPreps",
+      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/girls/schedule/",
+      "verifiedAt": "2026-11-20",
+      "secondarySourceName": "AL Scores",
+      "secondarySourceUrl": "https://alscores.app/basketball/girls/team/springville-high-school/"
+    },
+    {
       "id": "2026-11-16-basketball-boys-glencoe",
       "date": "2026-11-16",
       "time": "6:30 PM",
@@ -1963,6 +1963,39 @@
       "verifiedAt": "2026-11-20",
       "secondarySourceName": "AL Scores",
       "secondarySourceUrl": "https://alscores.app/basketball/team/springville-high-school/"
+    },
+    {
+      "id": "2026-11-17-basketball-boys-mountain-brook",
+      "date": "2026-11-17",
+      "time": "7:00 PM",
+      "sport": "Basketball",
+      "gender": "Boys",
+      "level": "Varsity",
+      "opponent": "Mountain Brook",
+      "site": "away",
+      "season": "2026-27",
+      "status": "unconfirmed",
+      "sourceName": "MaxPreps",
+      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/schedule/",
+      "verifiedAt": "2026-11-20",
+      "secondarySourceName": "Associated Press",
+      "secondarySourceUrl": "https://www.seattlepi.com/sports/tuesday-s-scores-a22536829",
+      "scoreReports": [
+        {
+          "springvilleScore": 42,
+          "opponentScore": 76,
+          "sourceName": "MaxPreps",
+          "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/schedule/"
+        },
+        {
+          "springvilleScore": 38,
+          "opponentScore": 71,
+          "sourceName": "Associated Press",
+          "sourceUrl": "https://www.seattlepi.com/sports/tuesday-s-scores-a22536829"
+        }
+      ],
+      "preferredScoreSourceName": "MaxPreps",
+      "sourcePreferenceReason": "MaxPreps reports final 42–76 and explicitly identifies the Associated Press/AL Scores 38–71 figure as the third-quarter tally. Confirm with school if available."
     },
     {
       "id": "2026-11-17-basketball-girls-mountain-brook",
@@ -2004,37 +2037,23 @@
       "sourcePreferenceReason": "November 17 girls: Associated Press and AL Scores both report 18–63; MaxPreps' 42–76 duplicates the boys' final and is disputed. Confirm with team when available."
     },
     {
-      "id": "2026-11-17-basketball-boys-mountain-brook",
-      "date": "2026-11-17",
-      "time": "7:00 PM",
+      "id": "2026-11-19-basketball-boys-albertville",
+      "date": "2026-11-19",
+      "time": "8:00 PM",
       "sport": "Basketball",
       "gender": "Boys",
       "level": "Varsity",
-      "opponent": "Mountain Brook",
-      "site": "away",
+      "opponent": "Albertville",
+      "site": "home",
       "season": "2026-27",
-      "status": "unconfirmed",
+      "status": "final",
       "sourceName": "MaxPreps",
       "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/schedule/",
       "verifiedAt": "2026-11-20",
-      "secondarySourceName": "Associated Press",
-      "secondarySourceUrl": "https://www.seattlepi.com/sports/tuesday-s-scores-a22536829",
-      "scoreReports": [
-        {
-          "springvilleScore": 42,
-          "opponentScore": 76,
-          "sourceName": "MaxPreps",
-          "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/schedule/"
-        },
-        {
-          "springvilleScore": 38,
-          "opponentScore": 71,
-          "sourceName": "Associated Press",
-          "sourceUrl": "https://www.seattlepi.com/sports/tuesday-s-scores-a22536829"
-        }
-      ],
-      "preferredScoreSourceName": "MaxPreps",
-      "sourcePreferenceReason": "MaxPreps reports final 42–76 and explicitly identifies the Associated Press/AL Scores 38–71 figure as the third-quarter tally. Confirm with school if available."
+      "springvilleScore": 50,
+      "opponentScore": 79,
+      "secondarySourceName": "AL Scores",
+      "secondarySourceUrl": "https://alscores.app/basketball/team/springville-high-school/"
     },
     {
       "id": "2026-11-19-basketball-girls-albertville",
@@ -2056,40 +2075,6 @@
       "secondarySourceUrl": "https://alscores.app/basketball/girls/team/springville-high-school/"
     },
     {
-      "id": "2026-11-19-basketball-boys-albertville",
-      "date": "2026-11-19",
-      "time": "8:00 PM",
-      "sport": "Basketball",
-      "gender": "Boys",
-      "level": "Varsity",
-      "opponent": "Albertville",
-      "site": "home",
-      "season": "2026-27",
-      "status": "final",
-      "sourceName": "MaxPreps",
-      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/schedule/",
-      "verifiedAt": "2026-11-20",
-      "springvilleScore": 50,
-      "opponentScore": 79,
-      "secondarySourceName": "AL Scores",
-      "secondarySourceUrl": "https://alscores.app/basketball/team/springville-high-school/"
-    },
-    {
-      "id": "2026-11-23-basketball-girls-sardis",
-      "date": "2026-11-23",
-      "time": "5:00 PM",
-      "sport": "Basketball",
-      "gender": "Girls",
-      "level": "Varsity",
-      "opponent": "Sardis",
-      "site": "away",
-      "season": "2026-27",
-      "status": "scheduled",
-      "sourceName": "MaxPreps",
-      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/girls/schedule/",
-      "verifiedAt": "2026-11-20"
-    },
-    {
       "id": "2026-11-23-basketball-boys-sardis",
       "date": "2026-11-23",
       "time": "6:30 PM",
@@ -2105,14 +2090,14 @@
       "verifiedAt": "2026-11-20"
     },
     {
-      "id": "2026-11-24-basketball-girls-ashville",
-      "date": "2026-11-24",
-      "time": "2:00 PM",
+      "id": "2026-11-23-basketball-girls-sardis",
+      "date": "2026-11-23",
+      "time": "5:00 PM",
       "sport": "Basketball",
       "gender": "Girls",
       "level": "Varsity",
-      "opponent": "Ashville",
-      "site": "home",
+      "opponent": "Sardis",
+      "site": "away",
       "season": "2026-27",
       "status": "scheduled",
       "sourceName": "MaxPreps",
@@ -2135,14 +2120,14 @@
       "verifiedAt": "2026-11-20"
     },
     {
-      "id": "2026-12-01-basketball-girls-locust-fork",
-      "date": "2026-12-01",
-      "time": "6:30 PM",
+      "id": "2026-11-24-basketball-girls-ashville",
+      "date": "2026-11-24",
+      "time": "2:00 PM",
       "sport": "Basketball",
       "gender": "Girls",
       "level": "Varsity",
-      "opponent": "Locust Fork",
-      "site": "away",
+      "opponent": "Ashville",
+      "site": "home",
       "season": "2026-27",
       "status": "scheduled",
       "sourceName": "MaxPreps",
@@ -2165,13 +2150,13 @@
       "verifiedAt": "2026-11-20"
     },
     {
-      "id": "2026-12-04-basketball-girls-oneonta",
-      "date": "2026-12-04",
-      "time": "5:45 PM",
+      "id": "2026-12-01-basketball-girls-locust-fork",
+      "date": "2026-12-01",
+      "time": "6:30 PM",
       "sport": "Basketball",
       "gender": "Girls",
       "level": "Varsity",
-      "opponent": "Oneonta",
+      "opponent": "Locust Fork",
       "site": "away",
       "season": "2026-27",
       "status": "scheduled",
@@ -2195,13 +2180,13 @@
       "verifiedAt": "2026-11-20"
     },
     {
-      "id": "2026-12-08-basketball-girls-moody",
-      "date": "2026-12-08",
-      "time": null,
+      "id": "2026-12-04-basketball-girls-oneonta",
+      "date": "2026-12-04",
+      "time": "5:45 PM",
       "sport": "Basketball",
       "gender": "Girls",
       "level": "Varsity",
-      "opponent": "Moody",
+      "opponent": "Oneonta",
       "site": "away",
       "season": "2026-27",
       "status": "scheduled",
@@ -2225,14 +2210,14 @@
       "verifiedAt": "2026-11-20"
     },
     {
-      "id": "2026-12-11-basketball-girls-mountain-brook",
-      "date": "2026-12-11",
-      "time": "6:30 PM",
+      "id": "2026-12-08-basketball-girls-moody",
+      "date": "2026-12-08",
+      "time": null,
       "sport": "Basketball",
       "gender": "Girls",
       "level": "Varsity",
-      "opponent": "Mountain Brook",
-      "site": "home",
+      "opponent": "Moody",
+      "site": "away",
       "season": "2026-27",
       "status": "scheduled",
       "sourceName": "MaxPreps",
@@ -2255,13 +2240,13 @@
       "verifiedAt": "2026-11-20"
     },
     {
-      "id": "2026-12-15-basketball-girls-oxford",
-      "date": "2026-12-15",
+      "id": "2026-12-11-basketball-girls-mountain-brook",
+      "date": "2026-12-11",
       "time": "6:30 PM",
       "sport": "Basketball",
       "gender": "Girls",
       "level": "Varsity",
-      "opponent": "Oxford",
+      "opponent": "Mountain Brook",
       "site": "home",
       "season": "2026-27",
       "status": "scheduled",
@@ -2285,13 +2270,13 @@
       "verifiedAt": "2026-11-20"
     },
     {
-      "id": "2026-12-18-basketball-girls-arab",
-      "date": "2026-12-18",
+      "id": "2026-12-15-basketball-girls-oxford",
+      "date": "2026-12-15",
       "time": "6:30 PM",
       "sport": "Basketball",
       "gender": "Girls",
       "level": "Varsity",
-      "opponent": "Arab",
+      "opponent": "Oxford",
       "site": "home",
       "season": "2026-27",
       "status": "scheduled",
@@ -2315,6 +2300,21 @@
       "verifiedAt": "2026-11-20"
     },
     {
+      "id": "2026-12-18-basketball-girls-arab",
+      "date": "2026-12-18",
+      "time": "6:30 PM",
+      "sport": "Basketball",
+      "gender": "Girls",
+      "level": "Varsity",
+      "opponent": "Arab",
+      "site": "home",
+      "season": "2026-27",
+      "status": "scheduled",
+      "sourceName": "MaxPreps",
+      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/girls/schedule/",
+      "verifiedAt": "2026-11-20"
+    },
+    {
       "id": "2026-12-19-basketball-girls-hartselle",
       "date": "2026-12-19",
       "time": "3:30 PM",
@@ -2323,21 +2323,6 @@
       "level": "Varsity",
       "opponent": "Hartselle",
       "site": "away",
-      "season": "2026-27",
-      "status": "scheduled",
-      "sourceName": "MaxPreps",
-      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/girls/schedule/",
-      "verifiedAt": "2026-11-20"
-    },
-    {
-      "id": "2026-12-21-basketball-girls-oneonta",
-      "date": "2026-12-21",
-      "time": "2:00 PM",
-      "sport": "Basketball",
-      "gender": "Girls",
-      "level": "Varsity",
-      "opponent": "Oneonta",
-      "site": "home",
       "season": "2026-27",
       "status": "scheduled",
       "sourceName": "MaxPreps",
@@ -2360,6 +2345,21 @@
       "verifiedAt": "2026-11-20"
     },
     {
+      "id": "2026-12-21-basketball-girls-oneonta",
+      "date": "2026-12-21",
+      "time": "2:00 PM",
+      "sport": "Basketball",
+      "gender": "Girls",
+      "level": "Varsity",
+      "opponent": "Oneonta",
+      "site": "home",
+      "season": "2026-27",
+      "status": "scheduled",
+      "sourceName": "MaxPreps",
+      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/girls/schedule/",
+      "verifiedAt": "2026-11-20"
+    },
+    {
       "id": "2026-12-28-basketball-boys-cumberland-county-tn",
       "date": "2026-12-28",
       "time": null,
@@ -2367,6 +2367,21 @@
       "gender": "Boys",
       "level": "Varsity",
       "opponent": "Cumberland County (TN)",
+      "site": "home",
+      "season": "2026-27",
+      "status": "scheduled",
+      "sourceName": "MaxPreps",
+      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/schedule/",
+      "verifiedAt": "2026-11-20"
+    },
+    {
+      "id": "2027-01-05-basketball-boys-moody",
+      "date": "2027-01-05",
+      "time": "7:30 PM",
+      "sport": "Basketball",
+      "gender": "Boys",
+      "level": "Varsity",
+      "opponent": "Moody",
       "site": "home",
       "season": "2026-27",
       "status": "scheduled",
@@ -2390,21 +2405,6 @@
       "verifiedAt": "2026-11-20"
     },
     {
-      "id": "2027-01-05-basketball-boys-moody",
-      "date": "2027-01-05",
-      "time": "7:30 PM",
-      "sport": "Basketball",
-      "gender": "Boys",
-      "level": "Varsity",
-      "opponent": "Moody",
-      "site": "home",
-      "season": "2026-27",
-      "status": "scheduled",
-      "sourceName": "MaxPreps",
-      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/schedule/",
-      "verifiedAt": "2026-11-20"
-    },
-    {
       "id": "2027-01-07-basketball-girls-jacksonville",
       "date": "2027-01-07",
       "time": "5:30 PM",
@@ -2413,21 +2413,6 @@
       "level": "Varsity",
       "opponent": "Jacksonville",
       "site": "away",
-      "season": "2026-27",
-      "status": "scheduled",
-      "sourceName": "MaxPreps",
-      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/girls/schedule/",
-      "verifiedAt": "2026-11-20"
-    },
-    {
-      "id": "2027-01-08-basketball-girls-pell-city",
-      "date": "2027-01-08",
-      "time": "6:30 PM",
-      "sport": "Basketball",
-      "gender": "Girls",
-      "level": "Varsity",
-      "opponent": "Pell City",
-      "site": "home",
       "season": "2026-27",
       "status": "scheduled",
       "sourceName": "MaxPreps",
@@ -2450,14 +2435,14 @@
       "verifiedAt": "2026-11-20"
     },
     {
-      "id": "2027-01-11-basketball-girls-oxford",
-      "date": "2027-01-11",
-      "time": "6:00 PM",
+      "id": "2027-01-08-basketball-girls-pell-city",
+      "date": "2027-01-08",
+      "time": "6:30 PM",
       "sport": "Basketball",
       "gender": "Girls",
       "level": "Varsity",
-      "opponent": "Oxford",
-      "site": "away",
+      "opponent": "Pell City",
+      "site": "home",
       "season": "2026-27",
       "status": "scheduled",
       "sourceName": "MaxPreps",
@@ -2480,13 +2465,13 @@
       "verifiedAt": "2026-11-20"
     },
     {
-      "id": "2027-01-12-basketball-girls-st-clair-county",
-      "date": "2027-01-12",
+      "id": "2027-01-11-basketball-girls-oxford",
+      "date": "2027-01-11",
       "time": "6:00 PM",
       "sport": "Basketball",
       "gender": "Girls",
       "level": "Varsity",
-      "opponent": "St. Clair County",
+      "opponent": "Oxford",
       "site": "away",
       "season": "2026-27",
       "status": "scheduled",
@@ -2510,13 +2495,13 @@
       "verifiedAt": "2026-11-20"
     },
     {
-      "id": "2027-01-15-basketball-girls-pell-city",
-      "date": "2027-01-15",
-      "time": "5:30 PM",
+      "id": "2027-01-12-basketball-girls-st-clair-county",
+      "date": "2027-01-12",
+      "time": "6:00 PM",
       "sport": "Basketball",
       "gender": "Girls",
       "level": "Varsity",
-      "opponent": "Pell City",
+      "opponent": "St. Clair County",
       "site": "away",
       "season": "2026-27",
       "status": "scheduled",
@@ -2540,13 +2525,13 @@
       "verifiedAt": "2026-11-20"
     },
     {
-      "id": "2027-01-19-basketball-girls-gadsden-city",
-      "date": "2027-01-19",
-      "time": "6:00 PM",
+      "id": "2027-01-15-basketball-girls-pell-city",
+      "date": "2027-01-15",
+      "time": "5:30 PM",
       "sport": "Basketball",
       "gender": "Girls",
       "level": "Varsity",
-      "opponent": "Gadsden City",
+      "opponent": "Pell City",
       "site": "away",
       "season": "2026-27",
       "status": "scheduled",
@@ -2570,14 +2555,14 @@
       "verifiedAt": "2026-11-20"
     },
     {
-      "id": "2027-01-29-basketball-girls-alexandria",
-      "date": "2027-01-29",
-      "time": "5:00 PM",
+      "id": "2027-01-19-basketball-girls-gadsden-city",
+      "date": "2027-01-19",
+      "time": "6:00 PM",
       "sport": "Basketball",
       "gender": "Girls",
       "level": "Varsity",
-      "opponent": "Alexandria",
-      "site": "home",
+      "opponent": "Gadsden City",
+      "site": "away",
       "season": "2026-27",
       "status": "scheduled",
       "sourceName": "MaxPreps",
@@ -2600,13 +2585,13 @@
       "verifiedAt": "2026-11-20"
     },
     {
-      "id": "2027-02-01-basketball-girls-guntersville",
-      "date": "2027-02-01",
-      "time": "6:00 PM",
+      "id": "2027-01-29-basketball-girls-alexandria",
+      "date": "2027-01-29",
+      "time": "5:00 PM",
       "sport": "Basketball",
       "gender": "Girls",
       "level": "Varsity",
-      "opponent": "Guntersville",
+      "opponent": "Alexandria",
       "site": "home",
       "season": "2026-27",
       "status": "scheduled",
@@ -2627,6 +2612,21 @@
       "status": "scheduled",
       "sourceName": "MaxPreps",
       "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/schedule/",
+      "verifiedAt": "2026-11-20"
+    },
+    {
+      "id": "2027-02-01-basketball-girls-guntersville",
+      "date": "2027-02-01",
+      "time": "6:00 PM",
+      "sport": "Basketball",
+      "gender": "Girls",
+      "level": "Varsity",
+      "opponent": "Guntersville",
+      "site": "home",
+      "season": "2026-27",
+      "status": "scheduled",
+      "sourceName": "MaxPreps",
+      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/girls/schedule/",
       "verifiedAt": "2026-11-20"
     },
     {
@@ -2660,21 +2660,6 @@
       "verifiedAt": "2026-11-20"
     },
     {
-      "id": "2027-02-12-soccer-girls-sylacauga",
-      "date": "2027-02-12",
-      "time": "5:30 PM",
-      "sport": "Soccer",
-      "gender": "Girls",
-      "level": "Varsity",
-      "opponent": "Sylacauga",
-      "site": "home",
-      "season": "2026-27",
-      "status": "scheduled",
-      "sourceName": "MaxPreps",
-      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/soccer/girls/spring/schedule/",
-      "verifiedAt": "2026-11-20"
-    },
-    {
       "id": "2027-02-12-soccer-boys-sylacauga",
       "date": "2027-02-12",
       "time": "7:00 PM",
@@ -2687,6 +2672,21 @@
       "status": "scheduled",
       "sourceName": "MaxPreps",
       "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/soccer/spring/schedule/",
+      "verifiedAt": "2026-11-20"
+    },
+    {
+      "id": "2027-02-12-soccer-girls-sylacauga",
+      "date": "2027-02-12",
+      "time": "5:30 PM",
+      "sport": "Soccer",
+      "gender": "Girls",
+      "level": "Varsity",
+      "opponent": "Sylacauga",
+      "site": "home",
+      "season": "2026-27",
+      "status": "scheduled",
+      "sourceName": "MaxPreps",
+      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/soccer/girls/spring/schedule/",
       "verifiedAt": "2026-11-20"
     },
     {
@@ -3011,6 +3011,21 @@
       "verifiedAt": "2026-11-21"
     },
     {
+      "id": "2027-03-30-softball-girls-cullman",
+      "date": "2027-03-30",
+      "time": "4:30 PM",
+      "sport": "Softball",
+      "gender": "Girls",
+      "level": "Varsity",
+      "opponent": "Cullman",
+      "site": "home",
+      "season": "2026-27",
+      "status": "scheduled",
+      "sourceName": "MaxPreps · Springville varsity schedule",
+      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/softball/schedule/",
+      "verifiedAt": "2026-11-22"
+    },
+    {
       "id": "2027-04-01-baseball-boys-pell-city",
       "date": "2027-04-01",
       "sport": "Baseball",
@@ -3137,21 +3152,6 @@
       "verifiedAt": "2026-11-21"
     },
     {
-      "id": "2027-04-13-soccer-girls-pell-city",
-      "date": "2027-04-13",
-      "time": "5:00 PM",
-      "sport": "Soccer",
-      "gender": "Girls",
-      "level": "Varsity",
-      "opponent": "Pell City",
-      "site": "away",
-      "season": "2026-27",
-      "status": "scheduled",
-      "sourceName": "NFHS Network",
-      "sourceUrl": "https://www.nfhsnetwork.com/events/pell-city-high-school-pell-city-al/gam67c99fc330",
-      "verifiedAt": "2026-11-20"
-    },
-    {
       "id": "2027-04-13-soccer-boys-pell-city",
       "date": "2027-04-13",
       "time": "7:00 PM",
@@ -3164,6 +3164,21 @@
       "status": "scheduled",
       "sourceName": "NFHS Network",
       "sourceUrl": "https://www.nfhsnetwork.com/events/pell-city-high-school-pell-city-al/gamf00ce3c1ae",
+      "verifiedAt": "2026-11-20"
+    },
+    {
+      "id": "2027-04-13-soccer-girls-pell-city",
+      "date": "2027-04-13",
+      "time": "5:00 PM",
+      "sport": "Soccer",
+      "gender": "Girls",
+      "level": "Varsity",
+      "opponent": "Pell City",
+      "site": "away",
+      "season": "2026-27",
+      "status": "scheduled",
+      "sourceName": "NFHS Network",
+      "sourceUrl": "https://www.nfhsnetwork.com/events/pell-city-high-school-pell-city-al/gam67c99fc330",
       "verifiedAt": "2026-11-20"
     },
     {
@@ -3241,10 +3256,10 @@
       "gender": "Girls",
       "season": "2026-27",
       "status": "partial",
-      "asOf": "2026-11-21",
-      "sourceName": "High School On SI · varsity schedule",
+      "asOf": "2026-11-22",
+      "sourceName": "High School On SI + Springville MaxPreps schedule",
       "sourceUrl": "https://www.si.com/high-school/stats/alabama/softball/teams/312094-springville-tigers/games",
-      "note": "Three softball games currently listed for spring 2027; March 9 location is still to be confirmed"
+      "note": "Four dated spring 2027 games currently verified across published sources; additional season fixtures may be posted later"
     },
     {
       "sport": "Golf",
@@ -3265,6 +3280,46 @@
       "sourceName": "High School On SI · girls golf schedule",
       "sourceUrl": "https://www.si.com/high-school/stats/alabama/girls-golf/teams/496224-springville-tigers/games",
       "note": "No spring 2027 golf meets posted yet"
+    },
+    {
+      "sport": "Soccer",
+      "gender": "Boys",
+      "season": "2026-27",
+      "status": "partial",
+      "asOf": "2026-11-22",
+      "sourceName": "Springville MaxPreps + NFHS scheduled match pages",
+      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/soccer/spring/schedule/",
+      "note": "Five spring 2027 varsity matches currently verified; sources do not yet provide a complete season schedule"
+    },
+    {
+      "sport": "Soccer",
+      "gender": "Girls",
+      "season": "2026-27",
+      "status": "partial",
+      "asOf": "2026-11-22",
+      "sourceName": "Springville MaxPreps + NFHS scheduled match pages",
+      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/soccer/girls/spring/schedule/",
+      "note": "Two spring 2027 varsity matches currently verified; full schedule is not published in sources checked"
+    },
+    {
+      "sport": "Tennis",
+      "gender": "Boys",
+      "season": "2026-27",
+      "status": "partial",
+      "asOf": "2026-11-22",
+      "sourceName": "High School On SI · varsity match",
+      "sourceUrl": "https://www.si.com/high-school/stats/alabama/tennis/games/6954335-springville-vs-southside",
+      "note": "One spring 2027 match independently listed; complete team calendar is not yet verified"
+    },
+    {
+      "sport": "Tennis",
+      "gender": "Girls",
+      "season": "2026-27",
+      "status": "partial",
+      "asOf": "2026-11-22",
+      "sourceName": "High School On SI · varsity match",
+      "sourceUrl": "https://www.si.com/high-school/stats/alabama/girls-tennis/games/6954319-springville-vs-southside",
+      "note": "One spring 2027 match independently listed; complete team calendar is not yet verified"
     }
   ]
 }
