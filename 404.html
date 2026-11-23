@@ -2,181 +2,119 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f5f9fb">
-<meta name="description" content="This Around Springville page could not be found. Visit the community homepage for local news and events.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#345a47">
+<meta name="description" content="That Springville.Info page could not be found. Head back to the local news, upcoming events, Tigers sports, and community stories.">
 <meta name="robots" content="noindex,follow">
-<title>Page Not Found | Around Springville</title>
 <link rel="icon" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=DM+Sans:wght@400;500;600;700;800&amp;family=Yellowtail&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/springville-refresh.css?v=20261123-readable">
+<title>Page Not Found | Springville.Info</title>
 <style>
-* { box-sizing: border-box; }
-:root { color-scheme: light; }
-html { background: #f5f9fb; color: #17364e; }
-body { margin: 0; font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.45; }
-a { color: inherit; text-underline-offset: .18em; }
-a:focus-visible { outline: 3px solid #b23b33; outline-offset: 4px; }
-.site-masthead {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  height: 248px;
-  padding: 15px max(28px, calc((100vw - 1300px) / 2));
-  overflow: hidden;
-  isolation: isolate;
-  border-bottom: 7px solid #15445f;
-  background: #d6ebed url("/assets/mainstreet-masthead.svg") center center / cover no-repeat;
+/* Only the 404 content is styled here. Masthead, colors, typography and footer use the live site's CSS. */
+body.springville-home.springville-404 main { padding-top:clamp(25px,5vw,55px);padding-bottom:clamp(40px,7vw,75px) }
+.springville-404 .missing-page {
+  width:min(100%,730px);
+  margin:0 auto;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-top:4px solid var(--forest);
+  border-radius:3px;
+  padding:clamp(25px,5vw,46px);
 }
-.site-masthead::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(236,248,248,.58), rgba(236,248,248,.38) 38%, transparent 62%);
+.springville-404 .missing-kicker {
+  margin:0 0 12px;
+  color:var(--forest);
+  font:800 12px/1.3 var(--sans);
+  text-transform:uppercase;
+  letter-spacing:.14em;
 }
-.wordmark {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 100%;
-  text-decoration: none;
-  white-space: nowrap;
+.springville-404 .missing-page h1 {
+  margin:0 0 15px;
+  color:var(--ink);
+  font:700 clamp(30px,5vw,44px)/1.12 Georgia,"Times New Roman",serif;
+  letter-spacing:-.035em;
 }
-.wordmark-around {
-  display: block;
-  margin: 0 0 -5px 34px;
-  color: #a53032;
-  font: 400 clamp(2.75rem,4.1vw,4rem)/.94 "Yellowtail", "Brush Script MT", cursive;
-  transform: rotate(-4deg);
-  text-shadow: 1px 2px 0 #f6fbf9, 2px 3px 0 rgba(255,255,255,.85);
+.springville-404 .missing-copy {
+  max-width:565px;
+  margin:0;
+  color:var(--quiet);
+  font:400 17px/1.65 var(--sans);
 }
-.wordmark-springville {
-  display: block;
-  color: #113650;
-  font: 800 clamp(4.25rem,6.75vw,7rem)/.83 "Barlow Condensed", Impact, "Arial Narrow", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: -.018em;
-  transform: skew(-5deg);
-  -webkit-text-stroke: .7px #f8fcfc;
-  text-shadow: 3px 4px 0 #f8fcfc, 4px 6px 0 rgba(16,66,88,.15);
+.springville-404 .missing-home {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:25px;
+  padding:12px 18px;
+  border-radius:4px;
+  background:var(--forest);
+  color:white;
+  text-decoration:none;
+  font:750 15px/1.3 var(--sans);
 }
-.wordmark-location {
-  display: block;
-  align-self: center;
-  margin: 15px 0 0 38px;
-  color: #18445c;
-  font: 800 clamp(.75rem,1.15vw,.95rem)/1.3 "DM Sans", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .29em;
-  text-shadow: 0 1px 0 white;
+.springville-404 .missing-home:hover { background:#274634;color:white }
+.springville-404 .missing-explore {
+  margin:26px 0 0;
+  padding:20px 0 0;
+  border-top:1px solid var(--line);
 }
-main { width: min(100% - 48px, 1050px); margin: 0 auto; padding: clamp(34px,5vw,68px) 0 64px; }
-.eyebrow {
-  display: inline-block;
-  padding: 9px 14px;
-  background: #183c53;
-  border-radius: 5px;
-  color: white;
-  font: 800 .84rem/1 "DM Sans", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .1em;
+.springville-404 .missing-explore p {
+  margin:0 0 10px;
+  color:var(--quiet);
+  font:600 13px/1.4 var(--sans);
 }
-main h1 {
-  margin: 22px 0 14px;
-  font: 800 clamp(3rem,7vw,5.8rem)/.95 "Barlow Condensed", Impact, sans-serif;
-  letter-spacing: -.025em;
-  text-transform: uppercase;
+.springville-404 .missing-explore nav {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 22px;
 }
-.lead { max-width: 580px; color: #526a78; font-size: clamp(1rem,2vw,1.16rem); line-height: 1.6; }
-.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 23px; margin-top: 28px; }
-.home-link {
-  display: inline-block;
-  padding: 13px 22px;
-  background: #b23b33;
-  color: white;
-  border-radius: 6px;
-  font-weight: 800;
-  text-decoration: none;
+.springville-404 .missing-explore a {
+  color:var(--forest);
+  font:700 14px/1.5 var(--sans);
+  text-decoration:underline;
+  text-decoration-color:#a3b9a7;
+  text-underline-offset:3px;
 }
-.home-link:hover { background: #922b29; }
-.other-links { display: flex; flex-wrap: wrap; gap: 10px 18px; color: #315a69; font-weight: 700; font-size: .95rem; }
-footer {
-  width: min(100% - 48px, 1050px);
-  margin: 0 auto;
-  padding: 19px 0 30px;
-  border-top: 1px solid #c6d8de;
-  color: #607383;
-  font-size: .84rem;
-}
-@media (max-width: 899px) {
-  .site-masthead {
-    display: block;
-    height: clamp(150px,37vw,180px);
-    padding: 0;
-    border-bottom: 0;
-    background: #dfedf2 url("/assets/mobile-masthead-flat.svg") center bottom / 100% 100% no-repeat;
-  }
-  .site-masthead::before { display: none; }
-  .wordmark { position: absolute; top: 12px; left: 15px; }
-  .wordmark-around {
-    margin: 0 0 -3px 12px;
-    color: #b23b33;
-    font: 400 clamp(1.9rem,7.4vw,2.65rem)/.95 "Yellowtail", "Brush Script MT", cursive;
-    transform: none;
-    text-shadow: none;
-  }
-  .wordmark-springville {
-    color: #153a52;
-    font: 800 clamp(2.5rem,10.4vw,4.25rem)/.9 "Barlow Condensed", Impact, "Arial Narrow", sans-serif;
-    letter-spacing: -.005em;
-    transform: none;
-    -webkit-text-stroke: 0;
-    text-shadow: none;
-  }
-  .wordmark-location {
-    align-self: flex-start;
-    margin: 7px 0 0 4px;
-    padding: 0;
-    color: #376e70;
-    font: 800 clamp(.58rem,1.8vw,.76rem)/1.15 "DM Sans", sans-serif;
-    letter-spacing: .15em;
-    text-shadow: none;
-  }
-  main { width: min(100% - 32px,650px); padding: 28px 0 40px; }
-  main h1 { font-size: clamp(2.9rem,12vw,4.1rem); margin-top: 19px; }
-  .lead { font-size: 1rem; }
-  footer { width: min(100% - 32px,650px); }
-}
-@media (max-width: 365px) {
-  .wordmark-around { font-size: 1.85rem; }
-  .wordmark-springville { font-size: 2.4rem; }
-  .wordmark-location { font-size: .54rem; letter-spacing: .1em; }
+.springville-404 .missing-explore a:hover { color:var(--red) }
+@media(max-width:540px) {
+ .springville-404 .missing-copy {font-size:16px}
+ .springville-404 .missing-home {width:100%}
 }
 </style>
 </head>
-<body>
-<header class="site-masthead" aria-label="Around Springville">
-  <a class="wordmark" href="/" aria-label="Around Springville home">
-    <span class="wordmark-around">Around</span>
-    <span class="wordmark-springville">Springville</span>
-    <span class="wordmark-location">Springville, Alabama</span>
-  </a>
-</header>
-<main id="main">
-  <span class="eyebrow">404 / Page not found</span>
-  <h1>Took a wrong turn?</h1>
-  <p class="lead">That page might have moved, or the link may be out of date. There's still plenty happening around Springville.</p>
-  <div class="actions">
-    <a class="home-link" href="/">Back to Around Springville</a>
-    <nav class="other-links" aria-label="Quick links">
-      <a href="/#news-heading">Local News</a>
-      <a href="/#listings-heading">Upcoming</a>
-      <a href="/#about">About</a>
-    </nav>
+<body class="springville-home springville-404">
+<header class="site-masthead">
+  <div class="masthead-inner">
+    <p class="site-name"><a href="/">Springville</a></p>
+    <img class="town-art" src="/assets/springville-town.svg" width="600" height="220" alt="Illustrated downtown Springville storefronts: Main Street, St. Clair County, Alabama">
   </div>
+</header>
+<div class="tagline-strip">Our little corner of Alabama</div>
+<main id="main">
+  <article class="missing-page">
+    <p class="missing-kicker">404 · Page not found</p>
+    <h1>Took a wrong turn?</h1>
+    <p class="missing-copy">That page might have moved, or the link may be out of date. There’s still plenty happening here in Springville.</p>
+    <a class="missing-home" href="/">Back to Springville →</a>
+    <div class="missing-explore">
+      <p>Or explore a little more</p>
+      <nav aria-label="Explore Springville">
+        <a href="/#feed">Local news &amp; upcoming events</a>
+        <a href="/front-porch/">From My Front Porch</a>
+        <a href="/sports.html">Tigers Sports</a>
+        <a href="/#did-you-know-archive">Did You Know archive</a>
+      </nav>
+    </div>
+  </article>
 </main>
-<footer>Independent, locally maintained community information for Springville, Alabama.</footer>
+<footer>
+  <a href="/">Home</a>
+  <a href="/front-porch/">From My Front Porch</a>
+  <a href="/sports.html">Tigers Sports</a>
+  <a href="/#about">About</a>
+</footer>
 </body>
 </html>
