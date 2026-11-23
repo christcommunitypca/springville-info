@@ -12,6 +12,16 @@ function sourceLink(url, text) {
   try { if (new URL(url).protocol === 'https:') return '<a href="' + escape(url) + '">' + escape(text) + ' ↗</a>'; } catch {}
   return '';
 }
+function sourceTrail(item) {
+  const primary = sourceLink(item.sourceUrl, item.sourceLabel || item.sourceName);
+  const extras = Array.isArray(item.additionalSources)
+    ? item.additionalSources.map(source => source && sourceLink(source.url, source.label)).filter(Boolean)
+    : [];
+  if (!extras.length) return primary;
+  return '<div class="reading-links"><p><strong>Read more:</strong> ' + primary +
+    '</p><div class="reading-extra"><p><strong>Explore further:</strong></p><ul>' +
+    extras.map(link => '<li>' + link + '</li>').join('') + '</ul></div></div>';
+}
 function more(label, contents) {
   return contents ? '<details><summary>See more ' + label + '</summary>' + contents + '</details>' : '';
 }
@@ -78,7 +88,7 @@ export function renderCommunity(data, today = chicagoDate()) {
     const credit = item.category === 'Did you know?' ? 'Did you know? · AI-written · ' : '';
     const paragraphs = [...new Set([item.summary,...(item.body || [])])].filter(Boolean).map(p=>'<p>'+escape(p)+'</p>').join('');
     return detail(item.slug,item.title,'<small>'+credit+'Published '+label(item.date,{year:'numeric',month:'long',day:'numeric'})+
-      '</small>'+paragraphs+sourceLink(item.sourceUrl,item.sourceLabel || item.sourceName));
+      '</small>'+paragraphs+sourceTrail(item));
   }).concat(events.map(item=>detail(item.id,item.title,'<p>'+escape([item.startDate,item.time,item.location].filter(Boolean).join(' · '))+
     '</p><p>'+escape(item.summary)+'</p>'+sourceLink(item.sourceUrl,item.sourceName || 'View event details')))).join('');
   const archive = detail('did-you-know-archive','Did You Know archive',features.length ? newsRows(features) : '<p>No features yet.</p>');
