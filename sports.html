@@ -196,13 +196,18 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
 .record-note strong{color:#173e50;font-size:.84rem}
 
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/springville-refresh.css?v=20261122">
 </head>
-<body>
-<header class="masthead">
-  <a class="back" href="/#listings">← Community calendar</a>
-  <div class="masthead-title"><span class="tiger-mark" aria-hidden="true">S</span><h1>Tigers Sports</h1></div>
+<body class="springville-sports">
+<header class="masthead site-masthead">
+  <div class="masthead-inner">
+    <h1 class="site-name"><a href="/" aria-label="Springville.info home">Springville</a></h1>
+    <img class="town-art" src="/assets/springville-town.svg" width="600" height="220" alt="Illustrated Main Street storefronts: Main Street, St. Clair County and Alabama">
+  </div>
 </header>
-<main>
+<div class="tagline-strip">Our town. Our Tigers.</div>
+<main><a class="page-back" href="/">← Back to Springville</a>
   <section class="toolbar" aria-label="Calendar controls">
     <div class="topline">
       <div class="month-buttons">
@@ -233,6 +238,6 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-si
   <div class="calendar-note"><span id="data-updated" aria-live="polite">Loading update time…</span></div>
   <div id="agenda-list" role="region" aria-label="Games by date"></div>
 </main>
-<footer><a href="/">Around Springville</a> · <a href="/#listings">Community events</a></footer>
+<footer><a href="/">Springville.info</a> · <a href="/#listings">Community events</a></footer>
 <script type="module" src="/assets/sports.mjs?v=20261121i"></script>
 </body></html>
