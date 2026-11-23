@@ -59,8 +59,8 @@ function months(items) {
   return Array.from(groups, ([key,rows]) => '<section class="month"><h3>' +
     label(key+'-01',{month:'long'}) + '</h3>' + rows.join('') + '</section>').join('');
 }
-function detail(id,title,body) {
-  return '<section class="page" id="' + escape(id) + '"><div class="page-actions"><a class="back" href="#feed">← Back to the front page</a><button class="share-button" type="button" data-share>Share</button></div><h2>' +
+function detail(id,title,body,kind='') {
+  return '<section class="page" id="' + escape(id) + '" data-share-kind="' + escape(kind) + '"><div class="page-actions"><a class="back" href="#feed">← Back to the front page</a><button class="share-button" type="button" data-share>Share</button></div><h2>' +
     escape(title) + '</h2>' + body + '</section>';
 }
 export function renderCommunity(data, today = chicagoDate()) {
@@ -92,9 +92,9 @@ export function renderCommunity(data, today = chicagoDate()) {
       ? '<a class="feature-archive-link" href="#did-you-know-archive">More Did You Know stories <span aria-hidden="true">→</span></a>'
       : '';
     return detail(item.slug,item.title,'<small>'+credit+'Published '+label(item.date,{year:'numeric',month:'long',day:'numeric'})+
-      '</small>'+paragraphs+sourceTrail(item)+archiveLink);
+      '</small>'+paragraphs+sourceTrail(item)+archiveLink,'story');
   }).concat(events.map(item=>detail(item.id,item.title,'<p>'+escape([item.startDate,item.time,item.location].filter(Boolean).join(' · '))+
-    '</p><p>'+escape(item.summary)+'</p>'+sourceLink(item.sourceUrl,item.sourceName || 'View event details')))).join('');
+    '</p><p>'+escape(item.summary)+'</p>'+sourceLink(item.sourceUrl,item.sourceName || 'View event details'),'event'))).join('');
   const archive = detail('did-you-know-archive','Did You Know archive',features.length ? newsRows(features) : '<p>No features yet.</p>');
   return {feed:headlines + listing, details: details + archive};
 }
@@ -106,7 +106,10 @@ if (typeof document !== 'undefined') {
     if (!shareButton) return;
     const page = shareButton.closest('.page') || document.querySelector('.page:target:not(#feed)');
     const home = document.querySelector('link[rel="canonical"]').href;
-    const url = page ? home + '#' + encodeURIComponent(page.id) : home;
+    const kind = page?.dataset?.shareKind;
+    const url = kind === 'story' || kind === 'event'
+      ? home.replace(/\/$/,'') + '/share/' + kind + '/' + encodeURIComponent(page.id)
+      : page && page.id !== 'feed' ? home + '#' + encodeURIComponent(page.id) : home;
     const title = page?.querySelector('h2')?.textContent || document.title;
     try {
       if (navigator.share) {
