@@ -1,4 +1,4 @@
-import {buildRecordIndex,recordLabel} from './sports-records.mjs?v=20261121h';
+import {buildRecordIndex,recordLabel} from './sports-records.mjs?v=20261122-recordfix';
 const escaped = value => String(value ?? '').replace(/[&<>"']/g, ch =>
   ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const secureUrl = value => { try { const url = new URL(value); return url.protocol === 'https:' ? url.href : ''; } catch { return ''; } };
@@ -115,7 +115,7 @@ async function load() {
       return;
     }
     const record = buildRecordIndex(data.games).get(game.id);
-    const recordText = record?.kind === 'through' ? recordLabel(record) : '';
+    const recordText = (record?.kind === 'through' || record?.kind === 'day_end') ? recordLabel(record) : '';
     const recordExtra = recordText ? '<div class="verified-record">' +
       'Overall: ' +
       '<strong>' + escaped(recordText) + '</strong></div>' : '';
