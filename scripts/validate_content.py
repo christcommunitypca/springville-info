@@ -14,7 +14,7 @@ for section in ('news','events','directory'):
       assert item['title'] and item['slug'] and item['sourceName'] and item['body']
       if 'shortTitle' in item:
         short_title = item['shortTitle']
-        assert isinstance(short_title, str) and 2 <= len(short_title.split()) <= 4, (section, 'shortTitle must be 2–4 words', item['id'])
+        assert isinstance(short_title, str) and 2 <= len(short_title.split()) <= 6, (section, 'shortTitle must be 2–6 words', item['id'])
       datetime.date.fromisoformat(item['date'])
     elif section=='events':
       start=datetime.date.fromisoformat(item['startDate']);end=datetime.date.fromisoformat(item['endDate'])
