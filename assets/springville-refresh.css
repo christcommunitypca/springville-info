@@ -113,23 +113,16 @@ body.springville-home .page:not(#feed) h2{
 body.springville-home .page:not(#feed) p{margin:14px 0;font:400 16px/1.6 var(--sans)}
 body.springville-home .page:not(#feed) small{color:#69736c;font:600 12px/1.5 var(--sans)}
 body.springville-home .page:not(#feed) a:not(.back){color:var(--forest);font-weight:700}
-/* Give Did You Know articles an obvious path into the permanent archive. */
+/* One clear archive link on Did You Know article details only. */
 body.springville-home .page:not(#feed) a.feature-archive-link{
- display:flex;flex-direction:column;align-items:flex-start;gap:4px;
- margin-top:24px;padding:17px 20px;
+ display:inline-flex;align-items:center;gap:8px;
+ margin-top:24px;padding:14px 18px;
  background:#eef4ee;border:1px solid #cbdccf;border-left:4px solid var(--forest);
  border-radius:4px;color:var(--forest);text-decoration:none;
-}
-body.springville-home .page:not(#feed) .feature-archive-link>span{
- font:600 12px/1.35 var(--sans);color:var(--quiet);
-}
-body.springville-home .page:not(#feed) .feature-archive-link strong{
- font:700 17px/1.35 var(--sans);color:var(--forest);
+ font:700 16px/1.4 var(--sans);
 }
 body.springville-home .page:not(#feed) .feature-archive-link:hover{
  background:#e3eee5;border-color:#a9c9b1;
-}
-body.springville-home .page:not(#feed) .feature-archive-link:hover strong{
  text-decoration:underline;text-underline-offset:3px;
 }
 body.springville-home .page-actions{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:22px}
