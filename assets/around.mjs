@@ -58,7 +58,7 @@ export function renderCommunity(data, today = chicagoDate()) {
   const age = item => (now - Date.parse(item.date)) / dayMs;
   const published = data.news.filter(item => age(item) >= 0).sort((a,b)=>b.date.localeCompare(a.date));
   const features = published.filter(item => item.category === 'Did you know?');
-  const todayFeature = features.filter(item => item.date === today).slice(0,1);
+  const latestFeature = features[0] || null; // Keep the most recent dated feature visible until the next daily update.
   const news = published.filter(item => item.category !== 'Did you know?' && age(item) <= 40);
   const limit = Math.max(3, Math.min(7, news.filter(item => age(item) < 7).length));
   const events = data.events.filter(item => (item.endDate || item.startDate) >= today)
@@ -68,8 +68,12 @@ export function renderCommunity(data, today = chicagoDate()) {
   const [thisYear,thisMonth] = today.slice(0,7).split('-').map(Number);
   const endOfNextMonth = new Date(Date.UTC(thisYear,thisMonth+1,0)).toISOString().slice(0,10);
   const count = Math.min(25, events.filter(item => item.startDate <= endOfNextMonth).length);
-  const headlines = todayFeature.length || news.length ? '<section aria-labelledby="news-heading"><h2 class="section-title" id="news-heading">Local news</h2>' +
-    newsRows([...todayFeature, ...news.slice(0,limit)]) + more('news',newsRows(news.slice(limit))) + '</section>' : '';
+  const feature = latestFeature ? '<p class="didyouknow-label">Did you know?</p><h2><a href="' +
+    sectionLink(latestFeature.slug) + '">' + escape(latestFeature.shortTitle || latestFeature.title) +
+    '</a></h2><time datetime="' + escape(latestFeature.date) + '">' +
+    label(latestFeature.date,{month:'short',day:'numeric'}) + '</time>' : '';
+  const headlines = news.length ? '<section aria-labelledby="news-heading"><h2 class="section-title" id="news-heading">Local news</h2>' +
+    newsRows(news.slice(0,limit)) + more('news',newsRows(news.slice(limit))) + '</section>' : '';
   const listing = events.length ? '<section id="listings" aria-labelledby="listings-heading"><h2 class="section-title" id="listings-heading">Upcoming <a class="sports-shortcut" href="/sports.html" aria-label="Springville Tigers sports calendar" title="Springville Tigers sports calendar"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 3h10v7a5 5 0 0 1-10 0V3ZM7 5H4v3a4 4 0 0 0 4 4M17 5h3v3a4 4 0 0 1-4 4"/></svg></a></h2>' +
     months(events.slice(0,count)) + more('events',months(events.slice(count))) + '</section>' : '';
   const details = published.map(item => {
@@ -80,7 +84,7 @@ export function renderCommunity(data, today = chicagoDate()) {
   }).concat(events.map(item=>detail(item.id,item.title,'<p>'+escape([item.startDate,item.time,item.location].filter(Boolean).join(' · '))+
     '</p><p>'+escape(item.summary)+'</p>'+sourceLink(item.sourceUrl,item.sourceName || 'View event details')))).join('');
   const archive = detail('did-you-know-archive','Did You Know archive',features.length ? newsRows(features) : '<p>No features yet.</p>');
-  return {feed:headlines + listing, details: details + archive};
+  return {feature, feed:headlines + listing, details: details + archive};
 }
 if (typeof document !== 'undefined') {
   document.documentElement.classList.add('can-share');
@@ -113,6 +117,11 @@ if (typeof document !== 'undefined') {
     const response = await fetch('/data/content.json',{cache:'no-cache'});
     if (!response.ok) return;
     const page = renderCommunity(await response.json());
+    const didYouKnow = document.getElementById('didyouknow-feature');
+    if (didYouKnow) {
+      didYouKnow.hidden = !page.feature;
+      if (page.feature) didYouKnow.innerHTML = page.feature;
+    }
     document.getElementById('feed').innerHTML = page.feed;
     document.getElementById('entry-pages').innerHTML = page.details;
   }
