@@ -63,10 +63,14 @@ export function renderCommunity(data, today = chicagoDate()) {
   const limit = Math.max(3, Math.min(7, news.filter(item => age(item) < 7).length));
   const events = data.events.filter(item => (item.endDate || item.startDate) >= today)
     .sort((a,b)=>a.startDate.localeCompare(b.startDate));
-  const count = Math.max(10,events.filter(item => Date.parse(item.startDate) <= now + 30 * dayMs).length);
+  // Show all events through the end of next calendar month, capped at 25 visible rows.
+  // Items outside that range remain available under See more events.
+  const [thisYear,thisMonth] = today.slice(0,7).split('-').map(Number);
+  const endOfNextMonth = new Date(Date.UTC(thisYear,thisMonth+1,0)).toISOString().slice(0,10);
+  const count = Math.min(25, events.filter(item => item.startDate <= endOfNextMonth).length);
   const headlines = todayFeature.length || news.length ? '<section aria-labelledby="news-heading"><h2 class="section-title" id="news-heading">Local news</h2>' +
     newsRows([...todayFeature, ...news.slice(0,limit)]) + more('news',newsRows(news.slice(limit))) + '</section>' : '';
-  const listing = events.length ? '<section id="listings" aria-labelledby="listings-heading"><h2 class="section-title" id="listings-heading">Upcoming <a class="sports-shortcut" href="/sports.html" aria-label="Springville Tigers sports calendar" title="Springville Tigers sports calendar">🏆</a></h2>' +
+  const listing = events.length ? '<section id="listings" aria-labelledby="listings-heading"><h2 class="section-title" id="listings-heading">Upcoming <a class="sports-shortcut" href="/sports.html" aria-label="Springville Tigers sports calendar" title="Springville Tigers sports calendar"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 3h10v7a5 5 0 0 1-10 0V3ZM7 5H4v3a4 4 0 0 0 4 4M17 5h3v3a4 4 0 0 1-4 4"/></svg></a></h2>' +
     months(events.slice(0,count)) + more('events',months(events.slice(count))) + '</section>' : '';
   const details = published.map(item => {
     const credit = item.category === 'Did you know?' ? 'Did you know? · AI-written · ' : '';
