@@ -176,31 +176,3 @@ body.springville-porch .porch-explore{border-bottom:0;border-top:1px solid #e6e7
   body.springville-porch .porch-archive-link span{color:#c3e5c9}
 }
 
-/* Separate daily discovery from the opinion column. */
-body.springville-home .home-features{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  gap:16px;margin:0 0 18px;align-items:stretch}
-body.springville-home .home-features .porch-teaser{margin:0}
-body.springville-home .didyouknow-teaser{display:block;position:relative;min-width:0;
-  padding:18px 23px 16px;background:#fff;border:1px solid #dce1df;
-  border-top:4px solid #3b7580;border-radius:3px}
-body.springville-home .didyouknow-teaser[hidden]{display:none}
-body.springville-home .didyouknow-label{margin:0 0 7px;
-  color:#336b76;font:800 12px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase}
-body.springville-home .didyouknow-teaser h2{margin:0 0 8px;
-  font:700 clamp(23px,3vw,34px)/1.13 var(--serif);letter-spacing:-.04em}
-body.springville-home .didyouknow-teaser h2 a{color:#253d42;text-decoration:none}
-body.springville-home .didyouknow-teaser h2 a:hover{text-decoration:underline}
-body.springville-home .didyouknow-teaser time{display:block;
-  margin:0;color:#657572;font:700 12px/1.3 var(--sans)}
-body.springville-home:has(.page:target:not(#feed)) .home-features{display:none}
-@media(max-width:780px){
-  body.springville-home .home-features{display:flex;flex-direction:column;gap:12px;margin-bottom:13px}
-  body.springville-home .didyouknow-teaser{padding:15px 18px 13px}
-  body.springville-home .didyouknow-teaser h2{font-size:26px}
-}
-@media(prefers-color-scheme:dark){
-  body.springville-home .didyouknow-teaser{background:#1d2821;border-color:#3b4b40;border-top-color:#82b9c0}
-  body.springville-home .didyouknow-label{color:#9ed1d7}
-  body.springville-home .didyouknow-teaser h2 a{color:#eef3eb}
-  body.springville-home .didyouknow-teaser time{color:#aec4bb}
-}
