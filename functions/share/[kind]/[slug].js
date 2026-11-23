@@ -2,7 +2,7 @@
 // Facebook does not read the #fragment and does not execute the site's client-side renderer.
 // This dynamic route reads the existing public JSON; it never edits or republishes content.
 const SITE = 'https://springville.info';
-const IMAGE = SITE + '/assets/wordmark-layer.png';
+const IMAGE = SITE + '/assets/springville-share-header.png';
 const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, char =>
   ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[char]));
 const tag = (name,value) => '<meta property="' + name + '" content="' + escapeHtml(value) + '">';
@@ -65,9 +65,9 @@ export async function onRequestGet({request,env,params}) {
     tag('og:url',shareUrl) +
     tag('og:image',IMAGE) +
     tag('og:image:type','image/png') +
-    tag('og:image:width','2172') +
-    tag('og:image:height','724') +
-    tag('og:image:alt','Around Springville, Alabama') +
+    tag('og:image:width','600') +
+    tag('og:image:height','315') +
+    tag('og:image:alt','Springville header with downtown storefront artwork') +
     '<meta name="twitter:card" content="summary_large_image">' +
     '<meta name="twitter:title" content="' + escapeHtml(title) + '">' +
     '<meta name="twitter:description" content="' + escapeHtml(desc) + '">' +
