@@ -35,7 +35,7 @@ const VERIFIED_START_TIMES = new Map([
 function minutesSinceMidnight(game) {
   const value = game.time || VERIFIED_START_TIMES.get(game.id);
   if (!value || typeof value !== 'string') return null;
-  const match = /^(\\d{1,2})(?::(\\d{2}))?\\s*(AM|PM)$/i.exec(value.trim());
+  const match = /^([0-9]{1,2})(?::([0-9]{2}))?[ ]*(AM|PM)$/i.exec(value.trim());
   if (!match) return null;
   const hour = Number(match[1]), minute = Number(match[2] || 0);
   if (hour < 1 || hour > 12 || minute > 59) return null;
