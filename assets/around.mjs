@@ -71,7 +71,7 @@ export function renderCommunity(data, today = chicagoDate()) {
   // Exactly one Did You Know feature leads Local News; previous features remain in the archive.
   // Keep the latest visible until the next daily feature arrives, while normal news ages out.
   const headlines = latestFeature || news.length ? '<section aria-labelledby="news-heading"><h2 class="section-title" id="news-heading">Local news</h2>' +
-    newsRows([...latestFeature ? [latestFeature] : [], ...news.slice(0,limit)]) + more('news',newsRows(news.slice(limit))) + '</section>' : '';
+    newsRows([...(latestFeature ? [latestFeature] : []), ...news.slice(0,limit)]) + more('news',newsRows(news.slice(limit))) + '</section>' : '';
   const listing = events.length ? '<section id="listings" aria-labelledby="listings-heading"><h2 class="section-title" id="listings-heading">Upcoming <a class="sports-shortcut" href="/sports.html" aria-label="Springville Tigers sports calendar" title="Springville Tigers sports calendar"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 3h10v7a5 5 0 0 1-10 0V3ZM7 5H4v3a4 4 0 0 0 4 4M17 5h3v3a4 4 0 0 1-4 4"/></svg></a></h2>' +
     months(events.slice(0,count)) + more('events',months(events.slice(count))) + '</section>' : '';
   const details = published.map(item => {
