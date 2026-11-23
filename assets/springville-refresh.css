@@ -218,3 +218,128 @@ body.springville-detail .sources a{color:var(--forest)}
 body.springville-detail .detail-backline{width:min(calc(100% - 56px),1110px);margin:16px auto 0}
 body.springville-detail .detail-backline .page-back{display:inline-flex;font:700 14px/1.4 var(--sans);text-decoration:none;color:var(--forest)}
 @media(max-width:780px){body.springville-detail .detail-backline{width:calc(100% - 34px);margin-top:12px}}
+
+
+/* Tigers sports calendar and game pages: follow the phone's appearance setting. */
+@media (prefers-color-scheme: dark) {
+  html:has(body.springville-sports),
+  html:has(body.springville-detail) { background:#141b17; color:#edf1eb }
+  body.springville-sports, body.springville-detail {
+    color-scheme:dark;
+    --paper:#141b17;--card:#1d2821;--ink:#edf1eb;
+    --quiet:#bbc8bd;--muted:#bdc9bc;--line:#3b4b40;
+    --red:#eab19e;--forest:#b8ddc2;--teal:#9fceb4;
+    --blue:#b8ddc2;
+    background:var(--paper);color:var(--ink);
+  }
+  body.springville-sports .site-masthead,
+  body.springville-detail .site-masthead{background:#25382d!important}
+  body.springville-sports .site-masthead .site-name,
+  body.springville-detail .site-masthead .site-name{color:#f0f3ea!important}
+  body.springville-sports .tagline-strip,
+  body.springville-detail .tagline-strip{
+    background:#315541;color:#f0f5ed;border-top-color:#4c7056}
+  body.springville-sports footer,body.springville-detail footer{color:#b7c6b9}
+  body.springville-sports footer a,body.springville-detail footer a{color:var(--forest)}
+  body.springville-sports .page-back,body.springville-detail .page-back{color:#c4e3ca}
+  
+  /* Calendar controls and dates. */
+  body.springville-sports .toolbar{
+    background:var(--card);border-color:var(--line)}
+  body.springville-sports #month-label{color:#edf2e9}
+  body.springville-sports .month-buttons button{
+    background:#2b4032;border-color:#58745f;color:#e6f1e8}
+  body.springville-sports .month-buttons button:hover{background:#3c5643}
+  body.springville-sports .field label,
+  body.springville-sports .field-label{color:#c1cfbf}
+  body.springville-sports .field select{
+    background:#24372b;border-color:#58715d;color:#edf1eb}
+  body.springville-sports .gender-stop{color:#b7c7b9}
+  body.springville-sports .gender-stop:hover,
+  body.springville-sports .gender-stop[aria-current="true"]{color:#e1f1df}
+  body.springville-sports .gender-slider::-webkit-slider-runnable-track{background:#688875}
+  body.springville-sports .gender-slider::-moz-range-track{background:#688875}
+  body.springville-sports .gender-slider::-webkit-slider-thumb{
+    background:#bfe3c4;border-color:#24372b;box-shadow:0 0 0 1px #bfe3c4}
+  body.springville-sports .gender-slider::-moz-range-thumb{
+    background:#bfe3c4;border-color:#24372b;box-shadow:0 0 0 1px #bfe3c4}
+  body.springville-sports .gender-track-stops i{background:#83a38c}
+  body.springville-sports .calendar-note{color:#b1c1b4}
+
+  /* Calendar groups, matchups, records and result cards. */
+  body.springville-sports .agenda-day{
+    background:var(--card);border-color:var(--line)}
+  body.springville-sports .agenda-day>h3{
+    background:#2b4032;color:#d4ead7;border-bottom-color:#55705b}
+  body.springville-sports .agenda-day .game,
+  body.springville-sports .agenda-day .game.completed,
+  body.springville-sports .agenda-day .competition-card{
+    background:transparent;border-bottom-color:var(--line);color:var(--ink)}
+  body.springville-sports .agenda-day .game:hover{background:#29392e}
+  body.springville-sports .matchup,
+  body.springville-sports .meet-title,
+  body.springville-sports .score-winner,
+  body.springville-sports .agenda-day .game .score{color:#edf1eb}
+  body.springville-sports .score-loser{color:#bac8ba}
+  body.springville-sports .game-meta,
+  body.springville-sports .meet-venue,
+  body.springville-sports .set-caption,
+  body.springville-sports .xc-section-heading{color:#aebfb1}
+  body.springville-sports .game-time,
+  body.springville-sports .game-result,
+  body.springville-sports .placement-context,
+  body.springville-sports .meet-summary,
+  body.springville-sports .agenda-day .competition-card .meet-summary{color:#c3e2c8}
+  body.springville-sports .details-hint,
+  body.springville-sports .xc-runner-stat{color:#b4c6b8}
+  body.springville-sports .game:hover .details-hint,
+  body.springville-sports .game:focus-visible .details-hint{color:#e3f1e3}
+  body.springville-sports .xc-runner-name{color:#e9efe7}
+  body.springville-sports .xc-achievement{color:#b9dfc0}
+  body.springville-sports .meet-highlight,
+  body.springville-sports .pr-indicator,
+  body.springville-sports .xc-rank,
+  body.springville-sports .xc-pr-mark{
+    background:#314c3b;border-color:#51715a;color:#e2f0e2}
+  body.springville-sports .record-note,
+  body.springville-sports .schedule-status{
+    background:#293d30;border-color:#4a6550;color:#d1e3d4}
+  body.springville-sports .record-note strong{color:#e9f4e8}
+  body.springville-sports .empty{
+    background:var(--card);border-color:var(--line);color:#c3d0c4}
+  body.springville-sports .outcome-t{
+    color:#f3f5ed;background:#586f62}
+
+  /* Individual game / meet details. */
+  body.springville-detail .detail-shell{
+    background:var(--card);border-color:var(--line)}
+  body.springville-detail .category,
+  body.springville-detail .result-label{color:#aebfb1}
+  body.springville-detail .when,
+  body.springville-detail .result-detail,
+  body.springville-detail .note,
+  body.springville-detail .subtext,
+  body.springville-detail .loser,
+  body.springville-detail .runner-stat,
+  body.springville-detail .player-stat{color:#b7c6b9}
+  body.springville-detail h1,
+  body.springville-detail h2{color:#edf2e9}
+  body.springville-detail .result-panel{
+    background:#293e31;border-left-color:#91c3a0}
+  body.springville-detail .result-context{color:#d8ecdb}
+  body.springville-detail .share{
+    background:#2e4637;border-color:#5c7c64;color:#e4f2e4}
+  body.springville-detail .share:hover{background:#395743}
+  body.springville-detail .share-status{color:#b5ddbc}
+  body.springville-detail .rank,
+  body.springville-detail .pr{
+    background:#314c3b;color:#e3f2e5}
+  body.springville-detail .extra-list{color:#c8ddcb}
+  body.springville-detail .sources,
+  body.springville-detail .verified-record,
+  body.springville-detail .footer{border-color:var(--line);color:#b8c8ba}
+  body.springville-detail .sources a{color:#c3e2c9}
+  body.springville-detail .verified-record strong{color:#e0f1de}
+  body.springville-detail .state-message{
+    background:var(--card);border-color:#607767;color:#d7e6da}
+}
