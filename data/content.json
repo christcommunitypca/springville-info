@@ -20,7 +20,17 @@
         "Explore the Presley Store's history and photograph on Wikipedia."
       ],
       "sourceName": "Wikipedia · Presley Store",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Presley_Store"
+      "sourceUrl": "https://en.wikipedia.org/wiki/Presley_Store",
+      "additionalSources": [
+        {
+          "label": "National Park Service · Historic district documentation (page 12)",
+          "url": "https://npgallery.nps.gov/GetAsset/fc7f83d5-fcee-447e-a319-b6216f49c6f0#page=12"
+        },
+        {
+          "label": "Encyclopedia of Alabama · Springville history",
+          "url": "https://encyclopediaofalabama.org/article/springville/"
+        }
+      ]
     },
     {
       "id": "springville-library-summer-reading-record-2026",
