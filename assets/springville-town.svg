@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 220" preserveAspectRatio="xMidYMax meet" role="img" aria-labelledby="town-title">
+<title id="town-title">Flat storefront sketch evoking downtown Springville</title>
+<rect fill="#8C2D19" height="4" width="600" x="0" y="199"/>
+<g stroke="#293029" stroke-width="2.5">
+<path d="M30 199V70H180V199M34 70V55H176V70M40 55V49H170V55" fill="#ece9df"/>
+<path d="M192 199V40H370V199M198 40V28H365V40M194 28V17H368V28" fill="#deded5"/>
+<path d="M382 199V78H566V199M388 78V66H558V78M403 66V54H543V66" fill="#e9e3db"/>
+<path d="M46 113H164V199H46zM202 119H359V199H202zM392 129H553V199H392z" fill="#fbfaf5"/>
+<path d="M46 109H164v16H46z" fill="#8C2D19"/>
+<path d="M202 110H359v16H202z" fill="#b5aba0"/>
+<path d="M392 120H553v16H392z" fill="#8C2D19"/>
+<path d="M78 199v-62h53v62M259 199v-63h45v63M455 199v-56h39v56" fill="#e5e6dc"/>
+<path d="M54 137h18v45H54zM138 137h18v45h-18zM212 136h31v44h-31zM318 136h31v44h-31zM400 144h39v38h-39zM508 144h37v38h-37z" fill="#d9e5e1"/>
+<path d="M216 59h30v32h-30zM262 59h30v32h-30zM309 59h30v32h-30z" fill="#e0e8e3"/>
+<path d="M101 137v62M279 136v63M475 143v56"/>
+<path d="M58 165h10M143 165h10M232 165h7M327 165h7M413 162h21M522 162h18"/>
+</g>
+<text x="105" y="97" text-anchor="middle" fill="#293029" font-family="Georgia,serif" font-size="10" font-weight="700">MAIN STREET</text>
+<text x="281" y="104" text-anchor="middle" fill="#293029" font-family="Georgia,serif" font-size="10" font-weight="700">ST. CLAIR COUNTY</text>
+<text x="471" y="113" text-anchor="middle" fill="#293029" font-family="Georgia,serif" font-size="10" font-weight="700">ALABAMA</text>
+</svg>
