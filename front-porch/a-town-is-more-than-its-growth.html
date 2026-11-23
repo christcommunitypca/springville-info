@@ -70,7 +70,7 @@
 <footer><a href="/">Home</a><a href="/front-porch/">From My Front Porch</a><a href="/sports.html">Tigers Sports</a><a href="/#about">About</a></footer>
 <script type="module" src="/assets/analytics.mjs"></script><script type="module" src="/assets/porch-community.mjs"></script><script>
 document.querySelectorAll('[data-share]').forEach(button=>button.addEventListener('click',async()=>{
-  const url=location.href;
+  const url="https://springville.info/preview/porch/a-town-is-more-than-its-growth";
   try {if (navigator.share) {await navigator.share({title:document.title,url});return;}}catch(error){if(error.name==='AbortError')return;}
   try {await navigator.clipboard.writeText(url);button.textContent='Link copied';setTimeout(()=>button.textContent='Share',2000);}
   catch {window.prompt('Copy this link',url);}
