@@ -44,6 +44,9 @@ async function loadContentIds() {
   } catch { /* Anonymous homepage measurements still work. */ }
 }
 function classify() {
+  // Count each original, owner-approved front-porch column as an article, not a homepage visit.
+  const columnPath = location.pathname.match(/^\/front-porch\/([a-z0-9-]+)\.html$/);
+  if (columnPath) return {kind:"article",id:"front-porch-" + columnPath[1]};
   let hash = "";
   try { hash = decodeURIComponent(location.hash.slice(1)); } catch {}
   if (news.has(hash)) return {kind:"article",id:hash};
