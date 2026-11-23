@@ -1,4 +1,4 @@
-import {buildRecordIndex,recordLabel} from './sports-records.mjs?v=20261121h';
+import {buildRecordIndex,recordLabel,compareSportsGames} from './sports-records.mjs?v=20261122-recordfix';
 const $ = selector => document.querySelector(selector);
 const escaped = text => String(text ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const safeUrl = value => { try { const url = new URL(value); return url.protocol === 'https:' ? url.href : '#'; } catch { return '#'; } };
@@ -62,7 +62,7 @@ function recordBadge(game) {
   const record = recordIndex.get(game.id);
   // Show Overall only when this game has a completed, established outcome.
   // This includes played games with an agreed W/L but conflicting point totals.
-  if(record?.kind !== 'through') return '';
+  if(record?.kind !== 'through' && record?.kind !== 'day_end') return '';
   const label = recordLabel(record);
   if(!label) return '';
   const kind = 'Overall';
@@ -195,8 +195,7 @@ function render() {
   $('.month-measure').textContent = 'September ' + year;
   const filtered = matchingGames();
   const prefix = year + '-' + String(month+1).padStart(2,'0') + '-';
-  const current = filtered.filter(g => g.date.startsWith(prefix)).sort((a,b)=>a.date.localeCompare(b.date) ||
-    (a.time||'').localeCompare(b.time||'') || (a.opponent || a.title || '').localeCompare(b.opponent || b.title || ''));
+  const current = filtered.filter(g => g.date.startsWith(prefix)).sort(compareSportsGames);
 
   const dates = [...new Set(current.map(x=>x.date))];
   $('#agenda-list').innerHTML = coverageBanner() + (dates.length ? dates.map(date => '<section class="agenda-day"><h3>' +
