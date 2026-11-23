@@ -2,12 +2,26 @@
   "site": {
     "name": "Springville.Info",
     "location": "Springville, Alabama",
-    "updatedAt": "2026-11-22",
+    "updatedAt": "2026-11-23",
     "timezone": "America/Chicago",
     "source": "Migrated from existing Springville.Info Wix site on 2026-11-18",
     "submissionUrl": "https://headless-czuiyfnwkie-christcommunitypca-1412.wix-site-host.com/share.html"
   },
   "news": [
+    {
+      "id": "springville-presley-store-1902",
+      "slug": "springville-presley-store-built-1902",
+      "title": "Springville's Presley Store dates to 1902",
+      "shortTitle": "The 1902 Presley Store",
+      "category": "Did you know?",
+      "date": "2026-11-23",
+      "summary": "Springville’s Presley Store was built in 1902. The city singles it out as one of downtown’s more elaborately detailed historic commercial buildings.",
+      "body": [
+        "Explore the City of Springville’s local-history page for more about the buildings that shaped downtown."
+      ],
+      "sourceName": "City of Springville · About Springville",
+      "sourceUrl": "https://www.cityofspringville.com/about-springville"
+    },
     {
       "id": "springville-library-summer-reading-record-2026",
       "slug": "springville-library-829-summer-readers-2026",
