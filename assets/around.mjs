@@ -89,8 +89,7 @@ export function renderCommunity(data, today = chicagoDate()) {
     const credit = feature ? 'Did you know? · AI-written · ' : '';
     const paragraphs = [...new Set([item.summary,...(item.body || [])])].filter(Boolean).map(p=>'<p>'+escape(p)+'</p>').join('');
     const archiveLink = feature
-      ? '<a class="feature-archive-link" href="#did-you-know-archive">' +
-          '<span>More local discoveries</span><strong>Explore the Did You Know archive <span aria-hidden="true">→</span></strong></a>'
+      ? '<a class="feature-archive-link" href="#did-you-know-archive">More Did You Know stories <span aria-hidden="true">→</span></a>'
       : '';
     return detail(item.slug,item.title,'<small>'+credit+'Published '+label(item.date,{year:'numeric',month:'long',day:'numeric'})+
       '</small>'+paragraphs+sourceTrail(item)+archiveLink);
