@@ -69,7 +69,7 @@ body.springville-home .story h3,body.springville-home #feed .story:first-child h
 body.springville-home .story h3:hover{text-decoration:underline}
 body.springville-home .story .kind,body.springville-home #feed .story:first-child .kind{
  display:block!important;margin:0 0 5px!important;padding:0!important;border:0!important;clip-path:none!important;
- background:transparent!important;color:var(--red)!important;font:800 11px/1.2 var(--sans)!important;
+ background:transparent!important;color:var(--red)!important;font:800 12px/1.2 var(--sans)!important;
  letter-spacing:.095em!important;text-transform:uppercase!important;white-space:normal!important}
 body.springville-home .story .story-headline{display:block!important;font:inherit!important}
 body.springville-home .story time{display:none!important}
@@ -92,13 +92,13 @@ body.springville-home .listing time{display:flex!important;flex-direction:column
  font-variant-numeric:tabular-nums;line-height:1.05}
 body.springville-home .listing time small:not(.date-month){display:none!important}
 body.springville-home .listing time .date-month{display:block!important;
- font:800 10px/1.15 var(--sans)!important;letter-spacing:.07em;color:#8f4631!important;text-transform:uppercase}
+ font:800 12px/1.15 var(--sans)!important;letter-spacing:.04em;color:#8f4631!important;text-transform:uppercase}
 body.springville-home .listing time b{font:700 23px/1.12 var(--serif)!important;letter-spacing:normal!important;color:#294734!important}
 body.springville-home .listing time b.wide{font:700 15px/1.4 var(--sans)!important}
 body.springville-home .listing strong{display:block!important;margin:0!important;padding:0!important;
- font:750 15px/1.22 var(--sans)!important;letter-spacing:normal!important;color:var(--ink)!important}
+ font:750 16px/1.25 var(--sans)!important;letter-spacing:normal!important;color:var(--ink)!important}
 body.springville-home .listing .where{display:block!important;margin-top:4px;color:#647067!important;
- font:400 12px/1.25 var(--sans)!important}
+ font:400 13px/1.25 var(--sans)!important}
 body.springville-home .listing:hover strong{color:var(--forest)!important;text-decoration:underline}
 body.springville-home .page{display:none}
 body.springville-home #feed{display:grid}
