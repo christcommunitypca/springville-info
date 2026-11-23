@@ -67,3 +67,110 @@ body.springville-porch .porch-community p:last-child{margin-bottom:0}
 body.springville-porch .porch-community p.porch-explore-eyebrow{font:800 11px/1.3 var(--sans);color:#88604f;letter-spacing:.12em;text-transform:uppercase;margin:0 0 8px}
 body.springville-porch .porch-community p.porch-community-updated{font:650 12px/1.4 var(--sans);color:#728076;margin-top:14px}
 body.springville-porch .porch-explore{border-bottom:0;border-top:1px solid #e6e7df;background:#fff}
+
+
+/* Match iOS/macOS dark appearance without changing the daylight design.
+   Scope to the homepage and Front Porch pages; the separate sports UI is untouched. */
+@media (prefers-color-scheme: dark) {
+  html:has(body.springville-home){background:#141b17;color:#edf1eb}
+  body.springville-home{
+    color-scheme:dark;
+    --paper:#141b17;--card:#1d2821;--ink:#edf1eb;
+    --quiet:#bbc8bd;--line:#3b4b40;--red:#e7aa94;--forest:#b8ddc2;
+    background:var(--paper);color:var(--ink);
+  }
+
+  /* The original town drawing remains unchanged, with a darker backdrop. */
+  body.springville-home .site-masthead{background:#25382d!important}
+  body.springville-home .site-masthead .site-name{color:#f0f3ea!important}
+  body.springville-home .site-masthead .share-button{
+    color:#e7f2e7!important;background:#344a3b!important;border-color:#5b7460!important}
+  body.springville-home .site-masthead .share-button:hover{background:#415a48!important}
+  body.springville-home .tagline-strip{background:#315541;color:#f0f5ed;border-top-color:#4c7056}
+  body.springville-home footer{color:#b2c0b4}
+  body.springville-home footer a{color:var(--forest)}
+
+  /* Local news and Upcoming use the same muted surfaces as the column. */
+  body.springville-home #feed>section{
+    background:var(--card)!important;border-color:var(--line)!important}
+  body.springville-home #feed>section:first-child .section-title{
+    background:#3b2d2a!important;color:#f0baa5!important;border-bottom-color:#b47861!important}
+  body.springville-home #feed>#listings .section-title{
+    background:#293c30!important;color:#d1e9d5!important;border-bottom-color:#719a7b!important}
+  body.springville-home .sports-shortcut{
+    background:#304537!important;color:#d2ead5!important;border-color:#4c6653!important}
+  body.springville-home .sports-shortcut:hover{background:#3a5241!important}
+  body.springville-home #feed summary{
+    background:var(--card)!important;color:var(--forest)!important}
+  body.springville-home #feed summary:hover{background:#29382d!important}
+  body.springville-home .listing time{
+    background:#2b4032!important;border-color:#496451!important;color:#e7f2e9!important}
+  body.springville-home .listing time .date-month{color:#f0ad93!important}
+  body.springville-home .listing time b{color:#e7f2e9!important}
+  body.springville-home .listing .where{color:#b1c0b4!important}
+  body.springville-home .page:not(#feed){
+    background:var(--card);border-color:var(--line)}
+  body.springville-home .page:not(#feed) small{color:#b2c0b4}
+  body.springville-home .page-actions .share-button{
+    background:#304538;color:#d2e8d7;border-color:#506957}
+
+  /* The featured homepage article is a quiet part of the dark layout. */
+  body.springville-home .porch-teaser{
+    background:#1d2821;border-color:#3b4b40;border-top-color:#c08267}
+  body.springville-home .porch-teaser .porch-label{color:#f0b29a}
+  body.springville-home .porch-teaser h2 a{color:#f0f3eb}
+  body.springville-home .porch-teaser .porch-description{color:#bdcabf}
+  body.springville-home .porch-teaser .porch-invite{
+    color:#c3e6cb;border-bottom-color:#6b9073}
+  body.springville-home .porch-teaser .porch-invite:hover{
+    color:#eff8ee;border-bottom-color:#c3e6cb}
+
+  /* Front Porch article and archive, including the read/reply controls. */
+  body.springville-porch .porch-breadcrumb{color:#aebcb0}
+  body.springville-porch .porch-breadcrumb a{color:#c0dfc6}
+  body.springville-porch .porch-article{
+    background:#1d2821;border-color:#3b4b40}
+  body.springville-porch .porch-article-heading{border-bottom-color:#3b4b40}
+  body.springville-porch .porch-kicker{color:#f0ae94}
+  body.springville-porch .porch-article h1,
+  body.springville-porch .porch-archive-heading h1{color:#f0f3eb}
+  body.springville-porch .porch-subtitle{color:#b9c7b9}
+  body.springville-porch .porch-meta{color:#b8c6ba}
+  body.springville-porch .porch-share{
+    background:#2b4033;color:#d2e8d5;border-color:#4e6a56}
+  body.springville-porch .porch-share:hover{background:#37513f}
+  body.springville-porch .porch-article-copy p{color:#e8eee6}
+  body.springville-porch .porch-article-copy strong{color:#cee9d2}
+  body.springville-porch .porch-article-copy a{color:#c2e7c6}
+  body.springville-porch .porch-article-bottom{
+    background:#1d2821;border-color:#3b4b40}
+  body.springville-porch .porch-response h2{color:#eef3eb}
+  body.springville-porch .porch-response p{color:#bfcbbf}
+  body.springville-porch .porch-response-link{
+    color:#c3e4c9;border-bottom-color:#6b9073}
+  body.springville-porch .porch-response-link:hover{
+    color:#eef8ec;border-bottom-color:#c3e4c9}
+  body.springville-porch .porch-explore{
+    background:#1d2821;border-top-color:#3b4b40;border-left-color:#c08267}
+  body.springville-porch .porch-explore-eyebrow{color:#e5aa95}
+  body.springville-porch .porch-explore-link{
+    color:#c3e5c9;border-bottom-color:#698b6d}
+  body.springville-porch .porch-explore-link:hover{
+    color:#eff7ed;border-bottom-color:#c3e5c9}
+  body.springville-porch .porch-community{
+    background:#26372b;border-bottom-color:#445849}
+  body.springville-porch .porch-community h2{color:#e9f0e7}
+  body.springville-porch .porch-community p{color:#c3d1c4}
+  body.springville-porch .porch-community p.porch-explore-eyebrow{color:#ebaf99}
+  body.springville-porch .porch-community p.porch-community-updated{color:#b3c2b6}
+  body.springville-porch .porch-bottom-nav a{color:#bfdfc5}
+  body.springville-porch .porch-archive-heading,
+  body.springville-porch .porch-archive-link{
+    background:#1d2821;border-color:#3b4b40}
+  body.springville-porch .porch-archive-heading{border-top-color:#c08267}
+  body.springville-porch .porch-archive-heading p:last-child{color:#bfcdbf}
+  body.springville-porch .porch-archive-link time{color:#ecb298}
+  body.springville-porch .porch-archive-link h2{color:#edf2e9}
+  body.springville-porch .porch-archive-link p{color:#becbbf}
+  body.springville-porch .porch-archive-link span{color:#c3e5c9}
+}
