@@ -213,3 +213,8 @@ body.springville-detail .sources a{color:var(--forest)}
  body.springville-sports .month-label-slot .month-measure{font-size:18px}
  body.springville-sports #month-label{font-size:18px}
 }
+
+/* Persistent backlink: sports-detail.mjs replaces the <main> contents on load. */
+body.springville-detail .detail-backline{width:min(calc(100% - 56px),1110px);margin:16px auto 0}
+body.springville-detail .detail-backline .page-back{display:inline-flex;font:700 14px/1.4 var(--sans);text-decoration:none;color:var(--forest)}
+@media(max-width:780px){body.springville-detail .detail-backline{width:calc(100% - 34px);margin-top:12px}}
