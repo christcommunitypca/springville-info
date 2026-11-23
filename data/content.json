@@ -30,7 +30,8 @@
           "label": "Encyclopedia of Alabama · Springville history",
           "url": "https://encyclopediaofalabama.org/article/springville/"
         }
-      ]
+      ],
+      "shareUrl": "https://springville.info/preview/news/springville-presley-store-built-1902"
     },
     {
       "id": "springville-library-summer-reading-record-2026",
@@ -44,7 +45,8 @@
         "Read The Trussville Tribune's original report for the story behind the library's success."
       ],
       "sourceName": "The Trussville Tribune · Terry Schrimscher · October 9, 2026",
-      "sourceUrl": "https://www.trussvilletribune.com/2026/10/09/springville-library-sets-new-record-with-summer-reading-program/"
+      "sourceUrl": "https://www.trussvilletribune.com/2026/10/09/springville-library-sets-new-record-with-summer-reading-program/",
+      "shareUrl": "https://springville.info/preview/news/springville-library-829-summer-readers-2026"
     },
     {
       "id": "springville-historic-district-1997",
@@ -60,7 +62,8 @@
         "The district covers part of the historic downtown around streets such as Academy, Wilson and Cross. The recognition helps tell the story of buildings and neighborhoods residents still encounter today."
       ],
       "sourceName": "National Park Service · National Register of Historic Places",
-      "sourceUrl": "https://npgallery.nps.gov/AssetDetail/NRIS/97000653"
+      "sourceUrl": "https://npgallery.nps.gov/AssetDetail/NRIS/97000653",
+      "shareUrl": "https://springville.info/preview/news/springville-historic-district-national-register"
     },
     {
       "id": "springville-depot-fire-1969",
@@ -75,7 +78,8 @@
         "Firefighters came from as far away as Birmingham, and the National Guard joined the response. Buildings were damaged, but no one was killed."
       ],
       "sourceName": "Encyclopedia of Alabama · Springville",
-      "sourceUrl": "https://encyclopediaofalabama.org/article/springville/"
+      "sourceUrl": "https://encyclopediaofalabama.org/article/springville/",
+      "shareUrl": "https://springville.info/preview/news/the-1969-springville-train-fire"
     },
     {
       "id": "pinkhill-post-office",
@@ -90,7 +94,8 @@
         "Pinkhill had a short run. In December 1834 the name changed to Springville, bringing the springs back into the town’s name. Of the town’s three names, two point to the water that first drew people here."
       ],
       "sourceName": "Encyclopedia of Alabama · Springville",
-      "sourceUrl": "https://encyclopediaofalabama.org/article/springville/"
+      "sourceUrl": "https://encyclopediaofalabama.org/article/springville/",
+      "shareUrl": "https://springville.info/preview/news/when-springville-was-pinkhill"
     },
     {
       "id": "springville-council-seat-2026",
@@ -105,7 +110,8 @@
       "category": "City Hall",
       "sourceName": "The Trussville Tribune · Terry Schrimscher",
       "sourceUrl": "https://www.trussvilletribune.com/2026/11/17/springville-fills-vacant-council-seat-approves-road-paving/",
-      "sourceLabel": "Read the full story at The Trussville Tribune"
+      "sourceLabel": "Read the full story at The Trussville Tribune",
+      "shareUrl": "https://springville.info/preview/news/springville-appoints-kevin-early-to-district-4-council-seat"
     },
     {
       "id": "springville-hare-gadsden-state-2026",
@@ -120,7 +126,8 @@
         "Hare's junior season was cut short by injury. Before then he was batting .375 with a .460 on-base percentage. He plans to return for one more Tigers season, expected to begin in March."
       ],
       "sourceName": "The Trussville Tribune · Johnny Sanders",
-      "sourceUrl": "https://www.trussvilletribune.com/2026/11/17/springvilles-charlie-hare-signs-with-gadsden-state/"
+      "sourceUrl": "https://www.trussvilletribune.com/2026/11/17/springvilles-charlie-hare-signs-with-gadsden-state/",
+      "shareUrl": "https://springville.info/preview/news/springville-charlie-hare-signs-gadsden-state"
     },
     {
       "id": "springville-comprehensive-plan-2026",
@@ -135,7 +142,8 @@
       "category": "Community",
       "sourceName": "The Trussville Tribune · Nathan Prewett",
       "sourceUrl": "https://www.trussvilletribune.com/2026/11/12/input-sought-from-residents-for-springville-comprehensive-plan/",
-      "sourceLabel": "Read the full story at The Trussville Tribune"
+      "sourceLabel": "Read the full story at The Trussville Tribune",
+      "shareUrl": "https://springville.info/preview/news/springville-seeks-community-input-for-comprehensive-plan"
     },
     {
       "id": "dibble-dabble-art-gallery-opening-2026",
@@ -150,7 +158,8 @@
         "The opening-day schedule included a glassblowing event and an evening open house. The gallery was described as a place to see work by local and central Alabama artists. Check with the gallery directly for current visiting hours."
       ],
       "sourceName": "The Trussville Tribune · Nathan Prewett",
-      "sourceUrl": "https://www.trussvilletribune.com/2026/11/11/grand-opening-to-be-held-for-dibble-dabble-art-gallery-in-springville/"
+      "sourceUrl": "https://www.trussvilletribune.com/2026/11/11/grand-opening-to-be-held-for-dibble-dabble-art-gallery-in-springville/",
+      "shareUrl": "https://springville.info/preview/news/dibble-dabble-art-gallery-announces-springville-opening"
     },
     {
       "id": "cops-for-tots-applications-2026",
@@ -165,7 +174,8 @@
       "category": "Community",
       "sourceName": "The Trussville Tribune · Nathan Prewett",
       "sourceUrl": "https://www.trussvilletribune.com/2026/11/03/applications-open-for-springville-pds-cops-for-tots/",
-      "sourceLabel": "Read the full story at The Trussville Tribune"
+      "sourceLabel": "Read the full story at The Trussville Tribune",
+      "shareUrl": "https://springville.info/preview/news/springville-cops-for-tots-applications"
     }
   ],
   "events": [
@@ -181,7 +191,8 @@
       "listLocation": "Market on Main · Springville",
       "category": "Holiday",
       "summary": "Springville Parks and Recreation invites neighbors to the city's first Christmas tree lighting at Market on Main on Thursday, December 3, at 6:30 p.m.",
-      "sourceUrl": "https://www.facebook.com/events/1607906890586556/"
+      "sourceUrl": "https://www.facebook.com/events/1607906890586556/",
+      "shareUrl": "https://springville.info/preview/events/springville-first-tree-lighting-2026"
     },
     {
       "id": "walk-through-bethlehem-2026",
@@ -192,7 +203,8 @@
       "location": "Homestead Hollow, 1161 Murphrees Valley Rd, Springville, AL",
       "category": "Holiday",
       "summary": "The Church at Bradford Road presents a free, outdoor walk through scenes of Bethlehem with live actors. All ages welcome; no reservation required.",
-      "sourceUrl": "https://happeningnext.com/event/a-walk-through-bethlehem-free-event-eid3a0ebcxw4j"
+      "sourceUrl": "https://happeningnext.com/event/a-walk-through-bethlehem-free-event-eid3a0ebcxw4j",
+      "shareUrl": "https://springville.info/preview/events/walk-through-bethlehem-2026"
     },
     {
       "id": "smore-explore-2026",
@@ -206,7 +218,8 @@
       "sourceUrl": "https://www.eventbrite.com/e/springville-smore-to-explore-tickets-2003727571104",
       "shortTitle": "S’more to Explore",
       "listTime": "11 a.m.",
-      "listLocation": "Springville Public Library"
+      "listLocation": "Springville Public Library",
+      "shareUrl": "https://springville.info/preview/events/smore-explore-2026"
     },
     {
       "id": "live-nativity-2026",
@@ -220,7 +233,8 @@
       "sourceUrl": "https://happeningnext.com/event/spring-valleys-10th-annual-live-nativity-presentation-eid3a0e9m7rq9",
       "shortTitle": "Spring Valley Nativity",
       "listTime": "6 p.m.",
-      "listLocation": "4193 U.S. Highway 11"
+      "listLocation": "4193 U.S. Highway 11",
+      "shareUrl": "https://springville.info/preview/events/live-nativity-2026"
     },
     {
       "id": "santa-at-lasters-2026",
@@ -234,7 +248,8 @@
       "listLocation": "Lasters · Springville",
       "category": "Holiday",
       "summary": "Santa is coming to Lasters on Thursday, December 10, from 6–8 p.m. Stop by for a Santa meet-and-greet at 6432 U.S. Highway 11 in Springville.",
-      "sourceUrl": "https://www.facebook.com/events/2249150349349698/"
+      "sourceUrl": "https://www.facebook.com/events/2249150349349698/",
+      "shareUrl": "https://springville.info/preview/events/santa-at-lasters-2026"
     },
     {
       "id": "odenville-drive-thru-christmas-2026",
@@ -248,7 +263,8 @@
       "listLocation": "New Life Baptist · Odenville",
       "category": "Holiday",
       "summary": "A free drive-through presentation with live scenes from the life of Jesus. The church confirms three evenings, December 11–13, from 6 to 9 p.m.",
-      "sourceUrl": "https://www.nlbconline.org/upcoming_events"
+      "sourceUrl": "https://www.nlbconline.org/upcoming_events",
+      "shareUrl": "https://springville.info/preview/events/odenville-drive-thru-christmas-2026"
     },
     {
       "id": "christmas-pines-2026",
@@ -262,7 +278,8 @@
       "sourceUrl": "https://happeningnext.com/event/christmas-in-the-pines-eid3a0e51qe96",
       "shortTitle": "Christmas in the Pines",
       "listTime": "",
-      "listLocation": "Big Canoe Creek Nature Preserve"
+      "listLocation": "Big Canoe Creek Nature Preserve",
+      "shareUrl": "https://springville.info/preview/events/christmas-pines-2026"
     },
     {
       "id": "christ-community-lessons-carols-2026",
@@ -276,7 +293,8 @@
       "listLocation": "Christ Community PCA",
       "category": "Holiday",
       "summary": "A Christmas Eve service of Scripture lessons and carols, hosted by Christ Community PCA. The service runs from 5 to 6 p.m., allowing families to gather for worship before Christmas Day. Details supplied directly by the organizer.",
-      "sourceUrl": "https://www.christcommunitypca.com/"
+      "sourceUrl": "https://www.christcommunitypca.com/",
+      "shareUrl": "https://springville.info/preview/events/christ-community-lessons-carols-2026"
     },
     {
       "id": "springville-neon-north-pole-parade-2026",
@@ -290,7 +308,8 @@
       "listLocation": "Springville · Route TBA",
       "category": "Holiday",
       "summary": "The Springville Area Chamber of Commerce's 2026 Christmas parade will feature a Neon North Pole theme. Frank and Carol Waid are the grand marshals. The parade starts at 6 p.m.; watch for an official route and traffic guidance before traveling.",
-      "sourceUrl": "https://www.trussvilletribune.com/2026/11/20/neon-north-pole-christmas-parade-in-springville-slated-for-dec-12/"
+      "sourceUrl": "https://www.trussvilletribune.com/2026/11/20/neon-north-pole-christmas-parade-in-springville-slated-for-dec-12/",
+      "shareUrl": "https://springville.info/preview/events/springville-neon-north-pole-parade-2026"
     }
   ],
   "directory": [
