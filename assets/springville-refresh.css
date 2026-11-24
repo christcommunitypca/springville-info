@@ -439,3 +439,61 @@ body.springville-frontpage footer.site-footer-home .footer-archives-divider{opac
     color:#bdd9e8!important;background:transparent!important;
   }
 }
+
+
+/* 404 page: honor the visitor's dark appearance without altering daylight. */
+@media (prefers-color-scheme: dark) {
+  html:has(body.springville-404) {
+    background:#141b17;
+    color:#edf1eb;
+  }
+  body.springville-home.springville-404 {
+    color-scheme:dark;
+    --paper:#141b17;
+    --card:#1d2821;
+    --ink:#edf1eb;
+    --quiet:#bdcbd0;
+    --line:#3b4b40;
+    --forest:#bdddec;
+    --red:#e7aa94;
+    background:var(--paper);
+    color:var(--ink);
+  }
+  body.springville-home.springville-404 .site-masthead {
+    background:#25382d !important;
+  }
+  body.springville-home.springville-404 .site-masthead .site-name {
+    color:#f0f3ea !important;
+  }
+  body.springville-home.springville-404 .tagline-strip {
+    background:#155b8f;
+    color:white;
+    border-top-color:#10486f;
+  }
+  body.springville-home.springville-404 .missing-page {
+    background:var(--card);
+    border-color:var(--line);
+    border-top-color:#82b5d7;
+    color:var(--ink);
+  }
+  body.springville-home.springville-404 .missing-kicker,
+  body.springville-home.springville-404 .missing-explore a {
+    color:#bdddec;
+  }
+  body.springville-home.springville-404 .missing-home {
+    background:#155b8f;
+    color:#fff;
+  }
+  body.springville-home.springville-404 .missing-home:hover,
+  body.springville-home.springville-404 .missing-home:focus-visible {
+    background:#1c6da6;
+    color:#fff;
+  }
+  body.springville-home.springville-404 footer {
+    color:#bdcbd0;
+    border-color:var(--line);
+  }
+  body.springville-home.springville-404 footer a {
+    color:#bdddec;
+  }
+}

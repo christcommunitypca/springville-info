@@ -201,3 +201,52 @@ body.springville-porch .porch-explore{border-bottom:0;border-top:1px solid #e6e7
     text-decoration-color:currentColor;
   }
 }
+
+
+/* Dark-mode regression fixes: homepage footer and article-detail archive link.
+   Leave the approved daylight design and all content unchanged. */
+@media (prefers-color-scheme: dark) {
+  html:has(body.springville-frontpage) {
+    background:#141b17 !important;
+    color:#edf1eb;
+  }
+  body.springville-frontpage {
+    --paper:#141b17;
+    background:#141b17 !important;
+  }
+  body.springville-frontpage footer.site-footer-home {
+    background:#141b17 !important;
+    border-top-color:#3b4b40 !important;
+    color:#d2ded6 !important;
+  }
+  body.springville-frontpage footer.site-footer-home .footer-about,
+  body.springville-frontpage footer.site-footer-home .footer-actions a {
+    color:#bdddec !important;
+  }
+  body.springville-frontpage footer.site-footer-home .footer-about:hover,
+  body.springville-frontpage footer.site-footer-home .footer-actions a:hover,
+  body.springville-frontpage footer.site-footer-home .footer-about:focus-visible,
+  body.springville-frontpage footer.site-footer-home .footer-actions a:focus-visible {
+    color:#e4f2fa !important;
+    text-decoration:underline;
+  }
+  body.springville-frontpage footer.site-footer-home .footer-archives {
+    background:#155b8f !important;
+    color:#fff !important;
+  }
+  body.springville-frontpage footer.site-footer-home .footer-archives-label {
+    opacity:.76;
+  }
+  body.springville-home .page:not(#feed) a.feature-archive-link {
+    background:#253941;
+    color:#c7e8f7;
+    border-color:#4f6775;
+    border-left-color:#82b5d7;
+  }
+  body.springville-home .page:not(#feed) a.feature-archive-link:hover,
+  body.springville-home .page:not(#feed) a.feature-archive-link:focus-visible {
+    background:#314852;
+    color:#e5f5fd;
+    border-color:#82b5d7;
+  }
+}
