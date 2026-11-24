@@ -4,7 +4,7 @@
     "city": "Springville, Alabama",
     "timezone": "America/Chicago",
     "address": "8295 US Highway 11, Springville, AL 35146",
-    "updatedAt": "2026-11-22T22:54:48-06:00",
+    "updatedAt": "2026-11-24T12:48:00-06:00",
     "note": "Springville Tigers varsity games, meets and results, with sources. Schedules are updated as they are published.",
     "flagFootball2026EditorialNote": "2026 girls varsity flag football: 18 distinct final matchups independently identified (9-9) plus two listed Oct 15 cancellations. MaxPreps and Flag Football Planet display a 10-9 record; FFP lists the exact Sep 1 Springville 33–13 Hope Christian Academy result twice with opposite venue labels. Do not fabricate a 19th game to force 10-9. If a new independent game source identifies an additional unique event, evaluate it; otherwise stop the one-time backfill."
   },
@@ -2084,10 +2084,12 @@
       "opponent": "Sardis",
       "site": "away",
       "season": "2026-27",
-      "status": "scheduled",
+      "status": "final",
       "sourceName": "MaxPreps",
-      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/schedule/",
-      "verifiedAt": "2026-11-20"
+      "sourceUrl": "https://www.maxpreps.com/news/oJ-2yd5UEUOEHyTU6DJ4Ng/basketball-recap-springville-skates-past-sardis-with-ease--how-to-watch.htm",
+      "verifiedAt": "2026-11-24",
+      "springvilleScore": 63,
+      "opponentScore": 33
     },
     {
       "id": "2026-11-23-basketball-girls-sardis",
@@ -2099,10 +2101,12 @@
       "opponent": "Sardis",
       "site": "away",
       "season": "2026-27",
-      "status": "scheduled",
+      "status": "final",
       "sourceName": "MaxPreps",
-      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/girls/schedule/",
-      "verifiedAt": "2026-11-20"
+      "sourceUrl": "https://www.maxpreps.com/news/q9uuAP5JJUiLzM2gr0PizQ/basketball-recap-tough-loss-for-springville--how-to-watch.htm",
+      "verifiedAt": "2026-11-24",
+      "springvilleScore": 52,
+      "opponentScore": 81
     },
     {
       "id": "2026-11-24-basketball-boys-ashville",
