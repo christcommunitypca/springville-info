@@ -19,7 +19,7 @@ button{cursor:pointer}
 :focus-visible{outline:3px solid var(--red);outline-offset:3px}
 .site-masthead{display:block!important;position:relative!important;inset:auto!important;transform:none!important;
  width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:auto!important;
- margin:0!important;padding:0!important;background:#e8eee8!important;border:0!important;box-shadow:none!important;
+ margin:0!important;padding:0!important;background:#fff!important;border:0!important;box-shadow:none!important;
  overflow:hidden!important;isolation:auto!important}
 .site-masthead:before,.site-masthead:after{display:none!important;content:none!important}
 .masthead-inner{width:min(calc(100% - 56px),1110px);min-height:0;margin:0 auto;
