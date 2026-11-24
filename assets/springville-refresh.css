@@ -362,7 +362,7 @@ body.springville-detail .detail-backline .page-back{display:inline-flex;font:700
 html:has(body.springville-frontpage){background:#fff}
 body.springville-frontpage{--paper:#fff;background:#fff}
 body.springville-frontpage .tagline-strip{
-  background:#155b8f;color:#fff;border-top-color:#10486f;
+  background:#155b8f!important;color:#fff!important;border-top-color:#10486f!important;
 }
 /* See more news is an unobtrusive text link, NEVER a highlighted button. */
 body.springville-frontpage #feed>section:first-child details>summary{
@@ -428,5 +428,14 @@ body.springville-frontpage footer.site-footer-home .footer-archives-divider{opac
   }
   body.springville-frontpage footer.site-footer-home .footer-archives-label{
     font-size:10px;letter-spacing:0;
+  }
+}
+
+/* Preserve legible text links when the visitor uses system dark mode. */
+@media(prefers-color-scheme:dark){
+  body.springville-frontpage #feed>section:first-child details>summary,
+  body.springville-frontpage #feed>section:first-child details>summary:hover,
+  body.springville-frontpage #feed>section:first-child details>summary:focus-visible{
+    color:#bdd9e8!important;background:transparent!important;
   }
 }
