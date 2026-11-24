@@ -355,3 +355,78 @@ body.springville-detail .detail-backline .page-back{display:inline-flex;font:700
   body.springville-detail .state-message{
     background:var(--card);border-color:#607767;color:#d7e6da}
 }
+
+
+/* Homepage-only footer and color adjustments approved Nov 23, 2026.
+   Preserve all existing cards, news/event content, masthead and sports styling. */
+html:has(body.springville-frontpage){background:#fff}
+body.springville-frontpage{--paper:#fff;background:#fff}
+body.springville-frontpage .tagline-strip{
+  background:#155b8f;color:#fff;border-top-color:#10486f;
+}
+/* See more news is an unobtrusive text link, NEVER a highlighted button. */
+body.springville-frontpage #feed>section:first-child details>summary{
+  display:inline-block!important;width:auto!important;min-height:0!important;
+  margin:0!important;padding:10px 22px 12px!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;
+  background:transparent!important;color:#5d7180!important;
+  font:600 13px/1.5 var(--sans)!important;text-decoration:underline;
+  text-decoration-color:#a9b8bf;text-underline-offset:3px;
+}
+body.springville-frontpage #feed>section:first-child details>summary:hover,
+body.springville-frontpage #feed>section:first-child details>summary:focus-visible{
+  background:transparent!important;color:#285574!important;
+  text-decoration-color:currentColor;
+}
+body.springville-frontpage footer.site-footer-home{
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+  width:100%!important;max-width:none;margin:0;padding:18px 0 0;
+  gap:0;background:#fff;border-top:1px solid var(--line);box-shadow:none;
+}
+body.springville-frontpage footer.site-footer-home .footer-center{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  width:100%;gap:0;padding:0 17px;
+}
+body.springville-frontpage footer.site-footer-home .footer-tower{
+  display:block;width:60px;height:60px;object-fit:contain;border-radius:50%;margin:0;
+}
+body.springville-frontpage footer.site-footer-home .footer-about{
+  display:inline-block;margin-top:6px;color:#285574;
+  font:700 13px/1.4 var(--sans);text-decoration:none;
+}
+body.springville-frontpage footer.site-footer-home .footer-actions{
+  display:flex;align-items:center;justify-content:center;gap:10px 22px;
+  flex-wrap:wrap;margin:11px 0 17px;
+}
+body.springville-frontpage footer.site-footer-home .footer-actions a{
+  color:#39627a;text-decoration:none;font:650 13px/1.4 var(--sans);
+}
+body.springville-frontpage footer.site-footer-home .footer-about:hover,
+body.springville-frontpage footer.site-footer-home .footer-actions a:hover{
+  text-decoration:underline;
+}
+body.springville-frontpage footer.site-footer-home .footer-archives{
+  width:100%;min-height:36px;display:flex;align-items:center;
+  justify-content:center;flex-wrap:wrap;gap:4px 11px;
+  margin:0;padding:10px 12px 9px;
+  background:#155b8f;color:#fff;
+  font:700 11px/1.5 var(--sans);letter-spacing:.08em;text-transform:uppercase;
+}
+body.springville-frontpage footer.site-footer-home .footer-archives-label{
+  opacity:.60;font-weight:500;font-size:10px;letter-spacing:.055em;
+}
+body.springville-frontpage footer.site-footer-home .footer-archives a{
+  color:#fff!important;font-weight:750;text-decoration:none;
+}
+body.springville-frontpage footer.site-footer-home .footer-archives a:hover{
+  color:#fff!important;text-decoration:underline;
+}
+body.springville-frontpage footer.site-footer-home .footer-archives-divider{opacity:.5}
+@media(max-width:440px){
+  body.springville-frontpage footer.site-footer-home .footer-archives{
+    gap:4px 7px;letter-spacing:.04em;padding-left:8px;padding-right:8px;
+  }
+  body.springville-frontpage footer.site-footer-home .footer-archives-label{
+    font-size:10px;letter-spacing:0;
+  }
+}
