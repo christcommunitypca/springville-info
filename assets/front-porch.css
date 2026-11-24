@@ -250,3 +250,18 @@ body.springville-porch .porch-explore{border-bottom:0;border-top:1px solid #e6e7
     border-color:#82b5d7;
   }
 }
+
+
+/* Blue-charcoal dark masthead across the home and Front Porch pages. */
+@media (prefers-color-scheme: dark) {
+ body.springville-home .site-masthead {background:#203849 !important}
+ body.springville-home .site-masthead .site-name {color:#eef5f8 !important}
+ body.springville-home .site-masthead .share-button {
+   background:#294c63 !important;border-color:#68849a !important;color:#e2f0f8 !important;
+ }
+ body.springville-home .site-masthead .share-button:hover,
+ body.springville-home .site-masthead .share-button:focus-visible {background:#365d76 !important}
+ body.springville-home .tagline-strip {
+   background:#155b8f !important;color:#fff !important;border-top-color:#10486f !important;
+ }
+}

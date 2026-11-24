@@ -111,7 +111,7 @@ async function load() {
     const data = await response.json();
     const game = data.games.find(item => item.id === eventId);
     if (!game) {
-      main.innerHTML = '<p class="state-message">This event was not found. <a href="/sports.html">Back to the sports calendar.</a></p>';
+      main.innerHTML = '<p class="state-message">This event was not found. <a href="/sports.html">Back to sports calendar.</a></p>';
       return;
     }
     const record = buildRecordIndex(data.games).get(game.id);

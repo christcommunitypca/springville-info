@@ -497,3 +497,38 @@ body.springville-frontpage footer.site-footer-home .footer-archives-divider{opac
     color:#bdddec;
   }
 }
+
+
+/* Preserve a plain inline 'See more' news link: no boxed row or colored fill. */
+body.springville-frontpage #feed > section:first-child > details {
+  border-top:0 !important;margin:0 !important;padding:0 !important;
+  background:transparent !important;box-shadow:none !important;
+}
+body.springville-frontpage #feed > section:first-child > details > summary {
+  display:inline-block !important;width:auto !important;min-height:0 !important;
+  margin:0 0 11px 22px !important;padding:3px 0 !important;
+  background:transparent !important;border:0 !important;border-radius:0 !important;box-shadow:none !important;
+  font:600 13px/1.5 var(--sans) !important;text-decoration:underline;
+  text-decoration-color:#a9b8bf;text-underline-offset:3px;
+}
+body.springville-frontpage #feed > section:first-child > details > summary:hover,
+body.springville-frontpage #feed > section:first-child > details > summary:focus-visible {
+  background:transparent !important;box-shadow:none !important;
+}
+@media (max-width:780px) {
+ body.springville-frontpage #feed > section:first-child > details > summary {margin-left:17px !important}
+}
+/* Blue-charcoal header in dark mode for sports and the error page. */
+@media (prefers-color-scheme: dark) {
+ body.springville-sports .site-masthead,
+ body.springville-detail .site-masthead,
+ body.springville-home.springville-404 .site-masthead {background:#203849 !important}
+ body.springville-sports .site-masthead .site-name,
+ body.springville-detail .site-masthead .site-name,
+ body.springville-home.springville-404 .site-masthead .site-name {color:#eef5f8 !important}
+ body.springville-sports .tagline-strip,
+ body.springville-detail .tagline-strip,
+ body.springville-home.springville-404 .tagline-strip {
+   background:#155b8f !important;color:#fff !important;border-top-color:#10486f !important
+ }
+}

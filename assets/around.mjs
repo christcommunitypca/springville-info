@@ -23,7 +23,7 @@ function sourceTrail(item) {
     extras.map(link => '<li>' + link + '</li>').join('') + '</ul></div></div>';
 }
 function more(label, contents) {
-  return contents ? '<details><summary>See more ' + label + '</summary>' + contents + '</details>' : '';
+  return contents ? '<details><summary>' + (label === 'news' ? 'See more' : 'See more ' + label) + '</summary>' + contents + '</details>' : '';
 }
 function newsRows(items) {
   if (!items.length) return '';
