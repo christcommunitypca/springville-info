@@ -4,7 +4,7 @@
     "city": "Springville, Alabama",
     "timezone": "America/Chicago",
     "address": "8295 US Highway 11, Springville, AL 35146",
-    "updatedAt": "2026-11-24T12:48:00-06:00",
+    "updatedAt": "2026-11-24T23:24:48.389Z",
     "note": "Springville Tigers varsity games, meets and results, with sources. Schedules are updated as they are published.",
     "flagFootball2026EditorialNote": "2026 girls varsity flag football: 18 distinct final matchups independently identified (9-9) plus two listed Oct 15 cancellations. MaxPreps and Flag Football Planet display a 10-9 record; FFP lists the exact Sep 1 Springville 33–13 Hope Christian Academy result twice with opposite venue labels. Do not fabricate a 19th game to force 10-9. If a new independent game source identifies an additional unique event, evaluate it; otherwise stop the one-time backfill."
   },
@@ -2167,10 +2167,14 @@
       "opponent": "Ashville",
       "site": "home",
       "season": "2026-27",
-      "status": "scheduled",
+      "status": "final",
       "sourceName": "MaxPreps",
-      "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/girls/schedule/",
-      "verifiedAt": "2026-11-20"
+      "sourceUrl": "https://www.maxpreps.com/al/basketball/girls/game/ashville-vs-springville/11-24-2026/?c=de37ba04-26f2-450e-8ddd-0a64d8a1c298",
+      "verifiedAt": "2026-11-24",
+      "springvilleScore": 57,
+      "opponentScore": 32,
+      "secondarySourceName": "High School On SI",
+      "secondarySourceUrl": "https://www.si.com/high-school/stats/alabama/girls-basketball/games/6719154-ashville-vs-springville"
     },
     {
       "id": "2026-12-01-basketball-boys-locust-fork",
