@@ -1905,7 +1905,24 @@
       "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/schedule/",
       "verifiedAt": "2026-11-20",
       "secondarySourceName": "AL Scores",
-      "secondarySourceUrl": "https://alscores.app/basketball/team/springville-high-school/"
+      "secondarySourceUrl": "https://alscores.app/basketball/team/springville-high-school/",
+      "playerHighlights": [
+        {
+          "name": "Nigel Laws",
+          "achievement": "18 points · 4 rebounds · 3 three-pointers",
+          "sourceUrl": "https://www.maxpreps.com/al/basketball/game/clay-chalkville-pinson-vs-springville/11-11-2026/?c=e773bdac-053e-4a86-9c6c-0396e8f7e205&tab=Stats"
+        },
+        {
+          "name": "Franklin Tripp",
+          "achievement": "11 points · 3 rebounds",
+          "sourceUrl": "https://www.maxpreps.com/al/basketball/game/clay-chalkville-pinson-vs-springville/11-11-2026/?c=e773bdac-053e-4a86-9c6c-0396e8f7e205&tab=Stats"
+        },
+        {
+          "name": "Cash Mobley",
+          "achievement": "4 steals · 2 assists",
+          "sourceUrl": "https://www.maxpreps.com/al/basketball/game/clay-chalkville-pinson-vs-springville/11-11-2026/?c=e773bdac-053e-4a86-9c6c-0396e8f7e205&tab=Stats"
+        }
+      ]
     },
     {
       "id": "2026-11-13-basketball-boys-locust-fork",
@@ -1924,7 +1941,24 @@
       "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/schedule/",
       "verifiedAt": "2026-11-20",
       "secondarySourceName": "AL Scores",
-      "secondarySourceUrl": "https://alscores.app/basketball/team/springville-high-school/"
+      "secondarySourceUrl": "https://alscores.app/basketball/team/springville-high-school/",
+      "playerHighlights": [
+        {
+          "name": "Nigel Laws",
+          "achievement": "18 points",
+          "sourceUrl": "https://www.maxpreps.com/al/basketball/game/locust-fork-vs-springville/11-13-2026/?c=95f980ef-295d-47d5-b37f-a414c238fa53"
+        },
+        {
+          "name": "Cole Dixon",
+          "achievement": "9 rebounds",
+          "sourceUrl": "https://www.maxpreps.com/al/basketball/game/locust-fork-vs-springville/11-13-2026/?c=95f980ef-295d-47d5-b37f-a414c238fa53"
+        },
+        {
+          "name": "Kam Laws",
+          "achievement": "4 assists",
+          "sourceUrl": "https://www.maxpreps.com/al/basketball/game/locust-fork-vs-springville/11-13-2026/?c=95f980ef-295d-47d5-b37f-a414c238fa53"
+        }
+      ]
     },
     {
       "id": "2026-11-13-basketball-girls-locust-fork",
