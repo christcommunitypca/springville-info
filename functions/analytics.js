@@ -84,7 +84,7 @@ const page = `<!doctype html>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=DM+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <title>Readership | Around Springville</title>
 <style>
-*{box-sizing:border-box}html{background:#f5f9fb;color:#183449}body{margin:0;font:400 15px/1.5 "DM Sans",system-ui,sans-serif}
+*{box-sizing:border-box}html{background:#ffffff;color:#183449}body{margin:0;font:400 15px/1.5 "DM Sans",system-ui,sans-serif}
 header{padding:20px max(20px,calc((100% - 1180px)/2));background:#173c53;color:#fff;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
 header .brand{font:800 27px/1 "Barlow Condensed",Impact,sans-serif;letter-spacing:.02em;text-transform:uppercase}
 header small{display:block;color:#b9d2dd;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
@@ -96,18 +96,35 @@ h1,h2,h3,p{margin:0}h1{font:800 clamp(36px,7vw,54px)/1 "Barlow Condensed",Impact
 .period button[aria-pressed=true]{background:#173c53;color:white;border-color:#173c53}
 .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin:0 0 24px}
 .card,.panel{border:1px solid #d4e1e6;background:#fff;border-radius:9px}
-.card{padding:16px 16px 15px;border-top:4px solid #3e756e}.card:nth-child(2n){border-top-color:#ae443e}
+.card{padding:16px 16px 15px;border-top:4px solid #155b8f}.card:nth-child(2n){border-top-color:#639fca}
 .card small{display:block;color:#607583;font-size:12px;font-weight:700}.card strong{display:block;font:800 clamp(28px,4vw,42px)/1.15 "Barlow Condensed",Impact,sans-serif;margin-top:7px}
 .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:14px}.panel{padding:20px;margin-bottom:14px;min-width:0}
 .panel p{color:#657985;font-size:12px;margin:6px 0 17px}.list{display:grid;gap:11px}
 .barline{display:grid;grid-template-columns:minmax(0,1fr) 58px;align-items:center;gap:12px;font-size:13px}
 .barname{overflow-wrap:anywhere;display:block;font-weight:650}.barvalue{text-align:right;font-variant-numeric:tabular-nums;color:#465f6e}
-.bar{height:6px;border-radius:7px;background:#e9f0f2;margin-top:6px;overflow:hidden}.fill{height:100%;background:#42776d;border-radius:7px}
-.grid .panel:nth-child(2n) .fill{background:#ae443e}.muted{color:#748691}
-.trend{display:flex;align-items:end;gap:4px;height:115px;border-bottom:1px solid #cedce3;padding-top:13px}.trend span{background:#42776d;min-width:4px;flex:1;border-radius:3px 3px 0 0}
+.bar{height:6px;border-radius:7px;background:#e9f0f2;margin-top:6px;overflow:hidden}.fill{height:100%;background:#155b8f;border-radius:7px}
+.grid .panel:nth-child(2n) .fill{background:#639fca}.muted{color:#748691}
+.trend{display:flex;align-items:end;gap:4px;height:115px;border-bottom:1px solid #cedce3;padding-top:13px}.trend span{background:#155b8f;min-width:4px;flex:1;border-radius:3px 3px 0 0}
 .note{font-size:12px;line-height:1.6;color:#5b7180;margin-top:14px}.error{padding:17px;border:1px solid #e4c3bd;background:#fff7f6;border-radius:8px;color:#98392f;margin-bottom:18px}
-a{color:#a43c33}footer{padding:15px 20px 30px;max-width:1180px;margin:0 auto;color:#667985;border-top:1px solid #cadbe1;font-size:12px}
+a{color:#155b8f}footer{padding:15px 20px 30px;max-width:1180px;margin:0 auto;color:#667985;border-top:1px solid #cadbe1;font-size:12px}
 @media(max-width:740px){header{padding:16px}main{padding:23px 14px 38px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.card{padding:14px 12px}.grid{grid-template-columns:1fr}.panel{padding:16px}}
+
+/* Private dashboard: blue-slate dark mode, CSS-only; data access logic unchanged. */
+@media (prefers-color-scheme: dark) {
+ html{color-scheme:dark;background:#101b25;color:#edf5fa}
+ header{background:#203849;color:#edf5fa}
+ header small{color:#b6d6e9}
+ .sub,.muted,.panel p,.card small,.barvalue,.note,footer{color:#b7cbd9}
+ .period button{background:#1b2d3d;color:#dcebf5;border-color:#3b5368}
+ .period button[aria-pressed=true]{background:#155b8f;color:#fff;border-color:#5b9bc5}
+ .card,.panel{background:#1b2d3d;border-color:#3b5368}
+ .bar{background:#294053}
+ .fill,.trend span{background:#438fbe}
+ .grid .panel:nth-child(2n) .fill{background:#79b8d9}
+ .trend,footer{border-color:#3b5368}
+ .error{background:#402a32;border-color:#765261;color:#f1c4ca}
+ a{color:#bfe5f7}
+}
 </style></head>
 <body>
 <header><div><span class="brand">Around Springville</span><small>Owner-only readership</small></div><a href="/">Visit the community site ↗</a></header>
