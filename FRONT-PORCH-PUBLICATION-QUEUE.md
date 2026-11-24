@@ -1,5 +1,5 @@
 # From My Front Porch — Approved Publication Queue
-Last editorial instruction: November 23, 2026 (Thanksgiving special approved for Wednesday, Nov 25). Time zone: America/Chicago.
+Last editorial instruction: November 23, 2026 (Christmas story approved for Tuesday, Dec 15). Time zone: America/Chicago.
 This file is a schedule and release workflow, NOT blanket authorization for unreviewed columns.
 
 ## Approved and queued
@@ -28,14 +28,21 @@ This file is a schedule and release workflow, NOT blanket authorization for unre
 - Homepage teaser: headline `More Than a Railroad Crossing`, short description `The railroad has always been here. Now it's helping shape Springville's future.`, with link `/front-porch/more-than-a-railroad-crossing.html`. Keep compact two-line summary and subtle `Pull up a chair` link.
 - Reader email subject should include the title and go to `frontporch@springville.info`.
 
-## Pending user review — NOT AUTHORIZED TO PUBLISH
-- Proposed 2026-12-15: Whatever Happened to Sunday Evening? (morning/evening sacrifices of praise and Lord's Day worship). Draft under review. NEVER publish without explicit later owner approval.
+- Date: 2026-12-15 (local calendar date; scheduled morning editor run).
+- Title: A Town That Still Tells the Christmas Story.
+- Status: OWNER APPROVED for publication on or after December 15, 2026. Preserve the exact 19-paragraph owner-edited article matching the print PDF. No early release.
+- Approved source: draft PR #5, branch `editorial/approved-christmas-story-dec-2026`, exact single file `front-porch/a-town-that-still-tells-the-christmas-story.html`.
+- Homepage teaser: headline `A Town That Still Tells the Christmas Story`, description `From early congregations to live Nativities, celebrating the generations of Springville neighbors who have shared the good news of Jesus Christ.`, link `/front-porch/a-town-that-still-tells-the-christmas-story.html`.
+- Archive date December 15, 2026; canonical sharing and reader email subject use exact title; reader email routes to frontporch@springville.info.
+
+## Withdrawn — NOT AUTHORIZED TO PUBLISH
+- Whatever Happened to Sunday Evening? Owner determined this does not fit Springville.info. Replaced by the Christmas story column; do not publish.
 
 ## Safe release steps (only for explicitly approved item when due)
 1. Never run these steps early, and never publish a pending item. Never reduce or interfere with the existing daily Springville news/events/sports work. On the due date, read this queue from MAIN and verify the release state.
-2. Match today's due OWNER-APPROVED release to its EXACT PR, branch, and article path: Nov 25 PR #4 `front-porch/thankful-for-the-town-we-call-home.html`; Dec 1 PR #2 `front-porch/when-more-becomes-the-measure.html`; Dec 8 PR #3 `front-porch/more-than-a-railroad-crossing.html`. Inspect the PR metadata and changed-files list, confirm precisely one added approved article and correct title/content/date, and verify current MAIN does not already contain it. If unexpected changes, failed verification, or merge conflict, hold and alert the owner rather than overwriting other content.
-3. ONLY PR #4 on/after Nov 25, PR #2 on/after Dec 1, and PR #3 on/after Dec 8 are explicit, narrow exceptions to the no-automatic-draft-merges rule, solely because the owner approved those exact articles and their future publication. On the respective due date, mark only that due PR ready, merge with expected head SHA; or safely copy its single approved article file to MAIN if PR merging is unavailable. Never merge early or auto-merge any other draft.
+2. Match today's due OWNER-APPROVED release to its EXACT PR, branch, and article path: Nov 25 PR #4 `front-porch/thankful-for-the-town-we-call-home.html`; Dec 1 PR #2 `front-porch/when-more-becomes-the-measure.html`; Dec 8 PR #3 `front-porch/more-than-a-railroad-crossing.html`; Dec 15 PR #5 `front-porch/a-town-that-still-tells-the-christmas-story.html`. Inspect the PR metadata and changed-files list, confirm precisely one added approved article and correct title/content/date, and verify current MAIN does not already contain it. If unexpected changes, failed verification, or merge conflict, hold and alert the owner rather than overwriting other content.
+3. ONLY PR #4 on/after Nov 25, PR #2 on/after Dec 1, PR #3 on/after Dec 8, and PR #5 on/after Dec 15 are explicit, narrow exceptions to the no-automatic-draft-merges rule, solely because the owner approved those exact articles and their future publication. On the respective due date, mark only that due PR ready, merge with expected head SHA; or safely copy its single approved article file to MAIN if PR merging is unavailable. Never merge early or auto-merge any other draft.
 4. Fetch LATEST MAIN versions of `index.html` and `front-porch/index.html`; update ONLY the separate homepage From My Front Porch opinion teaser and the Front Porch archive, preserving all existing links. CRITICAL: Did You Know is NOT a separate teaser or card; it is always the FIRST STORY inside Local News, marked with a small 'Did you know?' label. Keep exactly ONE latest dated feature in the Local News list, even if yesterday's remains until a new daily feature arrives. Keep ALL older features and source links in the permanent Did You Know archive (not subject to ordinary news expiration). Never remove, replace or duplicate the Did You Know story when updating the opinion teaser. Preserve the `assets/around.mjs` news renderer and all live news, calendar, about, sports, analytics, CSS and JS. Do not replace the homepage from a stale branch.
 5. Add the new article's canonical URL to `sitemap.xml`. In `data/porch-community.json`, add the new article slug with `{"updatedAt":null,"paragraphs":[]}` while preserving all other articles and summaries.
 6. Verify new page, homepage link, archive link, and routing `mailto:frontporch@springville.info` from MAIN, plus successful Cloudflare deployment. Report publication success only after deployment confirms. If any step fails, report exactly what succeeded and what remains.
-7. Once published, update only its queue status here to PUBLISHED (idempotent: never republish or duplicate). Do not alter the future approved Dec 1 and Dec 8 items when releasing the Thanksgiving special. Wait for separate, explicit owner approval for the Dec 15 and any later pieces. A date is NOT approval.
+7. Once published, update only its queue status here to PUBLISHED (idempotent: never republish or duplicate). Do not alter future approved items when releasing earlier editions. Wait for separate, explicit owner approval for any later pieces. A date is NOT approval.
