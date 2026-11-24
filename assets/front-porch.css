@@ -176,3 +176,28 @@ body.springville-porch .porch-explore{border-bottom:0;border-top:1px solid #e6e7
   body.springville-porch .porch-archive-link span{color:#c3e5c9}
 }
 
+
+/* About section dark-mode contrast — homepage only, no other sections affected. */
+@media (prefers-color-scheme: dark) {
+  body.springville-home.springville-frontpage section#about {
+    background:#1d2821 !important;
+    border-color:#3b4b40 !important;
+    color:#edf1eb !important;
+  }
+  body.springville-home.springville-frontpage section#about h2 {
+    color:#f0f4ed !important;
+  }
+  body.springville-home.springville-frontpage section#about p {
+    color:#d2ded6 !important;
+  }
+  body.springville-home.springville-frontpage section#about a,
+  body.springville-home.springville-frontpage section#about a:not(.back) {
+    color:#bdddec !important;
+    text-decoration-color:#769eb4;
+  }
+  body.springville-home.springville-frontpage section#about a:hover,
+  body.springville-home.springville-frontpage section#about a:focus-visible {
+    color:#e4f2fa !important;
+    text-decoration-color:currentColor;
+  }
+}
