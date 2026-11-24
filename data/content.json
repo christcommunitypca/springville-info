@@ -2,7 +2,7 @@
   "site": {
     "name": "Springville.Info",
     "location": "Springville, Alabama",
-    "updatedAt": "2026-11-23",
+    "updatedAt": "2026-11-24",
     "timezone": "America/Chicago",
     "source": "Migrated from existing Springville.Info Wix site on 2026-11-18",
     "submissionUrl": "https://headless-czuiyfnwkie-christcommunitypca-1412.wix-site-host.com/share.html"
@@ -304,12 +304,26 @@
       "endDate": "2026-12-12",
       "time": "6 p.m.",
       "listTime": "6 p.m.",
-      "location": "Springville, Alabama (parade route not confirmed)",
-      "listLocation": "Springville · Route TBA",
+      "location": "Springville, Alabama",
+      "listLocation": "Springville",
       "category": "Holiday",
-      "summary": "The Springville Area Chamber of Commerce's 2026 Christmas parade will feature a Neon North Pole theme. Frank and Carol Waid are the grand marshals. The parade starts at 6 p.m.; watch for an official route and traffic guidance before traveling.",
+      "summary": "The Springville Area Chamber of Commerce's 2026 Christmas parade will feature a Neon North Pole theme. Frank and Carol Waid are the grand marshals. The parade starts at 6 p.m.",
       "sourceUrl": "https://www.trussvilletribune.com/2026/11/20/neon-north-pole-christmas-parade-in-springville-slated-for-dec-12/",
       "shareUrl": "https://springville.info/preview/events/springville-neon-north-pole-parade-2026"
+    },
+    {
+      "id": "woodall-holiday-craft-fair-2026",
+      "title": "Holiday Craft Fair & Santa Visit",
+      "shortTitle": "Holiday Craft Fair",
+      "startDate": "2026-12-05",
+      "endDate": "2026-12-05",
+      "time": "9 a.m.–4 p.m.",
+      "listTime": "9 a.m.–4 p.m.",
+      "location": "The Woodall Building, 6415 U.S. Highway 11, Springville, AL",
+      "listLocation": "The Woodall Building",
+      "category": "Holiday",
+      "summary": "Shop vendors offering holiday decorations, wreaths, jewelry and sweet treats. Children can write letters to Santa and have their pictures taken with him. Sponsored by Unique by Design.",
+      "sourceUrl": "https://www.facebook.com/share/p/19wyCz6GFz/?mibextid=wwXIfr"
     }
   ],
   "directory": [
