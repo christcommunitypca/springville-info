@@ -89,7 +89,7 @@ renderList();
 route();
 window.addEventListener('hashchange',()=>{
   route();
-  window.scrollTo({top:0,left:0,behavior:'instant'});
+  window.scrollTo({top:0,left:0,behavior:'auto'});
 });
 fetch('/data/content.json',{cache:'no-cache'}).then(response=>{
   if(!response.ok)throw Error('Content currently unavailable');
