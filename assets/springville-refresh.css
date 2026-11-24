@@ -378,55 +378,55 @@ body.springville-frontpage #feed>section:first-child details>summary:focus-visib
   background:transparent!important;color:#285574!important;
   text-decoration-color:currentColor;
 }
-body.springville-frontpage footer.site-footer-home{
+body footer.site-footer-home{
   display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
   width:100%!important;max-width:none;margin:0;padding:18px 0 0;
   gap:0;background:#fff;border-top:1px solid var(--line);box-shadow:none;
 }
-body.springville-frontpage footer.site-footer-home .footer-center{
+body footer.site-footer-home .footer-center{
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   width:100%;gap:0;padding:0 17px;
 }
-body.springville-frontpage footer.site-footer-home .footer-tower{
+body footer.site-footer-home .footer-tower{
   display:block;width:60px;height:60px;object-fit:contain;border-radius:50%;margin:0;
 }
-body.springville-frontpage footer.site-footer-home .footer-about{
+body footer.site-footer-home .footer-about{
   display:inline-block;margin-top:6px;color:#285574;
   font:700 13px/1.4 var(--sans);text-decoration:none;
 }
-body.springville-frontpage footer.site-footer-home .footer-actions{
+body footer.site-footer-home .footer-actions{
   display:flex;align-items:center;justify-content:center;gap:10px 22px;
   flex-wrap:wrap;margin:11px 0 17px;
 }
-body.springville-frontpage footer.site-footer-home .footer-actions a{
+body footer.site-footer-home .footer-actions a{
   color:#39627a;text-decoration:none;font:650 13px/1.4 var(--sans);
 }
-body.springville-frontpage footer.site-footer-home .footer-about:hover,
-body.springville-frontpage footer.site-footer-home .footer-actions a:hover{
+body footer.site-footer-home .footer-about:hover,
+body footer.site-footer-home .footer-actions a:hover{
   text-decoration:underline;
 }
-body.springville-frontpage footer.site-footer-home .footer-archives{
+body footer.site-footer-home .footer-archives{
   width:100%;min-height:36px;display:flex;align-items:center;
   justify-content:center;flex-wrap:wrap;gap:4px 11px;
   margin:0;padding:10px 12px 9px;
   background:#155b8f;color:#fff;
   font:700 11px/1.5 var(--sans);letter-spacing:.08em;text-transform:uppercase;
 }
-body.springville-frontpage footer.site-footer-home .footer-archives-label{
+body footer.site-footer-home .footer-archives-label{
   opacity:.60;font-weight:500;font-size:10px;letter-spacing:.055em;
 }
-body.springville-frontpage footer.site-footer-home .footer-archives a{
+body footer.site-footer-home .footer-archives a{
   color:#fff!important;font-weight:750;text-decoration:none;
 }
-body.springville-frontpage footer.site-footer-home .footer-archives a:hover{
+body footer.site-footer-home .footer-archives a:hover{
   color:#fff!important;text-decoration:underline;
 }
-body.springville-frontpage footer.site-footer-home .footer-archives-divider{opacity:.5}
+body footer.site-footer-home .footer-archives-divider{opacity:.5}
 @media(max-width:440px){
-  body.springville-frontpage footer.site-footer-home .footer-archives{
+  body footer.site-footer-home .footer-archives{
     gap:4px 7px;letter-spacing:.04em;padding-left:8px;padding-right:8px;
   }
-  body.springville-frontpage footer.site-footer-home .footer-archives-label{
+  body footer.site-footer-home .footer-archives-label{
     font-size:10px;letter-spacing:0;
   }
 }
@@ -531,4 +531,36 @@ body.springville-frontpage #feed > section:first-child > details > summary:focus
  body.springville-home.springville-404 .tagline-strip {
    background:#155b8f !important;color:#fff !important;border-top-color:#10486f !important
  }
+}
+
+
+/* Shared footer: match homepage's approved dark mode on every visible page.
+   All CSS above remains the exact approved light footer. */
+@media (prefers-color-scheme: dark) {
+  body footer.site-footer-home {
+    background:#141b17 !important;
+    border-top-color:#3b4b40 !important;
+    color:#d2ded6 !important;
+  }
+  body footer.site-footer-home .footer-about,
+  body footer.site-footer-home .footer-actions a {
+    color:#bdddec !important;
+  }
+  body footer.site-footer-home .footer-about:hover,
+  body footer.site-footer-home .footer-about:focus-visible,
+  body footer.site-footer-home .footer-actions a:hover,
+  body footer.site-footer-home .footer-actions a:focus-visible {
+    color:#e4f2fa !important;
+    text-decoration:underline;
+  }
+  body footer.site-footer-home .footer-archives {
+    background:#155b8f !important;
+    color:#fff !important;
+  }
+  body footer.site-footer-home .footer-archives-label {
+    opacity:.76;
+  }
+  body footer.site-footer-home .footer-archives a {
+    color:#fff !important;
+  }
 }
