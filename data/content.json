@@ -2,12 +2,26 @@
   "site": {
     "name": "Springville.Info",
     "location": "Springville, Alabama",
-    "updatedAt": "2026-11-24",
+    "updatedAt": "2026-11-25",
     "timezone": "America/Chicago",
     "source": "Migrated from existing Springville.Info Wix site on 2026-11-18",
     "submissionUrl": "https://headless-czuiyfnwkie-christcommunitypca-1412.wix-site-host.com/share.html"
   },
   "news": [
+    {
+      "id": "springville-lake-giant-carp",
+      "slug": "springville-lake-giant-carp",
+      "title": "Springville Once Attracted Visitors With Giant Carp",
+      "shortTitle": "Springville’s Giant Carp",
+      "category": "Did you know?",
+      "date": "2026-11-25",
+      "summary": "Mayor James McLaughlin stocked Springville’s former lake with carp that grew large enough to become a local attraction. By the 1950s, families traveling through town were stopping to feed the fish by hand.",
+      "body": [
+        "Jerry C. Smith recalls feeding the fish during childhood trips in this illustrated account of Springville Lake."
+      ],
+      "sourceName": "Discover St. Clair",
+      "sourceUrl": "https://discoverstclair.com/traveling-the-backroads/spring-in-springville/"
+    },
     {
       "id": "springville-spring-lake-college",
       "slug": "springville-once-had-a-college",
