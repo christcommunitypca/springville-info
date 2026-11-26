@@ -15,18 +15,19 @@
       "shortTitle": "Springville’s Iron Ore Trade",
       "category": "Did you know?",
       "date": "2026-11-26",
-      "summary": "An 1880 census records a St. Clair County mine near Springville producing 12,085 tons of iron ore. Where did the ore go, why did mining decline, and could some of that iron have returned as the cast-iron storefront on Main Street?",
+      "summary": "In 1880, a single Springville-area mine produced more than 12,000 tons of iron ore. The town shipped ore to furnaces in Alabama, Georgia and Tennessee.",
       "body": [
-        "Could the iron columns on the Presley Store at 601 Main Street have come from the hills around Springville? By the time the store was built in 1902, local miners had been shipping iron ore to furnaces in three states for decades.",
-        "The arrival of the railroad in 1870 made it possible to ship large quantities of iron ore. By 1877, A. W. Woodall was mining near Springville, and by 1880 he was selling ore to James W. Sloss and Henry DeBardeleben, two pioneers of Birmingham’s iron industry. Around 1900, Woodall built an ore tram across Talladega Street.",
-        "Another pioneer was David A. Aderholt, who helped develop the ore trade with Tennessee. Aderholt served as Springville’s mayor from 1878 to 1885 and later helped establish Spring Lake College. The same man helped develop both the town’s economy and its educational opportunities.",
-        "Hugh Carlisle’s St. Clair County mine, described in an 1889 trade journal as near Springville, produced 12,085 tons of ore according to the 1880 census. That placed Carlisle sixth among the 29 Alabama mining operations listed on that census page, ahead of two individual Attalla mines.",
-        "Iron furnaces turned ore into pig iron, which could then be used to make machinery, stoves, nails and other goods. One particularly interesting destination was South Pittsburg, Tennessee, which later became the home of Lodge Cast Iron. I wonder whether iron from Springville ever made its way into a cast-iron skillet.",
-        "The 1880 federal mining survey identifies several properties near Springville. An Aderholt mine lay about four miles northeast of town, and samples from Woodall’s property contained nearly 50% iron or more.",
-        "By 1910, federal geologists had documented additional workings northwest and northeast of town. At one site north of the old St. Clair railroad switch, miners reportedly extracted 12,000–15,000 tons in about two years. Some underground passages stretched 200 feet. The old survey descriptions may help identify who owns the land today.",
-        "In February 1889, The Iron Age reported that Carlisle’s mining operation had stopped despite the quantity and quality of the ore. Even in 1910, geologists considered the ridge northeast of Springville a potential source of iron. The town apparently did not simply run out of ore.",
-        "I suspect Birmingham’s growth made it harder for Springville to compete. Its large companies had thicker ore beds, coal supplies and furnaces close together. Meanwhile, Springville was developing other businesses. Goodwin’s Mill ground grain along Canoe Creek around 1900, Bob Ewing established a cotton gin in 1902, and downtown stores and banks served the surrounding farming communities.",
-        "In 1902 the Presley brothers built their general store, with the cast-iron storefront that still stands on Main Street. I like the possibility that ore dug from a Springville hillside left town by railroad and returned as part of that building. The connection remains unproven, but a foundry’s mark on one of the columns or an old invoice might give us a clue.",
+        "Springville was once home to one of Alabama’s larger iron ore operations. In 1880, a single local mine produced more than 12,000 tons of ore, and Springville supplied iron furnaces in Alabama, Georgia and Tennessee.",
+        "The arrival of the railroad in 1870 made it possible to ship large quantities of iron ore. By 1880, A. W. Woodall was mining near Springville and selling ore to two pioneers of Birmingham’s iron industry, James W. Sloss and Henry DeBardeleben. Around 1900, Woodall built an ore tram across Talladega Street.",
+        "Another pioneer was David A. Aderholt, who helped develop the ore trade with Tennessee. Aderholt served as Springville’s mayor from 1878 to 1885 and later helped establish Spring Lake College.",
+        "Hugh Carlisle’s mine near Springville produced 12,085 tons of ore in 1880, ranking sixth among 29 Alabama mining operations listed in the census and ahead of two individual mines in Attalla.",
+        "Iron furnaces turned ore into pig iron, which could then be used to make machinery, stoves, nails and other goods. One particularly interesting destination was South Pittsburg, Tennessee, which later became the home of Lodge Cast Iron. I wonder whether iron from Springville ever made its way into a cast-iron skillet or even into the iron columns of the Presley Store downtown.",
+        "An Aderholt mine lay about four miles northeast of town, and samples from Woodall’s property contained nearly 50% iron or more.",
+        "By 1910, additional workings had been documented northwest and northeast of town. At one site north of the old St. Clair railroad switch, miners reportedly extracted 12,000–15,000 tons in about two years. Some underground passages stretched 200 feet.",
+        "The town apparently did not simply run out of ore. Even though the ore was abundant and of good quality, Carlisle’s mining operation had stopped by 1889. As late as 1910, the ridge northeast of Springville was still considered a promising source of iron.",
+        "I suspect Birmingham’s growth made it harder for Springville to compete. Its large companies had thicker ore beds, coal supplies and furnaces close together.",
+        "Meanwhile, Springville was developing other businesses. Goodwin’s Mill ground grain along Canoe Creek around 1900, Bob Ewing established a cotton gin in 1902, and downtown stores and banks served the surrounding farming communities.",
+        "In 1902 the Presley brothers built their general store, with the cast-iron storefront that still stands on Main Street. I like the possibility that ore dug from a Springville hillside left town by railroad and returned as part of that building. A foundry’s mark on one of the columns or an old invoice might help trace the origin of the ironwork.",
         "If you know where the old ore tram crossed Talladega Street, have photographs of the mines or know something about the Presley Store’s ironwork, I would love to hear from you."
       ],
       "sourceName": "1880 United States Census · Directory of Iron-Ore Mines",
@@ -34,8 +35,34 @@
       "articleBlocks": [
         {
           "type": "paragraph",
-          "text": "Could the iron columns on the Presley Store at 601 Main Street have come from the hills around Springville? By the time the store was built in 1902, local miners had been shipping iron ore to furnaces in three states for decades.",
-          "links": []
+          "text": "Springville was once home to one of Alabama’s larger iron ore operations. In 1880, a single local mine produced more than 12,000 tons of ore, and Springville supplied iron furnaces in Alabama, Georgia and Tennessee.",
+          "links": [
+            {
+              "label": "1880 U.S. Census, p. 931",
+              "url": "https://www2.census.gov/prod2/decennial/documents/1880a_v15-13.pdf#page=76"
+            },
+            {
+              "label": "The Iron Age, Feb. 7, 1889, p. 194",
+              "url": "https://americanprotectivetariffleague.org/library/1889-anon-iron-age-1889-02-07-vol-43/"
+            },
+            {
+              "label": "1880 U.S. Census, pp. 395–396 and Fig. 159",
+              "url": "https://www2.census.gov/library/publications/decennial/1880/volume-15/1880a_v15-06.pdf#page=29"
+            },
+            {
+              "label": "Springville Historic District nomination, section 8",
+              "url": "https://npgallery.nps.gov/GetAsset/fc7f83d5-fcee-447e-a319-b6216f49c6f0"
+            },
+            {
+              "label": "USGS Bulletin 400 (1910), Division G, pp. 114–116",
+              "url": "https://pubs.usgs.gov/bul/0400/report.pdf"
+            },
+            {
+              "label": "City of Springville history",
+              "url": "https://www.cityofspringville.com/about-springville"
+            }
+          ],
+          "inlineLinks": []
         },
         {
           "type": "heading",
@@ -43,29 +70,33 @@
         },
         {
           "type": "paragraph",
-          "text": "The arrival of the railroad in 1870 made it possible to ship large quantities of iron ore. By 1877, A. W. Woodall was mining near Springville, and by 1880 he was selling ore to James W. Sloss and Henry DeBardeleben, two pioneers of Birmingham’s iron industry. Around 1900, Woodall built an ore tram across Talladega Street.",
+          "text": "The arrival of the railroad in 1870 made it possible to ship large quantities of iron ore. By 1880, A. W. Woodall was mining near Springville and selling ore to two pioneers of Birmingham’s iron industry, James W. Sloss and Henry DeBardeleben. Around 1900, Woodall built an ore tram across Talladega Street.",
           "links": [
             {
               "label": "Springville Historic District nomination, section 8",
               "url": "https://npgallery.nps.gov/GetAsset/fc7f83d5-fcee-447e-a319-b6216f49c6f0"
             }
-          ]
+          ],
+          "inlineLinks": []
         },
         {
           "type": "paragraph",
-          "text": "Another pioneer was David A. Aderholt, who helped develop the ore trade with Tennessee. Aderholt served as Springville’s mayor from 1878 to 1885 and later helped establish Spring Lake College. The same man helped develop both the town’s economy and its educational opportunities.",
+          "text": "Another pioneer was David A. Aderholt, who helped develop the ore trade with Tennessee. Aderholt served as Springville’s mayor from 1878 to 1885 and later helped establish Spring Lake College.",
           "links": [
             {
               "label": "David A. Aderholt biography, Notable Men of Alabama (1904)",
               "url": "https://genealogytrails.com/ala/blount/bios1.html"
             },
             {
-              "label": "Springville Once Had Its Own College",
-              "url": "https://springville.info/did-you-know/#springville-once-had-a-college"
-            },
-            {
               "label": "Thomas McAdory Owen · History of Alabama and Dictionary of Alabama Biography (1921), pp. 13–14",
               "url": "https://hmchs.info/hhc/docs/pdf/book2/History_of_Alabama_and_dictionary_of_Alabama_biography_V3_%7B1921%7D_by_Thomas_McAdory_Owen.pdf"
+            }
+          ],
+          "inlineLinks": [
+            {
+              "label": "Springville Once Had Its Own College",
+              "url": "https://springville.info/did-you-know/#springville-once-had-a-college",
+              "after": "Spring Lake College"
             }
           ]
         },
@@ -75,7 +106,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Hugh Carlisle’s St. Clair County mine, described in an 1889 trade journal as near Springville, produced 12,085 tons of ore according to the 1880 census. That placed Carlisle sixth among the 29 Alabama mining operations listed on that census page, ahead of two individual Attalla mines.",
+          "text": "Hugh Carlisle’s mine near Springville produced 12,085 tons of ore in 1880, ranking sixth among 29 Alabama mining operations listed in the census and ahead of two individual mines in Attalla.",
           "links": [
             {
               "label": "1880 U.S. Census, p. 931",
@@ -85,7 +116,8 @@
               "label": "The Iron Age, Feb. 7, 1889, p. 194",
               "url": "https://americanprotectivetariffleague.org/library/1889-anon-iron-age-1889-02-07-vol-43/"
             }
-          ]
+          ],
+          "inlineLinks": []
         },
         {
           "type": "bars",
@@ -151,11 +183,18 @@
         },
         {
           "type": "paragraph",
-          "text": "Iron furnaces turned ore into pig iron, which could then be used to make machinery, stoves, nails and other goods. One particularly interesting destination was South Pittsburg, Tennessee, which later became the home of Lodge Cast Iron. I wonder whether iron from Springville ever made its way into a cast-iron skillet.",
+          "text": "Iron furnaces turned ore into pig iron, which could then be used to make machinery, stoves, nails and other goods. One particularly interesting destination was South Pittsburg, Tennessee, which later became the home of Lodge Cast Iron. I wonder whether iron from Springville ever made its way into a cast-iron skillet or even into the iron columns of the Presley Store downtown.",
           "links": [
             {
               "label": "1880 U.S. Census, p. 931",
               "url": "https://www2.census.gov/prod2/decennial/documents/1880a_v15-13.pdf#page=76"
+            }
+          ],
+          "inlineLinks": [
+            {
+              "label": "St. Clair County’s Only Cast-Iron Storefront",
+              "url": "https://springville.info/did-you-know/#springville-presley-store-built-1902",
+              "after": "Presley Store"
             }
           ]
         },
@@ -163,28 +202,23 @@
           "type": "table",
           "title": "Known markets for ore from the Springville area",
           "headers": [
-            "Destination",
-            "Evidence"
+            "Destination"
           ],
           "rows": [
             [
-              "Birmingham, Alabama",
-              "Woodall supplied Sloss and DeBardeleben."
+              "Birmingham, Alabama"
             ],
             [
-              "Rising Fawn, Georgia",
-              "Listed as a customer of Carlisle’s operation in the 1880 census."
+              "Rising Fawn, Georgia"
             ],
             [
-              "South Pittsburg, Tennessee",
-              "Woodall and Aderholt shipped ore here; a later survey records another shipment of about 150 tons."
+              "South Pittsburg, Tennessee"
             ],
             [
-              "Tuscaloosa, Alabama",
-              "Listed as a market in the city’s history."
+              "Tuscaloosa, Alabama"
             ]
           ],
-          "note": "Sources: historical mining records and the city’s history.",
+          "note": "",
           "links": [
             {
               "label": "1880 U.S. Census, pp. 395–396 and Fig. 159",
@@ -214,44 +248,19 @@
         },
         {
           "type": "paragraph",
-          "text": "The 1880 federal mining survey identifies several properties near Springville. An Aderholt mine lay about four miles northeast of town, and samples from Woodall’s property contained nearly 50% iron or more.",
+          "text": "An Aderholt mine lay about four miles northeast of town, and samples from Woodall’s property contained nearly 50% iron or more.",
           "links": [
             {
               "label": "1880 U.S. Census, pp. 395–396 and Fig. 159",
               "url": "https://www2.census.gov/library/publications/decennial/1880/volume-15/1880a_v15-06.pdf#page=29"
             }
-          ]
+          ],
+          "inlineLinks": []
         },
         {
-          "type": "table",
-          "title": "Historic mine properties identified in the 1880 survey",
-          "headers": [
-            "Property or prospect",
-            "Recorded land description"
-          ],
-          "rows": [
-            [
-              "Woodall — abandoned opening",
-              "SW ¼, Sec. 28, T14S, R2E"
-            ],
-            [
-              "Woodall — active surface workings",
-              "SW ¼, Sec. 27, T14S, R2E"
-            ],
-            [
-              "Aderholt — ore opening",
-              "Sec. 23, T14S, R2E"
-            ],
-            [
-              "Wilson — proposed opening",
-              "Sec. 23, T14S, R2E"
-            ],
-            [
-              "Thomason and Goodwin — proposed mine",
-              "Secs. 12–13, T14S, R2E"
-            ]
-          ],
-          "note": "All locations are in Township 14 South, Range 2 East. Historical locations, not verified entrances or public access points.",
+          "type": "mine-map",
+          "title": "Historic mining areas around Springville",
+          "note": "Schematic land-survey map. Shaded sections and quarter-sections show recorded mining areas, not exact mine entrances.",
           "links": [
             {
               "label": "1880 U.S. Census, pp. 395–396 and Fig. 159",
@@ -261,21 +270,14 @@
         },
         {
           "type": "paragraph",
-          "text": "By 1910, federal geologists had documented additional workings northwest and northeast of town. At one site north of the old St. Clair railroad switch, miners reportedly extracted 12,000–15,000 tons in about two years. Some underground passages stretched 200 feet. The old survey descriptions may help identify who owns the land today.",
+          "text": "By 1910, additional workings had been documented northwest and northeast of town. At one site north of the old St. Clair railroad switch, miners reportedly extracted 12,000–15,000 tons in about two years. Some underground passages stretched 200 feet.",
           "links": [
             {
               "label": "USGS Bulletin 400 (1910), Division G, pp. 114–116",
               "url": "https://pubs.usgs.gov/bul/0400/report.pdf"
-            },
-            {
-              "label": "St. Clair County GIS",
-              "url": "https://stclaircounty.org/Offices/gis/162"
-            },
-            {
-              "label": "Blount County property mapping",
-              "url": "https://www.blountrevenue.com/home/property/mapping/"
             }
-          ]
+          ],
+          "inlineLinks": []
         },
         {
           "type": "heading",
@@ -283,7 +285,7 @@
         },
         {
           "type": "paragraph",
-          "text": "In February 1889, The Iron Age reported that Carlisle’s mining operation had stopped despite the quantity and quality of the ore. Even in 1910, geologists considered the ridge northeast of Springville a potential source of iron. The town apparently did not simply run out of ore.",
+          "text": "The town apparently did not simply run out of ore. Even though the ore was abundant and of good quality, Carlisle’s mining operation had stopped by 1889. As late as 1910, the ridge northeast of Springville was still considered a promising source of iron.",
           "links": [
             {
               "label": "The Iron Age, Feb. 7, 1889, p. 194",
@@ -293,7 +295,19 @@
               "label": "USGS Bulletin 400 (1910), Division G, pp. 114–116",
               "url": "https://pubs.usgs.gov/bul/0400/report.pdf"
             }
-          ]
+          ],
+          "inlineLinks": []
+        },
+        {
+          "type": "paragraph",
+          "text": "I suspect Birmingham’s growth made it harder for Springville to compete. Its large companies had thicker ore beds, coal supplies and furnaces close together.",
+          "links": [
+            {
+              "label": "Iron and Steel Production in Birmingham",
+              "url": "https://encyclopediaofalabama.org/article/iron-and-steel-production-in-birmingham/"
+            }
+          ],
+          "inlineLinks": []
         },
         {
           "type": "seams",
@@ -312,12 +326,8 @@
         },
         {
           "type": "paragraph",
-          "text": "I suspect Birmingham’s growth made it harder for Springville to compete. Its large companies had thicker ore beds, coal supplies and furnaces close together. Meanwhile, Springville was developing other businesses. Goodwin’s Mill ground grain along Canoe Creek around 1900, Bob Ewing established a cotton gin in 1902, and downtown stores and banks served the surrounding farming communities.",
+          "text": "Meanwhile, Springville was developing other businesses. Goodwin’s Mill ground grain along Canoe Creek around 1900, Bob Ewing established a cotton gin in 1902, and downtown stores and banks served the surrounding farming communities.",
           "links": [
-            {
-              "label": "Iron and Steel Production in Birmingham",
-              "url": "https://encyclopediaofalabama.org/article/iron-and-steel-production-in-birmingham/"
-            },
             {
               "label": "Springville Historic District nomination, section 8",
               "url": "https://npgallery.nps.gov/GetAsset/fc7f83d5-fcee-447e-a319-b6216f49c6f0"
@@ -326,7 +336,8 @@
               "label": "Springville’s Nationally Recognized Historic District",
               "url": "https://springville.info/did-you-know/#springville-historic-district-national-register"
             }
-          ]
+          ],
+          "inlineLinks": []
         },
         {
           "type": "heading",
@@ -334,17 +345,14 @@
         },
         {
           "type": "paragraph",
-          "text": "In 1902 the Presley brothers built their general store, with the cast-iron storefront that still stands on Main Street. I like the possibility that ore dug from a Springville hillside left town by railroad and returned as part of that building. The connection remains unproven, but a foundry’s mark on one of the columns or an old invoice might give us a clue.",
+          "text": "In 1902 the Presley brothers built their general store, with the cast-iron storefront that still stands on Main Street. I like the possibility that ore dug from a Springville hillside left town by railroad and returned as part of that building. A foundry’s mark on one of the columns or an old invoice might help trace the origin of the ironwork.",
           "links": [
             {
               "label": "Presley Store's 1982 National Register nomination",
               "url": "https://npgallery.nps.gov/GetAsset/e25c5c13-182e-4f5a-975d-87fb2dd7a4d0"
-            },
-            {
-              "label": "St. Clair County’s Only Cast-Iron Storefront",
-              "url": "https://springville.info/did-you-know/#springville-presley-store-built-1902"
             }
-          ]
+          ],
+          "inlineLinks": []
         },
         {
           "type": "paragraph",
@@ -354,7 +362,8 @@
               "label": "Share a tip or historic photograph",
               "url": "https://springville.info/"
             }
-          ]
+          ],
+          "inlineLinks": []
         }
       ],
       "additionalSources": [
