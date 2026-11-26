@@ -22,7 +22,7 @@
         "Another pioneer was David A. Aderholt, who helped develop the ore trade with Tennessee. Aderholt served as Springville’s mayor from 1878 to 1885 and later helped establish Spring Lake College.",
         "Hugh Carlisle’s mine near Springville produced 12,085 tons of ore in 1880, ranking sixth among 29 Alabama mining operations listed in the census and ahead of two individual mines in Attalla.",
         "Iron furnaces turned ore into pig iron, which could then be used to make machinery, stoves, nails and other goods. One particularly interesting destination was South Pittsburg, Tennessee, which later became the home of Lodge Cast Iron. I wonder whether iron from Springville ever made its way into a cast-iron skillet or even into the iron columns of the Presley Store downtown.",
-        "An Aderholt mine lay about four miles northeast of town, and samples from Woodall’s property contained nearly 50% iron or more.",
+        "An Aderholt mine lay about four miles northeast of town.",
         "By 1910, additional workings had been documented northwest and northeast of town. At one site north of the old St. Clair railroad switch, miners reportedly extracted 12,000–15,000 tons in about two years. Some underground passages stretched 200 feet.",
         "The town apparently did not simply run out of ore. Even though the ore was abundant and of good quality, Carlisle’s mining operation had stopped by 1889. As late as 1910, the ridge northeast of Springville was still considered a promising source of iron.",
         "I suspect Birmingham’s growth made it harder for Springville to compete. Its large companies had thicker ore beds, coal supplies and furnaces close together.",
@@ -248,7 +248,7 @@
         },
         {
           "type": "paragraph",
-          "text": "An Aderholt mine lay about four miles northeast of town, and samples from Woodall’s property contained nearly 50% iron or more.",
+          "text": "An Aderholt mine lay about four miles northeast of town.",
           "links": [
             {
               "label": "1880 U.S. Census, pp. 395–396 and Fig. 159",
@@ -259,12 +259,16 @@
         },
         {
           "type": "mine-map",
-          "title": "Historic mining areas around Springville",
-          "note": "Schematic land-survey map. Shaded sections and quarter-sections show recorded mining areas, not exact mine entrances.",
+          "title": "Where iron ore was mined near Springville",
+          "note": "Shaded areas are approximate, based on historical distances and directions from town, not verified mine entrances.",
           "links": [
             {
               "label": "1880 U.S. Census, pp. 395–396 and Fig. 159",
               "url": "https://www2.census.gov/library/publications/decennial/1880/volume-15/1880a_v15-06.pdf#page=29"
+            },
+            {
+              "label": "USGS Bulletin 400 (1910), Division G, pp. 114–116",
+              "url": "https://pubs.usgs.gov/bul/0400/report.pdf"
             }
           ]
         },
