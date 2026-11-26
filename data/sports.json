@@ -4,7 +4,7 @@
     "city": "Springville, Alabama",
     "timezone": "America/Chicago",
     "address": "8295 US Highway 11, Springville, AL 35146",
-    "updatedAt": "2026-11-25T04:32:00.000Z",
+    "updatedAt": "2026-11-26T23:50:00.000Z",
     "note": "Springville Tigers varsity games, meets and results, with sources. Schedules are updated as they are published.",
     "flagFootball2026EditorialNote": "2026 girls varsity flag football: 18 distinct final matchups independently identified (9-9) plus two listed Oct 15 cancellations. MaxPreps and Flag Football Planet display a 10-9 record; FFP lists the exact Sep 1 Springville 33–13 Hope Christian Academy result twice with opposite venue labels. Do not fabricate a 19th game to force 10-9. If a new independent game source identifies an additional unique event, evaluate it; otherwise stop the one-time backfill."
   },
@@ -2071,6 +2071,37 @@
       "sourcePreferenceReason": "November 17 girls: Associated Press and AL Scores both report 18–63; MaxPreps' 42–76 duplicates the boys' final and is disputed. Confirm with team when available."
     },
     {
+      "id": "2026-11-17-wrestling-boys-tbd",
+      "date": "2026-11-17",
+      "time": "5:15 PM",
+      "sport": "Wrestling",
+      "gender": "Boys",
+      "level": "Varsity",
+      "opponent": "TBD",
+      "site": "home",
+      "season": "2026-27",
+      "status": "unconfirmed",
+      "statusNote": "Opponent and score pending",
+      "sourceName": "NFHS Network",
+      "sourceUrl": "https://www.nfhsnetwork.com/events/springville-high-school-springville-al/gam98a4848346",
+      "verifiedAt": "2026-11-26"
+    },
+    {
+      "id": "2026-11-17-wrestling-girls-ashville",
+      "date": "2026-11-17",
+      "sport": "Wrestling",
+      "gender": "Girls",
+      "level": "Varsity",
+      "opponent": "Ashville",
+      "site": "home",
+      "season": "2026-27",
+      "status": "unconfirmed",
+      "statusNote": "Result pending",
+      "sourceName": "FloWrestling · event teams",
+      "sourceUrl": "https://www.flowrestling.org/events/16413519/teams",
+      "verifiedAt": "2026-11-26"
+    },
+    {
       "id": "2026-11-19-basketball-boys-albertville",
       "date": "2026-11-19",
       "time": "8:00 PM",
@@ -2177,6 +2208,22 @@
       "opponentScore": 32,
       "secondarySourceName": "High School On SI",
       "secondarySourceUrl": "https://www.si.com/high-school/stats/alabama/girls-basketball/games/6719154-ashville-vs-springville"
+    },
+    {
+      "id": "2026-11-24-wrestling-boys-hayden",
+      "date": "2026-11-24",
+      "time": "9:00 AM",
+      "sport": "Wrestling",
+      "gender": "Boys",
+      "level": "Varsity",
+      "opponent": "Hayden",
+      "site": "away",
+      "season": "2026-27",
+      "status": "unconfirmed",
+      "statusNote": "Result pending",
+      "sourceName": "NFHS Network",
+      "sourceUrl": "https://www.nfhsnetwork.com/events/hayden-high-school-hayden-al/gam932cee3bc1",
+      "verifiedAt": "2026-11-26"
     },
     {
       "id": "2026-12-01-basketball-boys-locust-fork",
@@ -2329,6 +2376,21 @@
       "verifiedAt": "2026-11-20"
     },
     {
+      "id": "2026-12-17-wrestling-boys-tbd",
+      "date": "2026-12-17",
+      "time": "5:15 PM",
+      "sport": "Wrestling",
+      "gender": "Boys",
+      "level": "Varsity",
+      "opponent": "TBD",
+      "site": "home",
+      "season": "2026-27",
+      "status": "scheduled",
+      "sourceName": "NFHS Network",
+      "sourceUrl": "https://www.nfhsnetwork.com/events/springville-high-school-springville-al/gam6ddc39a997",
+      "verifiedAt": "2026-11-26"
+    },
+    {
       "id": "2026-12-18-basketball-boys-arab",
       "date": "2026-12-18",
       "time": "7:30 PM",
@@ -2419,6 +2481,21 @@
       "verifiedAt": "2026-11-20"
     },
     {
+      "id": "2027-01-02-wrestling-boys-st-clair-county",
+      "date": "2027-01-02",
+      "time": "8:00 AM",
+      "sport": "Wrestling",
+      "gender": "Boys",
+      "level": "Varsity",
+      "opponent": "St. Clair County",
+      "site": "home",
+      "season": "2026-27",
+      "status": "scheduled",
+      "sourceName": "NFHS Network",
+      "sourceUrl": "https://www.nfhsnetwork.com/events/springville-high-school-springville-al/gam3d0e942b1d",
+      "verifiedAt": "2026-11-26"
+    },
+    {
       "id": "2027-01-05-basketball-boys-moody",
       "date": "2027-01-05",
       "time": "7:30 PM",
@@ -2447,6 +2524,21 @@
       "sourceName": "MaxPreps",
       "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/girls/schedule/",
       "verifiedAt": "2026-11-20"
+    },
+    {
+      "id": "2027-01-05-wrestling-boys-moody",
+      "date": "2027-01-05",
+      "time": "6:00 PM",
+      "sport": "Wrestling",
+      "gender": "Boys",
+      "level": "Varsity",
+      "opponent": "Moody",
+      "site": "away",
+      "season": "2026-27",
+      "status": "scheduled",
+      "sourceName": "NFHS Network",
+      "sourceUrl": "https://www.nfhsnetwork.com/events/moody-high-school-moody-al/gam84338f970c",
+      "verifiedAt": "2026-11-26"
     },
     {
       "id": "2027-01-07-basketball-girls-jacksonville",
@@ -2554,6 +2646,21 @@
       "verifiedAt": "2026-11-20"
     },
     {
+      "id": "2027-01-12-wrestling-girls-hewitt-trussville",
+      "date": "2027-01-12",
+      "time": "5:30 PM",
+      "sport": "Wrestling",
+      "gender": "Girls",
+      "level": "Varsity",
+      "opponent": "Hewitt-Trussville",
+      "site": "away",
+      "season": "2026-27",
+      "status": "scheduled",
+      "sourceName": "Hewitt-Trussville Athletics",
+      "sourceUrl": "https://hthuskies.com/sports/womens-wrestling/schedule",
+      "verifiedAt": "2026-11-26"
+    },
+    {
       "id": "2027-01-15-basketball-boys-pell-city",
       "date": "2027-01-15",
       "time": "7:00 PM",
@@ -2612,6 +2719,21 @@
       "sourceName": "MaxPreps",
       "sourceUrl": "https://www.maxpreps.com/al/springville/springville-tigers/basketball/girls/schedule/",
       "verifiedAt": "2026-11-20"
+    },
+    {
+      "id": "2027-01-26-wrestling-boys-tbd",
+      "date": "2027-01-26",
+      "time": "5:15 PM",
+      "sport": "Wrestling",
+      "gender": "Boys",
+      "level": "Varsity",
+      "opponent": "TBD",
+      "site": "home",
+      "season": "2026-27",
+      "status": "scheduled",
+      "sourceName": "NFHS Network",
+      "sourceUrl": "https://www.nfhsnetwork.com/events/springville-high-school-springville-al/gamcabd4fca0e",
+      "verifiedAt": "2026-11-26"
     },
     {
       "id": "2027-01-29-basketball-boys-alexandria",
@@ -3282,7 +3404,8 @@
     "Soccer",
     "Softball",
     "Tennis",
-    "Volleyball"
+    "Volleyball",
+    "Wrestling"
   ],
   "scheduleCoverage": [
     {
@@ -3364,6 +3487,26 @@
       "sourceName": "High School On SI · varsity match",
       "sourceUrl": "https://www.si.com/high-school/stats/alabama/girls-tennis/games/6954319-springville-vs-southside",
       "note": "One spring 2027 match independently listed; complete team calendar is not yet verified"
+    },
+    {
+      "sport": "Wrestling",
+      "gender": "Boys",
+      "season": "2026-27",
+      "status": "partial",
+      "asOf": "2026-11-26",
+      "sourceName": "NFHS Network · varsity wrestling",
+      "sourceUrl": "https://www.nfhsnetwork.com/schools/springville-high-school-springville-al/wrestling/boys/varsity",
+      "note": "Six event listings verified; opponent names, final results and complete schedule remain incomplete."
+    },
+    {
+      "sport": "Wrestling",
+      "gender": "Girls",
+      "season": "2026-27",
+      "status": "partial",
+      "asOf": "2026-11-26",
+      "sourceName": "FloWrestling + Hewitt-Trussville Athletics",
+      "sourceUrl": "https://hthuskies.com/sports/womens-wrestling/schedule",
+      "note": "Two varsity dates verified; full schedule and results not yet available."
     }
   ]
 }
