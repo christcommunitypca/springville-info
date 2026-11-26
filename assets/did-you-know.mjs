@@ -43,7 +43,7 @@ function sourceLinks(item) {
       if(link){seen.add(u.href);links.push(link);}
     } catch {}
   }
-  return links.length ? '<section aria-label="References" style="margin:1.5rem 0 0;font-size:.83rem;font-style:italic;line-height:1.55"><p style="margin:0 0 .35rem;font-weight:600">References</p><ul style="margin:0;padding-left:1.1rem">'+links.map(l=>'<li style="margin:.25rem 0">'+l+'</li>').join('')+'</ul></section>' : '';
+  return links.length ? '<section class="dyk-references" aria-label="References"><h2>References</h2><div class="dyk-reference-list">'+links.map(l=>'<div>'+l+'</div>').join('')+'</div></section>' : '';
 }
 function renderResearchBlocks(blocks) {
   const dyk = l => {
