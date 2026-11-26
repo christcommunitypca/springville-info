@@ -15,9 +15,9 @@
       "shortTitle": "Springville’s Iron Ore Trade",
       "category": "Did you know?",
       "date": "2026-11-26",
-      "summary": "In 1880, a single Springville-area mine produced more than 12,000 tons of iron ore. The town shipped ore to furnaces in Alabama, Georgia and Tennessee.",
+      "summary": "In 1880, Springville was home to one of Alabama’s six largest reported iron ore mining operations. A single local mine produced more than 12,000 tons of ore, and Springville supplied iron furnaces in three states.",
       "body": [
-        "Springville was once home to one of Alabama’s larger iron ore operations. In 1880, a single local mine produced more than 12,000 tons of ore, and Springville supplied iron furnaces in Alabama, Georgia and Tennessee.",
+        "In 1880, Springville was home to one of Alabama’s six largest reported iron ore mining operations. A single local mine produced more than 12,000 tons of ore, and Springville supplied iron furnaces in three states.",
         "The arrival of the railroad in 1870 made it possible to ship large quantities of iron ore. By 1880, A. W. Woodall was mining near Springville and selling ore to two pioneers of Birmingham’s iron industry, James W. Sloss and Henry DeBardeleben. Around 1900, Woodall built an ore tram across Talladega Street.",
         "Another pioneer was David A. Aderholt, who helped develop the ore trade with Tennessee. Aderholt served as Springville’s mayor from 1878 to 1885 and later helped establish Spring Lake College.",
         "Hugh Carlisle’s mine near Springville produced 12,085 tons of ore in 1880, ranking sixth among 29 Alabama mining operations listed in the census and ahead of two individual mines in Attalla.",
@@ -35,7 +35,7 @@
       "articleBlocks": [
         {
           "type": "paragraph",
-          "text": "Springville was once home to one of Alabama’s larger iron ore operations. In 1880, a single local mine produced more than 12,000 tons of ore, and Springville supplied iron furnaces in Alabama, Georgia and Tennessee.",
+          "text": "In 1880, Springville was home to one of Alabama’s six largest reported iron ore mining operations. A single local mine produced more than 12,000 tons of ore, and Springville supplied iron furnaces in three states.",
           "links": [
             {
               "label": "1880 U.S. Census, p. 931",
@@ -331,13 +331,15 @@
             {
               "label": "Springville Historic District nomination, section 8",
               "url": "https://npgallery.nps.gov/GetAsset/fc7f83d5-fcee-447e-a319-b6216f49c6f0"
-            },
-            {
-              "label": "Springville’s Nationally Recognized Historic District",
-              "url": "https://springville.info/did-you-know/#springville-historic-district-national-register"
             }
           ],
-          "inlineLinks": []
+          "inlineLinks": [
+            {
+              "label": "Springville’s Nationally Recognized Historic District",
+              "url": "https://springville.info/did-you-know/#springville-historic-district-national-register",
+              "after": "downtown stores and banks"
+            }
+          ]
         },
         {
           "type": "heading",
@@ -402,14 +404,6 @@
         {
           "label": "City of Springville history",
           "url": "https://www.cityofspringville.com/about-springville"
-        },
-        {
-          "label": "Alabama archives · 1897 Henry McCalley report catalog",
-          "url": "https://archives.alabama.gov/research/finding-aids/v15352f.htm"
-        },
-        {
-          "label": "University of Alabama · Industrial Alabama archival collections",
-          "url": "https://www.lib.ua.edu/libraries/hoole/research-portals/industrial-alabama/"
         },
         {
           "label": "Thomas McAdory Owen · History of Alabama and Dictionary of Alabama Biography (1921), pp. 13–14",
