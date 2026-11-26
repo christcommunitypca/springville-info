@@ -26,37 +26,44 @@ function trustedLink(url,label) {
   } catch {}
   return '';
 }
-function sourceLinks(item) {
-  const links = [trustedLink(item.sourceUrl, item.sourceLabel || item.sourceName || 'Read original source')];
-  if (Array.isArray(item.additionalSources)) {
-    for (const source of item.additionalSources) {
-      if(source && source.url)links.push(trustedLink(source.url,source.label || 'Additional source'));
-    }
-  }
-  return links.filter(Boolean).length ? '<div class="porch-response"><h2>Sources and further reading</h2><p>'+links.filter(Boolean).join(' · ')+'</p></div>' : '';
+function dykUrl(value) {
+  try {
+    const u = new URL(value,'https://springville.info');
+    return u.origin === 'https://springville.info' && u.pathname === '/did-you-know/' && /^#[a-z0-9-]+$/.test(u.hash) ? u.pathname+u.hash : '';
+  } catch { return ''; }
 }
-
-function renderResearchBlocks(blocks) {
-  const links = b => (Array.isArray(b.links)?b.links:[]).map(l=>trustedLink(l.url,l.label)).filter(Boolean).join(' · ');
-  const arrow = l => {
+function sourceLinks(item) {
+  const seen = new Set(), links = [];
+  const sources = [{url:item.sourceUrl,label:item.sourceLabel || item.sourceName || 'Original source'},...(item.additionalSources||[]),...(item.articleBlocks||[]).flatMap(b=>[...(b.links||[]),...(b.inlineLinks||[])])];
+  for(const s of sources) {
     try {
-      const u = new URL(l.url);
-      if(u.protocol !== 'https:')return '';
-      const name = escape(l.label || 'Source');
-      return '<a href="'+escape(u.href)+'" aria-label="'+name+'" title="'+name+'" rel="noopener noreferrer" style="display:inline-block;margin-left:.25em;font-size:.82em;line-height:1;white-space:nowrap;text-decoration:none;vertical-align:super">↗</a>';
-    } catch { return ''; }
+      const u = new URL(s.url);
+      if(u.protocol !== 'https:' || u.hostname === 'springville.info' || seen.has(u.href))continue;
+      const link = trustedLink(u.href,s.label||'Source');
+      if(link){seen.add(u.href);links.push(link);}
+    } catch {}
+  }
+  return links.length ? '<section aria-label="References" style="margin:1.5rem 0 0;font-size:.83rem;font-style:italic;line-height:1.55"><p style="margin:0 0 .35rem;font-weight:600">References</p><ul style="margin:0;padding-left:1.1rem">'+links.map(l=>'<li style="margin:.25rem 0">'+l+'</li>').join('')+'</ul></section>' : '';
+}
+function renderResearchBlocks(blocks) {
+  const dyk = l => {
+    const href = dykUrl(l.url);
+    if(!href)return '';
+    const name = escape('Did You Know: '+(l.label||'Related story'));
+    return '<a href="'+escape(href)+'" aria-label="'+name+'" title="'+name+'" style="display:inline-block;margin-left:.3em;padding:0 .28em;font-size:.68em;line-height:1.4;white-space:nowrap;font-weight:700;text-decoration:none;border:1px solid currentColor;border-radius:3px;vertical-align:.12em">DYK →</a>';
   };
   const inline = b => {
     let remaining = String(b.text || ''), out = '';
     for(const l of (b.inlineLinks || [])){
+      if(!dykUrl(l.url))continue;
       const term = String(l.after || ''), i = remaining.indexOf(term);
       if(!term || i < 0)continue;
-      out += escape(remaining.slice(0,i+term.length))+arrow(l);
+      out += escape(remaining.slice(0,i+term.length))+dyk(l);
       remaining = remaining.slice(i+term.length);
     }
-    return out+escape(remaining)+(b.links||[]).map(arrow).join('');
+    return out+escape(remaining)+(b.links||[]).filter(l=>dykUrl(l.url)).map(dyk).join('');
   };
-  const note = b => '<figcaption style="font-size:.84rem;line-height:1.5;margin-top:.65rem;opacity:.82">'+escape(b.note||'')+' '+links(b)+'</figcaption>';
+  const note = b => b.note ? '<figcaption style="font-size:.84rem;line-height:1.5;margin-top:.65rem;opacity:.82">'+escape(b.note)+'</figcaption>' : '';
   const figure = (b,html) => '<figure style="margin:1.5rem 0;padding:1rem;border:1px solid color-mix(in srgb,currentColor 20%,transparent);border-radius:8px"><h3 style="margin:0 0 .85rem;font-size:1.1rem">'+escape(b.title)+'</h3>'+html+note(b)+'</figure>';
   return blocks.map(b=>{
     if(b.type==='heading')return '<h2>'+escape(b.text)+'</h2>';
@@ -113,10 +120,9 @@ function renderArticle(item) {
     '<div class="porch-meta"><time datetime="'+escape(item.date)+'">'+escape(dateLabel(item.date))+
     '</time><button class="porch-share" type="button" id="dyk-share">Share</button></div></header>'+
     '<div class="porch-article-copy">'+body+'</div>'+
-    sourceLinks(item)+
     '<nav class="porch-explore" aria-label="More discoveries">'+
     '<p class="porch-explore-eyebrow">More Springville discoveries</p>'+
-    '<a href="/did-you-know/" class="porch-explore-link">Read the Did You Know archive →</a></nav></article>';
+    '<a href="/did-you-know/" class="porch-explore-link">Read the Did You Know archive →</a></nav>'+sourceLinks(item)+'</article>';
   const share = document.getElementById('dyk-share');
   share.addEventListener('click',async()=>{
     const preview = typeof item.shareUrl==='string' && /^https:\/\/springville\.info\/preview\/news\/[-a-z0-9]+$/.test(item.shareUrl)
