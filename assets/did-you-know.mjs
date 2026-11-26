@@ -69,6 +69,10 @@ function renderResearchBlocks(blocks) {
     if(b.type==='heading')return '<h2>'+escape(b.text)+'</h2>';
     if(b.type==='paragraph')return '<p>'+inline(b)+'</p>';
     if(b.type==='table'){
+      if((b.headers||[]).length===1 && b.headers[0]==='Destination'){
+        const items=(b.rows||[]).map((row,i,rows)=>'<li style="padding:.5rem 0;margin:0;'+(i<rows.length-1?'border-bottom:1px solid color-mix(in srgb,currentColor 15%,transparent)':'')+'">'+escape(row[0])+'</li>').join('');
+        return '<figure style="margin:1.5rem 0;padding:1rem;border:1px solid color-mix(in srgb,currentColor 20%,transparent);border-radius:8px"><h3 style="margin:0 0 .45rem;font-size:1.1rem">'+escape(b.title)+'</h3><ul style="list-style:none;padding:0;margin:0;border-top:1px solid color-mix(in srgb,currentColor 30%,transparent);font-size:.9rem;line-height:1.4">'+items+'</ul>'+note(b)+'</figure>';
+      }
       const headers=(b.headers||[]).map(h=>'<th scope="col" style="text-align:left;padding:.45rem;border-bottom:1px solid currentColor">'+escape(h)+'</th>').join('');
       const rows=(b.rows||[]).map(row=>'<tr>'+row.map((v,i)=>'<'+(i===0?'th scope="row"':'td')+' style="text-align:left;vertical-align:top;padding:.45rem;border-bottom:1px solid color-mix(in srgb,currentColor 15%,transparent)">'+escape(v)+'</'+(i===0?'th':'td')+'>').join('')+'</tr>').join('');
       return figure(b,'<div role="region" aria-label="'+escape(b.title)+'" tabindex="0" style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem;line-height:1.4"><thead><tr>'+headers+'</tr></thead><tbody>'+rows+'</tbody></table></div>');
