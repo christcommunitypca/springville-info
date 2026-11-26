@@ -35,6 +35,28 @@ function sourceLinks(item) {
   }
   return links.filter(Boolean).length ? '<div class="porch-response"><h2>Sources and further reading</h2><p>'+links.filter(Boolean).join(' · ')+'</p></div>' : '';
 }
+
+function renderResearchBlocks(blocks) {
+  const links = b => (Array.isArray(b.links)?b.links:[]).map(l=>trustedLink(l.url,l.label)).filter(Boolean).join(' · ');
+  const note = b => '<figcaption style="font-size:.84rem;line-height:1.5;margin-top:.65rem;opacity:.82">'+escape(b.note||'')+' '+links(b)+'</figcaption>';
+  const figure = (b,html) => '<figure style="margin:1.5rem 0;padding:1rem;border:1px solid color-mix(in srgb,currentColor 20%,transparent);border-radius:8px"><h3 style="margin:0 0 .85rem;font-size:1.1rem">'+escape(b.title)+'</h3>'+html+note(b)+'</figure>';
+  return blocks.map(b=>{
+    if(b.type==='heading')return '<h2>'+escape(b.text)+'</h2>';
+    if(b.type==='paragraph')return '<p>'+escape(b.text)+(b.links?.length?' <span style="font-size:.9em">'+links(b)+'</span>':'')+'</p>';
+    if(b.type==='table'){
+      const headers=(b.headers||[]).map(h=>'<th scope="col" style="text-align:left;padding:.45rem;border-bottom:1px solid currentColor">'+escape(h)+'</th>').join('');
+      const rows=(b.rows||[]).map(row=>'<tr>'+row.map((v,i)=>'<'+(i===0?'th scope="row"':'td')+' style="text-align:left;vertical-align:top;padding:.45rem;border-bottom:1px solid color-mix(in srgb,currentColor 15%,transparent)">'+escape(v)+'</'+(i===0?'th':'td')+'>').join('')+'</tr>').join('');
+      return figure(b,'<div role="region" aria-label="'+escape(b.title)+'" tabindex="0" style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.9rem;line-height:1.4"><thead><tr>'+headers+'</tr></thead><tbody>'+rows+'</tbody></table></div>');
+    }
+    if(b.type==='bars'){
+      const rows=(b.rows||[]).filter(row=>Number.isFinite(row.value)&&row.value>=0),max=Math.max(1,...rows.map(row=>row.value));
+      return figure(b,rows.map(row=>'<div style="margin:.6rem 0"><div style="display:flex;justify-content:space-between;gap:.5rem;font-size:.88rem;'+(row.highlight?'font-weight:700':'')+'"><span>'+escape(row.label)+'</span><span style="white-space:nowrap">'+escape(row.value.toLocaleString('en-US'))+'</span></div><div style="height:.65rem;background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;overflow:hidden"><div style="width:'+(row.value/max*100).toFixed(2)+'%;height:100%;background:'+(row.highlight?'#3979b9':'#8b99aa')+'"></div></div></div>').join(''));
+    }
+    if(b.type==='seams')return figure(b,'<svg viewBox="0 0 320 200" role="img" aria-label="Illustration comparing a 3 to 4 foot Springville ore bed with a 21 foot Birmingham ore seam at one documented site" style="display:block;width:100%;height:auto;max-width:440px;margin:auto;color:inherit"><rect x="10" y="15" width="145" height="145" rx="4" fill="#b6a18a"/><rect x="165" y="15" width="145" height="145" rx="4" fill="#b6a18a"/><g stroke="#8b7763" opacity=".65"><path d="M10 35h145 M10 55h145 M10 120h145 M10 140h145 M165 35h145 M165 140h145"/></g><rect x="10" y="76" width="145" height="21" fill="#96452f"/><rect x="165" y="24" width="145" height="126" fill="#96452f"/><g font-size="12" text-anchor="middle" font-weight="bold" fill="#fff"><text x="82.5" y="90">3–4 ft</text><text x="237.5" y="90">21 ft</text></g><g font-size="12" text-anchor="middle" fill="currentColor"><text x="82.5" y="179">Springville</text><text x="237.5" y="179">Red Mountain</text></g></svg>');
+    return '';
+  }).join('');
+}
+
 let features = normalize(JSON.parse(document.getElementById('dyk-snapshot').textContent));
 const listView = document.getElementById('dyk-list-view');
 const detailView = document.getElementById('dyk-detail-view');
@@ -50,7 +72,7 @@ function renderList() {
 function renderArticle(item) {
   const paragraphs = [item.summary,...(Array.isArray(item.body)?item.body:[])].filter(Boolean);
   const distinct = [...new Set(paragraphs)];
-  const body = distinct.map(text=>'<p>'+escape(text)+'</p>').join('');
+  const body = Array.isArray(item.articleBlocks) && item.articleBlocks.length ? renderResearchBlocks(item.articleBlocks) : distinct.map(text=>'<p>'+escape(text)+'</p>').join('');
   article.innerHTML = '<article class="porch-article"><header class="porch-article-heading">'+
     '<p class="porch-kicker">Did You Know?</p><h1>'+escape(item.title)+'</h1>'+
     '<div class="porch-meta"><time datetime="'+escape(item.date)+'">'+escape(dateLabel(item.date))+
