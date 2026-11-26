@@ -31,7 +31,7 @@ function newsRows(items) {
     const isFeature = item.category === 'Did you know?';
     const kind = isFeature ? '<small class="kind">Did you know?</small>' : '';
     const headline = escape(item.shortTitle || item.title);
-    return '<a class="story" href="' + sectionLink(item.slug) + '"><h3>' + kind +
+    return '<a class="story" href="' + (isFeature ? '/did-you-know/' + sectionLink(item.slug) : sectionLink(item.slug)) + '"><h3>' + kind +
       (isFeature ? '<span class="story-headline">' + headline + '</span>' : headline) +
       '</h3><time datetime="' + escape(item.date) + '">' + label(item.date,{month:'short',day:'numeric'}) + '</time></a>';
   }).join('') + '</div>';
@@ -84,7 +84,7 @@ export function renderCommunity(data, today = chicagoDate()) {
     newsRows([...(latestFeature ? [latestFeature] : []), ...news.slice(0,limit)]) + more('news',newsRows(news.slice(limit))) + '</section>' : '';
   const listing = events.length ? '<section id="listings" aria-labelledby="listings-heading"><h2 class="section-title" id="listings-heading">Upcoming <a class="sports-shortcut" href="/sports.html" aria-label="Springville Tigers sports calendar" title="Springville Tigers sports calendar"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 3h10v7a5 5 0 0 1-10 0V3ZM7 5H4v3a4 4 0 0 0 4 4M17 5h3v3a4 4 0 0 1-4 4"/></svg></a></h2>' +
     months(events.slice(0,count)) + more('events',months(events.slice(count))) + '</section>' : '';
-  const details = published.map(item => {
+  const details = published.filter(item => item.category !== 'Did you know?').map(item => {
     const feature = item.category === 'Did you know?';
     const credit = feature ? 'Did you know? · AI-written · ' : '';
     const paragraphs = [...new Set([item.summary,...(item.body || [])])].filter(Boolean).map(p=>'<p>'+escape(p)+'</p>').join('');
@@ -133,7 +133,19 @@ if (typeof document !== 'undefined') {
   async function refresh() {
     const response = await fetch('/data/content.json',{cache:'no-cache'});
     if (!response.ok) return;
-    const page = renderCommunity(await response.json());
+    const data = await response.json();
+    const features = new Set(data.news.filter(item => item.category === 'Did you know?').map(item => item.slug));
+    function redirectFeature() {
+      let slug;
+      try { slug = decodeURIComponent(location.hash.slice(1)); } catch { return false; }
+      if (slug === 'did-you-know-archive') { location.replace('/did-you-know/'); return true; }
+      if (!features.has(slug)) return false;
+      location.replace('/did-you-know/#' + encodeURIComponent(slug));
+      return true;
+    }
+    if (redirectFeature()) return;
+    window.addEventListener('hashchange', redirectFeature);
+    const page = renderCommunity(data);
     document.getElementById('feed').innerHTML = page.feed;
     document.getElementById('entry-pages').innerHTML = page.details;
   }
