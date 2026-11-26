@@ -78,22 +78,7 @@ function renderResearchBlocks(blocks) {
       return figure(b,rows.map(row=>'<div style="margin:.6rem 0"><div style="display:flex;justify-content:space-between;gap:.5rem;font-size:.88rem;'+(row.highlight?'font-weight:700':'')+'"><span>'+escape(row.label)+'</span><span style="white-space:nowrap">'+escape(row.value.toLocaleString('en-US'))+'</span></div><div style="height:.65rem;background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;overflow:hidden"><div style="width:'+(row.value/max*100).toFixed(2)+'%;height:100%;background:'+(row.highlight?'#3979b9':'#8b99aa')+'"></div></div></div>').join(''));
     }
 
-    if(b.type==='mine-map'){
-      const sections=[[6,5,4,3,2,1],[7,8,9,10,11,12],[18,17,16,15,14,13],[19,20,21,22,23,24],[30,29,28,27,26,25],[31,32,33,34,35,36]];
-      const targets = {12:'3',13:'3',23:'2',27:'1',28:'1'};
-      let cells='',marks='';
-      sections.forEach((row,y)=>row.forEach((n,x)=>{
-        const sx=26+x*44,sy=23+y*44;
-        const marked=targets[n];
-        cells+='<rect x="'+sx+'" y="'+sy+'" width="44" height="44" fill="'+(marked?'#d8e8f4':'#f0f1ed')+'" stroke="#acb6bb" stroke-width=".8"/><text x="'+(sx+5)+'" y="'+(sy+12)+'" font-size="9" fill="#4c5c66">'+n+'</text>';
-        if(n===27||n===28){
-          marks+='<rect x="'+sx+'" y="'+(sy+22)+'" width="22" height="22" fill="#3979b9" opacity=".75"/><text x="'+(sx+11)+'" y="'+(sy+37)+'" text-anchor="middle" font-weight="bold" font-size="12" fill="white">1</text>';
-        }else if(marked){marks+='<circle cx="'+(sx+24)+'" cy="'+(sy+25)+'" r="10" fill="#3979b9"/><text x="'+(sx+24)+'" y="'+(sy+29)+'" text-anchor="middle" font-weight="bold" font-size="12" fill="white">'+marked+'</text>';}
-      }));
-      const svg='<svg viewBox="0 0 340 306" role="img" aria-label="Schematic north-oriented township grid highlighting historical Woodall, Aderholt, Wilson, Thomason and Goodwin mine areas" style="display:block;width:100%;height:auto;max-width:430px;margin:auto"><rect x="0" y="0" width="340" height="306" rx="6" fill="#f8fafb"/>'+cells+marks+'<g fill="#334155" font-size="11" text-anchor="middle"><text x="315" y="20" font-weight="bold">N</text><path d="M315 26l-6 13h12z" fill="#334155"/><text x="158" y="15" font-size="10">Township 14 South · Range 2 East</text><path d="M26 294h44" stroke="#334155" stroke-width="2"/><text x="48" y="304" font-size="8">~1 mile</text></g></svg>';
-      const legend='<div style="font-size:.9rem;line-height:1.5;margin:.75rem 0 0"><p style="margin:.3rem 0"><strong>1</strong> Woodall mines · sections 27–28</p><p style="margin:.3rem 0"><strong>2</strong> Aderholt mine and Wilson prospect · section 23</p><p style="margin:.3rem 0"><strong>3</strong> Thomason and Goodwin prospects · sections 12–13</p></div>';
-      return figure(b,svg+legend);
-    }
+    if(b.type==='mine-map')return figure(b,'<iframe src="/assets/springville-ore-map.html" title="Historic iron mining areas around Springville on a street map" loading="lazy" style="display:block;width:100%;height:350px;border:0;border-radius:5px"></iframe>');
     if(b.type==='seams')return figure(b,'<svg viewBox="0 0 320 200" role="img" aria-label="Illustration comparing a 3 to 4 foot Springville ore bed with a 21 foot Birmingham ore seam at one documented site" style="display:block;width:100%;height:auto;max-width:440px;margin:auto;color:inherit"><rect x="10" y="15" width="145" height="145" rx="4" fill="#b6a18a"/><rect x="165" y="15" width="145" height="145" rx="4" fill="#b6a18a"/><g stroke="#8b7763" opacity=".65"><path d="M10 35h145 M10 55h145 M10 120h145 M10 140h145 M165 35h145 M165 140h145"/></g><rect x="10" y="76" width="145" height="21" fill="#96452f"/><rect x="165" y="24" width="145" height="126" fill="#96452f"/><g font-size="12" text-anchor="middle" font-weight="bold" fill="#fff"><text x="82.5" y="90">3–4 ft</text><text x="237.5" y="90">21 ft</text></g><g font-size="12" text-anchor="middle" fill="currentColor"><text x="82.5" y="179">Springville</text><text x="237.5" y="179">Red Mountain</text></g></svg>');
     return '';
   }).join('');
