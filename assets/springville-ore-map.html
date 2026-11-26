@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Historic iron mining areas around Springville</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>html,body{height:100%;margin:0;font:14px system-ui,sans-serif}#map{height:100%;background:#e8eee8}.label{font-weight:600;white-space:normal}.fallback{padding:12px;color:#24384b;line-height:1.5}.leaflet-tooltip{font:600 12px system-ui,sans-serif;white-space:normal;max-width:130px;text-align:center}.leaflet-container a{color:#15598a}</style></head>
+<body><div id="map" aria-label="Map showing approximate historic iron mining areas northwest and northeast of downtown Springville"><div class="fallback">Historic mining areas: about 2½ miles northwest and 3½–5 miles northeast of downtown Springville. <a href="https://www.openstreetmap.org/#map=12/33.803/-86.462" target="_blank" rel="noopener">Open a street map of the area</a>.</div></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+if(window.L){
+ const origin=[33.77496,-86.47167];
+ // Approximate positions calculated from the historical directions, not surveyed coordinates.
+ const offset=(miles,bearing)=>{const rad=Math.PI/180,a=miles/3958.76,b=bearing*rad,lat=origin[0]*rad,lon=origin[1]*rad;const lat2=Math.asin(Math.sin(lat)*Math.cos(a)+Math.cos(lat)*Math.sin(a)*Math.cos(b));const lon2=lon+Math.atan2(Math.sin(b)*Math.sin(a)*Math.cos(lat),Math.cos(a)-Math.sin(lat)*Math.sin(lat2));return [lat2/rad,lon2/rad];};
+ const map=L.map('map',{scrollWheelZoom:false,zoomControl:true});
+ document.querySelector('.fallback')?.remove();
+ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'}).addTo(map);
+ const town=L.circleMarker(origin,{radius:6,color:'#1e3a5f',fillColor:'#fff',fillOpacity:1,weight:3}).addTo(map).bindTooltip('Downtown Springville',{permanent:true,direction:'bottom',offset:[0,8],className:'label'});
+ const nw=L.circle(offset(2.5,315),{radius:750,color:'#a45027',fillColor:'#d68c45',fillOpacity:.23,weight:2,dashArray:'5 4'}).addTo(map).bindTooltip('Northwest prospect area',{permanent:true,direction:'top',offset:[0,-9]}).bindPopup('Approximately 2½ miles northwest of town. The 1910 survey describes trenches and ore shipments to Tennessee.');
+ const ne=L.circle(offset(4.25,45),{radius:1500,color:'#a45027',fillColor:'#d68c45',fillOpacity:.23,weight:2,dashArray:'5 4'}).addTo(map).bindTooltip('Northeast mining area',{permanent:true,direction:'top',offset:[0,-9]}).bindPopup('Approximately 3½–5 miles northeast of town. Historical descriptions include an open cut, the Aderholt opening, a drift and an ore outcrop.');
+ const bounds=L.featureGroup([town,nw,ne]).getBounds();map.fitBounds(bounds,{padding:[35,45],maxZoom:13});
+ L.control.scale({imperial:true,metric:false,position:'bottomleft'}).addTo(map);
+ new ResizeObserver(()=>{map.invalidateSize();}).observe(document.getElementById('map'));
+}
+</script></body></html>
