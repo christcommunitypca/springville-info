@@ -2,12 +2,26 @@
   "site": {
     "name": "Springville.Info",
     "location": "Springville, Alabama",
-    "updatedAt": "2026-11-25",
+    "updatedAt": "2026-11-26",
     "timezone": "America/Chicago",
     "source": "Migrated from existing Springville.Info Wix site on 2026-11-18",
     "submissionUrl": "https://headless-czuiyfnwkie-christcommunitypca-1412.wix-site-host.com/share.html"
   },
   "news": [
+    {
+      "id": "springville-railroad-ore-trade",
+      "slug": "springville-railroad-ore-trade",
+      "title": "Springville Once Helped Supply Alabama’s Iron Industry",
+      "shortTitle": "Springville’s Ore Trade",
+      "category": "Did you know?",
+      "date": "2026-11-26",
+      "summary": "After the railroad reached Springville in 1870, the town became a shipping point for ore from nearby hills bound for Birmingham and Tuscaloosa.",
+      "body": [
+        "The city’s history page explains how the railroad helped transform the town into a commercial center."
+      ],
+      "sourceName": "City of Springville",
+      "sourceUrl": "https://www.cityofspringville.com/about-springville"
+    },
     {
       "id": "springville-lake-giant-carp",
       "slug": "springville-lake-giant-carp",
