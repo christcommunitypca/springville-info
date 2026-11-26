@@ -50,7 +50,7 @@ function renderResearchBlocks(blocks) {
     const href = dykUrl(l.url);
     if(!href)return '';
     const name = escape('Did You Know: '+(l.label||'Related story'));
-    return '<a href="'+escape(href)+'" aria-label="'+name+'" title="'+name+'" style="display:inline-block;margin-left:.3em;padding:0 .28em;font-size:.68em;line-height:1.4;white-space:nowrap;font-weight:700;text-decoration:none;border:1px solid currentColor;border-radius:3px;vertical-align:.12em">DYK</a>';
+    return '<a href="'+escape(href)+'" aria-label="'+name+'" title="'+name+'" style="display:inline-block;margin-left:.3em;padding:0 .28em;font-size:.68em;line-height:1.4;white-space:nowrap;font-weight:700;text-decoration:none;border:1px solid currentColor;border-radius:3px;vertical-align:.12em">DYK <svg aria-hidden="true" viewBox="0 0 16 16" width="10" height="10" style="vertical-align:-.05em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2.5h4.5V7M13.5 2.5 7 9M7 3.5H4a1.5 1.5 0 0 0-1.5 1.5v7A1.5 1.5 0 0 0 4 13.5h7a1.5 1.5 0 0 0 1.5-1.5V9"/></svg></a>';
   };
   const inline = b => {
     let remaining = String(b.text || ''), out = '';
