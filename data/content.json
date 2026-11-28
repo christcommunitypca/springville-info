@@ -730,7 +730,26 @@
       "category": "Holiday",
       "summary": "A Christmas Eve service of Scripture lessons and carols, hosted by Christ Community PCA. The service runs from 5 to 6 p.m., allowing families to gather for worship before Christmas Day. Details supplied directly by the organizer.",
       "sourceUrl": "https://www.christcommunitypca.com/",
-      "shareUrl": "https://springville.info/preview/events/christ-community-lessons-carols-2026"
+      "shareUrl": "https://springville.info/preview/events/christ-community-lessons-carols-2026",
+      "detailTitle": "Christmas Eve Services in Springville",
+      "services": [
+        {
+          "church": "Christ Community PCA",
+          "name": "Lessons & Carols",
+          "time": "5–6 p.m.",
+          "location": "7280 U.S. Highway 11, Springville",
+          "sourceUrl": "https://www.christcommunitypca.com/"
+        },
+        {
+          "church": "Springville Methodist Church",
+          "name": "Christmas Eve candlelight service",
+          "time": "2026 schedule not yet verified",
+          "location": "6471 U.S. Highway 11, Springville",
+          "sourceUrl": "https://www.springvillemethodist.com/services",
+          "pending": true
+        }
+      ],
+      "servicesNote": "Know of another Christmas Eve service in Springville? Send us the church name, service time and location so we can add it."
     },
     {
       "id": "springville-neon-north-pole-parade-2026",

@@ -63,6 +63,21 @@ function detail(id,title,body,kind='',shareUrl='') {
   return '<section class="page" id="' + escape(id) + '" data-share-kind="' + escape(kind) + '" data-share-url="' + escape(shareUrl) + '"><div class="page-actions"><a class="back" href="#feed">← Back to the front page</a><button class="share-button" type="button" data-share>Share</button></div><h2>' +
     escape(title) + '</h2>' + body + '</section>';
 }
+function eventDetailBody(item) {
+  if (!Array.isArray(item.services) || !item.services.length) {
+    return '<p>'+escape([item.startDate,item.time,item.location].filter(Boolean).join(' · '))+
+      '</p><p>'+escape(item.summary)+'</p>'+sourceLink(item.sourceUrl,item.sourceName || 'View event details');
+  }
+  const groups = [[false,'Confirmed services'],[true,'Awaiting 2026 details']];
+  return '<p>'+escape(label(item.startDate,{weekday:'long',month:'long',day:'numeric',year:'numeric'}))+'</p>'+
+    groups.map(([pending,heading])=>{
+      const rows=item.services.filter(service=>Boolean(service.pending)===pending);
+      if(!rows.length)return '';
+      return '<h3>'+heading+'</h3>'+rows.map(service=>'<p><strong>'+escape(service.church)+'</strong><br>'+
+        escape([service.name,service.time,service.location].filter(Boolean).join(' · '))+
+        '<br>'+sourceLink(service.sourceUrl,'Church website')+'</p>').join('');
+    }).join('')+(item.servicesNote?'<p>'+escape(item.servicesNote)+' <a href="mailto:tips@springville.info?subject=Christmas%20Eve%20service">Email us ↗</a></p>':'');
+}
 export function renderCommunity(data, today = chicagoDate()) {
   const now = Date.parse(today);
   const age = item => (now - Date.parse(item.date)) / dayMs;
@@ -93,8 +108,7 @@ export function renderCommunity(data, today = chicagoDate()) {
       : '';
     return detail(item.slug,item.title,'<small>'+credit+'Published '+label(item.date,{year:'numeric',month:'long',day:'numeric'})+
       '</small>'+paragraphs+sourceTrail(item)+archiveLink,'story',item.shareUrl || '');
-  }).concat(events.map(item=>detail(item.id,item.title,'<p>'+escape([item.startDate,item.time,item.location].filter(Boolean).join(' · '))+
-    '</p><p>'+escape(item.summary)+'</p>'+sourceLink(item.sourceUrl,item.sourceName || 'View event details'),'event',item.shareUrl || ''))).join('');
+  }).concat(events.map(item=>detail(item.id,item.detailTitle || item.title,eventDetailBody(item),'event',item.shareUrl || ''))).join('');
   const archive = detail('did-you-know-archive','Did You Know archive',features.length ? newsRows(features) : '<p>No features yet.</p>');
   return {feed:headlines + listing, details: details + archive};
 }
